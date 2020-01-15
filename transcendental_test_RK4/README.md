@@ -8,4 +8,4 @@ Testing the effect of transcendental functions on peek GFLOPS.
 
 ## Results
 * Table of results: http://bit.ly/transcendental_test_result
-* 10.7 GFLOPS (35%) with rollOut = 5
+* 10.7 GFLOPS (35%) with rollOut = 4
