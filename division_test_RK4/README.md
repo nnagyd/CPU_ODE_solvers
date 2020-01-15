@@ -8,4 +8,4 @@ Testing the effect of division on peek GFLOPS.
 
 ## Results
 * Table of results: http://bit.ly/division_test_result
-* 3.4 GFLOPS with rollOut = 2
+* 3.4 GFLOPS (11%) with rollOut = 2
