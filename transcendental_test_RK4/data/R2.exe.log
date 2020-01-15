@@ -1,0 +1,101 @@
+    13.214.938.734      Number of clock cycless                   
+    18.988.742.410      Number of instruction              #    1,44  insns per Number of clock cycles        
+                 0      cpu-migrations                                              
+       3,539754995 seconds time elapsed
+            32.330      Number of X87 uops executed                                                      [57,18%]
+     1.147.181.595      Number of SSE or AVX-128 double precision FP scalar uops executed                                                      [57,18%]
+                 0      Number of SSE or AVX-128 single precision FP scalar uops executed                                                      [57,18%]
+                 0      Number of SSE or AVX-128 single precision FP packed uops executed                                                      [57,18%]
+                 0      Counts 256-bit packed floating point                                                      [57,10%]
+                 0      Counts 256-bit packed single-precision                                                      [57,22%]
+     7.861.203.367      Counts 256-bit packed double-precision                                                      [57,14%]
+       3,138632159 seconds time elapsed
+            17.204      Cache misses              #   28,026 % of all cache refs     [50,06%]
+            61.385      Cache references                                             [75,06%]
+        85.473.559      mem-loads:p                                                  [75,07%]
+     1.134.991.742      mem-stores:p                                                 [24,93%]
+       3,176681021 seconds time elapsed
+     7.510.043.713      L1-dcache-loads                                              [79,93%]
+            96.003      L1-dcache-load-misses     #    0,00% of all L1-dcache hits   [80,03%]
+     1.134.998.785      L1-dcache-stores                                             [80,06%]
+            33.298      L1-dcache-store-misses                                       [80,06%]
+                 0      L1-dcache-prefetches                                        
+             6.995      L1-dcache-prefetch-misses                                    [79,93%]
+       3,189219782 seconds time elapsed
+                 0      L1-icache-loads                                             
+           156.555      L1-icache-load-misses                                       
+                 0      L1-icache-prefetches                                        
+                 0      L1-icache-prefetch-misses                                   
+       3,394241231 seconds time elapsed
+             8.928      LLC-loads                                                    [66,71%]
+            11.570      LLC-load-misses           #  129,59% of all LL-cache hits    [66,75%]
+            11.796      LLC-stores                                                   [66,75%]
+            12.803      LLC-store-misses                                             [66,75%]
+             7.151      LLC-prefetches                                               [66,62%]
+             3.496      LLC-prefetch-misses                                          [66,50%]
+       3,128046595 seconds time elapsed
+     7.508.537.590      dTLB-loads                                                  
+             2.407      dTLB-load-misses          #    0,00% of all dTLB cache hits 
+     1.134.867.386      dTLB-stores                                                 
+               612      dTLB-store-misses                                           
+                 0      dTLB-prefetches                                             
+                 0      dTLB-prefetch-misses                                        
+       3,123843948 seconds time elapsed
+             6.717      iTLB-loads                                                  
+             1.266      iTLB-load-misses          #   18,85% of all iTLB cache hits 
+       205.021.266      branch-loads                                                
+            20.524      branch-load-misses                                          
+       3,106957516 seconds time elapsed
+    24.011.132.153      Stalled cycles                                                      [50,02%]
+         2.337.664      CYCLES_L2_PENDING                                                     [50,02%]
+    12.001.677.177      CYCLES_LDM_PENDING                                                     [50,02%]
+         2.390.426      CYCLES_L1D_PENDING                                                     [50,02%]
+       794.570.767      CYCLES_NO_EXECUTE                                                     [49,99%]
+           469.988      STALLS_L2_PENDING                                                      [50,13%]
+           558.978      STALLS_L1D_PENDING                                                     [37,55%]
+       790.968.592      STALLS_LDM_PENDING                                                     [50,00%]
+       3,105279485 seconds time elapsed
+             7.480      Counts arithmetic multiply operations                                                      
+           111.549      Cycles that the divider is active, includes integer and floating point                                                     
+                 0      Number of cycles the divider is activated, includes integer and floating point                                                     
+       3,096928704 seconds time elapsed
+    26.972.620.962      Uops executed                                                      [50,06%]
+    26.994.747.280      Counts total number of uops executed from any thread per cycle                                                      [50,10%]
+    26.991.321.369      Counts total number of uops executed per thread each cycle                                                      [50,10%]
+    36.206.371.970      Number of cycles with no uops executed                                                      [50,10%]
+                 0      Cycles where at least 1 uop was executed per thread:p                                                    [49,98%]
+                 0      Cycles where at least 2 uops were executed per thread:p                                                    [49,90%]
+                 0      Cycles where at least 3 uops were executed per thread:p                                                    [50,06%]
+                 0      Cycles where at least 4 uops were executed per thread:p                                                    [50,00%]
+       3,206871620 seconds time elapsed
+     8.730.644.659      Uops dispatch to specific ports                                                      [57,20%]
+     6.613.243.473      Cycles in which a uop is dispatched on port 0                                                      [57,22%]
+     5.717.785.169      Cycles in which a uop is dispatched on port 1                                                      [57,22%]
+     4.266.409.263      Cycles in which a uop is dispatched on port 2                                                      [57,22%]
+     4.375.398.315      Cycles in which a uop is dispatched on port 3                                                      [57,09%]
+     1.135.015.282      Cycles in which a uop is dispatched on port 4                                                      [57,05%]
+     5.406.781.731      Cycles in which a uop is dispatched on port 5                                                      [57,14%]
+       3,225761889 seconds time elapsed
+    20.402.849.303      Uops issued                                                      [57,19%]
+    20.427.456.396      Number of uops issued by the RAT to the Reservation Station (RS)                                                      [57,24%]
+     9.839.914.937      Alias to ANY:c=1:i=1:t=1                                                     [57,27%]
+    13.679.650.326      Alias to ANY:c=1:i=1                                                     [57,27%]
+            25.047      Number of flags-merge uops allocated. Such uops adds delay                                                      [57,16%]
+            16.141      Number of slow LEA or similar uops allocated                                                      [57,05%]
+                 0      Number of multiply packed scalar single precision uops allocated                                                      [56,97%]
+       3,623299255 seconds time elapsed
+                 0      Ilnstruction Cache accesses                                                     
+           142.731      Number of Instruction Cache, Streaming Buffer and Victim Cache Misses. Includes UC accesses                                                     
+         1.273.665      Number of cycles wher a code-fetch stalled due to L1 instruction cache miss or iTLB miss                                                     
+         8.656.812      Number of Instruction Cache,Buffer                                                     
+       3,103100506 seconds time elapsed
+         5.422.208      Instruction Length Decoder stalls                                                     
+             1.600      Stall caused by changing prefix length of the instruction                                                     
+         5.420.629      Stall cycles due to IQ full                                                     
+       3,118527955 seconds time elapsed
+            33.008      Resource related stall cycles                                                      [80,00%]
+     6.887.597.443      Cycles stalled due to Resource Related reason                                                      [80,03%]
+     6.880.960.237      Cycles stalled due to no eligible RS entry available                                                      [80,03%]
+           111.152      Cycles stalled due to no store buffers available                                                      [80,03%]
+            56.658      Cycles stalled due to re-order buffer full                                                      [79,90%]
+       3,105238411 seconds time elapsed
