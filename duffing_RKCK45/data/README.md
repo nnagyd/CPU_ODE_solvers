@@ -1,4 +1,4 @@
-Results for different rollOuts
+Results for different rollOuts for 1440 parameters
 
 ## Assembly codes
 * Generated with GCC compiler on linux with -O3 and -mavx (enabling AVX instruction set) flags
