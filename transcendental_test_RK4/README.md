@@ -7,5 +7,5 @@ Testing the effect of transcendental functions on peek GFLOPS.
 * RK4 method
 
 ## Results
-* Table of results: http://bit.ly/transcendental_test_result
+* [Table of results](http://bit.ly/transcendental_test_result)
 * 10.7 GFLOPS (35%) with rollOut = 4
