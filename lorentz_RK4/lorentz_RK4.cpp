@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #define MAX_VECTOR_SIZE 256
-#include "/home/nagyd/VCL_LIB1/vectorclass.h"
+#include "vectorclass.h"
 
 double * linspace(double a, double b, int numberOfInts)
 {
