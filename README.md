@@ -31,7 +31,7 @@ Optimizing numerical ODE solvers using AVX instruction set (with [VCL libarary](
 |---------|------|--------|--------|------------------|--------|---|---------|
 |Basic test|RK4|6|1.577 s|181440|24.7|81%|-|
 |Division test|RK4|2|1.333 s|18144|3.4|11%|division in ODE|
-|Transcendental test|RK4|4 s|3.143|18144|10.7|35%|sine in ODE|
+|Transcendental test|RK4|4|3.143 s|18144|10.7|35%|sine in ODE|
 |Lorentz|RK4|2|1.438 s|40320|21.3|70%|-|
 |Lorentz|RKCK45|1|2.129 s|40320|10.8|36%|log,exp,division by stepsize prediction|
 |Duffing|RKCK45|1|195 s|46080|9.2|30%|Cosine in ODE and log,exp,division by stepsize prediction|
