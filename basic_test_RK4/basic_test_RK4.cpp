@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #define MAX_VECTOR_SIZE 256
-#include "/home/nagyd/VCL_LIB1/vectorclass.h"
+#include "vectorclass.h"
 
 double * linspace(double a, double b, int numberOfInts)
 {
@@ -57,11 +57,11 @@ int main()
 	{
 		for (int j = 0, offset = i; j < rollOut; j++, offset += 4) //initial setup before integration
 		{
-			v.p[j].load(p_Parameters + offset); //loading parameters from alligned memory
+			v.p[j].load_a(p_Parameters + offset); //loading parameters from alligned memory
 			v.x[j] = x0;
 		}
 
-		for (int j = 0; j < 10000; j++) //integration loop
+		for (int j = 0; j < numberOfSteps; j++) //integration loop
 		{
 			for (int k = 0; k < rollOut; k++) //k1
 			{
