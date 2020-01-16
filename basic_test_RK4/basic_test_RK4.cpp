@@ -108,5 +108,5 @@ int main()
 	}//end of parameter sweep
 
 	SimulationEnd = clock() - SimulationStart;
-	std::cout << "Eltelt ido: " << SimulationEnd/1000 << " ms" << std::endl;
+	std::cout << "Elapsed time: " << SimulationEnd/1000 << " ms" << std::endl;
 }
