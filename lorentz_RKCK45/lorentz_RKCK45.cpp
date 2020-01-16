@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <ctime>
 #define MAX_VECTOR_SIZE 256
-#include "/home/nagyd/VCL_LIB1/vectorclass.h"
-#include "/home/nagyd/VCL_LIB1/vectormath_exp.h"
+#include "vectorclass.h"
+#include "vectormath_exp.h"
 #include "RKCK45_constants.h"
 
 double * linspace(double a, double b, int numberOfInts);
@@ -191,7 +191,6 @@ int main()
 			std::cout << "--------------------------------------------------------\n";
 			std::cout << i << "\t p = " << v.p[0][0] << "\t x" << v.x[0][0] << "\n";
 			std::cout << i << "\t p = " << v.p[1][0] << "\t x" << v.x[1][0] << "\n";
-			std::cout << i << "\t p = " << v.p[2][0] << "\t x" << v.x[2][0] << "\n";
 		}
 	}//end of parameter sweep
 
