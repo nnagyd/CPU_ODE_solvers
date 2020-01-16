@@ -1,5 +1,10 @@
 ## Discription
-Optimizing numerical ODE solvers using AVX instruction set (with [VCL library](https://www.agner.org/optimize/vcl_manual.pdf)) on CPUs in C++
+* Optimizing numerical ODE solvers using AVX instruction set (with [VCL library](https://www.agner.org/optimize/vcl_manual.pdf)) on CPUs in C++
+* Using gcc compiler and linux perf profiler
+* CPU: Intel Core i7-4820K
+   * 3.8 GHz
+   * 30.4 double GFLOPS max
+   * Ivy Bridge microarchitecture
 
 ## Equations
 1. Basic test equation 
