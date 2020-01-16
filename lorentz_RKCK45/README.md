@@ -8,4 +8,4 @@ Testing peek GFLOPS, with RK4 solver.
 
 ## Results
 * [Table of results](http://bit.ly/lorentz_result_RKCK45)
-* 11.18 GFLOPS (37%) with rollOut = 2
+* 11.2 GFLOPS (37%) with rollOut = 4
