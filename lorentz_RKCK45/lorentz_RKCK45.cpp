@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include <ctime>
 #define MAX_VECTOR_SIZE 256
 #include "vectorclass.h"
