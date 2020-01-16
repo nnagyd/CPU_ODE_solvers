@@ -1,5 +1,5 @@
 ## Discription
-Optimizing numerical ODE solvers using AVX instruction set (with [VCL libarary](https://www.agner.org/optimize/vcl_manual.pdf)) on CPUs in C++
+Optimizing numerical ODE solvers using AVX instruction set (with [VCL library](https://www.agner.org/optimize/vcl_manual.pdf)) on CPUs in C++
 
 ## Equations
 1. Basic test equation 
