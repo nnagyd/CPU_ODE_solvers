@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #define MAX_VECTOR_SIZE 256
-#include "/home/nagyd/VCL_LIB1/vectorclass.h"
+#include "vectorclass.h"
 
 double * linspace(double a, double b, int numberOfInts)
 {
@@ -108,5 +108,5 @@ int main()
 	}//end of parameter sweep
 
 	SimulationEnd = clock() - SimulationStart;
-	std::cout << "Eltelt ido: " << SimulationEnd/1000 << " ms" << std::endl;
+	std::cout << "Elapsed time: " << SimulationEnd/1000 << " ms" << std::endl;
 }
