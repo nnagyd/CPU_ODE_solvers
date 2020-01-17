@@ -2,9 +2,9 @@
 #include <ctime>
 #include <fstream>
 #define MAX_VECTOR_SIZE 256
-#include "/home/nagyd/VCL_LIB1/vectorclass.h"
-#include "/home/nagyd/VCL_LIB1/vectormath_exp.h"
-#include "/home/nagyd/VCL_LIB1/vectormath_trig.h"
+#include "vectorclass.h"
+#include "vectormath_exp.h"
+#include "vectormath_trig.h"
 #include "RKCK45_constants.h"
 
 #define PI 3.14159265358979323
