@@ -22,6 +22,12 @@
 #define B41 0.2104377104377104
 #define B61 0.2891022021456804
 
+#define C1 0.2
+#define C2 0.3
+#define C3 0.6
+#define C4 1.0
+#define C5 0.875
+
 #define error1 0.0042937748015873
 #define error3 -0.018668586093857
 #define error4 0.0341550268308080

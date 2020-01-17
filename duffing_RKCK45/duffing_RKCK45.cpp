@@ -2,9 +2,9 @@
 #include <ctime>
 #include <fstream>
 #define MAX_VECTOR_SIZE 256
-#include "vectorclass.h"
-#include "vectormath_exp.h"
-#include "vectormath_trig.h"
+#include "/home/nagyd/VCL_LIB1/vectorclass.h"
+#include "/home/nagyd/VCL_LIB1/vectormath_exp.h"
+#include "/home/nagyd/VCL_LIB1/vectormath_trig.h"
 #include "RKCK45_constants.h"
 
 #define PI 3.14159265358979323
@@ -46,7 +46,7 @@ struct rkck45vars
 	};
 	Vec4d k1[numberOfVariables], k3[numberOfVariables], k4[numberOfVariables];
 	Vec4d xTmp[numberOfVariables], x[numberOfVariables];
-	Vec4d t[numberOfEquations], dt[numberOfEquations], p[numberOfEquations];
+	Vec4d t[numberOfEquations], tTmp[numberOfEquations], dt[numberOfEquations], p[numberOfEquations];
 	Vec4d tTarget[numberOfEquations];
 	Vec4i counter[numberOfEquations]; //counts number of events
 };
@@ -54,7 +54,7 @@ struct rkck45vars
 int main()
 {
 	const int numberOfProblems = 46080;
-	const int rollOut = 1;
+	const int rollOut = 1; //amount of manual unrolling of outer for loop
 	const int numberOfVariablesPerEquation = 2;
 	const int numberOfVariablesTotal = numberOfVariablesPerEquation * rollOut;
 	const int step = 4 * rollOut;
@@ -103,42 +103,47 @@ int main()
 
 		while (true)
 		{
-			F<rollOut>(v.k1, v.x,v.t, v.p); //k1
+			F<rollOut>(v.k1,v.x,v.t, v.p); //k1
 
 			for (int k = 0, l = 0; k < rollOut; k++)
 			{
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A11*v.k1[l]); l++;
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A11*v.k1[l]); l++;
+				v.tTmp[k] = v.t[k] + C1*v.dt[k];
 			}
-			F<rollOut>(v.k2, v.xTmp,v.t, v.p); //k2
+			F<rollOut>(v.k2, v.xTmp,v.tTmp, v.p); //k2
 
 			for (int k = 0, l = 0; k < rollOut; k++)
 			{
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A21*v.k1[l] + A22 * v.k2[l]); l++;
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A21*v.k1[l] + A22 * v.k2[l]); l++;
+				v.tTmp[k] = v.t[k] + C2*v.dt[k];
 			}
-			F<rollOut>(v.k3, v.xTmp,v.t, v.p); //k3
+			F<rollOut>(v.k3, v.xTmp,v.tTmp, v.p); //k3
 
 			for (int k = 0, l = 0; k < rollOut; k++)
 			{
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A31*v.k1[l] + A32 * v.k2[l] + A33 * v.k3[l]); l++;
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A31*v.k1[l] + A32 * v.k2[l] + A33 * v.k3[l]); l++;
+				v.tTmp[k] = v.t[k] + C3*v.dt[k];
 			}
-			F<rollOut>(v.k4, v.xTmp,v.t, v.p); //k4
+			F<rollOut>(v.k4, v.xTmp,v.tTmp, v.p); //k4
 
 			for (int k = 0, l = 0; k < rollOut; k++)
 			{
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A41*v.k1[l] + A42 * v.k2[l] + A43 * v.k3[l] + A44 * v.k4[l]); l++;
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A41*v.k1[l] + A42 * v.k2[l] + A43 * v.k3[l] + A44 * v.k4[l]); l++;
+				v.tTmp[k] = v.t[k] + C4*v.dt[k];
 			}
-			F<rollOut>(v.k5, v.xTmp,v.t, v.p); //k5
+			F<rollOut>(v.k5, v.xTmp,v.tTmp, v.p); //k5
 
 			for (int k = 0, l = 0; k < rollOut; k++)
 			{
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A51*v.k1[l] + A52 * v.k2[l] + A53 * v.k3[l] + A54 * v.k4[l] + A55 * v.k5[l]); l++;
 				v.xTmp[l] = v.x[l] + v.dt[k] * (A51*v.k1[l] + A52 * v.k2[l] + A53 * v.k3[l] + A54 * v.k4[l] + A55 * v.k5[l]); l++;
+				v.tTmp[k] = v.t[k] + C5*v.dt[k];
 			}
-			F<rollOut>(v.k6, v.xTmp,v.t, v.p); //k6
+			F<rollOut>(v.k6, v.xTmp,v.tTmp, v.p); //k6
 
 			for (int k = 0; k < rollOut; k++) //5. order step and relative error calculation
 			{
@@ -215,6 +220,7 @@ int main()
 	outputF.flush();
 	outputF.close();
 }
+
 
 double * linspace(double a, double b, int numberOfInts)
 {
