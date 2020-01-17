@@ -1,11 +1,11 @@
-GAS LISTING /tmp/cc72IM0J.s 			page 1
+GAS LISTING /tmp/ccsgyXat.s 			page 1
 
 
-   1              		.file	"Duffing_RKCK45.cpp"
+   1              		.file	"duffing_RKCK45.cpp"
    2              		.section	.text.unlikely,"ax",@progbits
    3              		.type	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.part.3, @function
    4              	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.part.3:
-   5              	.LFB5046:
+   5              	.LFB4958:
    6              		.cfi_startproc
    7 0000 50       		pushq	%rax
    8              		.cfi_def_cfa_offset 16
@@ -19,3493 +19,3807 @@ GAS LISTING /tmp/cc72IM0J.s 			page 1
   15              		.cfi_def_cfa_offset 8
   16 0014 C3       		ret
   17              		.cfi_endproc
-  18              	.LFE5046:
+  18              	.LFE4958:
   19              		.size	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.part.3, .-_ZStlsISt11char_traitsIcEE
-  20              		.section	.rodata.str1.1,"aMS",@progbits,1
-  21              	.LC0:
-  22 0000 0900     		.string	"\t"
-  23              		.text
-  24              		.p2align 4,,15
-  25              		.globl	_Z11printVectorPKc5Vec4d
-  26              		.type	_Z11printVectorPKc5Vec4d, @function
-  27              	_Z11printVectorPKc5Vec4d:
-  28              	.LFB4732:
-  29              		.cfi_startproc
-  30 0000 55       		pushq	%rbp
-  31              		.cfi_def_cfa_offset 16
-  32              		.cfi_offset 6, -16
-  33 0001 4889E5   		movq	%rsp, %rbp
-  34              		.cfi_def_cfa_register 6
-  35 0004 4154     		pushq	%r12
-  36 0006 53       		pushq	%rbx
-  37              		.cfi_offset 12, -24
-  38              		.cfi_offset 3, -32
-  39 0007 4889FB   		movq	%rdi, %rbx
-  40 000a 4883E4E0 		andq	$-32, %rsp
-  41 000e 4883EC40 		subq	$64, %rsp
-  42 0012 4885FF   		testq	%rdi, %rdi
-  43 0015 C5FD1144 		vmovupd	%ymm0, 32(%rsp)
-  43      2420
-  44 001b C5FB104C 		vmovsd	56(%rsp), %xmm1
-  44      2438
-  45 0021 C5FB1054 		vmovsd	48(%rsp), %xmm2
-  45      2430
-  46 0027 C5FB105C 		vmovsd	40(%rsp), %xmm3
-  46      2428
-  47 002d C5FB1064 		vmovsd	32(%rsp), %xmm4
-  47      2420
-  48 0033 C5FB114C 		vmovsd	%xmm1, 24(%rsp)
-  48      2418
-  49 0039 C5FB1154 		vmovsd	%xmm2, 16(%rsp)
-  49      2410
-GAS LISTING /tmp/cc72IM0J.s 			page 2
+  20              		.text
+  21              		.p2align 4,,15
+  22              		.globl	_Z8linspaceddi
+  23              		.type	_Z8linspaceddi, @function
+  24              	_Z8linspaceddi:
+  25              	.LFB4615:
+  26              		.cfi_startproc
+  27 0000 53       		pushq	%rbx
+  28              		.cfi_def_cfa_offset 16
+  29              		.cfi_offset 3, -16
+  30 0001 4863F7   		movslq	%edi, %rsi
+  31 0004 89FB     		movl	%edi, %ebx
+  32 0006 48C1E603 		salq	$3, %rsi
+  33 000a BF400000 		movl	$64, %edi
+  33      00
+  34 000f 4883EC10 		subq	$16, %rsp
+  35              		.cfi_def_cfa_offset 32
+  36 0013 C5FB1144 		vmovsd	%xmm0, 8(%rsp)
+  36      2408
+  37 0019 C5FB110C 		vmovsd	%xmm1, (%rsp)
+  37      24
+  38 001e E8000000 		call	aligned_alloc
+  38      00
+  39 0023 8D53FF   		leal	-1(%rbx), %edx
+  40 0026 C5FB1044 		vmovsd	8(%rsp), %xmm0
+  40      2408
+  41 002c C5FB100C 		vmovsd	(%rsp), %xmm1
+  41      24
+  42 0031 83FB01   		cmpl	$1, %ebx
+  43 0034 C5EB2AD2 		vcvtsi2sd	%edx, %xmm2, %xmm2
+  44 0038 C5F35CC8 		vsubsd	%xmm0, %xmm1, %xmm1
+  45 003c C5FB1100 		vmovsd	%xmm0, (%rax)
+  46 0040 C5F35ECA 		vdivsd	%xmm2, %xmm1, %xmm1
+  47 0044 7E24     		jle	.L8
+  48 0046 8D4BFE   		leal	-2(%rbx), %ecx
+  49 0049 488D5008 		leaq	8(%rax), %rdx
+  50 004d 488D4CC8 		leaq	16(%rax,%rcx,8), %rcx
+GAS LISTING /tmp/ccsgyXat.s 			page 2
 
 
-  50 003f C5FB115C 		vmovsd	%xmm3, 8(%rsp)
-  50      2408
-  51 0045 C5FB1124 		vmovsd	%xmm4, (%rsp)
-  51      24
-  52 004a 0F840001 		je	.L11
+  50      10
+  51              		.p2align 4,,10
+  52 0052 660F1F44 		.p2align 3
   52      0000
-  53 0050 C5F877   		vzeroupper
-  54 0053 E8000000 		call	strlen
-  54      00
-  55 0058 4889DE   		movq	%rbx, %rsi
-  56 005b 4889C2   		movq	%rax, %rdx
-  57 005e BF000000 		movl	$_ZSt4cout, %edi
-  57      00
-  58 0063 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  58      00
-  59              	.L5:
-  60 0068 BA010000 		movl	$1, %edx
-  60      00
-  61 006d BE000000 		movl	$.LC0, %esi
-  61      00
-  62 0072 BF000000 		movl	$_ZSt4cout, %edi
-  62      00
-  63 0077 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  63      00
-  64 007c C5FB1004 		vmovsd	(%rsp), %xmm0
-  64      24
-  65 0081 BF000000 		movl	$_ZSt4cout, %edi
-  65      00
-  66 0086 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
-  66      00
-  67 008b BA010000 		movl	$1, %edx
-  67      00
-  68 0090 BE000000 		movl	$.LC0, %esi
-  68      00
-  69 0095 4889C7   		movq	%rax, %rdi
-  70 0098 4889C3   		movq	%rax, %rbx
-  71 009b E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  71      00
-  72 00a0 C5FB1044 		vmovsd	8(%rsp), %xmm0
-  72      2408
-  73 00a6 4889DF   		movq	%rbx, %rdi
-  74 00a9 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
-  74      00
-  75 00ae BA010000 		movl	$1, %edx
-  75      00
-  76 00b3 BE000000 		movl	$.LC0, %esi
-  76      00
-  77 00b8 4889C7   		movq	%rax, %rdi
-  78 00bb 4889C3   		movq	%rax, %rbx
-  79 00be E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  79      00
-  80 00c3 C5FB1044 		vmovsd	16(%rsp), %xmm0
-  80      2410
-  81 00c9 4889DF   		movq	%rbx, %rdi
-  82 00cc E8000000 		call	_ZNSo9_M_insertIdEERSoT_
-  82      00
-  83 00d1 BA010000 		movl	$1, %edx
-GAS LISTING /tmp/cc72IM0J.s 			page 3
+  53              	.L6:
+  54 0058 C5F358C0 		vaddsd	%xmm0, %xmm1, %xmm0
+  55 005c 4883C208 		addq	$8, %rdx
+  56 0060 C5FB1142 		vmovsd	%xmm0, -8(%rdx)
+  56      F8
+  57 0065 4839CA   		cmpq	%rcx, %rdx
+  58 0068 75EE     		jne	.L6
+  59              	.L8:
+  60 006a 4883C410 		addq	$16, %rsp
+  61              		.cfi_def_cfa_offset 16
+  62 006e 5B       		popq	%rbx
+  63              		.cfi_def_cfa_offset 8
+  64 006f C3       		ret
+  65              		.cfi_endproc
+  66              	.LFE4615:
+  67              		.size	_Z8linspaceddi, .-_Z8linspaceddi
+  68              		.section	.rodata.str1.1,"aMS",@progbits,1
+  69              	.LC2:
+  70 0000 64617461 		.string	"data.csv"
+  70      2E637376 
+  70      00
+  71              	.LC95:
+  72 0009 0900     		.string	"\t"
+  73              	.LC103:
+  74 000b 456C6170 		.string	"Elapsed tome: "
+  74      73656420 
+  74      746F6D65 
+  74      3A2000
+  75              	.LC104:
+  76 001a 206D7300 		.string	" ms"
+  77              		.section	.text.startup,"ax",@progbits
+  78              		.p2align 4,,15
+  79              		.globl	main
+  80              		.type	main, @function
+  81              	main:
+  82              	.LFB4614:
+  83              		.cfi_startproc
+  84              		.cfi_personality 0x3,__gxx_personality_v0
+  85              		.cfi_lsda 0x3,.LLSDA4614
+  86 0000 55       		pushq	%rbp
+  87              		.cfi_def_cfa_offset 16
+  88              		.cfi_offset 6, -16
+  89 0001 BFA00500 		movl	$1440, %edi
+  89      00
+  90 0006 4889E5   		movq	%rsp, %rbp
+  91              		.cfi_def_cfa_register 6
+  92 0009 4157     		pushq	%r15
+  93 000b 4156     		pushq	%r14
+  94              		.cfi_offset 15, -24
+  95              		.cfi_offset 14, -32
+  96 000d 4531F6   		xorl	%r14d, %r14d
+  97 0010 4155     		pushq	%r13
+  98 0012 4154     		pushq	%r12
+GAS LISTING /tmp/ccsgyXat.s 			page 3
 
 
-  83      00
-  84 00d6 BE000000 		movl	$.LC0, %esi
-  84      00
-  85 00db 4889C7   		movq	%rax, %rdi
-  86 00de 4889C3   		movq	%rax, %rbx
-  87 00e1 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-  87      00
-  88 00e6 C5FB1044 		vmovsd	24(%rsp), %xmm0
-  88      2418
-  89 00ec 4889DF   		movq	%rbx, %rdi
-  90 00ef E8000000 		call	_ZNSo9_M_insertIdEERSoT_
-  90      00
-  91 00f4 4989C4   		movq	%rax, %r12
-  92 00f7 488B00   		movq	(%rax), %rax
-  93 00fa 488B40E8 		movq	-24(%rax), %rax
-  94 00fe 498B9C04 		movq	240(%r12,%rax), %rbx
-  94      F0000000 
-  95 0106 4885DB   		testq	%rbx, %rbx
-  96 0109 746A     		je	.L12
-  97 010b 807B3800 		cmpb	$0, 56(%rbx)
-  98 010f 7427     		je	.L7
-  99 0111 0FB64343 		movzbl	67(%rbx), %eax
- 100              	.L8:
- 101 0115 4C89E7   		movq	%r12, %rdi
- 102 0118 0FBEF0   		movsbl	%al, %esi
- 103 011b E8000000 		call	_ZNSo3putEc
- 103      00
- 104 0120 4889C7   		movq	%rax, %rdi
- 105 0123 E8000000 		call	_ZNSo5flushEv
- 105      00
- 106 0128 488D65F0 		leaq	-16(%rbp), %rsp
- 107 012c 5B       		popq	%rbx
- 108 012d 415C     		popq	%r12
- 109 012f 5D       		popq	%rbp
- 110              		.cfi_remember_state
- 111              		.cfi_def_cfa 7, 8
- 112 0130 C3       		ret
- 113              		.p2align 4,,10
- 114 0131 0F1F8000 		.p2align 3
- 114      000000
- 115              	.L7:
- 116              		.cfi_restore_state
- 117 0138 4889DF   		movq	%rbx, %rdi
- 118 013b E8000000 		call	_ZNKSt5ctypeIcE13_M_widen_initEv
+  99 0014 53       		pushq	%rbx
+ 100 0015 4883E4E0 		andq	$-32, %rsp
+ 101 0019 4881EC20 		subq	$2080, %rsp
+ 101      080000
+ 102              		.cfi_offset 13, -40
+ 103              		.cfi_offset 12, -48
+ 104              		.cfi_offset 3, -56
+ 105 0020 C5FB100D 		vmovsd	.LC0(%rip), %xmm1
+ 105      00000000 
+ 106 0028 C5FB1005 		vmovsd	.LC1(%rip), %xmm0
+ 106      00000000 
+ 107 0030 64488B04 		movq	%fs:40, %rax
+ 107      25280000 
+ 107      00
+ 108 0039 48898424 		movq	%rax, 2072(%rsp)
+ 108      18080000 
+ 109 0041 31C0     		xorl	%eax, %eax
+ 110 0043 E8000000 		call	_Z8linspaceddi
+ 110      00
+ 111 0048 488DBC24 		leaq	1552(%rsp), %rdi
+ 111      10060000 
+ 112 0050 BA300000 		movl	$48, %edx
+ 112      00
+ 113 0055 BE000000 		movl	$.LC2, %esi
+ 113      00
+ 114 005a 4989C7   		movq	%rax, %r15
+ 115              	.LEHB0:
+ 116 005d E8000000 		call	_ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+ 116      00
+ 117              	.LEHE0:
+ 118 0062 E8000000 		call	clock
  118      00
- 119 0140 488B03   		movq	(%rbx), %rax
- 120 0143 BE0A0000 		movl	$10, %esi
- 120      00
- 121 0148 4889DF   		movq	%rbx, %rdi
- 122 014b FF5030   		call	*48(%rax)
- 123 014e EBC5     		jmp	.L8
- 124              		.p2align 4,,10
- 125              		.p2align 3
- 126              	.L11:
- 127 0150 488B0500 		movq	_ZSt4cout(%rip), %rax
- 127      000000
- 128 0157 488B78E8 		movq	-24(%rax), %rdi
-GAS LISTING /tmp/cc72IM0J.s 			page 4
+ 119 0067 C5F82805 		vmovaps	.LC72(%rip), %xmm0
+ 119      00000000 
+ 120 006f 48894424 		movq	%rax, 48(%rsp)
+ 120      30
+ 121 0074 C5F828C8 		vmovaps	%xmm0, %xmm1
+ 122 0078 C4E37518 		vinsertf128	$0x1, %xmm0, %ymm1, %ymm0
+ 122      C001
+ 123 007e C5FC2944 		vmovaps	%ymm0, 64(%rsp)
+ 123      2440
+ 124 0084 C5FD5705 		vxorpd	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv
+ 124      00000000 
+ 125 008c C5FD2904 		vmovapd	%ymm0, (%rsp)
+ 125      24
+ 126              	.L12:
+ 127 0091 C4817D28 		vmovapd	(%r15,%r14), %ymm0
+ 127      0437
+ 128 0097 C5FD2984 		vmovapd	%ymm0, 1440(%rsp)
+ 128      24A00500 
+ 128      00
+ 129 00a0 C5FD2805 		vmovapd	.LC99(%rip), %ymm0
+ 129      00000000 
+ 130 00a8 C5FD2984 		vmovapd	%ymm0, 1408(%rsp)
+ 130      24800500 
+ 130      00
+ 131 00b1 C5F957C0 		vxorpd	%xmm0, %xmm0, %xmm0
+GAS LISTING /tmp/ccsgyXat.s 			page 4
 
 
- 129 015b 4881C700 		addq	$_ZSt4cout, %rdi
- 129      000000
- 130 0162 8B7720   		movl	32(%rdi), %esi
- 131 0165 83CE01   		orl	$1, %esi
- 132 0168 C5F877   		vzeroupper
- 133 016b E8000000 		call	_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
- 133      00
- 134 0170 E9F3FEFF 		jmp	.L5
- 134      FF
- 135              	.L12:
- 136 0175 E8000000 		call	_ZSt16__throw_bad_castv
+ 132 00b5 C5FD2984 		vmovapd	%ymm0, 1344(%rsp)
+ 132      24400500 
+ 132      00
+ 133 00be C5FD2805 		vmovapd	.LC100(%rip), %ymm0
+ 133      00000000 
+ 134 00c6 C5FD2984 		vmovapd	%ymm0, 1472(%rsp)
+ 134      24C00500 
+ 134      00
+ 135 00cf C5F9EFC0 		vpxor	%xmm0, %xmm0, %xmm0
+ 136 00d3 C5F97F84 		vmovdqa	%xmm0, 1504(%rsp)
+ 136      24E00500 
  136      00
- 137              		.cfi_endproc
- 138              	.LFE4732:
- 139              		.size	_Z11printVectorPKc5Vec4d, .-_Z11printVectorPKc5Vec4d
- 140 017a 660F1F44 		.p2align 4,,15
- 140      0000
- 141              		.globl	_Z8linspaceddi
- 142              		.type	_Z8linspaceddi, @function
- 143              	_Z8linspaceddi:
- 144              	.LFB4734:
- 145              		.cfi_startproc
- 146 0180 53       		pushq	%rbx
- 147              		.cfi_def_cfa_offset 16
- 148              		.cfi_offset 3, -16
- 149 0181 4863F7   		movslq	%edi, %rsi
- 150 0184 89FB     		movl	%edi, %ebx
- 151 0186 48C1E603 		salq	$3, %rsi
- 152 018a BF400000 		movl	$64, %edi
- 152      00
- 153 018f 4883EC10 		subq	$16, %rsp
- 154              		.cfi_def_cfa_offset 32
- 155 0193 C5FB1144 		vmovsd	%xmm0, 8(%rsp)
- 155      2408
- 156 0199 C5FB110C 		vmovsd	%xmm1, (%rsp)
- 156      24
- 157 019e E8000000 		call	aligned_alloc
+ 137 00dc C5FD2805 		vmovapd	.LC101(%rip), %ymm0
+ 137      00000000 
+ 138 00e4 C5FD2984 		vmovapd	%ymm0, 1280(%rsp)
+ 138      24000500 
+ 138      00
+ 139 00ed C5FD2805 		vmovapd	.LC102(%rip), %ymm0
+ 139      00000000 
+ 140 00f5 C5FD2984 		vmovapd	%ymm0, 1312(%rsp)
+ 140      24200500 
+ 140      00
+ 141 00fe 6690     		.p2align 4,,10
+ 142              		.p2align 3
+ 143              	.L47:
+ 144 0100 31C0     		xorl	%eax, %eax
+ 145 0102 48C1E005 		salq	$5, %rax
+ 146 0106 488D5020 		leaq	32(%rax), %rdx
+ 147 010a 488D8C14 		leaq	1280(%rsp,%rdx), %rcx
+ 147      00050000 
+ 148 0112 C5FD2801 		vmovapd	(%rcx), %ymm0
+ 149 0116 C5FD2984 		vmovapd	%ymm0, 1024(%rsp,%rax)
+ 149      04000400 
+ 149      00
+ 150 011f C5FD28AC 		vmovapd	1344(%rsp), %ymm5
+ 150      24400500 
+ 150      00
+ 151 0128 C5D55415 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 151      00000000 
+ 152 0130 C5ED5905 		vmulpd	.LC3(%rip), %ymm2, %ymm0
+ 152      00000000 
+ 153 0138 C4E37D09 		vroundpd	$8, %ymm0, %ymm0
+ 153      C008
+ 154 013e C4E37D09 		vroundpd	$8, %ymm0, %ymm1
+ 154      C808
+ 155 0144 C5FD118C 		vmovupd	%ymm1, 192(%rsp)
+ 155      24C00000 
+ 155      00
+ 156 014d C5FB109C 		vmovsd	200(%rsp), %xmm3
+ 156      24C80000 
+ 156      00
+ 157 0156 C5FB108C 		vmovsd	192(%rsp), %xmm1
+ 157      24C00000 
  157      00
- 158 01a3 8D53FF   		leal	-1(%rbx), %edx
- 159 01a6 C5FB1044 		vmovsd	8(%rsp), %xmm0
- 159      2408
- 160 01ac C5FB100C 		vmovsd	(%rsp), %xmm1
- 160      24
- 161 01b1 83FB01   		cmpl	$1, %ebx
- 162 01b4 C5EB2AD2 		vcvtsi2sd	%edx, %xmm2, %xmm2
- 163 01b8 C5F35CC8 		vsubsd	%xmm0, %xmm1, %xmm1
- 164 01bc C5FB1100 		vmovsd	%xmm0, (%rax)
- 165 01c0 C5F35ECA 		vdivsd	%xmm2, %xmm1, %xmm1
- 166 01c4 7E24     		jle	.L18
- 167 01c6 8D4BFE   		leal	-2(%rbx), %ecx
- 168 01c9 488D5008 		leaq	8(%rax), %rdx
- 169 01cd 488D4CC8 		leaq	16(%rax,%rcx,8), %rcx
- 169      10
- 170              		.p2align 4,,10
- 171 01d2 660F1F44 		.p2align 3
- 171      0000
- 172              	.L16:
-GAS LISTING /tmp/cc72IM0J.s 			page 5
+ 158 015f C4E1FB2C 		vcvttsd2siq	%xmm3, %rsi
+ 158      F3
+ 159 0164 C5FD591D 		vmulpd	.LC4(%rip), %ymm0, %ymm3
+GAS LISTING /tmp/ccsgyXat.s 			page 5
 
 
- 173 01d8 C5F358C0 		vaddsd	%xmm0, %xmm1, %xmm0
- 174 01dc 4883C208 		addq	$8, %rdx
- 175 01e0 C5FB1142 		vmovsd	%xmm0, -8(%rdx)
- 175      F8
- 176 01e5 4839CA   		cmpq	%rcx, %rdx
- 177 01e8 75EE     		jne	.L16
- 178              	.L18:
- 179 01ea 4883C410 		addq	$16, %rsp
- 180              		.cfi_def_cfa_offset 16
- 181 01ee 5B       		popq	%rbx
- 182              		.cfi_def_cfa_offset 8
- 183 01ef C3       		ret
- 184              		.cfi_endproc
- 185              	.LFE4734:
- 186              		.size	_Z8linspaceddi, .-_Z8linspaceddi
- 187              		.section	.rodata.str1.8,"aMS",@progbits,1
- 188              		.align 8
- 189              	.LC93:
- 190 0000 2D2D2D2D 		.string	"--------------------------------------------------------\n"
- 190      2D2D2D2D 
- 190      2D2D2D2D 
- 190      2D2D2D2D 
- 190      2D2D2D2D 
- 191              		.section	.rodata.str1.1
- 192              	.LC94:
- 193 0002 09207020 		.string	"\t p = "
- 193      3D2000
- 194              	.LC95:
- 195 0009 0A00     		.string	"\n"
- 196              	.LC96:
- 197 000b 785B305D 		.string	"x[0]="
- 197      3D00
- 198              	.LC97:
- 199 0011 785B335D 		.string	"x[3]="
- 199      3D00
- 200              	.LC101:
- 201 0017 456C7465 		.string	"Eltelt ido: "
- 201      6C742069 
- 201      646F3A20 
- 201      00
- 202              	.LC102:
- 203 0024 206D7300 		.string	" ms"
- 204              		.section	.text.startup,"ax",@progbits
- 205              		.p2align 4,,15
- 206              		.globl	main
- 207              		.type	main, @function
- 208              	main:
- 209              	.LFB4733:
- 210              		.cfi_startproc
- 211 0000 55       		pushq	%rbp
- 212              		.cfi_def_cfa_offset 16
- 213              		.cfi_offset 6, -16
- 214 0001 BFA00500 		movl	$1440, %edi
- 214      00
- 215 0006 4889E5   		movq	%rsp, %rbp
- 216              		.cfi_def_cfa_register 6
- 217 0009 4157     		pushq	%r15
-GAS LISTING /tmp/cc72IM0J.s 			page 6
+ 159      00000000 
+ 160 016c C4E1FB2C 		vcvttsd2siq	%xmm1, %rdi
+ 160      F9
+ 161 0171 C5FD590D 		vmulpd	.LC5(%rip), %ymm0, %ymm1
+ 161      00000000 
+ 162 0179 C5FD5905 		vmulpd	.LC6(%rip), %ymm0, %ymm0
+ 162      00000000 
+ 163 0181 C5FB10B4 		vmovsd	216(%rsp), %xmm6
+ 163      24D80000 
+ 163      00
+ 164 018a C5ED5CDB 		vsubpd	%ymm3, %ymm2, %ymm3
+ 165 018e C5E55CD9 		vsubpd	%ymm1, %ymm3, %ymm3
+ 166 0192 4889BC24 		movq	%rdi, 128(%rsp)
+ 166      80000000 
+ 167 019a C5FA7EAC 		vmovq	128(%rsp), %xmm5
+ 167      24800000 
+ 167      00
+ 168 01a3 C4E3D122 		vpinsrq	$1, %rsi, %xmm5, %xmm4
+ 168      E601
+ 169 01a9 C4E1FB2C 		vcvttsd2siq	%xmm6, %rsi
+ 169      F6
+ 170 01ae C5FB10AC 		vmovsd	208(%rsp), %xmm5
+ 170      24D00000 
+ 170      00
+ 171 01b7 C5E55CD8 		vsubpd	%ymm0, %ymm3, %ymm3
+ 172 01bb C4E1FB2C 		vcvttsd2siq	%xmm5, %rdi
+ 172      FD
+ 173 01c0 C5E559C3 		vmulpd	%ymm3, %ymm3, %ymm0
+ 174 01c4 C57D5905 		vmulpd	.LC9(%rip), %ymm0, %ymm8
+ 174      00000000 
+ 175 01cc C5FD59C8 		vmulpd	%ymm0, %ymm0, %ymm1
+ 176 01d0 4889BC24 		movq	%rdi, 128(%rsp)
+ 176      80000000 
+ 177 01d8 C5FA7EAC 		vmovq	128(%rsp), %xmm5
+ 177      24800000 
+ 177      00
+ 178 01e1 C5FD593D 		vmulpd	.LC7(%rip), %ymm0, %ymm7
+ 178      00000000 
+ 179 01e9 C57D590D 		vmulpd	.LC15(%rip), %ymm0, %ymm9
+ 179      00000000 
+ 180 01f1 C53D5805 		vaddpd	.LC10(%rip), %ymm8, %ymm8
+ 180      00000000 
+ 181 01f9 C5F559F1 		vmulpd	%ymm1, %ymm1, %ymm6
+ 182 01fd C4E3D122 		vpinsrq	$1, %rsi, %xmm5, %xmm5
+ 182      EE01
+ 183 0203 C5C5583D 		vaddpd	.LC8(%rip), %ymm7, %ymm7
+ 183      00000000 
+ 184 020b C535580D 		vaddpd	.LC16(%rip), %ymm9, %ymm9
+ 184      00000000 
+ 185 0213 C53D59C6 		vmulpd	%ymm6, %ymm8, %ymm8
+ 186 0217 C53D58C7 		vaddpd	%ymm7, %ymm8, %ymm8
+ 187 021b C5FD593D 		vmulpd	.LC11(%rip), %ymm0, %ymm7
+ 187      00000000 
+ 188 0223 C5B559F6 		vmulpd	%ymm6, %ymm9, %ymm6
+ 189 0227 C5C5583D 		vaddpd	.LC12(%rip), %ymm7, %ymm7
+ 189      00000000 
+ 190 022f C5C559F9 		vmulpd	%ymm1, %ymm7, %ymm7
+GAS LISTING /tmp/ccsgyXat.s 			page 6
 
 
- 218 000b 4156     		pushq	%r14
- 219 000d 4155     		pushq	%r13
- 220 000f 4154     		pushq	%r12
- 221              		.cfi_offset 15, -24
- 222              		.cfi_offset 14, -32
- 223              		.cfi_offset 13, -40
- 224              		.cfi_offset 12, -48
- 225 0011 4531E4   		xorl	%r12d, %r12d
- 226 0014 53       		pushq	%rbx
- 227 0015 4883E4E0 		andq	$-32, %rsp
- 228 0019 4881EC40 		subq	$832, %rsp
- 228      030000
- 229              		.cfi_offset 3, -56
- 230 0020 C5FB100D 		vmovsd	.LC1(%rip), %xmm1
- 230      00000000 
- 231 0028 C5FB1005 		vmovsd	.LC2(%rip), %xmm0
- 231      00000000 
- 232 0030 E8000000 		call	_Z8linspaceddi
- 232      00
- 233 0035 4989C5   		movq	%rax, %r13
- 234 0038 E8000000 		call	clock
- 234      00
- 235 003d C5F8280D 		vmovaps	.LC71(%rip), %xmm1
- 235      00000000 
- 236 0045 4889C3   		movq	%rax, %rbx
- 237 0048 C5F828C1 		vmovaps	%xmm1, %xmm0
- 238 004c C4E37D18 		vinsertf128	$0x1, %xmm1, %ymm0, %ymm3
- 238      D901
- 239 0052 C5FC291C 		vmovaps	%ymm3, (%rsp)
- 239      24
- 240 0057 C5E5571D 		vxorpd	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv
- 240      00000000 
- 241 005f C5FD295C 		vmovapd	%ymm3, 32(%rsp)
- 241      2420
- 242              		.p2align 4,,10
- 243 0065 0F1F00   		.p2align 3
- 244              	.L21:
- 245 0068 C5FD281D 		vmovapd	.LC98(%rip), %ymm3
- 245      00000000 
- 246 0070 31D2     		xorl	%edx, %edx
- 247 0072 C4C17D28 		vmovapd	0(%r13), %ymm0
- 247      4500
- 248 0078 C5FD299C 		vmovapd	%ymm3, 768(%rsp)
- 248      24000300 
- 248      00
- 249 0081 C5FD281D 		vmovapd	.LC99(%rip), %ymm3
- 249      00000000 
- 250 0089 C5FD2984 		vmovapd	%ymm0, 800(%rsp)
- 250      24200300 
- 250      00
- 251 0092 C5F957C0 		vxorpd	%xmm0, %xmm0, %xmm0
- 252 0096 C5FD299C 		vmovapd	%ymm3, 672(%rsp)
- 252      24A00200 
+ 191 0233 C4C14558 		vaddpd	%ymm8, %ymm7, %ymm7
+ 191      F8
+ 192 0238 C57D5905 		vmulpd	.LC13(%rip), %ymm0, %ymm8
+ 192      00000000 
+ 193 0240 C53D5805 		vaddpd	.LC14(%rip), %ymm8, %ymm8
+ 193      00000000 
+ 194 0248 C4C14D58 		vaddpd	%ymm8, %ymm6, %ymm6
+ 194      F0
+ 195 024d C57D5905 		vmulpd	.LC17(%rip), %ymm0, %ymm8
+ 195      00000000 
+ 196 0255 C53D5805 		vaddpd	.LC18(%rip), %ymm8, %ymm8
+ 196      00000000 
+ 197 025d C53D59C1 		vmulpd	%ymm1, %ymm8, %ymm8
+ 198 0261 C5BD58F6 		vaddpd	%ymm6, %ymm8, %ymm6
+ 199 0265 C56559C0 		vmulpd	%ymm0, %ymm3, %ymm8
+ 200 0269 C5FD5905 		vmulpd	.LC19(%rip), %ymm0, %ymm0
+ 200      00000000 
+ 201 0271 C5F559CE 		vmulpd	%ymm6, %ymm1, %ymm1
+ 202 0275 C5BD59FF 		vmulpd	%ymm7, %ymm8, %ymm7
+ 203 0279 C4C37D19 		vextractf128	$0x1, %ymm2, %xmm8
+ 203      D001
+ 204 027f C5C558DB 		vaddpd	%ymm3, %ymm7, %ymm3
+ 205 0283 C5FD283D 		vmovapd	.LC20(%rip), %ymm7
+ 205      00000000 
+ 206 028b C4C13973 		vpsllq	$1, %xmm8, %xmm8
+ 206      F001
+ 207 0291 C539DB05 		vpand	.LC23(%rip), %xmm8, %xmm8
+ 207      00000000 
+ 208 0299 C5C55CC0 		vsubpd	%ymm0, %ymm7, %ymm0
+ 209 029d C5C1EFFF 		vpxor	%xmm7, %xmm7, %xmm7
+ 210 02a1 C4623929 		vpcmpeqq	.LC23(%rip), %xmm8, %xmm8
+ 210      05000000 
+ 210      00
+ 211 02aa C5F558F0 		vaddpd	%ymm0, %ymm1, %ymm6
+ 212 02ae C5D1DB05 		vpand	.LC21(%rip), %xmm5, %xmm0
+ 212      00000000 
+ 213 02b6 C5D9DB0D 		vpand	.LC21(%rip), %xmm4, %xmm1
+ 213      00000000 
+ 214 02be C539EF05 		vpxor	.LC105(%rip), %xmm8, %xmm8
+ 214      00000000 
+ 215 02c6 C4E27929 		vpcmpeqq	%xmm7, %xmm0, %xmm0
+ 215      C7
+ 216 02cb C4E27129 		vpcmpeqq	%xmm7, %xmm1, %xmm1
+ 216      CF
+ 217 02d0 C5F9EF05 		vpxor	.LC105(%rip), %xmm0, %xmm0
+ 217      00000000 
+ 218 02d8 C4E25937 		vpcmpgtq	.LC22(%rip), %xmm4, %xmm7
+ 218      3D000000 
+ 218      00
+ 219 02e1 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+ 219      00000000 
+ 220 02e9 C4E37518 		vinsertf128	$0x1, %xmm0, %ymm1, %ymm1
+ 220      C801
+ 221 02ef C4E25137 		vpcmpgtq	.LC22(%rip), %xmm5, %xmm0
+ 221      05000000 
+ 221      00
+ 222 02f8 C4E34518 		vinsertf128	$0x1, %xmm0, %ymm7, %ymm7
+GAS LISTING /tmp/ccsgyXat.s 			page 7
+
+
+ 222      F801
+ 223 02fe C5F928C2 		vmovapd	%xmm2, %xmm0
+ 224 0302 C5E957D2 		vxorpd	%xmm2, %xmm2, %xmm2
+ 225 0306 C5F973F0 		vpsllq	$1, %xmm0, %xmm0
+ 225      01
+ 226 030b C5F9DB05 		vpand	.LC23(%rip), %xmm0, %xmm0
+ 226      00000000 
+ 227 0313 C4E27929 		vpcmpeqq	.LC23(%rip), %xmm0, %xmm0
+ 227      05000000 
+ 227      00
+ 228 031c C5F9EF05 		vpxor	.LC105(%rip), %xmm0, %xmm0
+ 228      00000000 
+ 229 0324 C4C37D18 		vinsertf128	$0x1, %xmm8, %ymm0, %ymm0
+ 229      C001
+ 230 032a C5C554C0 		vandpd	%ymm0, %ymm7, %ymm0
+ 231 032e C4E3654B 		vblendvpd	%ymm0, %ymm2, %ymm3, %ymm3
+ 231      DA00
+ 232 0334 C4E34D4B 		vblendvpd	%ymm0, .LC20(%rip), %ymm6, %ymm0
+ 232      05000000 
+ 232      0000
+ 233 033e C5D1D415 		vpaddq	.LC21(%rip), %xmm5, %xmm2
+ 233      00000000 
+ 234 0346 C5E9DB15 		vpand	.LC24(%rip), %xmm2, %xmm2
+ 234      00000000 
+ 235 034e C4E37D4B 		vblendvpd	%ymm1, %ymm3, %ymm0, %ymm0
+ 235      C310
+ 236 0354 C5D9D40D 		vpaddq	.LC21(%rip), %xmm4, %xmm1
+ 236      00000000 
+ 237 035c C5FD282D 		vmovapd	.LC20(%rip), %ymm5
+ 237      00000000 
+ 238 0364 C5F1DB0D 		vpand	.LC24(%rip), %xmm1, %xmm1
+ 238      00000000 
+ 239 036c C5E973F2 		vpsllq	$62, %xmm2, %xmm2
+ 239      3E
+ 240 0371 C5F173F1 		vpsllq	$62, %xmm1, %xmm1
+ 240      3E
+ 241 0376 C4E37518 		vinsertf128	$0x1, %xmm2, %ymm1, %ymm1
+ 241      CA01
+ 242 037c C5FD2894 		vmovapd	1440(%rsp), %ymm2
+ 242      24A00500 
+ 242      00
+ 243 0385 C5ED5911 		vmulpd	(%rcx), %ymm2, %ymm2
+ 244 0389 C5FD57C9 		vxorpd	%ymm1, %ymm0, %ymm1
+ 245 038d C5FD2884 		vmovapd	1280(%rsp,%rax), %ymm0
+ 245      04000500 
+ 245      00
+ 246 0396 C5FD59D8 		vmulpd	%ymm0, %ymm0, %ymm3
+ 247 039a C5F5590D 		vmulpd	.LC25(%rip), %ymm1, %ymm1
+ 247      00000000 
+ 248 03a2 C5D55CDB 		vsubpd	%ymm3, %ymm5, %ymm3
+ 249 03a6 C5FD59C3 		vmulpd	%ymm3, %ymm0, %ymm0
+ 250 03aa C5FD5CC2 		vsubpd	%ymm2, %ymm0, %ymm0
+ 251 03ae C5FD58C1 		vaddpd	%ymm1, %ymm0, %ymm0
+ 252 03b2 C5FD2984 		vmovapd	%ymm0, 1056(%rsp,%rax)
+ 252      04200400 
  252      00
- 253 009f C5FD281D 		vmovapd	.LC100(%rip), %ymm3
+ 253 03bb C5FD2805 		vmovapd	.LC26(%rip), %ymm0
+GAS LISTING /tmp/ccsgyXat.s 			page 8
+
+
  253      00000000 
- 254 00a7 C5FD2984 		vmovapd	%ymm0, 736(%rsp)
-GAS LISTING /tmp/cc72IM0J.s 			page 7
-
-
- 254      24E00200 
- 254      00
- 255 00b0 C5FD299C 		vmovapd	%ymm3, 704(%rsp)
- 255      24C00200 
+ 254 03c3 C5FD281D 		vmovapd	.LC26(%rip), %ymm3
+ 254      00000000 
+ 255 03cb C5FD59B4 		vmulpd	1024(%rsp), %ymm0, %ymm6
+ 255      24000400 
  255      00
- 256 00b9 C5FD281C 		vmovapd	(%rsp), %ymm3
- 256      24
- 257 00be C5FD295C 		vmovapd	%ymm3, 64(%rsp)
- 257      2440
- 258              	.L22:
- 259 00c4 48C1E205 		salq	$5, %rdx
- 260 00c8 C5FD283D 		vmovapd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EED
- 260      00000000 
- 261 00d0 488D4A20 		leaq	32(%rdx), %rcx
- 262 00d4 C4410157 		vxorpd	%xmm15, %xmm15, %xmm15
- 262      FF
- 263 00d9 488DBC0C 		leaq	672(%rsp,%rcx), %rdi
- 263      A0020000 
- 264 00e1 C5FD2807 		vmovapd	(%rdi), %ymm0
- 265 00e5 C5FD2984 		vmovapd	%ymm0, 416(%rsp,%rdx)
- 265      14A00100 
- 265      00
- 266 00ee C5C55494 		vandpd	736(%rsp), %ymm7, %ymm2
- 266      24E00200 
- 266      00
- 267 00f7 C5ED5905 		vmulpd	.LC3(%rip), %ymm2, %ymm0
- 267      00000000 
- 268 00ff C4E37D09 		vroundpd	$8, %ymm0, %ymm0
- 268      C008
- 269 0105 C4E37D09 		vroundpd	$8, %ymm0, %ymm1
- 269      C808
- 270 010b C5FD118C 		vmovupd	%ymm1, 192(%rsp)
- 270      24C00000 
- 270      00
- 271 0114 C5FB108C 		vmovsd	192(%rsp), %xmm1
- 271      24C00000 
+ 256 03d4 C5FD2884 		vmovapd	1408(%rsp), %ymm0
+ 256      24800500 
+ 256      00
+ 257 03dd C5E559AC 		vmulpd	1056(%rsp), %ymm3, %ymm5
+ 257      24200400 
+ 257      00
+ 258 03e6 C57D283D 		vmovapd	.LC20(%rip), %ymm15
+ 258      00000000 
+ 259 03ee C5FD59DB 		vmulpd	%ymm3, %ymm0, %ymm3
+ 260 03f2 C5FD59F6 		vmulpd	%ymm6, %ymm0, %ymm6
+ 261 03f6 C5E5589C 		vaddpd	1344(%rsp), %ymm3, %ymm3
+ 261      24400500 
+ 261      00
+ 262 03ff C5D559E8 		vmulpd	%ymm0, %ymm5, %ymm5
+ 263 0403 C5CD58B4 		vaddpd	1280(%rsp), %ymm6, %ymm6
+ 263      24000500 
+ 263      00
+ 264 040c C5D558AC 		vaddpd	1312(%rsp), %ymm5, %ymm5
+ 264      24200500 
+ 264      00
+ 265 0415 C5E5541D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 265      00000000 
+ 266 041d C5E5590D 		vmulpd	.LC3(%rip), %ymm3, %ymm1
+ 266      00000000 
+ 267 0425 C4E37D09 		vroundpd	$8, %ymm1, %ymm1
+ 267      C908
+ 268 042b C4E37D09 		vroundpd	$8, %ymm1, %ymm2
+ 268      D108
+ 269 0431 C5FD1194 		vmovupd	%ymm2, 224(%rsp)
+ 269      24E00000 
+ 269      00
+ 270 043a C5F55915 		vmulpd	.LC5(%rip), %ymm1, %ymm2
+ 270      00000000 
+ 271 0442 C5FB10BC 		vmovsd	224(%rsp), %xmm7
+ 271      24E00000 
  271      00
- 272 011d C5FB109C 		vmovsd	200(%rsp), %xmm3
- 272      24C80000 
+ 272 044b C57B1084 		vmovsd	232(%rsp), %xmm8
+ 272      24E80000 
  272      00
- 273 0126 C4E1FB2C 		vcvttsd2siq	%xmm1, %rax
- 273      C1
- 274 012b C5FD590D 		vmulpd	.LC5(%rip), %ymm0, %ymm1
- 274      00000000 
- 275 0133 C5FB10B4 		vmovsd	216(%rsp), %xmm6
- 275      24D80000 
+ 273 0454 C4E1FB2C 		vcvttsd2siq	%xmm7, %rax
+ 273      C7
+ 274 0459 C57B108C 		vmovsd	240(%rsp), %xmm9
+ 274      24F00000 
+ 274      00
+ 275 0462 C57B1094 		vmovsd	248(%rsp), %xmm10
+ 275      24F80000 
  275      00
- 276 013c 48898424 		movq	%rax, 160(%rsp)
- 276      A0000000 
- 277 0144 C4E1FB2C 		vcvttsd2siq	%xmm3, %rax
- 277      C3
- 278 0149 C5FD591D 		vmulpd	.LC4(%rip), %ymm0, %ymm3
- 278      00000000 
- 279 0151 C5FA7EAC 		vmovq	160(%rsp), %xmm5
- 279      24A00000 
- 279      00
- 280 015a C5FD5905 		vmulpd	.LC6(%rip), %ymm0, %ymm0
-GAS LISTING /tmp/cc72IM0J.s 			page 8
+ 276 046b 48898424 		movq	%rax, 128(%rsp)
+ 276      80000000 
+ 277 0473 C4C1FB2C 		vcvttsd2siq	%xmm8, %rax
+ 277      C0
+GAS LISTING /tmp/ccsgyXat.s 			page 9
 
 
- 280      00000000 
- 281 0162 C5ED5CDB 		vsubpd	%ymm3, %ymm2, %ymm3
- 282 0166 C4E3D122 		vpinsrq	$1, %rax, %xmm5, %xmm4
- 282      E001
- 283 016c C5FB10AC 		vmovsd	208(%rsp), %xmm5
- 283      24D00000 
+ 278 0478 C5FA7EA4 		vmovq	128(%rsp), %xmm4
+ 278      24800000 
+ 278      00
+ 279 0481 C4E3D922 		vpinsrq	$1, %rax, %xmm4, %xmm7
+ 279      F801
+ 280 0487 C4C1FB2C 		vcvttsd2siq	%xmm9, %rax
+ 280      C1
+ 281 048c 48898424 		movq	%rax, 128(%rsp)
+ 281      80000000 
+ 282 0494 C4C1FB2C 		vcvttsd2siq	%xmm10, %rax
+ 282      C2
+ 283 0499 C5FA7EA4 		vmovq	128(%rsp), %xmm4
+ 283      24800000 
  283      00
- 284 0175 C5E55CD9 		vsubpd	%ymm1, %ymm3, %ymm3
- 285 0179 C4E1FB2C 		vcvttsd2siq	%xmm5, %rax
- 285      C5
- 286 017e C5E55CD8 		vsubpd	%ymm0, %ymm3, %ymm3
- 287 0182 C5E559C3 		vmulpd	%ymm3, %ymm3, %ymm0
- 288 0186 48898424 		movq	%rax, 160(%rsp)
- 288      A0000000 
- 289 018e C4E1FB2C 		vcvttsd2siq	%xmm6, %rax
- 289      C6
- 290 0193 C5FA7EBC 		vmovq	160(%rsp), %xmm7
- 290      24A00000 
- 290      00
- 291 019c C57D5905 		vmulpd	.LC9(%rip), %ymm0, %ymm8
+ 284 04a2 C463D922 		vpinsrq	$1, %rax, %xmm4, %xmm8
+ 284      C001
+ 285 04a8 C5F55925 		vmulpd	.LC4(%rip), %ymm1, %ymm4
+ 285      00000000 
+ 286 04b0 C5F5590D 		vmulpd	.LC6(%rip), %ymm1, %ymm1
+ 286      00000000 
+ 287 04b8 C5E55CE4 		vsubpd	%ymm4, %ymm3, %ymm4
+ 288 04bc C5DD5CE2 		vsubpd	%ymm2, %ymm4, %ymm4
+ 289 04c0 C5DD5CE1 		vsubpd	%ymm1, %ymm4, %ymm4
+ 290 04c4 C5DD59CC 		vmulpd	%ymm4, %ymm4, %ymm1
+ 291 04c8 C575591D 		vmulpd	.LC9(%rip), %ymm1, %ymm11
  291      00000000 
- 292 01a4 C5FD59C8 		vmulpd	%ymm0, %ymm0, %ymm1
- 293 01a8 C57D590D 		vmulpd	.LC7(%rip), %ymm0, %ymm9
+ 292 04d0 C5F559D1 		vmulpd	%ymm1, %ymm1, %ymm2
+ 293 04d4 C5755915 		vmulpd	.LC7(%rip), %ymm1, %ymm10
  293      00000000 
- 294 01b0 C53D5805 		vaddpd	.LC10(%rip), %ymm8, %ymm8
+ 294 04dc C5755925 		vmulpd	.LC15(%rip), %ymm1, %ymm12
  294      00000000 
- 295 01b8 C4E3C122 		vpinsrq	$1, %rax, %xmm7, %xmm5
- 295      E801
- 296 01be C5FD593D 		vmulpd	.LC11(%rip), %ymm0, %ymm7
- 296      00000000 
- 297 01c6 C5F559F1 		vmulpd	%ymm1, %ymm1, %ymm6
- 298 01ca C535580D 		vaddpd	.LC8(%rip), %ymm9, %ymm9
+ 295 04e4 C525581D 		vaddpd	.LC10(%rip), %ymm11, %ymm11
+ 295      00000000 
+ 296 04ec C56D59CA 		vmulpd	%ymm2, %ymm2, %ymm9
+ 297 04f0 C52D5815 		vaddpd	.LC8(%rip), %ymm10, %ymm10
+ 297      00000000 
+ 298 04f8 C51D5825 		vaddpd	.LC16(%rip), %ymm12, %ymm12
  298      00000000 
- 299 01d2 C5C5583D 		vaddpd	.LC12(%rip), %ymm7, %ymm7
- 299      00000000 
- 300 01da C53D59C6 		vmulpd	%ymm6, %ymm8, %ymm8
- 301 01de C4413D58 		vaddpd	%ymm9, %ymm8, %ymm8
- 301      C1
- 302 01e3 C5C559F9 		vmulpd	%ymm1, %ymm7, %ymm7
- 303 01e7 C57D590D 		vmulpd	.LC15(%rip), %ymm0, %ymm9
+ 299 0500 C4412559 		vmulpd	%ymm9, %ymm11, %ymm11
+ 299      D9
+ 300 0505 C4412558 		vaddpd	%ymm10, %ymm11, %ymm11
+ 300      DA
+ 301 050a C5755915 		vmulpd	.LC11(%rip), %ymm1, %ymm10
+ 301      00000000 
+ 302 0512 C4411D59 		vmulpd	%ymm9, %ymm12, %ymm9
+ 302      C9
+ 303 0517 C52D5815 		vaddpd	.LC12(%rip), %ymm10, %ymm10
  303      00000000 
- 304 01ef C4C14558 		vaddpd	%ymm8, %ymm7, %ymm7
- 304      F8
- 305 01f4 C57D5905 		vmulpd	.LC13(%rip), %ymm0, %ymm8
- 305      00000000 
- 306 01fc C535580D 		vaddpd	.LC16(%rip), %ymm9, %ymm9
+ 304 051f C52D59D2 		vmulpd	%ymm2, %ymm10, %ymm10
+ 305 0523 C4412D58 		vaddpd	%ymm11, %ymm10, %ymm10
+ 305      D3
+ 306 0528 C575591D 		vmulpd	.LC13(%rip), %ymm1, %ymm11
  306      00000000 
- 307 0204 C53D5805 		vaddpd	.LC14(%rip), %ymm8, %ymm8
+ 307 0530 C525581D 		vaddpd	.LC14(%rip), %ymm11, %ymm11
  307      00000000 
- 308 020c C5B559F6 		vmulpd	%ymm6, %ymm9, %ymm6
- 309 0210 C4C14D58 		vaddpd	%ymm8, %ymm6, %ymm6
- 309      F0
- 310 0215 C57D5905 		vmulpd	.LC17(%rip), %ymm0, %ymm8
+ 308 0538 C4413558 		vaddpd	%ymm11, %ymm9, %ymm9
+ 308      CB
+GAS LISTING /tmp/ccsgyXat.s 			page 10
+
+
+ 309 053d C575591D 		vmulpd	.LC17(%rip), %ymm1, %ymm11
+ 309      00000000 
+ 310 0545 C525581D 		vaddpd	.LC18(%rip), %ymm11, %ymm11
  310      00000000 
- 311 021d C53D5805 		vaddpd	.LC18(%rip), %ymm8, %ymm8
- 311      00000000 
- 312 0225 C53D59C1 		vmulpd	%ymm1, %ymm8, %ymm8
-GAS LISTING /tmp/cc72IM0J.s 			page 9
-
-
- 313 0229 C5BD58F6 		vaddpd	%ymm6, %ymm8, %ymm6
- 314 022d C56559C0 		vmulpd	%ymm0, %ymm3, %ymm8
- 315 0231 C5FD5905 		vmulpd	.LC19(%rip), %ymm0, %ymm0
- 315      00000000 
- 316 0239 C5F559CE 		vmulpd	%ymm6, %ymm1, %ymm1
- 317 023d C5BD59FF 		vmulpd	%ymm7, %ymm8, %ymm7
- 318 0241 C5D9DB35 		vpand	.LC21(%rip), %xmm4, %xmm6
- 318      00000000 
- 319 0249 C4C37D19 		vextractf128	$0x1, %ymm2, %xmm8
- 319      D001
- 320 024f C5C558DB 		vaddpd	%ymm3, %ymm7, %ymm3
- 321 0253 C5FD283D 		vmovapd	.LC20(%rip), %ymm7
- 321      00000000 
- 322 025b C5C55CC0 		vsubpd	%ymm0, %ymm7, %ymm0
- 323 025f C4C13973 		vpsllq	$1, %xmm8, %xmm8
- 323      F001
- 324 0265 C5C1EFFF 		vpxor	%xmm7, %xmm7, %xmm7
- 325 0269 C539DB05 		vpand	.LC23(%rip), %xmm8, %xmm8
+ 311 054d C52559DA 		vmulpd	%ymm2, %ymm11, %ymm11
+ 312 0551 C4412558 		vaddpd	%ymm9, %ymm11, %ymm9
+ 312      C9
+ 313 0556 C55D59D9 		vmulpd	%ymm1, %ymm4, %ymm11
+ 314 055a C5F5590D 		vmulpd	.LC19(%rip), %ymm1, %ymm1
+ 314      00000000 
+ 315 0562 C4C16D59 		vmulpd	%ymm9, %ymm2, %ymm2
+ 315      D1
+ 316 0567 C541DB0D 		vpand	.LC21(%rip), %xmm7, %xmm9
+ 316      00000000 
+ 317 056f C4412559 		vmulpd	%ymm10, %ymm11, %ymm10
+ 317      D2
+ 318 0574 C5855CC9 		vsubpd	%ymm1, %ymm15, %ymm1
+ 319 0578 C44101EF 		vpxor	%xmm15, %xmm15, %xmm15
+ 319      FF
+ 320 057d C4C37D19 		vextractf128	$0x1, %ymm3, %xmm11
+ 320      DB01
+ 321 0583 C4423129 		vpcmpeqq	%xmm15, %xmm9, %xmm9
+ 321      CF
+ 322 0588 C5ED58D1 		vaddpd	%ymm1, %ymm2, %ymm2
+ 323 058c C5B9DB0D 		vpand	.LC21(%rip), %xmm8, %xmm1
+ 323      00000000 
+ 324 0594 C4C12173 		vpsllq	$1, %xmm11, %xmm11
+ 324      F301
+ 325 059a C531EF0D 		vpxor	.LC105(%rip), %xmm9, %xmm9
  325      00000000 
- 326 0271 C4E24929 		vpcmpeqq	%xmm7, %xmm6, %xmm6
- 326      F7
- 327 0276 C5F558C8 		vaddpd	%ymm0, %ymm1, %ymm1
- 328 027a C5D1DB05 		vpand	.LC21(%rip), %xmm5, %xmm0
- 328      00000000 
- 329 0282 C5C9EF35 		vpxor	.LC103(%rip), %xmm6, %xmm6
- 329      00000000 
- 330 028a C4623929 		vpcmpeqq	.LC23(%rip), %xmm8, %xmm8
- 330      05000000 
- 330      00
- 331 0293 C539EF05 		vpxor	.LC103(%rip), %xmm8, %xmm8
+ 326 05a2 C5AD58E4 		vaddpd	%ymm4, %ymm10, %ymm4
+ 327 05a6 C521DB1D 		vpand	.LC23(%rip), %xmm11, %xmm11
+ 327      00000000 
+ 328 05ae C4C27129 		vpcmpeqq	%xmm15, %xmm1, %xmm1
+ 328      CF
+ 329 05b3 C4624137 		vpcmpgtq	.LC22(%rip), %xmm7, %xmm10
+ 329      15000000 
+ 329      00
+ 330 05bc C54D59FE 		vmulpd	%ymm6, %ymm6, %ymm15
+ 331 05c0 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
  331      00000000 
- 332 029b C4E27929 		vpcmpeqq	%xmm7, %xmm0, %xmm0
- 332      C7
- 333 02a0 C4E25937 		vpcmpgtq	.LC22(%rip), %xmm4, %xmm7
- 333      3D000000 
- 333      00
- 334 02a9 C5D9D425 		vpaddq	.LC21(%rip), %xmm4, %xmm4
- 334      00000000 
- 335 02b1 C5F9EF05 		vpxor	.LC103(%rip), %xmm0, %xmm0
- 335      00000000 
- 336 02b9 C4E34D18 		vinsertf128	$0x1, %xmm0, %ymm6, %ymm6
- 336      F001
- 337 02bf C4E25137 		vpcmpgtq	.LC22(%rip), %xmm5, %xmm0
- 337      05000000 
- 337      00
- 338 02c8 C4E34518 		vinsertf128	$0x1, %xmm0, %ymm7, %ymm7
- 338      F801
- 339 02ce C5F928C2 		vmovapd	%xmm2, %xmm0
- 340 02d2 C5F973F0 		vpsllq	$1, %xmm0, %xmm0
- 340      01
- 341 02d7 C5F9DB05 		vpand	.LC23(%rip), %xmm0, %xmm0
- 341      00000000 
- 342 02df C4E27929 		vpcmpeqq	.LC23(%rip), %xmm0, %xmm0
- 342      05000000 
- 342      00
- 343 02e8 C5F9EF05 		vpxor	.LC103(%rip), %xmm0, %xmm0
- 343      00000000 
-GAS LISTING /tmp/cc72IM0J.s 			page 10
+ 332 05c8 C4622129 		vpcmpeqq	.LC23(%rip), %xmm11, %xmm11
+ 332      1D000000 
+ 332      00
+ 333 05d1 C521EF1D 		vpxor	.LC105(%rip), %xmm11, %xmm11
+ 333      00000000 
+ 334 05d9 C4633518 		vinsertf128	$0x1, %xmm1, %ymm9, %ymm9
+ 334      C901
+ 335 05df C4E23937 		vpcmpgtq	.LC22(%rip), %xmm8, %xmm1
+ 335      0D000000 
+ 335      00
+ 336 05e8 C4632D18 		vinsertf128	$0x1, %xmm1, %ymm10, %ymm10
+ 336      D101
+ 337 05ee C5F928CB 		vmovapd	%xmm3, %xmm1
+ 338 05f2 C5E157DB 		vxorpd	%xmm3, %xmm3, %xmm3
+ 339 05f6 C5F173F1 		vpsllq	$1, %xmm1, %xmm1
+ 339      01
+GAS LISTING /tmp/ccsgyXat.s 			page 11
 
 
- 344 02f0 C4C37D18 		vinsertf128	$0x1, %xmm8, %ymm0, %ymm0
- 344      C001
- 345 02f6 C5C554D0 		vandpd	%ymm0, %ymm7, %ymm2
- 346 02fa C5D1D405 		vpaddq	.LC21(%rip), %xmm5, %xmm0
- 346      00000000 
- 347 0302 C5D9DB2D 		vpand	.LC24(%rip), %xmm4, %xmm5
+ 340 05fb C5F1DB0D 		vpand	.LC23(%rip), %xmm1, %xmm1
+ 340      00000000 
+ 341 0603 C4E27129 		vpcmpeqq	.LC23(%rip), %xmm1, %xmm1
+ 341      0D000000 
+ 341      00
+ 342 060c C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+ 342      00000000 
+ 343 0614 C4C37518 		vinsertf128	$0x1, %xmm11, %ymm1, %ymm1
+ 343      CB01
+ 344 061a C5AD54C9 		vandpd	%ymm1, %ymm10, %ymm1
+ 345 061e C4E35D4B 		vblendvpd	%ymm1, %ymm3, %ymm4, %ymm4
+ 345      E310
+ 346 0624 C4E36D4B 		vblendvpd	%ymm1, .LC20(%rip), %ymm2, %ymm2
+ 346      15000000 
+ 346      0010
+ 347 062e C5B9D41D 		vpaddq	.LC21(%rip), %xmm8, %xmm3
  347      00000000 
- 348 030a C5F9DB05 		vpand	.LC24(%rip), %xmm0, %xmm0
+ 348 0636 C5E1DB1D 		vpand	.LC24(%rip), %xmm3, %xmm3
  348      00000000 
- 349 0312 C4C3654B 		vblendvpd	%ymm2, %ymm15, %ymm3, %ymm3
- 349      DF20
- 350 0318 C4E3754B 		vblendvpd	%ymm2, .LC20(%rip), %ymm1, %ymm1
- 350      0D000000 
- 350      0020
- 351 0322 C5D173F5 		vpsllq	$62, %xmm5, %xmm5
- 351      3E
- 352 0327 C4E3754B 		vblendvpd	%ymm6, %ymm3, %ymm1, %ymm2
- 352      D360
- 353 032d C5FD288C 		vmovapd	800(%rsp), %ymm1
- 353      24200300 
- 353      00
- 354 0336 C5F973F0 		vpsllq	$62, %xmm0, %xmm0
- 354      3E
- 355 033b C4E35518 		vinsertf128	$0x1, %xmm0, %ymm5, %ymm5
- 355      E801
- 356 0341 C5FD2884 		vmovapd	672(%rsp,%rdx), %ymm0
- 356      14A00200 
- 356      00
- 357 034a C5F5590F 		vmulpd	(%rdi), %ymm1, %ymm1
- 358 034e C5FD59D8 		vmulpd	%ymm0, %ymm0, %ymm3
- 359 0352 C5ED57D5 		vxorpd	%ymm5, %ymm2, %ymm2
- 360 0356 C5FD282D 		vmovapd	.LC20(%rip), %ymm5
+ 349 063e C4E36D4B 		vblendvpd	%ymm9, %ymm4, %ymm2, %ymm1
+ 349      CC90
+ 350 0644 C5C1D415 		vpaddq	.LC21(%rip), %xmm7, %xmm2
+ 350      00000000 
+ 351 064c C5E9DB15 		vpand	.LC24(%rip), %xmm2, %xmm2
+ 351      00000000 
+ 352 0654 C5E173F3 		vpsllq	$62, %xmm3, %xmm3
+ 352      3E
+ 353 0659 C5E973F2 		vpsllq	$62, %xmm2, %xmm2
+ 353      3E
+ 354 065e C4E36D18 		vinsertf128	$0x1, %xmm3, %ymm2, %ymm2
+ 354      D301
+ 355 0664 C5FD281D 		vmovapd	.LC20(%rip), %ymm3
+ 355      00000000 
+ 356 066c C441655C 		vsubpd	%ymm15, %ymm3, %ymm15
+ 356      FF
+ 357 0671 C5FD281D 		vmovapd	.LC28(%rip), %ymm3
+ 357      00000000 
+ 358 0679 C5F557CA 		vxorpd	%ymm2, %ymm1, %ymm1
+ 359 067d C5D55994 		vmulpd	1440(%rsp), %ymm5, %ymm2
+ 359      24A00500 
+ 359      00
+ 360 0686 C5F5590D 		vmulpd	.LC25(%rip), %ymm1, %ymm1
  360      00000000 
- 361 035e C5D55CDB 		vsubpd	%ymm3, %ymm5, %ymm3
- 362 0362 C5ED5915 		vmulpd	.LC25(%rip), %ymm2, %ymm2
- 362      00000000 
- 363 036a C5FD59C3 		vmulpd	%ymm3, %ymm0, %ymm0
- 364 036e C5FD5CC1 		vsubpd	%ymm1, %ymm0, %ymm0
- 365 0372 C5FD58C2 		vaddpd	%ymm2, %ymm0, %ymm0
- 366 0376 C5FD2984 		vmovapd	%ymm0, 448(%rsp,%rdx)
- 366      14C00100 
- 366      00
- 367 037f C5FD281D 		vmovapd	.LC26(%rip), %ymm3
- 367      00000000 
- 368 0387 C5E559A4 		vmulpd	416(%rsp), %ymm3, %ymm4
- 368      24A00100 
- 368      00
- 369 0390 C56559B4 		vmulpd	448(%rsp), %ymm3, %ymm14
- 369      24C00100 
- 369      00
- 370 0399 C5FD289C 		vmovapd	736(%rsp), %ymm3
- 370      24E00200 
- 370      00
- 371 03a2 C5E55415 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
- 371      00000000 
- 372 03aa C5DD59A4 		vmulpd	768(%rsp), %ymm4, %ymm4
- 372      24000300 
-GAS LISTING /tmp/cc72IM0J.s 			page 11
+ 361 068e C4414D59 		vmulpd	%ymm15, %ymm6, %ymm15
+ 361      FF
+ 362 0693 C5E559B4 		vmulpd	1024(%rsp), %ymm3, %ymm6
+ 362      24000400 
+ 362      00
+ 363 069c C5055CFA 		vsubpd	%ymm2, %ymm15, %ymm15
+ 364 06a0 C5E55994 		vmulpd	1056(%rsp), %ymm3, %ymm2
+ 364      24200400 
+ 364      00
+ 365 06a9 C50558F9 		vaddpd	%ymm1, %ymm15, %ymm15
+ 366 06ad C5D5590D 		vmulpd	.LC27(%rip), %ymm5, %ymm1
+ 366      00000000 
+ 367 06b5 C5CD58F1 		vaddpd	%ymm1, %ymm6, %ymm6
+ 368 06b9 C585590D 		vmulpd	.LC27(%rip), %ymm15, %ymm1
+GAS LISTING /tmp/ccsgyXat.s 			page 12
 
 
- 372      00
- 373 03b3 C50D59B4 		vmulpd	768(%rsp), %ymm14, %ymm14
- 373      24000300 
+ 368      00000000 
+ 369 06c1 C5FD59F6 		vmulpd	%ymm6, %ymm0, %ymm6
+ 370 06c5 C5ED58C9 		vaddpd	%ymm1, %ymm2, %ymm1
+ 371 06c9 C5CD58B4 		vaddpd	1280(%rsp), %ymm6, %ymm6
+ 371      24000500 
+ 371      00
+ 372 06d2 C5FD59C9 		vmulpd	%ymm1, %ymm0, %ymm1
+ 373 06d6 C5F5589C 		vaddpd	1312(%rsp), %ymm1, %ymm3
+ 373      24200500 
  373      00
- 374 03bc C5ED5905 		vmulpd	.LC3(%rip), %ymm2, %ymm0
- 374      00000000 
- 375 03c4 C5DD58A4 		vaddpd	672(%rsp), %ymm4, %ymm4
- 375      24A00200 
- 375      00
- 376 03cd C50D58B4 		vaddpd	704(%rsp), %ymm14, %ymm14
- 376      24C00200 
+ 374 06df C57D28F3 		vmovapd	%ymm3, %ymm14
+ 375 06e3 C5FD591D 		vmulpd	.LC25(%rip), %ymm0, %ymm3
+ 375      00000000 
+ 376 06eb C5E5589C 		vaddpd	1344(%rsp), %ymm3, %ymm3
+ 376      24400500 
  376      00
- 377 03d6 C4E37D09 		vroundpd	$8, %ymm0, %ymm0
- 377      C008
- 378 03dc C4E37D09 		vroundpd	$8, %ymm0, %ymm5
- 378      E808
- 379 03e2 C5FD11AC 		vmovupd	%ymm5, 192(%rsp)
- 379      24C00000 
- 379      00
- 380 03eb C57D28E5 		vmovapd	%ymm5, %ymm12
- 381 03ef C5FD590D 		vmulpd	.LC5(%rip), %ymm0, %ymm1
- 381      00000000 
- 382 03f7 C5FB10BC 		vmovsd	192(%rsp), %xmm7
- 382      24C00000 
+ 377 06f4 C57D29B4 		vmovapd	%ymm14, 1088(%rsp)
+ 377      24400400 
+ 377      00
+ 378 06fd C5E5541D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 378      00000000 
+ 379 0705 C5E5590D 		vmulpd	.LC3(%rip), %ymm3, %ymm1
+ 379      00000000 
+ 380 070d C4E37D09 		vroundpd	$8, %ymm1, %ymm1
+ 380      C908
+ 381 0713 C4E37D09 		vroundpd	$8, %ymm1, %ymm2
+ 381      D108
+ 382 0719 C5FD1194 		vmovupd	%ymm2, 256(%rsp)
+ 382      24000100 
  382      00
- 383 0400 C57B1084 		vmovsd	200(%rsp), %xmm8
- 383      24C80000 
+ 383 0722 C57B109C 		vmovsd	256(%rsp), %xmm11
+ 383      24000100 
  383      00
- 384 0409 C4E1FB2C 		vcvttsd2siq	%xmm7, %rax
- 384      C7
- 385 040e C57B1094 		vmovsd	208(%rsp), %xmm10
- 385      24D00000 
- 385      00
- 386 0417 C57B109C 		vmovsd	216(%rsp), %xmm11
- 386      24D80000 
+ 384 072b C57B10A4 		vmovsd	264(%rsp), %xmm12
+ 384      24080100 
+ 384      00
+ 385 0734 C4C1FB2C 		vcvttsd2siq	%xmm11, %rax
+ 385      C3
+ 386 0739 C57B10AC 		vmovsd	272(%rsp), %xmm13
+ 386      24100100 
  386      00
- 387 0420 48898424 		movq	%rax, 160(%rsp)
- 387      A0000000 
- 388 0428 C4C1FB2C 		vcvttsd2siq	%xmm8, %rax
- 388      C0
- 389 042d C5FA7EAC 		vmovq	160(%rsp), %xmm5
- 389      24A00000 
- 389      00
- 390 0436 C463D122 		vpinsrq	$1, %rax, %xmm5, %xmm9
- 390      C801
- 391 043c C4C1FB2C 		vcvttsd2siq	%xmm10, %rax
- 391      C2
- 392 0441 48898424 		movq	%rax, 160(%rsp)
- 392      A0000000 
- 393 0449 C4C1FB2C 		vcvttsd2siq	%xmm11, %rax
- 393      C3
- 394 044e C5FA7E9C 		vmovq	160(%rsp), %xmm3
- 394      24A00000 
- 394      00
- 395 0457 C463E122 		vpinsrq	$1, %rax, %xmm3, %xmm10
- 395      D001
- 396 045d C5FD591D 		vmulpd	.LC4(%rip), %ymm0, %ymm3
-GAS LISTING /tmp/cc72IM0J.s 			page 12
+ 387 0742 C5FB1094 		vmovsd	280(%rsp), %xmm2
+ 387      24180100 
+ 387      00
+ 388 074b 48898424 		movq	%rax, 128(%rsp)
+ 388      80000000 
+ 389 0753 C4C1FB2C 		vcvttsd2siq	%xmm12, %rax
+ 389      C4
+ 390 0758 C5FA7EA4 		vmovq	128(%rsp), %xmm4
+ 390      24800000 
+ 390      00
+ 391 0761 C463D922 		vpinsrq	$1, %rax, %xmm4, %xmm12
+ 391      E001
+ 392 0767 C4C1FB2C 		vcvttsd2siq	%xmm13, %rax
+ 392      C5
+ 393 076c C57D282D 		vmovapd	.LC20(%rip), %ymm13
+ 393      00000000 
+GAS LISTING /tmp/ccsgyXat.s 			page 13
 
 
- 396      00000000 
- 397 0465 C5FD5905 		vmulpd	.LC6(%rip), %ymm0, %ymm0
+ 394 0774 48898424 		movq	%rax, 128(%rsp)
+ 394      80000000 
+ 395 077c C4E1FB2C 		vcvttsd2siq	%xmm2, %rax
+ 395      C2
+ 396 0781 C5FA7EA4 		vmovq	128(%rsp), %xmm4
+ 396      24800000 
+ 396      00
+ 397 078a C5F55915 		vmulpd	.LC5(%rip), %ymm1, %ymm2
  397      00000000 
- 398 046d C5ED5CDB 		vsubpd	%ymm3, %ymm2, %ymm3
- 399 0471 C5E55CD9 		vsubpd	%ymm1, %ymm3, %ymm3
- 400 0475 C5E55CD8 		vsubpd	%ymm0, %ymm3, %ymm3
- 401 0479 C5E559C3 		vmulpd	%ymm3, %ymm3, %ymm0
- 402 047d C5FD592D 		vmulpd	.LC9(%rip), %ymm0, %ymm5
- 402      00000000 
- 403 0485 C5FD59C8 		vmulpd	%ymm0, %ymm0, %ymm1
- 404 0489 C57D5905 		vmulpd	.LC7(%rip), %ymm0, %ymm8
- 404      00000000 
- 405 0491 C5FD5935 		vmulpd	.LC11(%rip), %ymm0, %ymm6
+ 398 0792 C4E3D922 		vpinsrq	$1, %rax, %xmm4, %xmm7
+ 398      F801
+ 399 0798 C5F55925 		vmulpd	.LC4(%rip), %ymm1, %ymm4
+ 399      00000000 
+ 400 07a0 C5F5590D 		vmulpd	.LC6(%rip), %ymm1, %ymm1
+ 400      00000000 
+ 401 07a8 C5E55CE4 		vsubpd	%ymm4, %ymm3, %ymm4
+ 402 07ac C5DD5CE2 		vsubpd	%ymm2, %ymm4, %ymm4
+ 403 07b0 C5DD5CE1 		vsubpd	%ymm1, %ymm4, %ymm4
+ 404 07b4 C5DD59CC 		vmulpd	%ymm4, %ymm4, %ymm1
+ 405 07b8 C5755915 		vmulpd	.LC9(%rip), %ymm1, %ymm10
  405      00000000 
- 406 0499 C5D5582D 		vaddpd	.LC10(%rip), %ymm5, %ymm5
- 406      00000000 
- 407 04a1 C5F559F9 		vmulpd	%ymm1, %ymm1, %ymm7
- 408 04a5 C53D5805 		vaddpd	.LC8(%rip), %ymm8, %ymm8
+ 406 07c0 C5F559D1 		vmulpd	%ymm1, %ymm1, %ymm2
+ 407 07c4 C575590D 		vmulpd	.LC7(%rip), %ymm1, %ymm9
+ 407      00000000 
+ 408 07cc C575591D 		vmulpd	.LC15(%rip), %ymm1, %ymm11
  408      00000000 
- 409 04ad C5CD5835 		vaddpd	.LC12(%rip), %ymm6, %ymm6
+ 409 07d4 C52D5815 		vaddpd	.LC10(%rip), %ymm10, %ymm10
  409      00000000 
- 410 04b5 C5D559EF 		vmulpd	%ymm7, %ymm5, %ymm5
- 411 04b9 C4C15558 		vaddpd	%ymm8, %ymm5, %ymm5
- 411      E8
- 412 04be C5CD59F1 		vmulpd	%ymm1, %ymm6, %ymm6
- 413 04c2 C57D5905 		vmulpd	.LC15(%rip), %ymm0, %ymm8
- 413      00000000 
- 414 04ca C5CD58F5 		vaddpd	%ymm5, %ymm6, %ymm6
- 415 04ce C5FD592D 		vmulpd	.LC13(%rip), %ymm0, %ymm5
+ 410 07dc C56D59C2 		vmulpd	%ymm2, %ymm2, %ymm8
+ 411 07e0 C535580D 		vaddpd	.LC8(%rip), %ymm9, %ymm9
+ 411      00000000 
+ 412 07e8 C525581D 		vaddpd	.LC16(%rip), %ymm11, %ymm11
+ 412      00000000 
+ 413 07f0 C4412D59 		vmulpd	%ymm8, %ymm10, %ymm10
+ 413      D0
+ 414 07f5 C4412D58 		vaddpd	%ymm9, %ymm10, %ymm10
+ 414      D1
+ 415 07fa C575590D 		vmulpd	.LC11(%rip), %ymm1, %ymm9
  415      00000000 
- 416 04d6 C53D5805 		vaddpd	.LC16(%rip), %ymm8, %ymm8
- 416      00000000 
- 417 04de C5D5582D 		vaddpd	.LC14(%rip), %ymm5, %ymm5
+ 416 0802 C4412559 		vmulpd	%ymm8, %ymm11, %ymm8
+ 416      C0
+ 417 0807 C535580D 		vaddpd	.LC12(%rip), %ymm9, %ymm9
  417      00000000 
- 418 04e6 C5BD59FF 		vmulpd	%ymm7, %ymm8, %ymm7
- 419 04ea C5C558ED 		vaddpd	%ymm5, %ymm7, %ymm5
- 420 04ee C5FD593D 		vmulpd	.LC17(%rip), %ymm0, %ymm7
+ 418 080f C53559CA 		vmulpd	%ymm2, %ymm9, %ymm9
+ 419 0813 C4413558 		vaddpd	%ymm10, %ymm9, %ymm9
+ 419      CA
+ 420 0818 C5755915 		vmulpd	.LC13(%rip), %ymm1, %ymm10
  420      00000000 
- 421 04f6 C5C5583D 		vaddpd	.LC18(%rip), %ymm7, %ymm7
+ 421 0820 C52D5815 		vaddpd	.LC14(%rip), %ymm10, %ymm10
  421      00000000 
- 422 04fe C5C559F9 		vmulpd	%ymm1, %ymm7, %ymm7
- 423 0502 C5C558FD 		vaddpd	%ymm5, %ymm7, %ymm7
- 424 0506 C5E559E8 		vmulpd	%ymm0, %ymm3, %ymm5
- 425 050a C5FD5905 		vmulpd	.LC19(%rip), %ymm0, %ymm0
- 425      00000000 
- 426 0512 C5D559F6 		vmulpd	%ymm6, %ymm5, %ymm6
- 427 0516 C5FD282D 		vmovapd	.LC20(%rip), %ymm5
- 427      00000000 
- 428 051e C5D55CC0 		vsubpd	%ymm0, %ymm5, %ymm0
- 429 0522 C5F559EF 		vmulpd	%ymm7, %ymm1, %ymm5
- 430 0526 C5CD58F3 		vaddpd	%ymm3, %ymm6, %ymm6
- 431 052a C5A9DB0D 		vpand	.LC21(%rip), %xmm10, %xmm1
- 431      00000000 
- 432 0532 C5B1DB1D 		vpand	.LC21(%rip), %xmm9, %xmm3
- 432      00000000 
- 433 053a C5D558E8 		vaddpd	%ymm0, %ymm5, %ymm5
- 434 053e C5C1EFFF 		vpxor	%xmm7, %xmm7, %xmm7
-GAS LISTING /tmp/cc72IM0J.s 			page 13
+ 422 0828 C4413D58 		vaddpd	%ymm10, %ymm8, %ymm10
+ 422      D2
+ 423 082d C5755905 		vmulpd	.LC17(%rip), %ymm1, %ymm8
+ 423      00000000 
+ 424 0835 C53D5805 		vaddpd	.LC18(%rip), %ymm8, %ymm8
+ 424      00000000 
+ 425 083d C53D59C2 		vmulpd	%ymm2, %ymm8, %ymm8
+GAS LISTING /tmp/ccsgyXat.s 			page 14
 
 
- 435 0542 C4E23137 		vpcmpgtq	.LC22(%rip), %xmm9, %xmm0
- 435      05000000 
- 435      00
- 436 054b C531D40D 		vpaddq	.LC21(%rip), %xmm9, %xmm9
- 436      00000000 
- 437 0553 C4E27129 		vpcmpeqq	%xmm7, %xmm1, %xmm1
- 437      CF
- 438 0558 C4E26129 		vpcmpeqq	%xmm7, %xmm3, %xmm3
- 438      DF
- 439 055d C5F928FA 		vmovapd	%xmm2, %xmm7
- 440 0561 C5F1EF0D 		vpxor	.LC103(%rip), %xmm1, %xmm1
- 440      00000000 
- 441 0569 C5C173F7 		vpsllq	$1, %xmm7, %xmm7
- 441      01
- 442 056e C5E1EF1D 		vpxor	.LC103(%rip), %xmm3, %xmm3
+ 426 0841 C4413D58 		vaddpd	%ymm10, %ymm8, %ymm10
+ 426      D2
+ 427 0846 C55D59C1 		vmulpd	%ymm1, %ymm4, %ymm8
+ 428 084a C5F5590D 		vmulpd	.LC19(%rip), %ymm1, %ymm1
+ 428      00000000 
+ 429 0852 C4C16D59 		vmulpd	%ymm10, %ymm2, %ymm2
+ 429      D2
+ 430 0857 C4413D59 		vmulpd	%ymm9, %ymm8, %ymm8
+ 430      C1
+ 431 085c C4621937 		vpcmpgtq	.LC22(%rip), %xmm12, %xmm9
+ 431      0D000000 
+ 431      00
+ 432 0865 C4C37D19 		vextractf128	$0x1, %ymm3, %xmm10
+ 432      DA01
+ 433 086b C5955CC9 		vsubpd	%ymm1, %ymm13, %ymm1
+ 434 086f C44111EF 		vpxor	%xmm13, %xmm13, %xmm13
+ 434      ED
+ 435 0874 C5BD58E4 		vaddpd	%ymm4, %ymm8, %ymm4
+ 436 0878 C4C12973 		vpsllq	$1, %xmm10, %xmm10
+ 436      F201
+ 437 087e C519DB05 		vpand	.LC21(%rip), %xmm12, %xmm8
+ 437      00000000 
+ 438 0886 C5ED58D1 		vaddpd	%ymm1, %ymm2, %ymm2
+ 439 088a C5C1DB0D 		vpand	.LC21(%rip), %xmm7, %xmm1
+ 439      00000000 
+ 440 0892 C4423929 		vpcmpeqq	%xmm13, %xmm8, %xmm8
+ 440      C5
+ 441 0897 C529DB15 		vpand	.LC23(%rip), %xmm10, %xmm10
+ 441      00000000 
+ 442 089f C539EF05 		vpxor	.LC105(%rip), %xmm8, %xmm8
  442      00000000 
- 443 0576 C5C1DB3D 		vpand	.LC23(%rip), %xmm7, %xmm7
- 443      00000000 
- 444 057e C4E36518 		vinsertf128	$0x1, %xmm1, %ymm3, %ymm3
- 444      D901
- 445 0584 C4E22937 		vpcmpgtq	.LC22(%rip), %xmm10, %xmm1
- 445      0D000000 
+ 443 08a7 C4C27129 		vpcmpeqq	%xmm13, %xmm1, %xmm1
+ 443      CD
+ 444 08ac C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+ 444      00000000 
+ 445 08b4 C4622929 		vpcmpeqq	.LC23(%rip), %xmm10, %xmm10
+ 445      15000000 
  445      00
- 446 058d C4E37D18 		vinsertf128	$0x1, %xmm1, %ymm0, %ymm0
- 446      C101
- 447 0593 C4E24129 		vpcmpeqq	.LC23(%rip), %xmm7, %xmm7
- 447      3D000000 
- 447      00
- 448 059c C4E37D19 		vextractf128	$0x1, %ymm2, %xmm1
- 448      D101
- 449 05a2 C5C1EF3D 		vpxor	.LC103(%rip), %xmm7, %xmm7
- 449      00000000 
- 450 05aa C5F173F1 		vpsllq	$1, %xmm1, %xmm1
- 450      01
- 451 05af C5F1DB0D 		vpand	.LC23(%rip), %xmm1, %xmm1
- 451      00000000 
- 452 05b7 C4E27129 		vpcmpeqq	.LC23(%rip), %xmm1, %xmm1
- 452      0D000000 
- 452      00
- 453 05c0 C5F1EF0D 		vpxor	.LC103(%rip), %xmm1, %xmm1
+ 446 08bd C529EF15 		vpxor	.LC105(%rip), %xmm10, %xmm10
+ 446      00000000 
+ 447 08c5 C4633D18 		vinsertf128	$0x1, %xmm1, %ymm8, %ymm8
+ 447      C101
+ 448 08cb C4E24137 		vpcmpgtq	.LC22(%rip), %xmm7, %xmm1
+ 448      0D000000 
+ 448      00
+ 449 08d4 C4633518 		vinsertf128	$0x1, %xmm1, %ymm9, %ymm9
+ 449      C901
+ 450 08da C5F928CB 		vmovapd	%xmm3, %xmm1
+ 451 08de C5E157DB 		vxorpd	%xmm3, %xmm3, %xmm3
+ 452 08e2 C5F173F1 		vpsllq	$1, %xmm1, %xmm1
+ 452      01
+ 453 08e7 C5F1DB0D 		vpand	.LC23(%rip), %xmm1, %xmm1
  453      00000000 
- 454 05c8 C4E34518 		vinsertf128	$0x1, %xmm1, %ymm7, %ymm7
- 454      F901
- 455 05ce C5FD54C7 		vandpd	%ymm7, %ymm0, %ymm0
- 456 05d2 C4434D4B 		vblendvpd	%ymm0, %ymm15, %ymm6, %ymm8
- 456      C700
- 457 05d8 C4E3554B 		vblendvpd	%ymm0, .LC20(%rip), %ymm5, %ymm1
- 457      0D000000 
- 457      0000
- 458 05e2 C4C3754B 		vblendvpd	%ymm3, %ymm8, %ymm1, %ymm0
- 458      C030
- 459 05e8 C55D59C4 		vmulpd	%ymm4, %ymm4, %ymm8
- 460 05ec C5A9D40D 		vpaddq	.LC21(%rip), %xmm10, %xmm1
+ 454 08ef C4E27129 		vpcmpeqq	.LC23(%rip), %xmm1, %xmm1
+ 454      0D000000 
+ 454      00
+ 455 08f8 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+GAS LISTING /tmp/ccsgyXat.s 			page 15
+
+
+ 455      00000000 
+ 456 0900 C4C37518 		vinsertf128	$0x1, %xmm10, %ymm1, %ymm1
+ 456      CA01
+ 457 0906 C5B554C9 		vandpd	%ymm1, %ymm9, %ymm1
+ 458 090a C4E35D4B 		vblendvpd	%ymm1, %ymm3, %ymm4, %ymm4
+ 458      E310
+ 459 0910 C4E36D4B 		vblendvpd	%ymm1, .LC20(%rip), %ymm2, %ymm2
+ 459      15000000 
+ 459      0010
+ 460 091a C5C1D41D 		vpaddq	.LC21(%rip), %xmm7, %xmm3
  460      00000000 
- 461 05f4 C5FD281D 		vmovapd	.LC20(%rip), %ymm3
+ 461 0922 C5E1DB1D 		vpand	.LC24(%rip), %xmm3, %xmm3
  461      00000000 
- 462 05fc C531DB15 		vpand	.LC24(%rip), %xmm9, %xmm10
-GAS LISTING /tmp/cc72IM0J.s 			page 14
-
-
- 462      00000000 
- 463 0604 C5F1DB0D 		vpand	.LC24(%rip), %xmm1, %xmm1
+ 462 092a C4E36D4B 		vblendvpd	%ymm8, %ymm4, %ymm2, %ymm1
+ 462      CC80
+ 463 0930 C599D415 		vpaddq	.LC21(%rip), %xmm12, %xmm2
  463      00000000 
- 464 060c C441655C 		vsubpd	%ymm8, %ymm3, %ymm8
- 464      C0
- 465 0611 C4C12973 		vpsllq	$62, %xmm10, %xmm10
- 465      F23E
- 466 0617 C5F173F1 		vpsllq	$62, %xmm1, %xmm1
+ 464 0938 C5FD283D 		vmovapd	.LC20(%rip), %ymm7
+ 464      00000000 
+ 465 0940 C5E9DB15 		vpand	.LC24(%rip), %xmm2, %xmm2
+ 465      00000000 
+ 466 0948 C5E173F3 		vpsllq	$62, %xmm3, %xmm3
  466      3E
- 467 061c C4632D18 		vinsertf128	$0x1, %xmm1, %ymm10, %ymm10
- 467      D101
- 468 0622 C58D598C 		vmulpd	800(%rsp), %ymm14, %ymm1
- 468      24200300 
- 468      00
- 469 062b C4C17D57 		vxorpd	%ymm10, %ymm0, %ymm0
- 469      C2
- 470 0630 C4415D59 		vmulpd	%ymm8, %ymm4, %ymm8
- 470      C0
- 471 0635 C5FD2825 		vmovapd	.LC28(%rip), %ymm4
- 471      00000000 
- 472 063d C5FD5905 		vmulpd	.LC25(%rip), %ymm0, %ymm0
+ 467 094d C5E973F2 		vpsllq	$62, %xmm2, %xmm2
+ 467      3E
+ 468 0952 C4E36D18 		vinsertf128	$0x1, %xmm3, %ymm2, %ymm2
+ 468      D301
+ 469 0958 C58D599C 		vmulpd	1440(%rsp), %ymm14, %ymm3
+ 469      24A00500 
+ 469      00
+ 470 0961 C5F557CA 		vxorpd	%ymm2, %ymm1, %ymm1
+ 471 0965 C5CD59D6 		vmulpd	%ymm6, %ymm6, %ymm2
+ 472 0969 C5F5590D 		vmulpd	.LC25(%rip), %ymm1, %ymm1
  472      00000000 
- 473 0645 C5DD5994 		vmulpd	448(%rsp), %ymm4, %ymm2
- 473      24C00100 
- 473      00
- 474 064e C53D5CC1 		vsubpd	%ymm1, %ymm8, %ymm8
- 475 0652 C5DD599C 		vmulpd	416(%rsp), %ymm4, %ymm3
- 475      24A00100 
- 475      00
- 476 065b C53D58C0 		vaddpd	%ymm0, %ymm8, %ymm8
- 477 065f C58D5905 		vmulpd	.LC27(%rip), %ymm14, %ymm0
- 477      00000000 
- 478 0667 C5BD590D 		vmulpd	.LC27(%rip), %ymm8, %ymm1
+ 473 0971 C5C55CD2 		vsubpd	%ymm2, %ymm7, %ymm2
+ 474 0975 C5CD59D2 		vmulpd	%ymm2, %ymm6, %ymm2
+ 475 0979 C5ED5CD3 		vsubpd	%ymm3, %ymm2, %ymm2
+ 476 097d C5ED58D1 		vaddpd	%ymm1, %ymm2, %ymm2
+ 477 0981 C5FD2994 		vmovapd	%ymm2, 1120(%rsp)
+ 477      24600400 
+ 477      00
+ 478 098a C5D5591D 		vmulpd	.LC30(%rip), %ymm5, %ymm3
  478      00000000 
- 479 066f C5E558D8 		vaddpd	%ymm0, %ymm3, %ymm3
- 480 0673 C5FD2884 		vmovapd	768(%rsp), %ymm0
- 480      24000300 
+ 479 0992 C5FD2835 		vmovapd	.LC25(%rip), %ymm6
+ 479      00000000 
+ 480 099a C57D29B4 		vmovapd	%ymm14, 128(%rsp)
+ 480      24800000 
  480      00
- 481 067c C5ED58C9 		vaddpd	%ymm1, %ymm2, %ymm1
- 482 0680 C5FD59DB 		vmulpd	%ymm3, %ymm0, %ymm3
- 483 0684 C5FD59C9 		vmulpd	%ymm1, %ymm0, %ymm1
- 484 0688 C5E5589C 		vaddpd	672(%rsp), %ymm3, %ymm3
- 484      24A00200 
- 484      00
- 485 0691 C5F5588C 		vaddpd	704(%rsp), %ymm1, %ymm1
- 485      24C00200 
- 485      00
- 486 069a C5FD298C 		vmovapd	%ymm1, 480(%rsp)
- 486      24E00100 
- 486      00
- 487 06a3 C57B10AC 		vmovsd	192(%rsp), %xmm13
- 487      24C00000 
+ 481 09a3 C5CD59A4 		vmulpd	1056(%rsp), %ymm6, %ymm4
+ 481      24200400 
+ 481      00
+ 482 09ac C54D5984 		vmulpd	1024(%rsp), %ymm6, %ymm8
+ 482      24000400 
+ 482      00
+ 483 09b5 C5FD5935 		vmulpd	.LC31(%rip), %ymm0, %ymm6
+ 483      00000000 
+ 484 09bd C58D590D 		vmulpd	.LC29(%rip), %ymm14, %ymm1
+GAS LISTING /tmp/ccsgyXat.s 			page 16
+
+
+ 484      00000000 
+ 485 09c5 C53D58C3 		vaddpd	%ymm3, %ymm8, %ymm8
+ 486 09c9 C585591D 		vmulpd	.LC30(%rip), %ymm15, %ymm3
+ 486      00000000 
+ 487 09d1 C5CD58B4 		vaddpd	1344(%rsp), %ymm6, %ymm6
+ 487      24400500 
  487      00
- 488 06ac C5FB1094 		vmovsd	200(%rsp), %xmm2
- 488      24C80000 
- 488      00
- 489 06b5 C4C1FB2C 		vcvttsd2siq	%xmm13, %rax
-GAS LISTING /tmp/cc72IM0J.s 			page 15
-
-
- 489      C5
- 490 06ba C44111EF 		vpxor	%xmm13, %xmm13, %xmm13
- 490      ED
- 491 06bf C57B108C 		vmovsd	208(%rsp), %xmm9
- 491      24D00000 
- 491      00
- 492 06c8 C57B1094 		vmovsd	216(%rsp), %xmm10
- 492      24D80000 
- 492      00
- 493 06d1 48898424 		movq	%rax, 160(%rsp)
- 493      A0000000 
- 494 06d9 C4E1FB2C 		vcvttsd2siq	%xmm2, %rax
- 494      C2
- 495 06de C5FA7EA4 		vmovq	160(%rsp), %xmm4
- 495      24A00000 
+ 488 09da C53D58C1 		vaddpd	%ymm1, %ymm8, %ymm8
+ 489 09de C5ED590D 		vmulpd	.LC29(%rip), %ymm2, %ymm1
+ 489      00000000 
+ 490 09e6 C5DD58DB 		vaddpd	%ymm3, %ymm4, %ymm3
+ 491 09ea C5CD5435 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 491      00000000 
+ 492 09f2 C4417D59 		vmulpd	%ymm8, %ymm0, %ymm8
+ 492      C0
+ 493 09f7 C5E558D9 		vaddpd	%ymm1, %ymm3, %ymm3
+ 494 09fb C5CD590D 		vmulpd	.LC3(%rip), %ymm6, %ymm1
+ 494      00000000 
+ 495 0a03 C53D5884 		vaddpd	1280(%rsp), %ymm8, %ymm8
+ 495      24000500 
  495      00
- 496 06e7 C4E3D922 		vpinsrq	$1, %rax, %xmm4, %xmm4
- 496      E001
- 497 06ed C4C1FB2C 		vcvttsd2siq	%xmm9, %rax
- 497      C1
- 498 06f2 48898424 		movq	%rax, 160(%rsp)
- 498      A0000000 
- 499 06fa C4C1FB2C 		vcvttsd2siq	%xmm10, %rax
- 499      C2
- 500 06ff C5FA7E94 		vmovq	160(%rsp), %xmm2
- 500      24A00000 
+ 496 0a0c C5FD59DB 		vmulpd	%ymm3, %ymm0, %ymm3
+ 497 0a10 C4E37D09 		vroundpd	$8, %ymm1, %ymm1
+ 497      C908
+ 498 0a16 C4E37D09 		vroundpd	$8, %ymm1, %ymm4
+ 498      E108
+ 499 0a1c C5FD11A4 		vmovupd	%ymm4, 288(%rsp)
+ 499      24200100 
+ 499      00
+ 500 0a25 C5FB10A4 		vmovsd	288(%rsp), %xmm4
+ 500      24200100 
  500      00
- 501 0708 C463E922 		vpinsrq	$1, %rax, %xmm2, %xmm9
- 501      C801
- 502 070e C5D9DB15 		vpand	.LC21(%rip), %xmm4, %xmm2
- 502      00000000 
- 503 0716 C531DB15 		vpand	.LC21(%rip), %xmm9, %xmm10
+ 501 0a2e C5FB10BC 		vmovsd	296(%rsp), %xmm7
+ 501      24280100 
+ 501      00
+ 502 0a37 C4E1FB2C 		vcvttsd2siq	%xmm4, %rax
+ 502      C4
+ 503 0a3c C5F55925 		vmulpd	.LC5(%rip), %ymm1, %ymm4
  503      00000000 
- 504 071e C4623137 		vpcmpgtq	.LC22(%rip), %xmm9, %xmm11
- 504      1D000000 
+ 504 0a44 C5E5589C 		vaddpd	1312(%rsp), %ymm3, %ymm3
+ 504      24200500 
  504      00
- 505 0727 C531D40D 		vpaddq	.LC21(%rip), %xmm9, %xmm9
- 505      00000000 
- 506 072f C531DB0D 		vpand	.LC24(%rip), %xmm9, %xmm9
- 506      00000000 
- 507 0737 C4C26929 		vpcmpeqq	%xmm13, %xmm2, %xmm2
- 507      D5
- 508 073c C4422929 		vpcmpeqq	%xmm13, %xmm10, %xmm10
- 508      D5
- 509 0741 C5E9EF15 		vpxor	.LC103(%rip), %xmm2, %xmm2
- 509      00000000 
- 510 0749 C57D282D 		vmovapd	.LC20(%rip), %ymm13
+ 505 0a4d C57B108C 		vmovsd	304(%rsp), %xmm9
+ 505      24300100 
+ 505      00
+ 506 0a56 C57B1094 		vmovsd	312(%rsp), %xmm10
+ 506      24380100 
+ 506      00
+ 507 0a5f C5FD299C 		vmovapd	%ymm3, 1152(%rsp)
+ 507      24800400 
+ 507      00
+ 508 0a68 48894424 		movq	%rax, 112(%rsp)
+ 508      70
+ 509 0a6d C4E1FB2C 		vcvttsd2siq	%xmm7, %rax
+ 509      C7
+ 510 0a72 C5F5593D 		vmulpd	.LC4(%rip), %ymm1, %ymm7
  510      00000000 
- 511 0751 C529EF15 		vpxor	.LC103(%rip), %xmm10, %xmm10
- 511      00000000 
- 512 0759 C4C13173 		vpsllq	$62, %xmm9, %xmm9
- 512      F13E
- 513 075f C4C36D18 		vinsertf128	$0x1, %xmm10, %ymm2, %ymm2
- 513      D201
- 514 0765 C4625937 		vpcmpgtq	.LC22(%rip), %xmm4, %xmm10
- 514      15000000 
- 514      00
-GAS LISTING /tmp/cc72IM0J.s 			page 16
+GAS LISTING /tmp/ccsgyXat.s 			page 17
 
 
- 515 076e C5D9D425 		vpaddq	.LC21(%rip), %xmm4, %xmm4
- 515      00000000 
- 516 0776 C5D9DB25 		vpand	.LC24(%rip), %xmm4, %xmm4
- 516      00000000 
- 517 077e C4432D18 		vinsertf128	$0x1, %xmm11, %ymm10, %ymm10
- 517      D301
- 518 0784 C52D54D7 		vandpd	%ymm7, %ymm10, %ymm10
- 519 0788 C5D973F4 		vpsllq	$62, %xmm4, %xmm4
- 519      3E
- 520 078d C4435D18 		vinsertf128	$0x1, %xmm9, %ymm4, %ymm9
- 520      C901
- 521 0793 C5F559A4 		vmulpd	800(%rsp), %ymm1, %ymm4
- 521      24200300 
- 521      00
- 522 079c C4434D4B 		vblendvpd	%ymm10, %ymm15, %ymm6, %ymm11
- 522      DFA0
- 523 07a2 C463554B 		vblendvpd	%ymm10, .LC20(%rip), %ymm5, %ymm10
- 523      15000000 
- 523      00A0
- 524 07ac C4432D4B 		vblendvpd	%ymm2, %ymm11, %ymm10, %ymm11
- 524      DB20
- 525 07b2 C5E559D3 		vmulpd	%ymm3, %ymm3, %ymm2
- 526 07b6 C4412557 		vxorpd	%ymm9, %ymm11, %ymm10
- 526      D1
- 527 07bb C57D281D 		vmovapd	.LC25(%rip), %ymm11
- 527      00000000 
- 528 07c3 C525598C 		vmulpd	416(%rsp), %ymm11, %ymm9
- 528      24A00100 
- 528      00
- 529 07cc C5955CD2 		vsubpd	%ymm2, %ymm13, %ymm2
- 530 07d0 C52D5915 		vmulpd	.LC25(%rip), %ymm10, %ymm10
- 530      00000000 
- 531 07d8 C5E559D2 		vmulpd	%ymm2, %ymm3, %ymm2
- 532 07dc C5F5591D 		vmulpd	.LC29(%rip), %ymm1, %ymm3
+ 511 0a7a C57A7E74 		vmovq	112(%rsp), %xmm14
+ 511      2470
+ 512 0a80 C5F5590D 		vmulpd	.LC6(%rip), %ymm1, %ymm1
+ 512      00000000 
+ 513 0a88 C5CD5CFF 		vsubpd	%ymm7, %ymm6, %ymm7
+ 514 0a8c C4638922 		vpinsrq	$1, %rax, %xmm14, %xmm14
+ 514      F001
+ 515 0a92 C4C1FB2C 		vcvttsd2siq	%xmm9, %rax
+ 515      C1
+ 516 0a97 C5C55CFC 		vsubpd	%ymm4, %ymm7, %ymm7
+ 517 0a9b C5C55CF9 		vsubpd	%ymm1, %ymm7, %ymm7
+ 518 0a9f C5C559CF 		vmulpd	%ymm7, %ymm7, %ymm1
+ 519 0aa3 48894424 		movq	%rax, 112(%rsp)
+ 519      70
+ 520 0aa8 C4C1FB2C 		vcvttsd2siq	%xmm10, %rax
+ 520      C2
+ 521 0aad C57A7E64 		vmovq	112(%rsp), %xmm12
+ 521      2470
+ 522 0ab3 C575591D 		vmulpd	.LC9(%rip), %ymm1, %ymm11
+ 522      00000000 
+ 523 0abb C5F559E1 		vmulpd	%ymm1, %ymm1, %ymm4
+ 524 0abf C5755915 		vmulpd	.LC7(%rip), %ymm1, %ymm10
+ 524      00000000 
+ 525 0ac7 C525581D 		vaddpd	.LC10(%rip), %ymm11, %ymm11
+ 525      00000000 
+ 526 0acf C55D59CC 		vmulpd	%ymm4, %ymm4, %ymm9
+ 527 0ad3 C4639922 		vpinsrq	$1, %rax, %xmm12, %xmm13
+ 527      E801
+ 528 0ad9 C52D5815 		vaddpd	.LC8(%rip), %ymm10, %ymm10
+ 528      00000000 
+ 529 0ae1 C5755925 		vmulpd	.LC15(%rip), %ymm1, %ymm12
+ 529      00000000 
+ 530 0ae9 C4412559 		vmulpd	%ymm9, %ymm11, %ymm11
+ 530      D9
+ 531 0aee C4412558 		vaddpd	%ymm10, %ymm11, %ymm11
+ 531      DA
+ 532 0af3 C5755915 		vmulpd	.LC11(%rip), %ymm1, %ymm10
  532      00000000 
- 533 07e4 C5ED5CD4 		vsubpd	%ymm4, %ymm2, %ymm2
- 534 07e8 C58D5925 		vmulpd	.LC30(%rip), %ymm14, %ymm4
+ 533 0afb C51D5825 		vaddpd	.LC16(%rip), %ymm12, %ymm12
+ 533      00000000 
+ 534 0b03 C52D5815 		vaddpd	.LC12(%rip), %ymm10, %ymm10
  534      00000000 
- 535 07f0 C4C16D58 		vaddpd	%ymm10, %ymm2, %ymm2
- 535      D2
- 536 07f5 C5255994 		vmulpd	448(%rsp), %ymm11, %ymm10
- 536      24C00100 
- 536      00
- 537 07fe C53558CC 		vaddpd	%ymm4, %ymm9, %ymm9
- 538 0802 C5ED5925 		vmulpd	.LC29(%rip), %ymm2, %ymm4
- 538      00000000 
- 539 080a C5FD2994 		vmovapd	%ymm2, 512(%rsp)
- 539      24000200 
- 539      00
- 540 0813 C5FD2994 		vmovapd	%ymm2, 160(%rsp)
- 540      24A00000 
- 540      00
- 541 081c C57D29E2 		vmovapd	%ymm12, %ymm2
- 542 0820 C53558CB 		vaddpd	%ymm3, %ymm9, %ymm9
- 543 0824 C5BD591D 		vmulpd	.LC30(%rip), %ymm8, %ymm3
+ 535 0b0b C4411D59 		vmulpd	%ymm9, %ymm12, %ymm9
+ 535      C9
+ 536 0b10 C57D2825 		vmovapd	.LC20(%rip), %ymm12
+ 536      00000000 
+ 537 0b18 C52D59D4 		vmulpd	%ymm4, %ymm10, %ymm10
+ 538 0b1c C4412D58 		vaddpd	%ymm11, %ymm10, %ymm10
+ 538      D3
+ 539 0b21 C575591D 		vmulpd	.LC13(%rip), %ymm1, %ymm11
+ 539      00000000 
+ 540 0b29 C525581D 		vaddpd	.LC14(%rip), %ymm11, %ymm11
+ 540      00000000 
+ 541 0b31 C4413558 		vaddpd	%ymm11, %ymm9, %ymm11
+ 541      DB
+ 542 0b36 C575590D 		vmulpd	.LC17(%rip), %ymm1, %ymm9
+ 542      00000000 
+GAS LISTING /tmp/ccsgyXat.s 			page 18
+
+
+ 543 0b3e C535580D 		vaddpd	.LC18(%rip), %ymm9, %ymm9
  543      00000000 
- 544 082c C4417D59 		vmulpd	%ymm9, %ymm0, %ymm9
-GAS LISTING /tmp/cc72IM0J.s 			page 17
-
-
- 544      C9
- 545 0831 C5AD58DB 		vaddpd	%ymm3, %ymm10, %ymm3
- 546 0835 C535588C 		vaddpd	672(%rsp), %ymm9, %ymm9
- 546      24A00200 
- 546      00
- 547 083e C5E558DC 		vaddpd	%ymm4, %ymm3, %ymm3
- 548 0842 C5FD59DB 		vmulpd	%ymm3, %ymm0, %ymm3
- 549 0846 C5E5589C 		vaddpd	704(%rsp), %ymm3, %ymm3
- 549      24C00200 
- 549      00
- 550 084f C5FD299C 		vmovapd	%ymm3, 544(%rsp)
- 550      24200200 
+ 544 0b46 C53559CC 		vmulpd	%ymm4, %ymm9, %ymm9
+ 545 0b4a C4413558 		vaddpd	%ymm11, %ymm9, %ymm11
+ 545      DB
+ 546 0b4f C54559C9 		vmulpd	%ymm1, %ymm7, %ymm9
+ 547 0b53 C5F5590D 		vmulpd	.LC19(%rip), %ymm1, %ymm1
+ 547      00000000 
+ 548 0b5b C4C15D59 		vmulpd	%ymm11, %ymm4, %ymm4
+ 548      E3
+ 549 0b60 C4413559 		vmulpd	%ymm10, %ymm9, %ymm9
+ 549      CA
+ 550 0b65 C4621137 		vpcmpgtq	.LC22(%rip), %xmm13, %xmm10
+ 550      15000000 
  550      00
- 551 0858 C57B109C 		vmovsd	192(%rsp), %xmm11
- 551      24C00000 
- 551      00
- 552 0861 C57B10A4 		vmovsd	200(%rsp), %xmm12
- 552      24C80000 
- 552      00
- 553 086a C4C1FB2C 		vcvttsd2siq	%xmm11, %rax
- 553      C3
- 554 086f C5FB10A4 		vmovsd	208(%rsp), %xmm4
- 554      24D00000 
- 554      00
- 555 0878 C57B1094 		vmovsd	216(%rsp), %xmm10
- 555      24D80000 
- 555      00
- 556 0881 48898424 		movq	%rax, 144(%rsp)
- 556      90000000 
- 557 0889 C4C1FB2C 		vcvttsd2siq	%xmm12, %rax
- 557      C4
- 558 088e C57A7E9C 		vmovq	144(%rsp), %xmm11
- 558      24900000 
- 558      00
- 559 0897 C463A122 		vpinsrq	$1, %rax, %xmm11, %xmm13
- 559      E801
- 560 089d C4E1FB2C 		vcvttsd2siq	%xmm4, %rax
- 560      C4
- 561 08a2 C591DB25 		vpand	.LC21(%rip), %xmm13, %xmm4
+ 551 0b6e C59D5CC9 		vsubpd	%ymm1, %ymm12, %ymm1
+ 552 0b72 C44119EF 		vpxor	%xmm12, %xmm12, %xmm12
+ 552      E4
+ 553 0b77 C5B558FF 		vaddpd	%ymm7, %ymm9, %ymm7
+ 554 0b7b C511DB0D 		vpand	.LC21(%rip), %xmm13, %xmm9
+ 554      00000000 
+ 555 0b83 C5DD58E1 		vaddpd	%ymm1, %ymm4, %ymm4
+ 556 0b87 C589DB0D 		vpand	.LC21(%rip), %xmm14, %xmm1
+ 556      00000000 
+ 557 0b8f C4423129 		vpcmpeqq	%xmm12, %xmm9, %xmm9
+ 557      CC
+ 558 0b94 C531EF0D 		vpxor	.LC105(%rip), %xmm9, %xmm9
+ 558      00000000 
+ 559 0b9c C4C27129 		vpcmpeqq	%xmm12, %xmm1, %xmm1
+ 559      CC
+ 560 0ba1 C4411957 		vxorpd	%xmm12, %xmm12, %xmm12
+ 560      E4
+ 561 0ba6 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
  561      00000000 
- 562 08aa 48898424 		movq	%rax, 144(%rsp)
- 562      90000000 
- 563 08b2 C4C1FB2C 		vcvttsd2siq	%xmm10, %rax
- 563      C2
- 564 08b7 C57A7E9C 		vmovq	144(%rsp), %xmm11
- 564      24900000 
- 564      00
- 565 08c0 C463A122 		vpinsrq	$1, %rax, %xmm11, %xmm12
- 565      E001
- 566 08c6 C44121EF 		vpxor	%xmm11, %xmm11, %xmm11
- 566      DB
- 567 08cb C519DB15 		vpand	.LC21(%rip), %xmm12, %xmm10
+ 562 0bae C4C37518 		vinsertf128	$0x1, %xmm9, %ymm1, %ymm1
+ 562      C901
+ 563 0bb4 C4620937 		vpcmpgtq	.LC22(%rip), %xmm14, %xmm9
+ 563      0D000000 
+ 563      00
+ 564 0bbd C4433518 		vinsertf128	$0x1, %xmm10, %ymm9, %ymm9
+ 564      CA01
+ 565 0bc3 C4C37D19 		vextractf128	$0x1, %ymm6, %xmm10
+ 565      F201
+ 566 0bc9 C5C973F6 		vpsllq	$1, %xmm6, %xmm6
+ 566      01
+ 567 0bce C5C9DB35 		vpand	.LC23(%rip), %xmm6, %xmm6
  567      00000000 
- 568 08d3 C4C25929 		vpcmpeqq	%xmm11, %xmm4, %xmm4
- 568      E3
- 569 08d8 C5D9EF25 		vpxor	.LC103(%rip), %xmm4, %xmm4
+ 568 0bd6 C4C12973 		vpsllq	$1, %xmm10, %xmm10
+ 568      F201
+ 569 0bdc C529DB15 		vpand	.LC23(%rip), %xmm10, %xmm10
  569      00000000 
-GAS LISTING /tmp/cc72IM0J.s 			page 18
-
-
- 570 08e0 C4422929 		vpcmpeqq	%xmm11, %xmm10, %xmm10
- 570      D3
- 571 08e5 C4621937 		vpcmpgtq	.LC22(%rip), %xmm12, %xmm11
- 571      1D000000 
+ 570 0be4 C4E24929 		vpcmpeqq	.LC23(%rip), %xmm6, %xmm6
+ 570      35000000 
+ 570      00
+ 571 0bed C4622929 		vpcmpeqq	.LC23(%rip), %xmm10, %xmm10
+ 571      15000000 
  571      00
- 572 08ee C519D425 		vpaddq	.LC21(%rip), %xmm12, %xmm12
+GAS LISTING /tmp/ccsgyXat.s 			page 19
+
+
+ 572 0bf6 C5C9EF35 		vpxor	.LC105(%rip), %xmm6, %xmm6
  572      00000000 
- 573 08f6 C519DB25 		vpand	.LC24(%rip), %xmm12, %xmm12
+ 573 0bfe C529EF15 		vpxor	.LC105(%rip), %xmm10, %xmm10
  573      00000000 
- 574 08fe C529EF15 		vpxor	.LC103(%rip), %xmm10, %xmm10
- 574      00000000 
- 575 0906 C4C11973 		vpsllq	$62, %xmm12, %xmm12
- 575      F43E
- 576 090c C4C35D18 		vinsertf128	$0x1, %xmm10, %ymm4, %ymm4
- 576      E201
- 577 0912 C4621137 		vpcmpgtq	.LC22(%rip), %xmm13, %xmm10
- 577      15000000 
- 577      00
- 578 091b C511D42D 		vpaddq	.LC21(%rip), %xmm13, %xmm13
+ 574 0c06 C4C34D18 		vinsertf128	$0x1, %xmm10, %ymm6, %ymm6
+ 574      F201
+ 575 0c0c C5B554F6 		vandpd	%ymm6, %ymm9, %ymm6
+ 576 0c10 C509D40D 		vpaddq	.LC21(%rip), %xmm14, %xmm9
+ 576      00000000 
+ 577 0c18 C57D2835 		vmovapd	.LC20(%rip), %ymm14
+ 577      00000000 
+ 578 0c20 C531DB0D 		vpand	.LC24(%rip), %xmm9, %xmm9
  578      00000000 
- 579 0923 C511DB2D 		vpand	.LC24(%rip), %xmm13, %xmm13
- 579      00000000 
- 580 092b C4432D18 		vinsertf128	$0x1, %xmm11, %ymm10, %ymm10
- 580      D301
- 581 0931 C52D54D7 		vandpd	%ymm7, %ymm10, %ymm10
- 582 0935 C4C11173 		vpsllq	$62, %xmm13, %xmm13
- 582      F53E
- 583 093b C4431518 		vinsertf128	$0x1, %xmm12, %ymm13, %ymm12
- 583      E401
- 584 0941 C57D282D 		vmovapd	.LC20(%rip), %ymm13
- 584      00000000 
- 585 0949 C4434D4B 		vblendvpd	%ymm10, %ymm15, %ymm6, %ymm11
- 585      DFA0
- 586 094f C463554B 		vblendvpd	%ymm10, .LC20(%rip), %ymm5, %ymm10
- 586      15000000 
- 586      00A0
- 587 0959 C4432D4B 		vblendvpd	%ymm4, %ymm11, %ymm10, %ymm11
- 587      DB40
- 588 095f C4C13559 		vmulpd	%ymm9, %ymm9, %ymm4
- 588      E1
- 589 0964 C4412557 		vxorpd	%ymm12, %ymm11, %ymm10
- 589      D4
- 590 0969 C565599C 		vmulpd	800(%rsp), %ymm3, %ymm11
- 590      24200300 
- 590      00
- 591 0972 C5955CE4 		vsubpd	%ymm4, %ymm13, %ymm4
- 592 0976 C57D282D 		vmovapd	.LC34(%rip), %ymm13
- 592      00000000 
- 593 097e C52D5915 		vmulpd	.LC25(%rip), %ymm10, %ymm10
- 593      00000000 
- 594 0986 C51559A4 		vmulpd	416(%rsp), %ymm13, %ymm12
- 594      24A00100 
- 594      00
- 595 098f C5B559E4 		vmulpd	%ymm4, %ymm9, %ymm4
- 596 0993 C565590D 		vmulpd	.LC31(%rip), %ymm3, %ymm9
+ 579 0c28 C4C3454B 		vblendvpd	%ymm6, %ymm12, %ymm7, %ymm7
+ 579      FC60
+ 580 0c2e C4E35D4B 		vblendvpd	%ymm6, .LC20(%rip), %ymm4, %ymm6
+ 580      35000000 
+ 580      0060
+ 581 0c38 C591D425 		vpaddq	.LC21(%rip), %xmm13, %xmm4
+ 581      00000000 
+ 582 0c40 C5D9DB25 		vpand	.LC24(%rip), %xmm4, %xmm4
+ 582      00000000 
+ 583 0c48 C4E34D4B 		vblendvpd	%ymm1, %ymm7, %ymm6, %ymm1
+ 583      CF10
+ 584 0c4e C4C13173 		vpsllq	$62, %xmm9, %xmm9
+ 584      F13E
+ 585 0c54 C5E559B4 		vmulpd	1440(%rsp), %ymm3, %ymm6
+ 585      24A00500 
+ 585      00
+ 586 0c5d C5D973F4 		vpsllq	$62, %xmm4, %xmm4
+ 586      3E
+ 587 0c62 C4633518 		vinsertf128	$0x1, %xmm4, %ymm9, %ymm9
+ 587      CC01
+ 588 0c68 C4C13D59 		vmulpd	%ymm8, %ymm8, %ymm4
+ 588      E0
+ 589 0c6d C4C17557 		vxorpd	%ymm9, %ymm1, %ymm1
+ 589      C9
+ 590 0c72 C58D5CE4 		vsubpd	%ymm4, %ymm14, %ymm4
+ 591 0c76 C5F5590D 		vmulpd	.LC25(%rip), %ymm1, %ymm1
+ 591      00000000 
+ 592 0c7e C5BD59E4 		vmulpd	%ymm4, %ymm8, %ymm4
+ 593 0c82 C5DD5CE6 		vsubpd	%ymm6, %ymm4, %ymm4
+ 594 0c86 C5DD58E1 		vaddpd	%ymm1, %ymm4, %ymm4
+ 595 0c8a C5FD29A4 		vmovapd	%ymm4, 1184(%rsp)
+ 595      24A00400 
+ 595      00
+ 596 0c93 C5E5590D 		vmulpd	.LC32(%rip), %ymm3, %ymm1
  596      00000000 
- 597 099b C51559AC 		vmulpd	448(%rsp), %ymm13, %ymm13
-GAS LISTING /tmp/cc72IM0J.s 			page 19
+ 597 0c9b C57D2835 		vmovapd	.LC35(%rip), %ymm14
+ 597      00000000 
+ 598 0ca3 C5FD28BC 		vmovapd	128(%rsp), %ymm7
+ 598      24800000 
+ 598      00
+ 599 0cac C50D5994 		vmulpd	1024(%rsp), %ymm14, %ymm10
+ 599      24000400 
+ 599      00
+ 600 0cb5 C5C55935 		vmulpd	.LC33(%rip), %ymm7, %ymm6
+GAS LISTING /tmp/ccsgyXat.s 			page 20
 
 
- 597      24C00100 
- 597      00
- 598 09a4 C4C15D5C 		vsubpd	%ymm11, %ymm4, %ymm4
- 598      E3
- 599 09a9 C50D591D 		vmulpd	.LC33(%rip), %ymm14, %ymm11
- 599      00000000 
- 600 09b1 C4C15D58 		vaddpd	%ymm10, %ymm4, %ymm4
- 600      E2
- 601 09b6 C5755915 		vmulpd	.LC32(%rip), %ymm1, %ymm10
+ 600      00000000 
+ 601 0cbd C5D5593D 		vmulpd	.LC34(%rip), %ymm5, %ymm7
  601      00000000 
- 602 09be C4411D58 		vaddpd	%ymm11, %ymm12, %ymm11
- 602      DB
- 603 09c3 C57D28A4 		vmovapd	160(%rsp), %ymm12
- 603      24A00000 
- 603      00
- 604 09cc C5FD29A4 		vmovapd	%ymm4, 576(%rsp)
- 604      24400200 
- 604      00
- 605 09d5 C4412558 		vaddpd	%ymm10, %ymm11, %ymm11
- 605      DA
- 606 09da C4412558 		vaddpd	%ymm9, %ymm11, %ymm10
- 606      D1
- 607 09df C51D590D 		vmulpd	.LC32(%rip), %ymm12, %ymm9
- 607      00000000 
- 608 09e7 C53D5925 		vmulpd	.LC33(%rip), %ymm8, %ymm12
+ 602 0cc5 C50D5984 		vmulpd	1056(%rsp), %ymm14, %ymm8
+ 602      24200400 
+ 602      00
+ 603 0cce C5D5592D 		vmulpd	.LC39(%rip), %ymm5, %ymm5
+ 603      00000000 
+ 604 0cd6 C52D58D7 		vaddpd	%ymm7, %ymm10, %ymm10
+ 605 0cda C585593D 		vmulpd	.LC34(%rip), %ymm15, %ymm7
+ 605      00000000 
+ 606 0ce2 C505593D 		vmulpd	.LC39(%rip), %ymm15, %ymm15
+ 606      00000000 
+ 607 0cea C52D58D6 		vaddpd	%ymm6, %ymm10, %ymm10
+ 608 0cee C5ED5935 		vmulpd	.LC33(%rip), %ymm2, %ymm6
  608      00000000 
- 609 09ef C55D591D 		vmulpd	.LC31(%rip), %ymm4, %ymm11
- 609      00000000 
- 610 09f7 C4417D59 		vmulpd	%ymm10, %ymm0, %ymm10
- 610      D2
- 611 09fc C4411558 		vaddpd	%ymm12, %ymm13, %ymm12
- 611      E4
- 612 0a01 C52D5894 		vaddpd	672(%rsp), %ymm10, %ymm10
- 612      24A00200 
- 612      00
- 613 0a0a C4411D58 		vaddpd	%ymm9, %ymm12, %ymm12
- 613      E1
- 614 0a0f C4411D58 		vaddpd	%ymm11, %ymm12, %ymm9
- 614      CB
- 615 0a14 C4417D59 		vmulpd	%ymm9, %ymm0, %ymm9
- 615      C9
- 616 0a19 C535588C 		vaddpd	704(%rsp), %ymm9, %ymm9
- 616      24C00200 
- 616      00
- 617 0a22 C5FD2954 		vmovapd	%ymm2, 96(%rsp)
- 617      2460
- 618 0a28 C57B109C 		vmovsd	192(%rsp), %xmm11
- 618      24C00000 
+ 609 0cf6 C53D58C7 		vaddpd	%ymm7, %ymm8, %ymm8
+ 610 0cfa C5FD58BC 		vaddpd	1344(%rsp), %ymm0, %ymm7
+ 610      24400500 
+ 610      00
+ 611 0d03 C52D58D1 		vaddpd	%ymm1, %ymm10, %ymm10
+ 612 0d07 C5DD590D 		vmulpd	.LC32(%rip), %ymm4, %ymm1
+ 612      00000000 
+ 613 0d0f C53D58C6 		vaddpd	%ymm6, %ymm8, %ymm8
+ 614 0d13 C5C5543D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 614      00000000 
+ 615 0d1b C4417D59 		vmulpd	%ymm10, %ymm0, %ymm10
+ 615      D2
+ 616 0d20 C53D58C1 		vaddpd	%ymm1, %ymm8, %ymm8
+ 617 0d24 C5C5590D 		vmulpd	.LC3(%rip), %ymm7, %ymm1
+ 617      00000000 
+ 618 0d2c C52D5894 		vaddpd	1280(%rsp), %ymm10, %ymm10
+ 618      24000500 
  618      00
- 619 0a31 C57B10A4 		vmovsd	200(%rsp), %xmm12
- 619      24C80000 
- 619      00
- 620 0a3a C4C1FB2C 		vcvttsd2siq	%xmm11, %rax
- 620      C3
- 621 0a3f C57B10AC 		vmovsd	208(%rsp), %xmm13
- 621      24D00000 
- 621      00
-GAS LISTING /tmp/cc72IM0J.s 			page 20
-
-
- 622 0a48 C5FB1094 		vmovsd	216(%rsp), %xmm2
- 622      24D80000 
+ 619 0d35 C4417D59 		vmulpd	%ymm8, %ymm0, %ymm8
+ 619      C0
+ 620 0d3a C4E37D09 		vroundpd	$8, %ymm1, %ymm1
+ 620      C908
+ 621 0d40 C4E37D09 		vroundpd	$8, %ymm1, %ymm6
+ 621      F108
+ 622 0d46 C5FD11B4 		vmovupd	%ymm6, 320(%rsp)
+ 622      24400100 
  622      00
- 623 0a51 C50D5935 		vmulpd	.LC38(%rip), %ymm14, %ymm14
+ 623 0d4f C575590D 		vmulpd	.LC4(%rip), %ymm1, %ymm9
  623      00000000 
- 624 0a59 C53D5905 		vmulpd	.LC38(%rip), %ymm8, %ymm8
- 624      00000000 
- 625 0a61 48898424 		movq	%rax, 144(%rsp)
- 625      90000000 
- 626 0a69 C4C1FB2C 		vcvttsd2siq	%xmm12, %rax
- 626      C4
- 627 0a6e C57A7EA4 		vmovq	144(%rsp), %xmm12
- 627      24900000 
+ 624 0d57 C57B109C 		vmovsd	320(%rsp), %xmm11
+ 624      24400100 
+ 624      00
+ 625 0d60 C57B10A4 		vmovsd	328(%rsp), %xmm12
+ 625      24480100 
+ 625      00
+ 626 0d69 C4C1FB2C 		vcvttsd2siq	%xmm11, %rax
+ 626      C3
+ 627 0d6e C57B10AC 		vmovsd	336(%rsp), %xmm13
+ 627      24500100 
  627      00
- 628 0a77 C4639922 		vpinsrq	$1, %rax, %xmm12, %xmm12
- 628      E001
- 629 0a7d C4C1FB2C 		vcvttsd2siq	%xmm13, %rax
- 629      C5
- 630 0a82 48898424 		movq	%rax, 144(%rsp)
- 630      90000000 
- 631 0a8a C4E1FB2C 		vcvttsd2siq	%xmm2, %rax
- 631      C2
- 632 0a8f C57A7E9C 		vmovq	144(%rsp), %xmm11
- 632      24900000 
- 632      00
- 633 0a98 C5E9EFD2 		vpxor	%xmm2, %xmm2, %xmm2
- 634 0a9c C463A122 		vpinsrq	$1, %rax, %xmm11, %xmm11
- 634      D801
- 635 0aa2 C5797F9C 		vmovdqa	%xmm11, 144(%rsp)
- 635      24900000 
- 635      00
- 636 0aab C521DB2D 		vpand	.LC21(%rip), %xmm11, %xmm13
- 636      00000000 
- 637 0ab3 C519DB1D 		vpand	.LC21(%rip), %xmm12, %xmm11
+ 628 0d77 C57B10B4 		vmovsd	344(%rsp), %xmm14
+GAS LISTING /tmp/ccsgyXat.s 			page 21
+
+
+ 628      24580100 
+ 628      00
+ 629 0d80 C441455C 		vsubpd	%ymm9, %ymm7, %ymm9
+ 629      C9
+ 630 0d85 C53D5884 		vaddpd	1312(%rsp), %ymm8, %ymm8
+ 630      24200500 
+ 630      00
+ 631 0d8e 48894424 		movq	%rax, 112(%rsp)
+ 631      70
+ 632 0d93 C4C1FB2C 		vcvttsd2siq	%xmm12, %rax
+ 632      C4
+ 633 0d98 C5FA7E74 		vmovq	112(%rsp), %xmm6
+ 633      2470
+ 634 0d9e C4E3C922 		vpinsrq	$1, %rax, %xmm6, %xmm6
+ 634      F001
+ 635 0da4 C4C1FB2C 		vcvttsd2siq	%xmm13, %rax
+ 635      C5
+ 636 0da9 C5F97F74 		vmovdqa	%xmm6, 112(%rsp)
+ 636      2470
+ 637 0daf C5F55935 		vmulpd	.LC5(%rip), %ymm1, %ymm6
  637      00000000 
- 638 0abb C4621129 		vpcmpeqq	%xmm2, %xmm13, %xmm13
- 638      EA
- 639 0ac0 C511EF2D 		vpxor	.LC103(%rip), %xmm13, %xmm13
- 639      00000000 
- 640 0ac8 C4622129 		vpcmpeqq	%xmm2, %xmm11, %xmm11
- 640      DA
- 641 0acd C5797FE2 		vmovdqa	%xmm12, %xmm2
- 642 0ad1 C521EF1D 		vpxor	.LC103(%rip), %xmm11, %xmm11
- 642      00000000 
- 643 0ad9 C4621937 		vpcmpgtq	.LC22(%rip), %xmm12, %xmm12
- 643      25000000 
- 643      00
- 644 0ae2 C4432518 		vinsertf128	$0x1, %xmm13, %ymm11, %ymm11
- 644      DD01
- 645 0ae8 C5796FAC 		vmovdqa	144(%rsp), %xmm13
- 645      24900000 
- 645      00
- 646 0af1 C4621137 		vpcmpgtq	.LC22(%rip), %xmm13, %xmm13
- 646      2D000000 
- 646      00
- 647 0afa C4431D18 		vinsertf128	$0x1, %xmm13, %ymm12, %ymm12
- 647      E501
-GAS LISTING /tmp/cc72IM0J.s 			page 21
-
-
- 648 0b00 C51D54E7 		vandpd	%ymm7, %ymm12, %ymm12
- 649 0b04 C4434D4B 		vblendvpd	%ymm12, %ymm15, %ymm6, %ymm13
- 649      EFC0
- 650 0b0a C463554B 		vblendvpd	%ymm12, .LC20(%rip), %ymm5, %ymm12
- 650      25000000 
- 650      00C0
- 651 0b14 C4431D4B 		vblendvpd	%ymm11, %ymm13, %ymm12, %ymm12
- 651      E5B0
- 652 0b1a C5796F9C 		vmovdqa	144(%rsp), %xmm11
- 652      24900000 
- 652      00
- 653 0b23 C5796F2D 		vmovdqa	.LC21(%rip), %xmm13
+ 638 0db7 C5F5590D 		vmulpd	.LC6(%rip), %ymm1, %ymm1
+ 638      00000000 
+ 639 0dbf C5B55CF6 		vsubpd	%ymm6, %ymm9, %ymm6
+ 640 0dc3 48894424 		movq	%rax, 96(%rsp)
+ 640      60
+ 641 0dc8 C4C1FB2C 		vcvttsd2siq	%xmm14, %rax
+ 641      C6
+ 642 0dcd C57A7E6C 		vmovq	96(%rsp), %xmm13
+ 642      2460
+ 643 0dd3 C54D5CC9 		vsubpd	%ymm1, %ymm6, %ymm9
+ 644 0dd7 C4C13559 		vmulpd	%ymm9, %ymm9, %ymm1
+ 644      C9
+ 645 0ddc C4639122 		vpinsrq	$1, %rax, %xmm13, %xmm13
+ 645      E801
+ 646 0de2 C5797F6C 		vmovdqa	%xmm13, 96(%rsp)
+ 646      2460
+ 647 0de8 C575592D 		vmulpd	.LC9(%rip), %ymm1, %ymm13
+ 647      00000000 
+ 648 0df0 C5F559F1 		vmulpd	%ymm1, %ymm1, %ymm6
+ 649 0df4 C5755925 		vmulpd	.LC7(%rip), %ymm1, %ymm12
+ 649      00000000 
+ 650 0dfc C5755935 		vmulpd	.LC15(%rip), %ymm1, %ymm14
+ 650      00000000 
+ 651 0e04 C515582D 		vaddpd	.LC10(%rip), %ymm13, %ymm13
+ 651      00000000 
+ 652 0e0c C54D59DE 		vmulpd	%ymm6, %ymm6, %ymm11
+ 653 0e10 C51D5825 		vaddpd	.LC8(%rip), %ymm12, %ymm12
  653      00000000 
- 654 0b2b C521D41D 		vpaddq	.LC21(%rip), %xmm11, %xmm11
+ 654 0e18 C50D5835 		vaddpd	.LC16(%rip), %ymm14, %ymm14
  654      00000000 
- 655 0b33 C521DB1D 		vpand	.LC24(%rip), %xmm11, %xmm11
- 655      00000000 
- 656 0b3b C511D4EA 		vpaddq	%xmm2, %xmm13, %xmm13
- 657 0b3f C5FD2815 		vmovapd	.LC20(%rip), %ymm2
+ 655 0e20 C4411559 		vmulpd	%ymm11, %ymm13, %ymm13
+ 655      EB
+ 656 0e25 C4411558 		vaddpd	%ymm12, %ymm13, %ymm13
+ 656      EC
+ 657 0e2a C5755925 		vmulpd	.LC11(%rip), %ymm1, %ymm12
  657      00000000 
- 658 0b47 C511DB2D 		vpand	.LC24(%rip), %xmm13, %xmm13
- 658      00000000 
- 659 0b4f C4C12173 		vpsllq	$62, %xmm11, %xmm11
- 659      F33E
- 660 0b55 C4C11173 		vpsllq	$62, %xmm13, %xmm13
- 660      F53E
- 661 0b5b C4431518 		vinsertf128	$0x1, %xmm11, %ymm13, %ymm11
- 661      DB01
- 662 0b61 C53559AC 		vmulpd	800(%rsp), %ymm9, %ymm13
- 662      24200300 
- 662      00
- 663 0b6a C4411D57 		vxorpd	%ymm11, %ymm12, %ymm12
- 663      E3
- 664 0b6f C4412D59 		vmulpd	%ymm10, %ymm10, %ymm11
- 664      DA
- 665 0b74 C51D5925 		vmulpd	.LC25(%rip), %ymm12, %ymm12
- 665      00000000 
- 666 0b7c C4416D5C 		vsubpd	%ymm11, %ymm2, %ymm11
- 666      DB
- 667 0b81 C5FD2815 		vmovapd	.LC39(%rip), %ymm2
+GAS LISTING /tmp/ccsgyXat.s 			page 22
+
+
+ 658 0e32 C4410D59 		vmulpd	%ymm11, %ymm14, %ymm11
+ 658      DB
+ 659 0e37 C5796F74 		vmovdqa	112(%rsp), %xmm14
+ 659      2470
+ 660 0e3d C51D5825 		vaddpd	.LC12(%rip), %ymm12, %ymm12
+ 660      00000000 
+ 661 0e45 C51D59E6 		vmulpd	%ymm6, %ymm12, %ymm12
+ 662 0e49 C4411D58 		vaddpd	%ymm13, %ymm12, %ymm12
+ 662      E5
+ 663 0e4e C575592D 		vmulpd	.LC13(%rip), %ymm1, %ymm13
+ 663      00000000 
+ 664 0e56 C515582D 		vaddpd	.LC14(%rip), %ymm13, %ymm13
+ 664      00000000 
+ 665 0e5e C4412558 		vaddpd	%ymm13, %ymm11, %ymm13
+ 665      ED
+ 666 0e63 C575591D 		vmulpd	.LC17(%rip), %ymm1, %ymm11
+ 666      00000000 
+ 667 0e6b C525581D 		vaddpd	.LC18(%rip), %ymm11, %ymm11
  667      00000000 
- 668 0b89 C5ED5994 		vmulpd	416(%rsp), %ymm2, %ymm2
- 668      24A00100 
- 668      00
- 669 0b92 C4412D59 		vmulpd	%ymm11, %ymm10, %ymm11
- 669      DB
- 670 0b97 C5655915 		vmulpd	.LC36(%rip), %ymm3, %ymm10
- 670      00000000 
- 671 0b9f C50D58F2 		vaddpd	%ymm2, %ymm14, %ymm14
- 672 0ba3 C5FD2894 		vmovapd	160(%rsp), %ymm2
- 672      24A00000 
- 672      00
- 673 0bac C441255C 		vsubpd	%ymm13, %ymm11, %ymm11
- 673      DD
- 674 0bb1 C575592D 		vmulpd	.LC37(%rip), %ymm1, %ymm13
- 674      00000000 
- 675 0bb9 C4412558 		vaddpd	%ymm12, %ymm11, %ymm11
-GAS LISTING /tmp/cc72IM0J.s 			page 22
-
-
- 675      DC
- 676 0bbe C5355925 		vmulpd	.LC35(%rip), %ymm9, %ymm12
- 676      00000000 
- 677 0bc6 C4410D58 		vaddpd	%ymm13, %ymm14, %ymm14
- 677      F5
- 678 0bcb C55D592D 		vmulpd	.LC36(%rip), %ymm4, %ymm13
- 678      00000000 
- 679 0bd3 C4410D58 		vaddpd	%ymm10, %ymm14, %ymm14
- 679      F2
- 680 0bd8 C4410D58 		vaddpd	%ymm12, %ymm14, %ymm10
- 680      D4
- 681 0bdd C56D5935 		vmulpd	.LC37(%rip), %ymm2, %ymm14
+ 668 0e73 C52559DE 		vmulpd	%ymm6, %ymm11, %ymm11
+ 669 0e77 C4412558 		vaddpd	%ymm13, %ymm11, %ymm13
+ 669      ED
+ 670 0e7c C53559D9 		vmulpd	%ymm1, %ymm9, %ymm11
+ 671 0e80 C5F5590D 		vmulpd	.LC19(%rip), %ymm1, %ymm1
+ 671      00000000 
+ 672 0e88 C4C14D59 		vmulpd	%ymm13, %ymm6, %ymm6
+ 672      F5
+ 673 0e8d C5796F6C 		vmovdqa	96(%rsp), %xmm13
+ 673      2460
+ 674 0e93 C4412559 		vmulpd	%ymm12, %ymm11, %ymm11
+ 674      DC
+ 675 0e98 C57D2825 		vmovapd	.LC20(%rip), %ymm12
+ 675      00000000 
+ 676 0ea0 C59D5CC9 		vsubpd	%ymm1, %ymm12, %ymm1
+ 677 0ea4 C44119EF 		vpxor	%xmm12, %xmm12, %xmm12
+ 677      E4
+ 678 0ea9 C4412558 		vaddpd	%ymm9, %ymm11, %ymm9
+ 678      C9
+ 679 0eae C511DB1D 		vpand	.LC21(%rip), %xmm13, %xmm11
+ 679      00000000 
+ 680 0eb6 C5CD58F1 		vaddpd	%ymm1, %ymm6, %ymm6
+ 681 0eba C5F96F0D 		vmovdqa	.LC21(%rip), %xmm1
  681      00000000 
- 682 0be5 C5FD2815 		vmovapd	.LC39(%rip), %ymm2
- 682      00000000 
- 683 0bed C5255925 		vmulpd	.LC35(%rip), %ymm11, %ymm12
- 683      00000000 
- 684 0bf5 C5ED5994 		vmulpd	448(%rsp), %ymm2, %ymm2
- 684      24C00100 
- 684      00
- 685 0bfe C4417D59 		vmulpd	%ymm10, %ymm0, %ymm10
- 685      D2
- 686 0c03 C53D58C2 		vaddpd	%ymm2, %ymm8, %ymm8
- 687 0c07 C52D5894 		vaddpd	672(%rsp), %ymm10, %ymm10
- 687      24A00200 
- 687      00
- 688 0c10 C4413D58 		vaddpd	%ymm14, %ymm8, %ymm8
- 688      C6
- 689 0c15 C4413D58 		vaddpd	%ymm13, %ymm8, %ymm8
- 689      C5
- 690 0c1a C4413D58 		vaddpd	%ymm12, %ymm8, %ymm12
- 690      E4
- 691 0c1f C57B1084 		vmovsd	192(%rsp), %xmm8
- 691      24C00000 
- 691      00
- 692 0c28 C4C1FB2C 		vcvttsd2siq	%xmm8, %rax
- 692      C0
- 693 0c2d C4417D59 		vmulpd	%ymm12, %ymm0, %ymm12
- 693      E4
- 694 0c32 C51D58A4 		vaddpd	704(%rsp), %ymm12, %ymm12
- 694      24C00200 
- 694      00
- 695 0c3b 48898424 		movq	%rax, 144(%rsp)
- 695      90000000 
- 696 0c43 C57B10AC 		vmovsd	200(%rsp), %xmm13
- 696      24C80000 
+ 682 0ec2 C4422129 		vpcmpeqq	%xmm12, %xmm11, %xmm11
+ 682      DC
+ 683 0ec7 C4C171DB 		vpand	%xmm14, %xmm1, %xmm1
+ 683      CE
+ 684 0ecc C521EF1D 		vpxor	.LC105(%rip), %xmm11, %xmm11
+ 684      00000000 
+ 685 0ed4 C4C27129 		vpcmpeqq	%xmm12, %xmm1, %xmm1
+ 685      CC
+ 686 0ed9 C4621137 		vpcmpgtq	.LC22(%rip), %xmm13, %xmm12
+ 686      25000000 
+ 686      00
+ 687 0ee2 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+ 687      00000000 
+ 688 0eea C4C37518 		vinsertf128	$0x1, %xmm11, %ymm1, %ymm1
+GAS LISTING /tmp/ccsgyXat.s 			page 23
+
+
+ 688      CB01
+ 689 0ef0 C4620937 		vpcmpgtq	.LC22(%rip), %xmm14, %xmm11
+ 689      1D000000 
+ 689      00
+ 690 0ef9 C4432518 		vinsertf128	$0x1, %xmm12, %ymm11, %ymm11
+ 690      DC01
+ 691 0eff C4C37D19 		vextractf128	$0x1, %ymm7, %xmm12
+ 691      FC01
+ 692 0f05 C5C173F7 		vpsllq	$1, %xmm7, %xmm7
+ 692      01
+ 693 0f0a C5C1DB3D 		vpand	.LC23(%rip), %xmm7, %xmm7
+ 693      00000000 
+ 694 0f12 C4C11973 		vpsllq	$1, %xmm12, %xmm12
+ 694      F401
+ 695 0f18 C519DB25 		vpand	.LC23(%rip), %xmm12, %xmm12
+ 695      00000000 
+ 696 0f20 C4E24129 		vpcmpeqq	.LC23(%rip), %xmm7, %xmm7
+ 696      3D000000 
  696      00
- 697 0c4c C5FA7E94 		vmovq	144(%rsp), %xmm2
- 697      24900000 
+ 697 0f29 C4621929 		vpcmpeqq	.LC23(%rip), %xmm12, %xmm12
+ 697      25000000 
  697      00
- 698 0c55 C4C1FB2C 		vcvttsd2siq	%xmm13, %rax
- 698      C5
- 699 0c5a C57B1084 		vmovsd	216(%rsp), %xmm8
- 699      24D80000 
- 699      00
- 700 0c63 C535590D 		vmulpd	.LC45(%rip), %ymm9, %ymm9
- 700      00000000 
-GAS LISTING /tmp/cc72IM0J.s 			page 23
-
-
- 701 0c6b C463E922 		vpinsrq	$1, %rax, %xmm2, %xmm14
- 701      F001
- 702 0c71 C5FB1094 		vmovsd	208(%rsp), %xmm2
- 702      24D00000 
- 702      00
- 703 0c7a C4E1FB2C 		vcvttsd2siq	%xmm2, %rax
- 703      C2
- 704 0c7f 48898424 		movq	%rax, 144(%rsp)
- 704      90000000 
- 705 0c87 C4C1FB2C 		vcvttsd2siq	%xmm8, %rax
- 705      C0
- 706 0c8c C5FA7E94 		vmovq	144(%rsp), %xmm2
- 706      24900000 
- 706      00
- 707 0c95 C509DB05 		vpand	.LC21(%rip), %xmm14, %xmm8
- 707      00000000 
- 708 0c9d C463E922 		vpinsrq	$1, %rax, %xmm2, %xmm13
- 708      E801
- 709 0ca3 C5E9EFD2 		vpxor	%xmm2, %xmm2, %xmm2
- 710 0ca7 C5797FAC 		vmovdqa	%xmm13, 144(%rsp)
- 710      24900000 
- 710      00
- 711 0cb0 C511DB2D 		vpand	.LC21(%rip), %xmm13, %xmm13
- 711      00000000 
- 712 0cb8 C4623929 		vpcmpeqq	%xmm2, %xmm8, %xmm8
- 712      C2
- 713 0cbd C539EF05 		vpxor	.LC103(%rip), %xmm8, %xmm8
+ 698 0f32 C5C1EF3D 		vpxor	.LC105(%rip), %xmm7, %xmm7
+ 698      00000000 
+ 699 0f3a C519EF25 		vpxor	.LC105(%rip), %xmm12, %xmm12
+ 699      00000000 
+ 700 0f42 C4C34518 		vinsertf128	$0x1, %xmm12, %ymm7, %ymm7
+ 700      FC01
+ 701 0f48 C4411957 		vxorpd	%xmm12, %xmm12, %xmm12
+ 701      E4
+ 702 0f4d C5A554FF 		vandpd	%ymm7, %ymm11, %ymm7
+ 703 0f51 C509D41D 		vpaddq	.LC21(%rip), %xmm14, %xmm11
+ 703      00000000 
+ 704 0f59 C57D2835 		vmovapd	.LC20(%rip), %ymm14
+ 704      00000000 
+ 705 0f61 C521DB1D 		vpand	.LC24(%rip), %xmm11, %xmm11
+ 705      00000000 
+ 706 0f69 C443354B 		vblendvpd	%ymm7, %ymm12, %ymm9, %ymm9
+ 706      CC70
+ 707 0f6f C4E34D4B 		vblendvpd	%ymm7, .LC20(%rip), %ymm6, %ymm7
+ 707      3D000000 
+ 707      0070
+ 708 0f79 C591D435 		vpaddq	.LC21(%rip), %xmm13, %xmm6
+ 708      00000000 
+ 709 0f81 C5C9DB35 		vpand	.LC24(%rip), %xmm6, %xmm6
+ 709      00000000 
+ 710 0f89 C4C3454B 		vblendvpd	%ymm1, %ymm9, %ymm7, %ymm1
+ 710      C910
+ 711 0f8f C5FD28BC 		vmovapd	128(%rsp), %ymm7
+ 711      24800000 
+ 711      00
+ 712 0f98 C4C12173 		vpsllq	$62, %xmm11, %xmm11
+ 712      F33E
+ 713 0f9e C5C5593D 		vmulpd	.LC38(%rip), %ymm7, %ymm7
  713      00000000 
- 714 0cc5 C4621129 		vpcmpeqq	%xmm2, %xmm13, %xmm13
- 714      EA
- 715 0cca C5797FF2 		vmovdqa	%xmm14, %xmm2
- 716 0cce C4620937 		vpcmpgtq	.LC22(%rip), %xmm14, %xmm14
- 716      35000000 
+ 714 0fa6 C5C973F6 		vpsllq	$62, %xmm6, %xmm6
+ 714      3E
+GAS LISTING /tmp/ccsgyXat.s 			page 24
+
+
+ 715 0fab C4632518 		vinsertf128	$0x1, %xmm6, %ymm11, %ymm11
+ 715      DE01
+ 716 0fb1 C5BD59B4 		vmulpd	1440(%rsp), %ymm8, %ymm6
+ 716      24A00500 
  716      00
- 717 0cd7 C511EF2D 		vpxor	.LC103(%rip), %xmm13, %xmm13
- 717      00000000 
- 718 0cdf C4433D18 		vinsertf128	$0x1, %xmm13, %ymm8, %ymm8
- 718      C501
- 719 0ce5 C5796FAC 		vmovdqa	144(%rsp), %xmm13
- 719      24900000 
- 719      00
- 720 0cee C4621137 		vpcmpgtq	.LC22(%rip), %xmm13, %xmm13
- 720      2D000000 
- 720      00
- 721 0cf7 C4430D18 		vinsertf128	$0x1, %xmm13, %ymm14, %ymm13
- 721      ED01
- 722 0cfd C51554EF 		vandpd	%ymm7, %ymm13, %ymm13
- 723 0d01 C4C12D59 		vmulpd	%ymm10, %ymm10, %ymm7
- 723      FA
- 724 0d06 C4C34D4B 		vblendvpd	%ymm13, %ymm15, %ymm6, %ymm6
- 724      F7D0
- 725 0d0c C463554B 		vblendvpd	%ymm13, .LC20(%rip), %ymm5, %ymm13
- 725      2D000000 
- 725      00D0
- 726 0d16 C5F96FAC 		vmovdqa	144(%rsp), %xmm5
- 726      24900000 
- 726      00
-GAS LISTING /tmp/cc72IM0J.s 			page 24
-
-
- 727 0d1f C463154B 		vblendvpd	%ymm8, %ymm6, %ymm13, %ymm13
- 727      EE80
- 728 0d25 C551D43D 		vpaddq	.LC21(%rip), %xmm5, %xmm15
- 728      00000000 
- 729 0d2d C5E9D42D 		vpaddq	.LC21(%rip), %xmm2, %xmm5
+ 717 0fba C4C17557 		vxorpd	%ymm11, %ymm1, %ymm1
+ 717      CB
+ 718 0fbf C4412D59 		vmulpd	%ymm10, %ymm10, %ymm11
+ 718      DA
+ 719 0fc4 C5F5590D 		vmulpd	.LC25(%rip), %ymm1, %ymm1
+ 719      00000000 
+ 720 0fcc C4410D5C 		vsubpd	%ymm11, %ymm14, %ymm11
+ 720      DB
+ 721 0fd1 C57D2835 		vmovapd	.LC40(%rip), %ymm14
+ 721      00000000 
+ 722 0fd9 C50D598C 		vmulpd	1056(%rsp), %ymm14, %ymm9
+ 722      24200400 
+ 722      00
+ 723 0fe2 C4412D59 		vmulpd	%ymm11, %ymm10, %ymm11
+ 723      DB
+ 724 0fe7 C50D5994 		vmulpd	1024(%rsp), %ymm14, %ymm10
+ 724      24000400 
+ 724      00
+ 725 0ff0 C4413558 		vaddpd	%ymm15, %ymm9, %ymm9
+ 725      CF
+ 726 0ff5 C5255CDE 		vsubpd	%ymm6, %ymm11, %ymm11
+ 727 0ff9 C5E55935 		vmulpd	.LC37(%rip), %ymm3, %ymm6
+ 727      00000000 
+ 728 1001 C52D58D5 		vaddpd	%ymm5, %ymm10, %ymm10
+ 729 1005 C5DD592D 		vmulpd	.LC37(%rip), %ymm4, %ymm5
  729      00000000 
- 730 0d35 C5FD2815 		vmovapd	.LC20(%rip), %ymm2
- 730      00000000 
- 731 0d3d C5D1DB2D 		vpand	.LC24(%rip), %xmm5, %xmm5
+ 730 100d C52558D9 		vaddpd	%ymm1, %ymm11, %ymm11
+ 731 1011 C5BD590D 		vmulpd	.LC36(%rip), %ymm8, %ymm1
  731      00000000 
- 732 0d45 C5ED5CFF 		vsubpd	%ymm7, %ymm2, %ymm7
- 733 0d49 C5FD2815 		vmovapd	.LC43(%rip), %ymm2
- 733      00000000 
- 734 0d51 C501DB3D 		vpand	.LC24(%rip), %xmm15, %xmm15
+ 732 1019 C52D58D7 		vaddpd	%ymm7, %ymm10, %ymm10
+ 733 101d C52D58D6 		vaddpd	%ymm6, %ymm10, %ymm10
+ 734 1021 C5ED5935 		vmulpd	.LC38(%rip), %ymm2, %ymm6
  734      00000000 
- 735 0d59 C56D5984 		vmulpd	416(%rsp), %ymm2, %ymm8
- 735      24A00100 
- 735      00
- 736 0d62 C5C973F5 		vpsllq	$62, %xmm5, %xmm6
- 736      3E
- 737 0d67 C59D59AC 		vmulpd	800(%rsp), %ymm12, %ymm5
- 737      24200300 
- 737      00
- 738 0d70 C4C10173 		vpsllq	$62, %xmm15, %xmm15
- 738      F73E
- 739 0d76 C52D59D7 		vmulpd	%ymm7, %ymm10, %ymm10
- 740 0d7a C4C34D18 		vinsertf128	$0x1, %xmm15, %ymm6, %ymm6
- 740      F701
- 741 0d80 C5E5593D 		vmulpd	.LC41(%rip), %ymm3, %ymm7
- 741      00000000 
- 742 0d88 C52D5CD5 		vsubpd	%ymm5, %ymm10, %ymm10
- 743 0d8c C59557F6 		vxorpd	%ymm6, %ymm13, %ymm6
- 744 0d90 C5F5592D 		vmulpd	.LC42(%rip), %ymm1, %ymm5
- 744      00000000 
- 745 0d98 C5CD5935 		vmulpd	.LC25(%rip), %ymm6, %ymm6
- 745      00000000 
- 746 0da0 C5F5590D 		vmulpd	.LC47(%rip), %ymm1, %ymm1
- 746      00000000 
- 747 0da8 C5E5591D 		vmulpd	.LC46(%rip), %ymm3, %ymm3
+ 735 1029 C52D58D1 		vaddpd	%ymm1, %ymm10, %ymm10
+ 736 102d C5A5590D 		vmulpd	.LC36(%rip), %ymm11, %ymm1
+ 736      00000000 
+ 737 1035 C53558CE 		vaddpd	%ymm6, %ymm9, %ymm9
+ 738 1039 C5FD5935 		vmulpd	.LC41(%rip), %ymm0, %ymm6
+ 738      00000000 
+ 739 1041 C4417D59 		vmulpd	%ymm10, %ymm0, %ymm10
+ 739      D2
+ 740 1046 C53558CD 		vaddpd	%ymm5, %ymm9, %ymm9
+ 741 104a C5CD58B4 		vaddpd	1344(%rsp), %ymm6, %ymm6
+ 741      24400500 
+ 741      00
+ 742 1053 C53558C9 		vaddpd	%ymm1, %ymm9, %ymm9
+ 743 1057 C52D5894 		vaddpd	1280(%rsp), %ymm10, %ymm10
+ 743      24000500 
+ 743      00
+ 744 1060 C4417D59 		vmulpd	%ymm9, %ymm0, %ymm9
+ 744      C9
+ 745 1065 C535588C 		vaddpd	1312(%rsp), %ymm9, %ymm9
+GAS LISTING /tmp/ccsgyXat.s 			page 25
+
+
+ 745      24200500 
+ 745      00
+ 746 106e C5FD29B4 		vmovapd	%ymm6, 1376(%rsp)
+ 746      24600500 
+ 746      00
+ 747 1077 C5CD5435 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
  747      00000000 
- 748 0db0 C5BD58ED 		vaddpd	%ymm5, %ymm8, %ymm5
- 749 0db4 C52D58D6 		vaddpd	%ymm6, %ymm10, %ymm10
- 750 0db8 C59D5935 		vmulpd	.LC40(%rip), %ymm12, %ymm6
- 750      00000000 
- 751 0dc0 C5D558EF 		vaddpd	%ymm7, %ymm5, %ymm5
- 752 0dc4 C5FD283D 		vmovapd	.LC48(%rip), %ymm7
- 752      00000000 
- 753 0dcc C51D5925 		vmulpd	.LC44(%rip), %ymm12, %ymm12
- 753      00000000 
- 754 0dd4 C5D558EE 		vaddpd	%ymm6, %ymm5, %ymm5
- 755 0dd8 C5C559B4 		vmulpd	416(%rsp), %ymm7, %ymm6
- 755      24A00100 
+ 748 107f C5CD590D 		vmulpd	.LC3(%rip), %ymm6, %ymm1
+ 748      00000000 
+ 749 1087 C4E37D09 		vroundpd	$8, %ymm1, %ymm1
+ 749      C908
+ 750 108d C4E37D09 		vroundpd	$8, %ymm1, %ymm5
+ 750      E908
+ 751 1093 C5FD11AC 		vmovupd	%ymm5, 352(%rsp)
+ 751      24600100 
+ 751      00
+ 752 109c C57B10BC 		vmovsd	352(%rsp), %xmm15
+ 752      24600100 
+ 752      00
+ 753 10a5 C5FB10AC 		vmovsd	360(%rsp), %xmm5
+ 753      24680100 
+ 753      00
+ 754 10ae C4C1FB2C 		vcvttsd2siq	%xmm15, %rax
+ 754      C7
+ 755 10b3 C5FB10BC 		vmovsd	368(%rsp), %xmm7
+ 755      24700100 
  755      00
- 756 0de1 C5D559E8 		vmulpd	%ymm0, %ymm5, %ymm5
- 757 0de5 C5CD58C9 		vaddpd	%ymm1, %ymm6, %ymm1
- 758 0de9 C5D558AC 		vaddpd	672(%rsp), %ymm5, %ymm5
- 758      24A00200 
-GAS LISTING /tmp/cc72IM0J.s 			page 25
-
-
- 758      00
- 759 0df2 C5F558DB 		vaddpd	%ymm3, %ymm1, %ymm3
- 760 0df6 C5FD29AC 		vmovapd	%ymm5, 608(%rsp)
- 760      24600200 
- 760      00
- 761 0dff C4416558 		vaddpd	%ymm9, %ymm3, %ymm9
- 761      C9
- 762 0e04 C4413558 		vaddpd	%ymm12, %ymm9, %ymm12
- 762      E4
- 763 0e09 C51D59E0 		vmulpd	%ymm0, %ymm12, %ymm12
- 764 0e0d C57D29A4 		vmovapd	%ymm12, 224(%rsp)
- 764      24E00000 
- 764      00
- 765 0e16 C5D5541D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 756 10bc C57B10A4 		vmovsd	376(%rsp), %xmm12
+ 756      24780100 
+ 756      00
+ 757 10c5 48894424 		movq	%rax, 112(%rsp)
+ 757      70
+ 758 10ca C4E1FB2C 		vcvttsd2siq	%xmm5, %rax
+ 758      C5
+ 759 10cf C5FA7E6C 		vmovq	112(%rsp), %xmm5
+ 759      2470
+ 760 10d5 C4E3D122 		vpinsrq	$1, %rax, %xmm5, %xmm5
+ 760      E801
+ 761 10db C4E1FB2C 		vcvttsd2siq	%xmm7, %rax
+ 761      C7
+ 762 10e0 C5F5593D 		vmulpd	.LC4(%rip), %ymm1, %ymm7
+ 762      00000000 
+ 763 10e8 C5F97F6C 		vmovdqa	%xmm5, 112(%rsp)
+ 763      2470
+ 764 10ee C5F5592D 		vmulpd	.LC5(%rip), %ymm1, %ymm5
+ 764      00000000 
+ 765 10f6 C5F5590D 		vmulpd	.LC6(%rip), %ymm1, %ymm1
  765      00000000 
- 766 0e1e C5FD2894 		vmovapd	160(%rsp), %ymm2
- 766      24A00000 
- 766      00
- 767 0e27 C5FD283D 		vmovapd	.LC43(%rip), %ymm7
- 767      00000000 
- 768 0e2f C5ED592D 		vmulpd	.LC42(%rip), %ymm2, %ymm5
- 768      00000000 
- 769 0e37 C5C559BC 		vmulpd	448(%rsp), %ymm7, %ymm7
- 769      24C00100 
- 769      00
- 770 0e40 C5DD5935 		vmulpd	.LC41(%rip), %ymm4, %ymm6
- 770      00000000 
- 771 0e48 C5AD590D 		vmulpd	.LC40(%rip), %ymm10, %ymm1
- 771      00000000 
- 772 0e50 C5ED5915 		vmulpd	.LC47(%rip), %ymm2, %ymm2
- 772      00000000 
- 773 0e58 C5C558ED 		vaddpd	%ymm5, %ymm7, %ymm5
- 774 0e5c C5FD283D 		vmovapd	.LC48(%rip), %ymm7
- 774      00000000 
- 775 0e64 C5DD5925 		vmulpd	.LC46(%rip), %ymm4, %ymm4
- 775      00000000 
- 776 0e6c C52D5915 		vmulpd	.LC44(%rip), %ymm10, %ymm10
+ 766 10fe C5CD5CFF 		vsubpd	%ymm7, %ymm6, %ymm7
+ 767 1102 48894424 		movq	%rax, 96(%rsp)
+ 767      60
+ 768 1107 C4C1FB2C 		vcvttsd2siq	%xmm12, %rax
+ 768      C4
+ 769 110c C57A7E6C 		vmovq	96(%rsp), %xmm13
+ 769      2460
+ 770 1112 C5C55CED 		vsubpd	%ymm5, %ymm7, %ymm5
+ 771 1116 C5D55CF9 		vsubpd	%ymm1, %ymm5, %ymm7
+GAS LISTING /tmp/ccsgyXat.s 			page 26
+
+
+ 772 111a C4639122 		vpinsrq	$1, %rax, %xmm13, %xmm13
+ 772      E801
+ 773 1120 C5C559CF 		vmulpd	%ymm7, %ymm7, %ymm1
+ 774 1124 C5797F6C 		vmovdqa	%xmm13, 96(%rsp)
+ 774      2460
+ 775 112a C5F559E9 		vmulpd	%ymm1, %ymm1, %ymm5
+ 776 112e C5755935 		vmulpd	.LC9(%rip), %ymm1, %ymm14
  776      00000000 
- 777 0e74 C5D558EE 		vaddpd	%ymm6, %ymm5, %ymm5
- 778 0e78 C5E5591D 		vmulpd	.LC49(%rip), %ymm3, %ymm3
- 778      00000000 
- 779 0e80 C5D558E9 		vaddpd	%ymm1, %ymm5, %ymm5
- 780 0e84 C5A5590D 		vmulpd	.LC45(%rip), %ymm11, %ymm1
+ 777 1136 C575592D 		vmulpd	.LC7(%rip), %ymm1, %ymm13
+ 777      00000000 
+ 778 113e C55559E5 		vmulpd	%ymm5, %ymm5, %ymm12
+ 779 1142 C575593D 		vmulpd	.LC15(%rip), %ymm1, %ymm15
+ 779      00000000 
+ 780 114a C50D5835 		vaddpd	.LC10(%rip), %ymm14, %ymm14
  780      00000000 
- 781 0e8c C545599C 		vmulpd	448(%rsp), %ymm7, %ymm11
- 781      24C00100 
- 781      00
- 782 0e95 C5E5581D 		vaddpd	.LC49(%rip), %ymm3, %ymm3
+ 781 1152 C515582D 		vaddpd	.LC8(%rip), %ymm13, %ymm13
+ 781      00000000 
+ 782 115a C505583D 		vaddpd	.LC16(%rip), %ymm15, %ymm15
  782      00000000 
- 783 0e9d C5D559E8 		vmulpd	%ymm0, %ymm5, %ymm5
- 784 0ea1 C52558DA 		vaddpd	%ymm2, %ymm11, %ymm11
- 785 0ea5 C4C1655E 		vdivpd	%ymm12, %ymm3, %ymm3
- 785      DC
- 786 0eaa C5D558AC 		vaddpd	704(%rsp), %ymm5, %ymm5
- 786      24C00200 
- 786      00
- 787 0eb3 C52558DC 		vaddpd	%ymm4, %ymm11, %ymm11
-GAS LISTING /tmp/cc72IM0J.s 			page 26
-
-
- 788 0eb7 C5FD29AC 		vmovapd	%ymm5, 640(%rsp)
- 788      24800200 
- 788      00
- 789 0ec0 C52558D9 		vaddpd	%ymm1, %ymm11, %ymm11
- 790 0ec4 C4412558 		vaddpd	%ymm10, %ymm11, %ymm11
- 790      DA
- 791 0ec9 C5D5540D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 783 1162 C4410D59 		vmulpd	%ymm12, %ymm14, %ymm14
+ 783      F4
+ 784 1167 C4410D58 		vaddpd	%ymm13, %ymm14, %ymm14
+ 784      F5
+ 785 116c C575592D 		vmulpd	.LC11(%rip), %ymm1, %ymm13
+ 785      00000000 
+ 786 1174 C4410559 		vmulpd	%ymm12, %ymm15, %ymm12
+ 786      E4
+ 787 1179 C44101EF 		vpxor	%xmm15, %xmm15, %xmm15
+ 787      FF
+ 788 117e C515582D 		vaddpd	.LC12(%rip), %ymm13, %ymm13
+ 788      00000000 
+ 789 1186 C51559ED 		vmulpd	%ymm5, %ymm13, %ymm13
+ 790 118a C4411558 		vaddpd	%ymm14, %ymm13, %ymm13
+ 790      EE
+ 791 118f C5755935 		vmulpd	.LC13(%rip), %ymm1, %ymm14
  791      00000000 
- 792 0ed1 C52559D8 		vmulpd	%ymm0, %ymm11, %ymm11
- 793 0ed5 C5F5590D 		vmulpd	.LC49(%rip), %ymm1, %ymm1
- 793      00000000 
- 794 0edd C57D299C 		vmovapd	%ymm11, 256(%rsp)
- 794      24000100 
- 794      00
- 795 0ee6 C5E5541D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 792 1197 C50D5835 		vaddpd	.LC14(%rip), %ymm14, %ymm14
+ 792      00000000 
+ 793 119f C4411D58 		vaddpd	%ymm14, %ymm12, %ymm14
+ 793      F6
+ 794 11a4 C5755925 		vmulpd	.LC17(%rip), %ymm1, %ymm12
+ 794      00000000 
+ 795 11ac C51D5825 		vaddpd	.LC18(%rip), %ymm12, %ymm12
  795      00000000 
- 796 0eee C5F5580D 		vaddpd	.LC49(%rip), %ymm1, %ymm1
- 796      00000000 
- 797 0ef6 C5FD298C 		vmovapd	%ymm1, 320(%rsp)
- 797      24400100 
- 797      00
- 798 0eff C4C1755E 		vdivpd	%ymm11, %ymm1, %ymm1
- 798      CB
- 799 0f04 C5F5540D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 796 11b4 C51D59E5 		vmulpd	%ymm5, %ymm12, %ymm12
+ 797 11b8 C4411D58 		vaddpd	%ymm14, %ymm12, %ymm14
+ 797      F6
+ 798 11bd C54559E1 		vmulpd	%ymm1, %ymm7, %ymm12
+ 799 11c1 C5F5590D 		vmulpd	.LC19(%rip), %ymm1, %ymm1
  799      00000000 
- 800 0f0c C5E55DD9 		vminpd	%ymm1, %ymm3, %ymm3
- 801 0f10 C5FD298C 		vmovapd	%ymm1, 384(%rsp)
- 801      24800100 
- 801      00
- 802 0f19 C4E37D19 		vextractf128	$0x1, %ymm3, %xmm5
- 802      DD01
- 803 0f1f C5FD299C 		vmovapd	%ymm3, 288(%rsp)
- 803      24200100 
- 803      00
- 804 0f28 C5F928E3 		vmovapd	%xmm3, %xmm4
- 805 0f2c C5D1DB15 		vpand	.LC50(%rip), %xmm5, %xmm2
+ 800 11c9 C4C15559 		vmulpd	%ymm14, %ymm5, %ymm5
+ 800      EE
+ 801 11ce C5796F74 		vmovdqa	112(%rsp), %xmm14
+ 801      2470
+ 802 11d4 C4411D59 		vmulpd	%ymm13, %ymm12, %ymm12
+ 802      E5
+ 803 11d9 C5796F6C 		vmovdqa	96(%rsp), %xmm13
+GAS LISTING /tmp/ccsgyXat.s 			page 27
+
+
+ 803      2460
+ 804 11df C59D58FF 		vaddpd	%ymm7, %ymm12, %ymm7
+ 805 11e3 C57D2825 		vmovapd	.LC20(%rip), %ymm12
  805      00000000 
- 806 0f34 C5F173D5 		vpsrlq	$52, %xmm5, %xmm1
- 806      34
- 807 0f39 C5C173D4 		vpsrlq	$52, %xmm4, %xmm7
- 807      34
- 808 0f3e C5D9DB35 		vpand	.LC50(%rip), %xmm4, %xmm6
- 808      00000000 
- 809 0f46 C5F1EB0D 		vpor	.LC52(%rip), %xmm1, %xmm1
+ 806 11eb C59D5CC9 		vsubpd	%ymm1, %ymm12, %ymm1
+ 807 11ef C511DB25 		vpand	.LC21(%rip), %xmm13, %xmm12
+ 807      00000000 
+ 808 11f7 C5D558E9 		vaddpd	%ymm1, %ymm5, %ymm5
+ 809 11fb C5F96F0D 		vmovdqa	.LC21(%rip), %xmm1
  809      00000000 
- 810 0f4e C5E9EB15 		vpor	.LC51(%rip), %xmm2, %xmm2
- 810      00000000 
- 811 0f56 C5C9EB35 		vpor	.LC51(%rip), %xmm6, %xmm6
- 811      00000000 
- 812 0f5e C5C1EB3D 		vpor	.LC52(%rip), %xmm7, %xmm7
+ 810 1203 C4421929 		vpcmpeqq	%xmm15, %xmm12, %xmm12
+ 810      E7
+ 811 1208 C4C171DB 		vpand	%xmm14, %xmm1, %xmm1
+ 811      CE
+ 812 120d C519EF25 		vpxor	.LC105(%rip), %xmm12, %xmm12
  812      00000000 
- 813 0f66 C4E34D18 		vinsertf128	$0x1, %xmm2, %ymm6, %ymm6
- 813      F201
- 814 0f6c C5FD2815 		vmovapd	.LC54(%rip), %ymm2
- 814      00000000 
- 815 0f74 C4E34518 		vinsertf128	$0x1, %xmm1, %ymm7, %ymm7
- 815      F901
-GAS LISTING /tmp/cc72IM0J.s 			page 27
-
-
- 816 0f7a C5EDC2D6 		vcmppd	$1, %ymm6, %ymm2, %ymm2
- 816      01
- 817 0f7f C5C55C3D 		vsubpd	.LC53(%rip), %ymm7, %ymm7
- 817      00000000 
- 818 0f87 C4C37D19 		vextractf128	$0x1, %ymm2, %xmm8
- 818      D001
- 819 0f8d C5F928CA 		vmovapd	%xmm2, %xmm1
- 820 0f91 C5ED5415 		vandpd	.LC20(%rip), %ymm2, %ymm2
- 820      00000000 
- 821 0f99 C5395705 		vxorpd	.LC55(%rip), %xmm8, %xmm8
- 821      00000000 
- 822 0fa1 C5F1570D 		vxorpd	.LC55(%rip), %xmm1, %xmm1
+ 813 1215 C4C27129 		vpcmpeqq	%xmm15, %xmm1, %xmm1
+ 813      CF
+ 814 121a C441796F 		vmovdqa	%xmm13, %xmm15
+ 814      FD
+ 815 121f C4621137 		vpcmpgtq	.LC22(%rip), %xmm13, %xmm13
+ 815      2D000000 
+ 815      00
+ 816 1228 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+ 816      00000000 
+ 817 1230 C4C37518 		vinsertf128	$0x1, %xmm12, %ymm1, %ymm1
+ 817      CC01
+ 818 1236 C4620937 		vpcmpgtq	.LC22(%rip), %xmm14, %xmm12
+ 818      25000000 
+ 818      00
+ 819 123f C4431D18 		vinsertf128	$0x1, %xmm13, %ymm12, %ymm12
+ 819      E501
+ 820 1245 C4C37D19 		vextractf128	$0x1, %ymm6, %xmm13
+ 820      F501
+ 821 124b C5C973F6 		vpsllq	$1, %xmm6, %xmm6
+ 821      01
+ 822 1250 C5C9DB35 		vpand	.LC23(%rip), %xmm6, %xmm6
  822      00000000 
- 823 0fa9 C5C558FA 		vaddpd	%ymm2, %ymm7, %ymm7
- 824 0fad C4C37518 		vinsertf128	$0x1, %xmm8, %ymm1, %ymm1
- 824      C801
- 825 0fb3 C5F554CE 		vandpd	%ymm6, %ymm1, %ymm1
- 826 0fb7 C5F558F6 		vaddpd	%ymm6, %ymm1, %ymm6
- 827 0fbb C5CD5C0D 		vsubpd	.LC20(%rip), %ymm6, %ymm1
+ 823 1258 C4C11173 		vpsllq	$1, %xmm13, %xmm13
+ 823      F501
+ 824 125e C511DB2D 		vpand	.LC23(%rip), %xmm13, %xmm13
+ 824      00000000 
+ 825 1266 C4E24929 		vpcmpeqq	.LC23(%rip), %xmm6, %xmm6
+ 825      35000000 
+ 825      00
+ 826 126f C4621129 		vpcmpeqq	.LC23(%rip), %xmm13, %xmm13
+ 826      2D000000 
+ 826      00
+ 827 1278 C5C9EF35 		vpxor	.LC105(%rip), %xmm6, %xmm6
  827      00000000 
- 828 0fc3 C575590D 		vmulpd	.LC58(%rip), %ymm1, %ymm9
+ 828 1280 C511EF2D 		vpxor	.LC105(%rip), %xmm13, %xmm13
  828      00000000 
- 829 0fcb C5F559D1 		vmulpd	%ymm1, %ymm1, %ymm2
- 830 0fcf C5755915 		vmulpd	.LC56(%rip), %ymm1, %ymm10
- 830      00000000 
- 831 0fd7 C5755905 		vmulpd	.LC60(%rip), %ymm1, %ymm8
- 831      00000000 
- 832 0fdf C535580D 		vaddpd	.LC59(%rip), %ymm9, %ymm9
+ 829 1288 C4C34D18 		vinsertf128	$0x1, %xmm13, %ymm6, %ymm6
+ 829      F501
+ 830 128e C4411157 		vxorpd	%xmm13, %xmm13, %xmm13
+ 830      ED
+ 831 1293 C59D54F6 		vandpd	%ymm6, %ymm12, %ymm6
+GAS LISTING /tmp/ccsgyXat.s 			page 28
+
+
+ 832 1297 C509D425 		vpaddq	.LC21(%rip), %xmm14, %xmm12
  832      00000000 
- 833 0fe7 C5ED59F2 		vmulpd	%ymm2, %ymm2, %ymm6
- 834 0feb C52D5815 		vaddpd	.LC57(%rip), %ymm10, %ymm10
+ 833 129f C57D2835 		vmovapd	.LC20(%rip), %ymm14
+ 833      00000000 
+ 834 12a7 C519DB25 		vpand	.LC24(%rip), %xmm12, %xmm12
  834      00000000 
- 835 0ff3 C53D5805 		vaddpd	.LC61(%rip), %ymm8, %ymm8
- 835      00000000 
- 836 0ffb C53559CE 		vmulpd	%ymm6, %ymm9, %ymm9
- 837 0fff C4413558 		vaddpd	%ymm10, %ymm9, %ymm9
- 837      CA
- 838 1004 C53D59C2 		vmulpd	%ymm2, %ymm8, %ymm8
- 839 1008 C5755915 		vmulpd	.LC62(%rip), %ymm1, %ymm10
+ 835 12af C4E3554B 		vblendvpd	%ymm6, .LC20(%rip), %ymm5, %ymm5
+ 835      2D000000 
+ 835      0060
+ 836 12b9 C4C3454B 		vblendvpd	%ymm6, %ymm13, %ymm7, %ymm7
+ 836      FD60
+ 837 12bf C5B559B4 		vmulpd	1440(%rsp), %ymm9, %ymm6
+ 837      24A00500 
+ 837      00
+ 838 12c8 C4E3554B 		vblendvpd	%ymm1, %ymm7, %ymm5, %ymm7
+ 838      FF10
+ 839 12ce C581D40D 		vpaddq	.LC21(%rip), %xmm15, %xmm1
  839      00000000 
- 840 1010 C4413D58 		vaddpd	%ymm9, %ymm8, %ymm8
- 840      C1
- 841 1015 C57559CA 		vmulpd	%ymm2, %ymm1, %ymm9
- 842 1019 C52D5815 		vaddpd	.LC63(%rip), %ymm10, %ymm10
- 842      00000000 
- 843 1021 C4413D59 		vmulpd	%ymm9, %ymm8, %ymm8
- 843      C1
- 844 1026 C575580D 		vaddpd	.LC64(%rip), %ymm1, %ymm9
- 844      00000000 
- 845 102e C5B559F6 		vmulpd	%ymm6, %ymm9, %ymm6
- 846 1032 C4414D58 		vaddpd	%ymm10, %ymm6, %ymm9
- 846      CA
- 847 1037 C5F55935 		vmulpd	.LC65(%rip), %ymm1, %ymm6
+ 840 12d6 C57D28BC 		vmovapd	128(%rsp), %ymm15
+ 840      24800000 
+ 840      00
+ 841 12df C5F1DB0D 		vpand	.LC24(%rip), %xmm1, %xmm1
+ 841      00000000 
+ 842 12e7 C4C11973 		vpsllq	$62, %xmm12, %xmm12
+ 842      F43E
+ 843 12ed C5F173F1 		vpsllq	$62, %xmm1, %xmm1
+ 843      3E
+ 844 12f2 C4631D18 		vinsertf128	$0x1, %xmm1, %ymm12, %ymm12
+ 844      E101
+ 845 12f8 C4C12D59 		vmulpd	%ymm10, %ymm10, %ymm1
+ 845      CA
+ 846 12fd C4C14557 		vxorpd	%ymm12, %ymm7, %ymm5
+ 846      EC
+ 847 1302 C5E5593D 		vmulpd	.LC43(%rip), %ymm3, %ymm7
  847      00000000 
- 848 103f C5CD5835 		vaddpd	.LC66(%rip), %ymm6, %ymm6
- 848      00000000 
- 849 1047 C5CD59F2 		vmulpd	%ymm2, %ymm6, %ymm6
-GAS LISTING /tmp/cc72IM0J.s 			page 28
-
-
- 850 104b C5ED5915 		vmulpd	.LC19(%rip), %ymm2, %ymm2
+ 848 130a C58D5CC9 		vsubpd	%ymm1, %ymm14, %ymm1
+ 849 130e C57D2835 		vmovapd	.LC45(%rip), %ymm14
+ 849      00000000 
+ 850 1316 C5D5592D 		vmulpd	.LC25(%rip), %ymm5, %ymm5
  850      00000000 
- 851 1053 C4C14D58 		vaddpd	%ymm9, %ymm6, %ymm6
- 851      F1
- 852 1058 C5F55CCA 		vsubpd	%ymm2, %ymm1, %ymm1
- 853 105c C5BD5EF6 		vdivpd	%ymm6, %ymm8, %ymm6
- 854 1060 C5455905 		vmulpd	.LC67(%rip), %ymm7, %ymm8
+ 851 131e C5AD59C9 		vmulpd	%ymm1, %ymm10, %ymm1
+ 852 1322 C50D5994 		vmulpd	1024(%rsp), %ymm14, %ymm10
+ 852      24000400 
+ 852      00
+ 853 132b C5F55CCE 		vsubpd	%ymm6, %ymm1, %ymm1
+ 854 132f C5B55935 		vmulpd	.LC42(%rip), %ymm9, %ymm6
  854      00000000 
- 855 1068 C5C5593D 		vmulpd	.LC68(%rip), %ymm7, %ymm7
- 855      00000000 
- 856 1070 C5BD58F6 		vaddpd	%ymm6, %ymm8, %ymm6
- 857 1074 C5B973F5 		vpsllq	$1, %xmm5, %xmm8
- 857      01
- 858 1079 C5B9DB15 		vpand	.LC23(%rip), %xmm8, %xmm2
- 858      00000000 
- 859 1081 C5CD58C9 		vaddpd	%ymm1, %ymm6, %ymm1
- 860 1085 C4E26929 		vpcmpeqq	.LC23(%rip), %xmm2, %xmm2
- 860      15000000 
- 860      00
- 861 108e C5E9EF15 		vpxor	.LC103(%rip), %xmm2, %xmm2
- 861      00000000 
- 862 1096 C5C558C9 		vaddpd	%ymm1, %ymm7, %ymm1
- 863 109a C5C173F4 		vpsllq	$1, %xmm4, %xmm7
- 863      01
- 864 109f C5C1DB35 		vpand	.LC23(%rip), %xmm7, %xmm6
+ 855 1337 C5F558CD 		vaddpd	%ymm5, %ymm1, %ymm1
+ 856 133b C5FD282D 		vmovapd	.LC44(%rip), %ymm5
+ 856      00000000 
+ 857 1343 C4C15559 		vmulpd	%ymm15, %ymm5, %ymm5
+ 857      EF
+ 858 1348 C5AD58ED 		vaddpd	%ymm5, %ymm10, %ymm5
+ 859 134c C5D558EF 		vaddpd	%ymm7, %ymm5, %ymm5
+ 860 1350 C5D558EE 		vaddpd	%ymm6, %ymm5, %ymm5
+ 861 1354 C5D559E8 		vmulpd	%ymm0, %ymm5, %ymm5
+ 862 1358 C5D558AC 		vaddpd	1280(%rsp), %ymm5, %ymm5
+GAS LISTING /tmp/ccsgyXat.s 			page 29
+
+
+ 862      24000500 
+ 862      00
+ 863 1361 C5FD29AC 		vmovapd	%ymm5, 1216(%rsp)
+ 863      24C00400 
+ 863      00
+ 864 136a C5855935 		vmulpd	.LC49(%rip), %ymm15, %ymm6
  864      00000000 
- 865 10a7 C4E24929 		vpcmpeqq	.LC23(%rip), %xmm6, %xmm6
- 865      35000000 
- 865      00
- 866 10b0 C5C9EF35 		vpxor	.LC103(%rip), %xmm6, %xmm6
- 866      00000000 
- 867 10b8 C4E34D18 		vinsertf128	$0x1, %xmm2, %ymm6, %ymm6
- 867      F201
- 868 10be C4C37D19 		vextractf128	$0x1, %ymm6, %xmm9
- 868      F101
- 869 10c4 C5C95715 		vxorpd	.LC55(%rip), %xmm6, %xmm2
+ 865 1372 C5FD283D 		vmovapd	.LC50(%rip), %ymm7
+ 865      00000000 
+ 866 137a C5C559BC 		vmulpd	1024(%rsp), %ymm7, %ymm7
+ 866      24000400 
+ 866      00
+ 867 1383 C5E5591D 		vmulpd	.LC48(%rip), %ymm3, %ymm3
+ 867      00000000 
+ 868 138b C53D5905 		vmulpd	.LC47(%rip), %ymm8, %ymm8
+ 868      00000000 
+ 869 1393 C5D5542D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
  869      00000000 
- 870 10cc C5E5C235 		vcmppd	$1, .LC69(%rip), %ymm3, %ymm6
- 870      00000000 
- 870      01
- 871 10d5 C531570D 		vxorpd	.LC55(%rip), %xmm9, %xmm9
+ 870 139b C5C558F6 		vaddpd	%ymm6, %ymm7, %ymm6
+ 871 139f C535590D 		vmulpd	.LC46(%rip), %ymm9, %ymm9
  871      00000000 
- 872 10dd C4C36D18 		vinsertf128	$0x1, %xmm9, %ymm2, %ymm2
- 872      D101
- 873 10e3 C57D28D2 		vmovapd	%ymm2, %ymm10
- 874 10e7 C5CD56D2 		vorpd	%ymm2, %ymm6, %ymm2
- 875 10eb C4C37D19 		vextractf128	$0x1, %ymm2, %xmm9
- 875      D101
- 876 10f1 C4C16956 		vorpd	%xmm9, %xmm2, %xmm2
- 876      D1
- 877 10f6 C5F950D2 		vmovmskpd	%xmm2, %edx
- 878 10fa 85D2     		testl	%edx, %edx
- 879 10fc 0F848D00 		je	.L23
- 879      0000
- 880 1102 C5D1DB15 		vpand	.LC72(%rip), %xmm5, %xmm2
- 880      00000000 
- 881 110a C4E3754B 		vblendvpd	%ymm6, .LC70(%rip), %ymm1, %ymm6
-GAS LISTING /tmp/cc72IM0J.s 			page 29
-
-
- 881      35000000 
- 881      0060
- 882 1114 C5D172E5 		vpsrad	$31, %xmm5, %xmm5
- 882      1F
- 883 1119 C4623929 		vpcmpeqq	.LC23(%rip), %xmm8, %xmm8
- 883      05000000 
- 883      00
- 884 1122 C5F1EFC9 		vpxor	%xmm1, %xmm1, %xmm1
- 885 1126 C44101EF 		vpxor	%xmm15, %xmm15, %xmm15
- 885      FF
- 886 112b C4E26929 		vpcmpeqq	%xmm1, %xmm2, %xmm2
- 886      D1
- 887 1130 C5D9DB0D 		vpand	.LC72(%rip), %xmm4, %xmm1
+ 872 13a7 C5DD593D 		vmulpd	.LC43(%rip), %ymm4, %ymm7
+ 872      00000000 
+ 873 13af C5CD58DB 		vaddpd	%ymm3, %ymm6, %ymm3
+ 874 13b3 C5D5592D 		vmulpd	.LC51(%rip), %ymm5, %ymm5
+ 874      00000000 
+ 875 13bb C5F55935 		vmulpd	.LC42(%rip), %ymm1, %ymm6
+ 875      00000000 
+ 876 13c3 C4C16558 		vaddpd	%ymm8, %ymm3, %ymm3
+ 876      D8
+ 877 13c8 C50D5984 		vmulpd	1056(%rsp), %ymm14, %ymm8
+ 877      24200400 
+ 877      00
+ 878 13d1 C5D5582D 		vaddpd	.LC51(%rip), %ymm5, %ymm5
+ 878      00000000 
+ 879 13d9 C5DD5925 		vmulpd	.LC48(%rip), %ymm4, %ymm4
+ 879      00000000 
+ 880 13e1 C4C16558 		vaddpd	%ymm9, %ymm3, %ymm3
+ 880      D9
+ 881 13e6 C525591D 		vmulpd	.LC47(%rip), %ymm11, %ymm11
+ 881      00000000 
+ 882 13ee C5F5590D 		vmulpd	.LC46(%rip), %ymm1, %ymm1
+ 882      00000000 
+ 883 13f6 C5E559D8 		vmulpd	%ymm0, %ymm3, %ymm3
+ 884 13fa C5FD299C 		vmovapd	%ymm3, 832(%rsp)
+ 884      24400300 
+ 884      00
+ 885 1403 C5D55EDB 		vdivpd	%ymm3, %ymm5, %ymm3
+ 886 1407 C5ED592D 		vmulpd	.LC44(%rip), %ymm2, %ymm5
+ 886      00000000 
+ 887 140f C5ED5915 		vmulpd	.LC49(%rip), %ymm2, %ymm2
  887      00000000 
- 888 1138 C5D972E4 		vpsrad	$31, %xmm4, %xmm4
- 888      1F
- 889 113d C4C27129 		vpcmpeqq	%xmm15, %xmm1, %xmm1
- 889      CF
- 890 1142 C4E37518 		vinsertf128	$0x1, %xmm2, %ymm1, %ymm1
- 890      CA01
- 891 1148 C4E34D4B 		vblendvpd	%ymm1, 32(%rsp), %ymm6, %ymm1
- 891      4C242010 
- 892 1150 C463754B 		vblendvpd	%ymm10, %ymm3, %ymm1, %ymm10
- 892      D3A0
- 893 1156 C5F173D5 		vpsrlq	$32, %xmm5, %xmm1
- 893      20
- 894 115b C4E3710E 		vpblendw	$204, %xmm5, %xmm1, %xmm5
- 894      EDCC
- 895 1161 C5F173D4 		vpsrlq	$32, %xmm4, %xmm1
- 895      20
- 896 1166 C4E3710E 		vpblendw	$204, %xmm4, %xmm1, %xmm4
- 896      E4CC
- 897 116c C4E24129 		vpcmpeqq	.LC23(%rip), %xmm7, %xmm1
- 897      0D000000 
- 897      00
- 898 1175 C4E35D18 		vinsertf128	$0x1, %xmm5, %ymm4, %ymm5
- 898      ED01
- 899 117b C4C37518 		vinsertf128	$0x1, %xmm8, %ymm1, %ymm1
- 899      C801
- 900 1181 C5F554CD 		vandpd	%ymm5, %ymm1, %ymm1
- 901 1185 C4E32D4B 		vblendvpd	%ymm1, .LC70(%rip), %ymm10, %ymm1
- 901      0D000000 
- 901      0010
- 902              	.L23:
- 903 118f C5F5590D 		vmulpd	.LC26(%rip), %ymm1, %ymm1
- 903      00000000 
- 904 1197 C5F55935 		vmulpd	.LC73(%rip), %ymm1, %ymm6
+ 888 1417 C5BD58ED 		vaddpd	%ymm5, %ymm8, %ymm5
+ 889 141b C5E5541D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 889      00000000 
+ 890 1423 C5D558EF 		vaddpd	%ymm7, %ymm5, %ymm5
+ 891 1427 C5FD283D 		vmovapd	.LC50(%rip), %ymm7
+GAS LISTING /tmp/ccsgyXat.s 			page 30
+
+
+ 891      00000000 
+ 892 142f C5D558EE 		vaddpd	%ymm6, %ymm5, %ymm5
+ 893 1433 C5C559B4 		vmulpd	1056(%rsp), %ymm7, %ymm6
+ 893      24200400 
+ 893      00
+ 894 143c C5D559E8 		vmulpd	%ymm0, %ymm5, %ymm5
+ 895 1440 C5CD58D2 		vaddpd	%ymm2, %ymm6, %ymm2
+ 896 1444 C5D558AC 		vaddpd	1312(%rsp), %ymm5, %ymm5
+ 896      24200500 
+ 896      00
+ 897 144d C5ED58E4 		vaddpd	%ymm4, %ymm2, %ymm4
+ 898 1451 C5D55415 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 898      00000000 
+ 899 1459 C5FD29AC 		vmovapd	%ymm5, 1248(%rsp)
+ 899      24E00400 
+ 899      00
+ 900 1462 C4415D58 		vaddpd	%ymm11, %ymm4, %ymm11
+ 900      DB
+ 901 1467 C5ED5915 		vmulpd	.LC51(%rip), %ymm2, %ymm2
+ 901      00000000 
+ 902 146f C5A558C9 		vaddpd	%ymm1, %ymm11, %ymm1
+ 903 1473 C5F559C8 		vmulpd	%ymm0, %ymm1, %ymm1
+ 904 1477 C5ED5815 		vaddpd	.LC51(%rip), %ymm2, %ymm2
  904      00000000 
- 905 119f C4E37D09 		vroundpd	$8, %ymm6, %ymm6
- 905      F608
- 906 11a5 C5CD5915 		vmulpd	.LC74(%rip), %ymm6, %ymm2
- 906      00000000 
- 907 11ad C5CD5925 		vmulpd	.LC75(%rip), %ymm6, %ymm4
- 907      00000000 
- 908 11b5 C5CD5835 		vaddpd	.LC53(%rip), %ymm6, %ymm6
+ 905 147f C5FD298C 		vmovapd	%ymm1, 864(%rsp)
+ 905      24600300 
+ 905      00
+ 906 1488 C5ED5EC9 		vdivpd	%ymm1, %ymm2, %ymm1
+ 907 148c C5FD2994 		vmovapd	%ymm2, 928(%rsp)
+ 907      24A00300 
+ 907      00
+ 908 1495 C5F5540D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
  908      00000000 
- 909 11bd C5F55CD2 		vsubpd	%ymm2, %ymm1, %ymm2
-GAS LISTING /tmp/cc72IM0J.s 			page 30
-
-
- 910 11c1 C5ED5CD4 		vsubpd	%ymm4, %ymm2, %ymm2
- 911 11c5 C5ED593D 		vmulpd	.LC79(%rip), %ymm2, %ymm7
- 911      00000000 
- 912 11cd C56D590D 		vmulpd	.LC76(%rip), %ymm2, %ymm9
- 912      00000000 
- 913 11d5 C56D5915 		vmulpd	.LC77(%rip), %ymm2, %ymm10
- 913      00000000 
- 914 11dd C5ED59E2 		vmulpd	%ymm2, %ymm2, %ymm4
- 915 11e1 C5C5583D 		vaddpd	.LC80(%rip), %ymm7, %ymm7
- 915      00000000 
- 916 11e9 C535580D 		vaddpd	.LC19(%rip), %ymm9, %ymm9
+ 909 149d C5E55DD9 		vminpd	%ymm1, %ymm3, %ymm3
+ 910 14a1 C5FD298C 		vmovapd	%ymm1, 992(%rsp)
+ 910      24E00300 
+ 910      00
+ 911 14aa C4E37D19 		vextractf128	$0x1, %ymm3, %xmm5
+ 911      DD01
+ 912 14b0 C5FD299C 		vmovapd	%ymm3, 896(%rsp)
+ 912      24800300 
+ 912      00
+ 913 14b9 C5F928E3 		vmovapd	%xmm3, %xmm4
+ 914 14bd C5D1DB15 		vpand	.LC52(%rip), %xmm5, %xmm2
+ 914      00000000 
+ 915 14c5 C5C973D4 		vpsrlq	$52, %xmm4, %xmm6
+ 915      34
+ 916 14ca C5D9DB0D 		vpand	.LC52(%rip), %xmm4, %xmm1
  916      00000000 
- 917 11f1 C52D5815 		vaddpd	.LC78(%rip), %ymm10, %ymm10
+ 917 14d2 C5C9EB35 		vpor	.LC54(%rip), %xmm6, %xmm6
  917      00000000 
- 918 11f9 C5DD59EC 		vmulpd	%ymm4, %ymm4, %ymm5
- 919 11fd C5C559FC 		vmulpd	%ymm4, %ymm7, %ymm7
- 920 1201 C53559CC 		vmulpd	%ymm4, %ymm9, %ymm9
- 921 1205 C55559C5 		vmulpd	%ymm5, %ymm5, %ymm8
- 922 1209 C4C14558 		vaddpd	%ymm10, %ymm7, %ymm7
- 922      FA
- 923 120e C56D5915 		vmulpd	.LC83(%rip), %ymm2, %ymm10
- 923      00000000 
- 924 1216 C53558CA 		vaddpd	%ymm2, %ymm9, %ymm9
- 925 121a C5C559FD 		vmulpd	%ymm5, %ymm7, %ymm7
- 926 121e C52D5815 		vaddpd	.LC84(%rip), %ymm10, %ymm10
+ 918 14da C5E9EB15 		vpor	.LC53(%rip), %xmm2, %xmm2
+ 918      00000000 
+ 919 14e2 C5F1EB0D 		vpor	.LC53(%rip), %xmm1, %xmm1
+ 919      00000000 
+ 920 14ea C4E37518 		vinsertf128	$0x1, %xmm2, %ymm1, %ymm1
+ 920      CA01
+GAS LISTING /tmp/ccsgyXat.s 			page 31
+
+
+ 921 14f0 C5E973D5 		vpsrlq	$52, %xmm5, %xmm2
+ 921      34
+ 922 14f5 C5E9EB15 		vpor	.LC54(%rip), %xmm2, %xmm2
+ 922      00000000 
+ 923 14fd C4E34D18 		vinsertf128	$0x1, %xmm2, %ymm6, %ymm6
+ 923      F201
+ 924 1503 C5FD2815 		vmovapd	.LC56(%rip), %ymm2
+ 924      00000000 
+ 925 150b C5EDC2D1 		vcmppd	$1, %ymm1, %ymm2, %ymm2
+ 925      01
+ 926 1510 C5CD5C35 		vsubpd	.LC55(%rip), %ymm6, %ymm6
  926      00000000 
- 927 1226 C4C14558 		vaddpd	%ymm9, %ymm7, %ymm7
- 927      F9
- 928 122b C56D590D 		vmulpd	.LC81(%rip), %ymm2, %ymm9
- 928      00000000 
- 929 1233 C5ED5915 		vmulpd	.LC85(%rip), %ymm2, %ymm2
+ 927 1518 C4C37D19 		vextractf128	$0x1, %ymm2, %xmm8
+ 927      D001
+ 928 151e C5F928FA 		vmovapd	%xmm2, %xmm7
+ 929 1522 C5ED5415 		vandpd	.LC20(%rip), %ymm2, %ymm2
  929      00000000 
- 930 123b C5AD59E4 		vmulpd	%ymm4, %ymm10, %ymm4
- 931 123f C535580D 		vaddpd	.LC82(%rip), %ymm9, %ymm9
+ 930 152a C539EF05 		vpxor	.LC105(%rip), %xmm8, %xmm8
+ 930      00000000 
+ 931 1532 C5C1EF3D 		vpxor	.LC105(%rip), %xmm7, %xmm7
  931      00000000 
- 932 1247 C5ED5815 		vaddpd	.LC86(%rip), %ymm2, %ymm2
- 932      00000000 
- 933 124f C4C15D58 		vaddpd	%ymm9, %ymm4, %ymm4
- 933      E1
- 934 1254 C5ED59D5 		vmulpd	%ymm5, %ymm2, %ymm2
- 935 1258 C5F928E9 		vmovapd	%xmm1, %xmm5
- 936 125c C5ED58D4 		vaddpd	%ymm4, %ymm2, %ymm2
- 937 1260 C4E37D19 		vextractf128	$0x1, %ymm6, %xmm4
- 937      F401
- 938 1266 C5C973F6 		vpsllq	$52, %xmm6, %xmm6
- 938      34
- 939 126b C5D973F4 		vpsllq	$52, %xmm4, %xmm4
- 939      34
- 940 1270 C4E34D18 		vinsertf128	$0x1, %xmm4, %ymm6, %ymm6
- 940      F401
- 941 1276 C5D973F5 		vpsllq	$1, %xmm5, %xmm4
- 941      01
- 942 127b C4C16D59 		vmulpd	%ymm8, %ymm2, %ymm2
- 942      D0
- 943 1280 C5D9DB25 		vpand	.LC23(%rip), %xmm4, %xmm4
+ 932 153a C5CD58F2 		vaddpd	%ymm2, %ymm6, %ymm6
+ 933 153e C4C34518 		vinsertf128	$0x1, %xmm8, %ymm7, %ymm7
+ 933      F801
+ 934 1544 C5C554F9 		vandpd	%ymm1, %ymm7, %ymm7
+ 935 1548 C5C558C9 		vaddpd	%ymm1, %ymm7, %ymm1
+ 936 154c C5F55C0D 		vsubpd	.LC20(%rip), %ymm1, %ymm1
+ 936      00000000 
+ 937 1554 C5755905 		vmulpd	.LC59(%rip), %ymm1, %ymm8
+ 937      00000000 
+ 938 155c C5755815 		vaddpd	.LC65(%rip), %ymm1, %ymm10
+ 938      00000000 
+ 939 1564 C5F559D1 		vmulpd	%ymm1, %ymm1, %ymm2
+ 940 1568 C575590D 		vmulpd	.LC57(%rip), %ymm1, %ymm9
+ 940      00000000 
+ 941 1570 C53D5805 		vaddpd	.LC60(%rip), %ymm8, %ymm8
+ 941      00000000 
+ 942 1578 C5ED59FA 		vmulpd	%ymm2, %ymm2, %ymm7
+ 943 157c C535580D 		vaddpd	.LC58(%rip), %ymm9, %ymm9
  943      00000000 
- 944 1288 C5ED58D7 		vaddpd	%ymm7, %ymm2, %ymm2
-GAS LISTING /tmp/cc72IM0J.s 			page 31
-
-
- 945 128c C5F5543D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
- 945      00000000 
- 946 1294 C4E25929 		vpcmpeqq	.LC23(%rip), %xmm4, %xmm4
- 946      25000000 
- 946      00
- 947 129d C5D9EF25 		vpxor	.LC103(%rip), %xmm4, %xmm4
+ 944 1584 C53D59C7 		vmulpd	%ymm7, %ymm8, %ymm8
+ 945 1588 C5AD59FF 		vmulpd	%ymm7, %ymm10, %ymm7
+ 946 158c C4413D58 		vaddpd	%ymm9, %ymm8, %ymm8
+ 946      C1
+ 947 1591 C575590D 		vmulpd	.LC61(%rip), %ymm1, %ymm9
  947      00000000 
- 948 12a5 C5ED5815 		vaddpd	.LC20(%rip), %ymm2, %ymm2
+ 948 1599 C535580D 		vaddpd	.LC62(%rip), %ymm9, %ymm9
  948      00000000 
- 949 12ad C5C5C23D 		vcmppd	$1, .LC87(%rip), %ymm7, %ymm7
- 949      00000000 
- 949      01
- 950 12b6 C5ED59D6 		vmulpd	%ymm6, %ymm2, %ymm2
- 951 12ba C4E37D19 		vextractf128	$0x1, %ymm1, %xmm6
- 951      CE01
- 952 12c0 C5B973F6 		vpsllq	$1, %xmm6, %xmm8
- 952      01
- 953 12c5 C539DB05 		vpand	.LC23(%rip), %xmm8, %xmm8
+ 949 15a1 C53559CA 		vmulpd	%ymm2, %ymm9, %ymm9
+ 950 15a5 C4413558 		vaddpd	%ymm8, %ymm9, %ymm9
+ 950      C8
+ 951 15aa C57559C2 		vmulpd	%ymm2, %ymm1, %ymm8
+ 952 15ae C4413559 		vmulpd	%ymm8, %ymm9, %ymm8
+ 952      C0
+ 953 15b3 C575590D 		vmulpd	.LC63(%rip), %ymm1, %ymm9
  953      00000000 
- 954 12cd C4623929 		vpcmpeqq	.LC23(%rip), %xmm8, %xmm8
- 954      05000000 
- 954      00
- 955 12d6 C539EF05 		vpxor	.LC103(%rip), %xmm8, %xmm8
- 955      00000000 
- 956 12de C4C35D18 		vinsertf128	$0x1, %xmm8, %ymm4, %ymm4
- 956      E001
- 957 12e4 C5C554E4 		vandpd	%ymm4, %ymm7, %ymm4
- 958 12e8 C4E37D19 		vextractf128	$0x1, %ymm4, %xmm7
- 958      E701
- 959 12ee C57928C4 		vmovapd	%xmm4, %xmm8
- 960 12f2 C5B954FF 		vandpd	%xmm7, %xmm8, %xmm7
- 961 12f6 C5F950D7 		vmovmskpd	%xmm7, %edx
- 962 12fa 83FA03   		cmpl	$3, %edx
- 963 12fd 7447     		je	.L24
- 964 12ff C5C972E6 		vpsrad	$31, %xmm6, %xmm6
- 964      1F
- 965 1304 C5D172E5 		vpsrad	$31, %xmm5, %xmm5
- 965      1F
- 966 1309 C5C173D6 		vpsrlq	$32, %xmm6, %xmm7
- 966      20
- 967 130e C4E3410E 		vpblendw	$204, %xmm6, %xmm7, %xmm6
- 967      F6CC
- 968 1314 C5C173D5 		vpsrlq	$32, %xmm5, %xmm7
- 968      20
- 969 1319 C4E3410E 		vpblendw	$204, %xmm5, %xmm7, %xmm5
- 969      EDCC
- 970 131f C5C157FF 		vxorpd	%xmm7, %xmm7, %xmm7
- 971 1323 C4E35518 		vinsertf128	$0x1, %xmm6, %ymm5, %ymm6
- 971      F601
- 972 1329 C5FD286C 		vmovapd	64(%rsp), %ymm5
- 972      2440
- 973 132f C4E3554B 		vblendvpd	%ymm6, %ymm7, %ymm5, %ymm6
- 973      F760
- 974 1335 C4E34D4B 		vblendvpd	%ymm4, %ymm2, %ymm6, %ymm2
- 974      D240
- 975 133b C5F5C2E1 		vcmppd	$4, %ymm1, %ymm1, %ymm4
- 975      04
-GAS LISTING /tmp/cc72IM0J.s 			page 32
+ 954 15bb C535580D 		vaddpd	.LC64(%rip), %ymm9, %ymm9
+GAS LISTING /tmp/ccsgyXat.s 			page 32
 
 
- 976 1340 C4E36D4B 		vblendvpd	%ymm4, %ymm1, %ymm2, %ymm2
- 976      D140
- 977              	.L24:
- 978 1346 C5FD282D 		vmovapd	.LC20(%rip), %ymm5
- 978      00000000 
- 979 134e C5FDC20D 		vcmppd	$2, .LC88(%rip), %ymm0, %ymm1
+ 954      00000000 
+ 955 15c3 C4C14558 		vaddpd	%ymm9, %ymm7, %ymm7
+ 955      F9
+ 956 15c8 C575590D 		vmulpd	.LC66(%rip), %ymm1, %ymm9
+ 956      00000000 
+ 957 15d0 C535580D 		vaddpd	.LC67(%rip), %ymm9, %ymm9
+ 957      00000000 
+ 958 15d8 C53559CA 		vmulpd	%ymm2, %ymm9, %ymm9
+ 959 15dc C5ED5915 		vmulpd	.LC19(%rip), %ymm2, %ymm2
+ 959      00000000 
+ 960 15e4 C5B558FF 		vaddpd	%ymm7, %ymm9, %ymm7
+ 961 15e8 C5B173F5 		vpsllq	$1, %xmm5, %xmm9
+ 961      01
+ 962 15ed C5F55CCA 		vsubpd	%ymm2, %ymm1, %ymm1
+ 963 15f1 C5BD5EFF 		vdivpd	%ymm7, %ymm8, %ymm7
+ 964 15f5 C54D5905 		vmulpd	.LC68(%rip), %ymm6, %ymm8
+ 964      00000000 
+ 965 15fd C5CD5915 		vmulpd	.LC69(%rip), %ymm6, %ymm2
+ 965      00000000 
+ 966 1605 C5B1DB35 		vpand	.LC23(%rip), %xmm9, %xmm6
+ 966      00000000 
+ 967 160d C5BD58FF 		vaddpd	%ymm7, %ymm8, %ymm7
+ 968 1611 C5B973F4 		vpsllq	$1, %xmm4, %xmm8
+ 968      01
+ 969 1616 C4E24929 		vpcmpeqq	.LC23(%rip), %xmm6, %xmm6
+ 969      35000000 
+ 969      00
+ 970 161f C5C9EF35 		vpxor	.LC105(%rip), %xmm6, %xmm6
+ 970      00000000 
+ 971 1627 C5C558C9 		vaddpd	%ymm1, %ymm7, %ymm1
+ 972 162b C5B9DB3D 		vpand	.LC23(%rip), %xmm8, %xmm7
+ 972      00000000 
+ 973 1633 C5ED58D1 		vaddpd	%ymm1, %ymm2, %ymm2
+ 974 1637 C4E24129 		vpcmpeqq	.LC23(%rip), %xmm7, %xmm7
+ 974      3D000000 
+ 974      00
+ 975 1640 C5C1EF3D 		vpxor	.LC105(%rip), %xmm7, %xmm7
+ 975      00000000 
+ 976 1648 C4E34518 		vinsertf128	$0x1, %xmm6, %ymm7, %ymm7
+ 976      FE01
+ 977 164e C4C37D19 		vextractf128	$0x1, %ymm7, %xmm10
+ 977      FA01
+ 978 1654 C5F928F7 		vmovapd	%xmm7, %xmm6
+ 979 1658 C5E5C23D 		vcmppd	$1, .LC70(%rip), %ymm3, %ymm7
  979      00000000 
- 979      02
- 980 1357 C5D5C2DB 		vcmppd	$2, %ymm3, %ymm5, %ymm3
- 980      02
- 981 135c C5FD282D 		vmovapd	.LC89(%rip), %ymm5
+ 979      01
+ 980 1661 C529EF15 		vpxor	.LC105(%rip), %xmm10, %xmm10
+ 980      00000000 
+ 981 1669 C5C9EF35 		vpxor	.LC105(%rip), %xmm6, %xmm6
  981      00000000 
- 982 1364 C5E556D9 		vorpd	%ymm1, %ymm3, %ymm3
- 983 1368 C5D5C2CA 		vcmppd	$1, %ymm2, %ymm5, %ymm1
- 983      01
- 984 136d C4E36D4B 		vblendvpd	%ymm1, %ymm5, %ymm2, %ymm2
- 984      D510
- 985 1373 C5FD282D 		vmovapd	.LC92(%rip), %ymm5
- 985      00000000 
- 986 137b C5EDC20D 		vcmppd	$1, .LC26(%rip), %ymm2, %ymm1
- 986      00000000 
- 986      01
- 987 1384 C4E36D4B 		vblendvpd	%ymm1, .LC26(%rip), %ymm2, %ymm2
- 987      15000000 
- 987      0010
- 988 138e C5FD288C 		vmovapd	672(%rsp), %ymm1
- 988      24A00200 
- 988      00
- 989 1397 C4E3754B 		vblendvpd	%ymm3, 608(%rsp), %ymm1, %ymm1
- 989      8C246002 
- 989      000030
- 990 13a2 C5FD2994 		vmovapd	%ymm2, 352(%rsp)
- 990      24600100 
- 990      00
- 991 13ab C5FD298C 		vmovapd	%ymm1, 672(%rsp)
- 991      24A00200 
- 991      00
- 992 13b4 C5FD288C 		vmovapd	704(%rsp), %ymm1
- 992      24C00200 
- 992      00
- 993 13bd C4E3754B 		vblendvpd	%ymm3, 640(%rsp), %ymm1, %ymm1
- 993      8C248002 
- 993      000030
- 994 13c8 C5FD298C 		vmovapd	%ymm1, 704(%rsp)
- 994      24C00200 
- 994      00
- 995 13d1 C5FD288C 		vmovapd	736(%rsp), %ymm1
- 995      24E00200 
- 995      00
- 996 13da C5F558E0 		vaddpd	%ymm0, %ymm1, %ymm4
- 997 13de C5ED59C0 		vmulpd	%ymm0, %ymm2, %ymm0
- 998 13e2 C4E3754B 		vblendvpd	%ymm3, %ymm4, %ymm1, %ymm3
- 998      DC30
- 999 13e8 C5FD2825 		vmovapd	.LC91(%rip), %ymm4
- 999      00000000 
- 1000 13f0 C5FD5905 		vmulpd	.LC90(%rip), %ymm0, %ymm0
- 1000      00000000 
-GAS LISTING /tmp/cc72IM0J.s 			page 33
+ 982 1671 C4C34D18 		vinsertf128	$0x1, %xmm10, %ymm6, %ymm6
+ 982      F201
+ 983 1677 C57D28DE 		vmovapd	%ymm6, %ymm11
+ 984 167b C5C556F6 		vorpd	%ymm6, %ymm7, %ymm6
+ 985 167f C4C37D19 		vextractf128	$0x1, %ymm6, %xmm10
+ 985      F201
+ 986 1685 C4C14956 		vorpd	%xmm10, %xmm6, %xmm6
+GAS LISTING /tmp/ccsgyXat.s 			page 33
 
 
- 1001 13f8 C5FD299C 		vmovapd	%ymm3, 736(%rsp)
- 1001      24E00200 
+ 986      F2
+ 987 168a C5F950C6 		vmovmskpd	%xmm6, %eax
+ 988 168e 85C0     		testl	%eax, %eax
+ 989 1690 0F848700 		je	.L14
+ 989      0000
+ 990 1696 C5D1DB0D 		vpand	.LC73(%rip), %xmm5, %xmm1
+ 990      00000000 
+ 991 169e C4E36D4B 		vblendvpd	%ymm7, .LC71(%rip), %ymm2, %ymm2
+ 991      15000000 
+ 991      0070
+ 992 16a8 C5D172E5 		vpsrad	$31, %xmm5, %xmm5
+ 992      1F
+ 993 16ad C4623129 		vpcmpeqq	.LC23(%rip), %xmm9, %xmm9
+ 993      0D000000 
+ 993      00
+ 994 16b6 C5D9DB35 		vpand	.LC73(%rip), %xmm4, %xmm6
+ 994      00000000 
+ 995 16be C5D972E4 		vpsrad	$31, %xmm4, %xmm4
+ 995      1F
+ 996 16c3 C5C1EFFF 		vpxor	%xmm7, %xmm7, %xmm7
+ 997 16c7 C4E27129 		vpcmpeqq	%xmm7, %xmm1, %xmm1
+ 997      CF
+ 998 16cc C4E24929 		vpcmpeqq	%xmm7, %xmm6, %xmm6
+ 998      F7
+ 999 16d1 C4E34D18 		vinsertf128	$0x1, %xmm1, %ymm6, %ymm1
+ 999      C901
+ 1000 16d7 C4E36D4B 		vblendvpd	%ymm1, (%rsp), %ymm2, %ymm1
+ 1000      0C2410
+ 1001 16de C4E23929 		vpcmpeqq	.LC23(%rip), %xmm8, %xmm2
+ 1001      15000000 
  1001      00
- 1002 1401 C5D5C2DB 		vcmppd	$2, %ymm3, %ymm5, %ymm3
- 1002      02
- 1003 1406 C5DDC2C8 		vcmppd	$1, %ymm0, %ymm4, %ymm1
- 1003      01
- 1004 140b C4E37D4B 		vblendvpd	%ymm1, %ymm4, %ymm0, %ymm0
- 1004      C410
- 1005 1411 C5FDC20D 		vcmppd	$1, .LC88(%rip), %ymm0, %ymm1
- 1005      00000000 
- 1005      01
- 1006 141a C4E37D4B 		vblendvpd	%ymm1, .LC88(%rip), %ymm0, %ymm0
- 1006      05000000 
- 1006      0010
- 1007 1424 C5FD2984 		vmovapd	%ymm0, 768(%rsp)
- 1007      24000300 
- 1007      00
- 1008 142d C4E37D19 		vextractf128	$0x1, %ymm3, %xmm0
- 1008      D801
- 1009 1433 C5E154D8 		vandpd	%xmm0, %xmm3, %xmm3
- 1010 1437 C5F950D3 		vmovmskpd	%xmm3, %edx
- 1011 143b 83FA03   		cmpl	$3, %edx
- 1012 143e 7410     		je	.L47
- 1013 1440 31D2     		xorl	%edx, %edx
- 1014 1442 E97DECFF 		jmp	.L22
- 1014      FF
- 1015 1447 660F1F84 		.p2align 4,,10
+ 1002 16e7 C463754B 		vblendvpd	%ymm11, %ymm3, %ymm1, %ymm11
+ 1002      DBB0
+ 1003 16ed C5F173D5 		vpsrlq	$32, %xmm5, %xmm1
+ 1003      20
+ 1004 16f2 C4E3710E 		vpblendw	$204, %xmm5, %xmm1, %xmm5
+ 1004      EDCC
+ 1005 16f8 C5F173D4 		vpsrlq	$32, %xmm4, %xmm1
+ 1005      20
+ 1006 16fd C4E3710E 		vpblendw	$204, %xmm4, %xmm1, %xmm1
+ 1006      CCCC
+ 1007 1703 C4C36D18 		vinsertf128	$0x1, %xmm9, %ymm2, %ymm2
+ 1007      D101
+ 1008 1709 C4E37518 		vinsertf128	$0x1, %xmm5, %ymm1, %ymm1
+ 1008      CD01
+ 1009 170f C5ED54D1 		vandpd	%ymm1, %ymm2, %ymm2
+ 1010 1713 C4E3254B 		vblendvpd	%ymm2, .LC71(%rip), %ymm11, %ymm2
+ 1010      15000000 
+ 1010      0020
+ 1011              	.L14:
+ 1012 171d C5ED5915 		vmulpd	.LC26(%rip), %ymm2, %ymm2
+ 1012      00000000 
+ 1013 1725 C5ED5935 		vmulpd	.LC74(%rip), %ymm2, %ymm6
+ 1013      00000000 
+ 1014 172d C4E37D09 		vroundpd	$8, %ymm6, %ymm6
+ 1014      F608
+ 1015 1733 C5CD5925 		vmulpd	.LC75(%rip), %ymm6, %ymm4
+GAS LISTING /tmp/ccsgyXat.s 			page 34
+
+
  1015      00000000 
- 1015      00
- 1016              		.p2align 3
- 1017              	.L47:
- 1018 1450 4489E0   		movl	%r12d, %eax
- 1019 1453 BAD34D62 		movl	$274877907, %edx
- 1019      10
- 1020 1458 F7EA     		imull	%edx
- 1021 145a 4489E0   		movl	%r12d, %eax
- 1022 145d C1F81F   		sarl	$31, %eax
- 1023 1460 C1FA06   		sarl	$6, %edx
- 1024 1463 29C2     		subl	%eax, %edx
- 1025 1465 4489E0   		movl	%r12d, %eax
- 1026 1468 69D2E803 		imull	$1000, %edx, %edx
- 1026      0000
- 1027 146e 29D0     		subl	%edx, %eax
- 1028 1470 83F801   		cmpl	$1, %eax
- 1029 1473 746B     		je	.L48
- 1030              	.L26:
- 1031 1475 4183C404 		addl	$4, %r12d
- 1032 1479 4983C520 		addq	$32, %r13
- 1033 147d 4181FCA0 		cmpl	$1440, %r12d
- 1033      050000
- 1034 1484 0F85DEEB 		jne	.L21
- 1034      FFFF
- 1035 148a C5F877   		vzeroupper
- 1036 148d E8000000 		call	clock
- 1036      00
- 1037 1492 4989C4   		movq	%rax, %r12
-GAS LISTING /tmp/cc72IM0J.s 			page 34
+ 1016 173b C5CD590D 		vmulpd	.LC76(%rip), %ymm6, %ymm1
+ 1016      00000000 
+ 1017 1743 C5CD5835 		vaddpd	.LC55(%rip), %ymm6, %ymm6
+ 1017      00000000 
+ 1018 174b C5ED5CE4 		vsubpd	%ymm4, %ymm2, %ymm4
+ 1019 174f C5DD5CC9 		vsubpd	%ymm1, %ymm4, %ymm1
+ 1020 1753 C5F5593D 		vmulpd	.LC80(%rip), %ymm1, %ymm7
+ 1020      00000000 
+ 1021 175b C575590D 		vmulpd	.LC77(%rip), %ymm1, %ymm9
+ 1021      00000000 
+ 1022 1763 C5755915 		vmulpd	.LC78(%rip), %ymm1, %ymm10
+ 1022      00000000 
+ 1023 176b C5F559E1 		vmulpd	%ymm1, %ymm1, %ymm4
+ 1024 176f C5C5583D 		vaddpd	.LC81(%rip), %ymm7, %ymm7
+ 1024      00000000 
+ 1025 1777 C535580D 		vaddpd	.LC19(%rip), %ymm9, %ymm9
+ 1025      00000000 
+ 1026 177f C52D5815 		vaddpd	.LC79(%rip), %ymm10, %ymm10
+ 1026      00000000 
+ 1027 1787 C5DD59EC 		vmulpd	%ymm4, %ymm4, %ymm5
+ 1028 178b C5C559FC 		vmulpd	%ymm4, %ymm7, %ymm7
+ 1029 178f C53559CC 		vmulpd	%ymm4, %ymm9, %ymm9
+ 1030 1793 C55559C5 		vmulpd	%ymm5, %ymm5, %ymm8
+ 1031 1797 C4C14558 		vaddpd	%ymm10, %ymm7, %ymm7
+ 1031      FA
+ 1032 179c C5755915 		vmulpd	.LC84(%rip), %ymm1, %ymm10
+ 1032      00000000 
+ 1033 17a4 C53558C9 		vaddpd	%ymm1, %ymm9, %ymm9
+ 1034 17a8 C5C559FD 		vmulpd	%ymm5, %ymm7, %ymm7
+ 1035 17ac C52D5815 		vaddpd	.LC85(%rip), %ymm10, %ymm10
+ 1035      00000000 
+ 1036 17b4 C4C14558 		vaddpd	%ymm9, %ymm7, %ymm7
+ 1036      F9
+ 1037 17b9 C575590D 		vmulpd	.LC82(%rip), %ymm1, %ymm9
+ 1037      00000000 
+ 1038 17c1 C5F5590D 		vmulpd	.LC86(%rip), %ymm1, %ymm1
+ 1038      00000000 
+ 1039 17c9 C5AD59E4 		vmulpd	%ymm4, %ymm10, %ymm4
+ 1040 17cd C535580D 		vaddpd	.LC83(%rip), %ymm9, %ymm9
+ 1040      00000000 
+ 1041 17d5 C5F5580D 		vaddpd	.LC87(%rip), %ymm1, %ymm1
+ 1041      00000000 
+ 1042 17dd C4C15D58 		vaddpd	%ymm9, %ymm4, %ymm4
+ 1042      E1
+ 1043 17e2 C5F559ED 		vmulpd	%ymm5, %ymm1, %ymm5
+ 1044 17e6 C5F173F6 		vpsllq	$52, %xmm6, %xmm1
+ 1044      34
+ 1045 17eb C5D558E4 		vaddpd	%ymm4, %ymm5, %ymm4
+ 1046 17ef C4E37D19 		vextractf128	$0x1, %ymm6, %xmm5
+ 1046      F501
+ 1047 17f5 C5D173F5 		vpsllq	$52, %xmm5, %xmm5
+ 1047      34
+ 1048 17fa C4E37518 		vinsertf128	$0x1, %xmm5, %ymm1, %ymm1
+ 1048      CD01
+ 1049 1800 C4C15D59 		vmulpd	%ymm8, %ymm4, %ymm4
+ 1049      E0
+GAS LISTING /tmp/ccsgyXat.s 			page 35
 
 
- 1038 1495 BA0C0000 		movl	$12, %edx
- 1038      00
- 1039 149a BE000000 		movl	$.LC101, %esi
- 1039      00
- 1040 149f 4929DC   		subq	%rbx, %r12
- 1041 14a2 BF000000 		movl	$_ZSt4cout, %edi
- 1041      00
- 1042 14a7 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1042      00
- 1043 14ac 4C89E6   		movq	%r12, %rsi
- 1044 14af BF000000 		movl	$_ZSt4cout, %edi
- 1044      00
- 1045 14b4 E8000000 		call	_ZNSo9_M_insertIlEERSoT_
- 1045      00
- 1046 14b9 BE000000 		movl	$.LC102, %esi
- 1046      00
- 1047 14be 4889C7   		movq	%rax, %rdi
- 1048 14c1 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
- 1048      00
- 1049 14c6 4889C7   		movq	%rax, %rdi
- 1050 14c9 E8000000 		call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
- 1050      00
- 1051 14ce 488D65D8 		leaq	-40(%rbp), %rsp
- 1052 14d2 31C0     		xorl	%eax, %eax
- 1053 14d4 5B       		popq	%rbx
- 1054 14d5 415C     		popq	%r12
- 1055 14d7 415D     		popq	%r13
- 1056 14d9 415E     		popq	%r14
- 1057 14db 415F     		popq	%r15
- 1058 14dd 5D       		popq	%rbp
- 1059              		.cfi_remember_state
- 1060              		.cfi_def_cfa 7, 8
- 1061 14de C3       		ret
- 1062 14df 90       		.p2align 4,,10
- 1063              		.p2align 3
- 1064              	.L48:
- 1065              		.cfi_restore_state
- 1066 14e0 BA390000 		movl	$57, %edx
- 1066      00
- 1067 14e5 BE000000 		movl	$.LC93, %esi
- 1067      00
- 1068 14ea BF000000 		movl	$_ZSt4cout, %edi
- 1068      00
- 1069 14ef C5F877   		vzeroupper
- 1070 14f2 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1070      00
- 1071 14f7 C5FD2884 		vmovapd	800(%rsp), %ymm0
- 1071      24200300 
- 1071      00
- 1072 1500 4489E6   		movl	%r12d, %esi
- 1073 1503 BF000000 		movl	$_ZSt4cout, %edi
- 1073      00
- 1074 1508 C5FD1184 		vmovupd	%ymm0, 192(%rsp)
- 1074      24C00000 
- 1074      00
- 1075 1511 C5FB1084 		vmovsd	192(%rsp), %xmm0
- 1075      24C00000 
-GAS LISTING /tmp/cc72IM0J.s 			page 35
+ 1050 1805 C4E37D19 		vextractf128	$0x1, %ymm2, %xmm5
+ 1050      D501
+ 1051 180b C5DD58E7 		vaddpd	%ymm7, %ymm4, %ymm4
+ 1052 180f C5B973F5 		vpsllq	$1, %xmm5, %xmm8
+ 1052      01
+ 1053 1814 C539DB05 		vpand	.LC23(%rip), %xmm8, %xmm8
+ 1053      00000000 
+ 1054 181c C5ED543D 		vandpd	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv
+ 1054      00000000 
+ 1055 1824 C5DD5835 		vaddpd	.LC20(%rip), %ymm4, %ymm6
+ 1055      00000000 
+ 1056 182c C5F928E2 		vmovapd	%xmm2, %xmm4
+ 1057 1830 C4623929 		vpcmpeqq	.LC23(%rip), %xmm8, %xmm8
+ 1057      05000000 
+ 1057      00
+ 1058 1839 C5C5C23D 		vcmppd	$1, .LC88(%rip), %ymm7, %ymm7
+ 1058      00000000 
+ 1058      01
+ 1059 1842 C539EF05 		vpxor	.LC105(%rip), %xmm8, %xmm8
+ 1059      00000000 
+ 1060 184a C5CD59F1 		vmulpd	%ymm1, %ymm6, %ymm6
+ 1061 184e C5F173F4 		vpsllq	$1, %xmm4, %xmm1
+ 1061      01
+ 1062 1853 C5F1DB0D 		vpand	.LC23(%rip), %xmm1, %xmm1
+ 1062      00000000 
+ 1063 185b C4E27129 		vpcmpeqq	.LC23(%rip), %xmm1, %xmm1
+ 1063      0D000000 
+ 1063      00
+ 1064 1864 C5F1EF0D 		vpxor	.LC105(%rip), %xmm1, %xmm1
+ 1064      00000000 
+ 1065 186c C4C37518 		vinsertf128	$0x1, %xmm8, %ymm1, %ymm1
+ 1065      C801
+ 1066 1872 C5C554C9 		vandpd	%ymm1, %ymm7, %ymm1
+ 1067 1876 C4E37D19 		vextractf128	$0x1, %ymm1, %xmm7
+ 1067      CF01
+ 1068 187c C57928C1 		vmovapd	%xmm1, %xmm8
+ 1069 1880 C5B954FF 		vandpd	%xmm7, %xmm8, %xmm7
+ 1070 1884 C5F950C7 		vmovmskpd	%xmm7, %eax
+ 1071 1888 83F803   		cmpl	$3, %eax
+ 1072 188b 0F840705 		je	.L33
+ 1072      0000
+ 1073 1891 C5D172E5 		vpsrad	$31, %xmm5, %xmm5
+ 1073      1F
+ 1074 1896 C5D972E4 		vpsrad	$31, %xmm4, %xmm4
+ 1074      1F
+ 1075 189b C5C173D5 		vpsrlq	$32, %xmm5, %xmm7
+ 1075      20
+ 1076 18a0 C4E3410E 		vpblendw	$204, %xmm5, %xmm7, %xmm5
+ 1076      EDCC
+ 1077 18a6 C5C173D4 		vpsrlq	$32, %xmm4, %xmm7
+ 1077      20
+ 1078 18ab C4E3410E 		vpblendw	$204, %xmm4, %xmm7, %xmm4
+ 1078      E4CC
+ 1079 18b1 C5FD287C 		vmovapd	64(%rsp), %ymm7
+ 1079      2440
+ 1080 18b7 C4E35D18 		vinsertf128	$0x1, %xmm5, %ymm4, %ymm5
+ 1080      ED01
+GAS LISTING /tmp/ccsgyXat.s 			page 36
 
 
- 1075      00
- 1076 151a C5FB1184 		vmovsd	%xmm0, 160(%rsp)
- 1076      24A00000 
- 1076      00
- 1077 1523 C5F877   		vzeroupper
- 1078 1526 E8000000 		call	_ZNSolsEi
- 1078      00
- 1079 152b BA060000 		movl	$6, %edx
- 1079      00
- 1080 1530 BE000000 		movl	$.LC94, %esi
- 1080      00
- 1081 1535 4889C7   		movq	%rax, %rdi
- 1082 1538 4989C6   		movq	%rax, %r14
- 1083 153b E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1083      00
- 1084 1540 C5FB1084 		vmovsd	160(%rsp), %xmm0
- 1084      24A00000 
- 1084      00
- 1085 1549 4C89F7   		movq	%r14, %rdi
- 1086 154c E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1086      00
- 1087 1551 BA010000 		movl	$1, %edx
- 1087      00
- 1088 1556 BE000000 		movl	$.LC95, %esi
- 1088      00
- 1089 155b 4889C7   		movq	%rax, %rdi
- 1090 155e E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1090      00
- 1091 1563 C5FD288C 		vmovapd	672(%rsp), %ymm1
- 1091      24A00200 
- 1091      00
- 1092 156c BA050000 		movl	$5, %edx
- 1092      00
- 1093 1571 BE000000 		movl	$.LC96, %esi
- 1093      00
- 1094 1576 BF000000 		movl	$_ZSt4cout, %edi
- 1094      00
- 1095 157b C5FD118C 		vmovupd	%ymm1, 192(%rsp)
- 1095      24C00000 
- 1095      00
- 1096 1584 C5FB1094 		vmovsd	216(%rsp), %xmm2
- 1096      24D80000 
- 1096      00
- 1097 158d C5FB109C 		vmovsd	208(%rsp), %xmm3
- 1097      24D00000 
+ 1081 18bd C5D957E4 		vxorpd	%xmm4, %xmm4, %xmm4
+ 1082 18c1 C4E3454B 		vblendvpd	%ymm5, %ymm4, %ymm7, %ymm4
+ 1082      E450
+ 1083 18c7 C4E35D4B 		vblendvpd	%ymm1, %ymm6, %ymm4, %ymm1
+ 1083      CE10
+ 1084 18cd C5EDC2E2 		vcmppd	$4, %ymm2, %ymm2, %ymm4
+ 1084      04
+ 1085 18d2 C4E3754B 		vblendvpd	%ymm4, %ymm2, %ymm1, %ymm2
+ 1085      D240
+ 1086              	.L15:
+ 1087 18d8 C5FD282D 		vmovapd	.LC20(%rip), %ymm5
+ 1087      00000000 
+ 1088 18e0 C5FDC20D 		vcmppd	$2, .LC89(%rip), %ymm0, %ymm1
+ 1088      00000000 
+ 1088      02
+ 1089 18e9 C5D5C2DB 		vcmppd	$2, %ymm3, %ymm5, %ymm3
+ 1089      02
+ 1090 18ee C5FD282D 		vmovapd	.LC90(%rip), %ymm5
+ 1090      00000000 
+ 1091 18f6 C5E556D9 		vorpd	%ymm1, %ymm3, %ymm3
+ 1092 18fa C5D5C2CA 		vcmppd	$1, %ymm2, %ymm5, %ymm1
+ 1092      01
+ 1093 18ff C4E36D4B 		vblendvpd	%ymm1, %ymm5, %ymm2, %ymm2
+ 1093      D510
+ 1094 1905 C5FD282D 		vmovapd	.LC92(%rip), %ymm5
+ 1094      00000000 
+ 1095 190d C5EDC20D 		vcmppd	$1, .LC26(%rip), %ymm2, %ymm1
+ 1095      00000000 
+ 1095      01
+ 1096 1916 C4E36D4B 		vblendvpd	%ymm1, .LC26(%rip), %ymm2, %ymm1
+ 1096      0D000000 
+ 1096      0010
+ 1097 1920 C5FD2894 		vmovapd	1280(%rsp), %ymm2
+ 1097      24000500 
  1097      00
- 1098 1596 C5FB10A4 		vmovsd	200(%rsp), %xmm4
- 1098      24C80000 
- 1098      00
- 1099 159f C5FB1084 		vmovsd	192(%rsp), %xmm0
- 1099      24C00000 
+ 1098 1929 C4E36D4B 		vblendvpd	%ymm3, 1216(%rsp), %ymm2, %ymm2
+ 1098      9424C004 
+ 1098      000030
+ 1099 1934 C5FD298C 		vmovapd	%ymm1, 960(%rsp)
+ 1099      24C00300 
  1099      00
- 1100 15a8 C5FB1154 		vmovsd	%xmm2, 64(%rsp)
- 1100      2440
- 1101 15ae C5FB115C 		vmovsd	%xmm3, 96(%rsp)
- 1101      2460
- 1102 15b4 C5FB11A4 		vmovsd	%xmm4, 144(%rsp)
-GAS LISTING /tmp/cc72IM0J.s 			page 36
-
-
- 1102      24900000 
- 1102      00
- 1103 15bd C5FB1184 		vmovsd	%xmm0, 160(%rsp)
- 1103      24A00000 
+ 1100 193d C5FD2994 		vmovapd	%ymm2, 1280(%rsp)
+ 1100      24000500 
+ 1100      00
+ 1101 1946 C5FD2894 		vmovapd	1312(%rsp), %ymm2
+ 1101      24200500 
+ 1101      00
+ 1102 194f C4E36D4B 		vblendvpd	%ymm3, 1248(%rsp), %ymm2, %ymm2
+ 1102      9424E004 
+ 1102      000030
+ 1103 195a C5FD2994 		vmovapd	%ymm2, 1312(%rsp)
+ 1103      24200500 
  1103      00
- 1104 15c6 C5F877   		vzeroupper
- 1105 15c9 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1105      00
- 1106 15ce BA010000 		movl	$1, %edx
- 1106      00
- 1107 15d3 BE000000 		movl	$.LC0, %esi
- 1107      00
- 1108 15d8 BF000000 		movl	$_ZSt4cout, %edi
+ 1104 1963 C5FD2894 		vmovapd	1344(%rsp), %ymm2
+ 1104      24400500 
+ 1104      00
+ 1105 196c C5ED58E0 		vaddpd	%ymm0, %ymm2, %ymm4
+GAS LISTING /tmp/ccsgyXat.s 			page 37
+
+
+ 1106 1970 C5FD59C1 		vmulpd	%ymm1, %ymm0, %ymm0
+ 1107 1974 C4E36D4B 		vblendvpd	%ymm3, %ymm4, %ymm2, %ymm3
+ 1107      DC30
+ 1108 197a C5FD2894 		vmovapd	1472(%rsp), %ymm2
+ 1108      24C00500 
  1108      00
- 1109 15dd E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1109      00
- 1110 15e2 C5FB1084 		vmovsd	160(%rsp), %xmm0
- 1110      24A00000 
+ 1109 1983 C5FD5905 		vmulpd	.LC91(%rip), %ymm0, %ymm0
+ 1109      00000000 
+ 1110 198b C5FD299C 		vmovapd	%ymm3, 1344(%rsp)
+ 1110      24400500 
  1110      00
- 1111 15eb BF000000 		movl	$_ZSt4cout, %edi
- 1111      00
- 1112 15f0 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1112      00
- 1113 15f5 BA010000 		movl	$1, %edx
- 1113      00
- 1114 15fa BE000000 		movl	$.LC0, %esi
- 1114      00
- 1115 15ff 4889C7   		movq	%rax, %rdi
- 1116 1602 4989C6   		movq	%rax, %r14
- 1117 1605 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1117      00
- 1118 160a C5FB10A4 		vmovsd	144(%rsp), %xmm4
- 1118      24900000 
- 1118      00
- 1119 1613 4C89F7   		movq	%r14, %rdi
- 1120 1616 C5F928C4 		vmovapd	%xmm4, %xmm0
- 1121 161a E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1121      00
- 1122 161f BA010000 		movl	$1, %edx
- 1122      00
- 1123 1624 BE000000 		movl	$.LC0, %esi
- 1123      00
- 1124 1629 4889C7   		movq	%rax, %rdi
- 1125 162c 4989C6   		movq	%rax, %r14
- 1126 162f E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1111 1994 C5D5C2C8 		vcmppd	$1, %ymm0, %ymm5, %ymm1
+ 1111      01
+ 1112 1999 C4E37D4B 		vblendvpd	%ymm1, %ymm5, %ymm0, %ymm0
+ 1112      C510
+ 1113 199f C5EDC2EB 		vcmppd	$2, %ymm3, %ymm2, %ymm5
+ 1113      02
+ 1114 19a4 C5FDC20D 		vcmppd	$1, .LC89(%rip), %ymm0, %ymm1
+ 1114      00000000 
+ 1114      01
+ 1115 19ad C5F928E5 		vmovapd	%xmm5, %xmm4
+ 1116 19b1 C5FD29AC 		vmovapd	%ymm5, 128(%rsp)
+ 1116      24800000 
+ 1116      00
+ 1117 19ba C4E37D4B 		vblendvpd	%ymm1, .LC89(%rip), %ymm0, %ymm1
+ 1117      0D000000 
+ 1117      0010
+ 1118 19c4 C4E37D19 		vextractf128	$0x1, %ymm5, %xmm0
+ 1118      E801
+ 1119 19ca C5FD298C 		vmovapd	%ymm1, 1408(%rsp)
+ 1119      24800500 
+ 1119      00
+ 1120 19d3 C5D956C0 		vorpd	%xmm0, %xmm4, %xmm0
+ 1121 19d7 C5F950C0 		vmovmskpd	%xmm0, %eax
+ 1122 19db 85C0     		testl	%eax, %eax
+ 1123 19dd 0F848503 		je	.L34
+ 1123      0000
+ 1124 19e3 31DB     		xorl	%ebx, %ebx
+ 1125              	.L23:
+ 1126 19e5 C5FD289C 		vmovapd	128(%rsp), %ymm3
+ 1126      24800000 
  1126      00
- 1127 1634 C5FB105C 		vmovsd	96(%rsp), %xmm3
- 1127      2460
- 1128 163a 4C89F7   		movq	%r14, %rdi
- 1129 163d C5F928C3 		vmovapd	%xmm3, %xmm0
- 1130 1641 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1130      00
- 1131 1646 BA010000 		movl	$1, %edx
- 1131      00
- 1132 164b BE000000 		movl	$.LC0, %esi
- 1132      00
- 1133 1650 4889C7   		movq	%rax, %rdi
-GAS LISTING /tmp/cc72IM0J.s 			page 37
-
-
- 1134 1653 4989C6   		movq	%rax, %r14
- 1135 1656 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1127 19ee C5FD119C 		vmovupd	%ymm3, 768(%rsp)
+ 1127      24000300 
+ 1127      00
+ 1128 19f7 448B8C5C 		movl	772(%rsp,%rbx,2), %r9d
+ 1128      04030000 
+ 1129 19ff 4585C9   		testl	%r9d, %r9d
+ 1130 1a02 0F85F801 		jne	.L48
+ 1130      0000
+ 1131              	.L29:
+ 1132 1a08 4883C304 		addq	$4, %rbx
+ 1133 1a0c 4883FB10 		cmpq	$16, %rbx
+ 1134 1a10 75D3     		jne	.L23
+ 1135 1a12 C5FD289C 		vmovapd	128(%rsp), %ymm3
+ 1135      24800000 
  1135      00
- 1136 165b C5FB1054 		vmovsd	64(%rsp), %xmm2
- 1136      2440
- 1137 1661 4C89F7   		movq	%r14, %rdi
- 1138 1664 C5F928C2 		vmovapd	%xmm2, %xmm0
- 1139 1668 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1139      00
- 1140 166d 4989C7   		movq	%rax, %r15
- 1141 1670 488B00   		movq	(%rax), %rax
- 1142 1673 488B40E8 		movq	-24(%rax), %rax
- 1143 1677 4D8BB407 		movq	240(%r15,%rax), %r14
- 1143      F0000000 
- 1144 167f 4D85F6   		testq	%r14, %r14
- 1145 1682 0F84A001 		je	.L30
- 1145      0000
- 1146 1688 41807E38 		cmpb	$0, 56(%r14)
- 1146      00
- 1147 168d 0F845D01 		je	.L28
- 1147      0000
- 1148 1693 410FB646 		movzbl	67(%r14), %eax
- 1148      43
- 1149              	.L29:
- 1150 1698 0FBEF0   		movsbl	%al, %esi
- 1151 169b 4C89FF   		movq	%r15, %rdi
- 1152 169e E8000000 		call	_ZNSo3putEc
- 1152      00
- 1153 16a3 4889C7   		movq	%rax, %rdi
- 1154 16a6 E8000000 		call	_ZNSo5flushEv
- 1154      00
- 1155 16ab C5FD288C 		vmovapd	768(%rsp), %ymm1
- 1155      24000300 
- 1155      00
- 1156 16b4 BA050000 		movl	$5, %edx
- 1156      00
- 1157 16b9 BE000000 		movl	$.LC97, %esi
- 1157      00
- 1158 16be BF000000 		movl	$_ZSt4cout, %edi
- 1158      00
- 1159 16c3 C5FD118C 		vmovupd	%ymm1, 192(%rsp)
- 1159      24C00000 
- 1159      00
- 1160 16cc C5FB1094 		vmovsd	216(%rsp), %xmm2
- 1160      24D80000 
- 1160      00
- 1161 16d5 C5FB109C 		vmovsd	208(%rsp), %xmm3
- 1161      24D00000 
+GAS LISTING /tmp/ccsgyXat.s 			page 38
+
+
+ 1136 1a1b C5FD119C 		vmovupd	%ymm3, 512(%rsp)
+ 1136      24000200 
+ 1136      00
+ 1137 1a24 8B84241C 		movl	540(%rsp), %eax
+ 1137      020000
+ 1138 1a2b C5FD119C 		vmovupd	%ymm3, 576(%rsp)
+ 1138      24400200 
+ 1138      00
+ 1139 1a34 8B942454 		movl	596(%rsp), %edx
+ 1139      020000
+ 1140 1a3b C5FD119C 		vmovupd	%ymm3, 640(%rsp)
+ 1140      24800200 
+ 1140      00
+ 1141 1a44 8BBC248C 		movl	652(%rsp), %edi
+ 1141      020000
+ 1142 1a4b 85C0     		testl	%eax, %eax
+ 1143 1a4d C5FD119C 		vmovupd	%ymm3, 704(%rsp)
+ 1143      24C00200 
+ 1143      00
+ 1144 1a56 448B8424 		movl	708(%rsp), %r8d
+ 1144      C4020000 
+ 1145 1a5e 0F95C1   		setne	%cl
+ 1146 1a61 85D2     		testl	%edx, %edx
+ 1147 1a63 400F95C6 		setne	%sil
+ 1148 1a67 85FF     		testl	%edi, %edi
+ 1149 1a69 0FB6C9   		movzbl	%cl, %ecx
+ 1150 1a6c 0F95C0   		setne	%al
+ 1151 1a6f 400FB6F6 		movzbl	%sil, %esi
+ 1152 1a73 31D2     		xorl	%edx, %edx
+ 1153 1a75 4585C0   		testl	%r8d, %r8d
+ 1154 1a78 0FB6C0   		movzbl	%al, %eax
+ 1155 1a7b 0F95C2   		setne	%dl
+ 1156 1a7e F7DE     		negl	%esi
+ 1157 1a80 F7D8     		negl	%eax
+ 1158 1a82 89B42480 		movl	%esi, 128(%rsp)
+ 1158      000000
+ 1159 1a89 F7DA     		negl	%edx
+ 1160 1a8b F7D9     		negl	%ecx
+ 1161 1a8d C5F96E84 		vmovd	128(%rsp), %xmm0
+ 1161      24800000 
  1161      00
- 1162 16de C5FB10A4 		vmovsd	200(%rsp), %xmm4
- 1162      24C80000 
- 1162      00
- 1163 16e7 C5FB1084 		vmovsd	192(%rsp), %xmm0
- 1163      24C00000 
+ 1162 1a96 89942480 		movl	%edx, 128(%rsp)
+ 1162      000000
+ 1163 1a9d C5F96EAC 		vmovd	128(%rsp), %xmm5
+ 1163      24800000 
  1163      00
- 1164 16f0 C5FB1154 		vmovsd	%xmm2, 64(%rsp)
- 1164      2440
-GAS LISTING /tmp/cc72IM0J.s 			page 38
-
-
- 1165 16f6 C5FB115C 		vmovsd	%xmm3, 96(%rsp)
- 1165      2460
- 1166 16fc C5FB11A4 		vmovsd	%xmm4, 144(%rsp)
- 1166      24900000 
- 1166      00
- 1167 1705 C5FB1184 		vmovsd	%xmm0, 160(%rsp)
- 1167      24A00000 
+ 1164 1aa6 C5E55415 		vandpd	.LC97(%rip), %ymm3, %ymm2
+ 1164      00000000 
+ 1165 1aae C4E35122 		vpinsrd	$1, %eax, %xmm5, %xmm1
+ 1165      C801
+ 1166 1ab4 C4E37922 		vpinsrd	$1, %ecx, %xmm0, %xmm0
+ 1166      C101
+ 1167 1aba C5ED5894 		vaddpd	1472(%rsp), %ymm2, %ymm2
+ 1167      24C00500 
  1167      00
- 1168 170e C5F877   		vzeroupper
- 1169 1711 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1168 1ac3 C5F16CC0 		vpunpcklqdq	%xmm0, %xmm1, %xmm0
+ 1169 1ac7 C5FD288C 		vmovapd	1408(%rsp), %ymm1
+GAS LISTING /tmp/ccsgyXat.s 			page 39
+
+
+ 1169      24800500 
  1169      00
- 1170 1716 BA010000 		movl	$1, %edx
- 1170      00
- 1171 171b BE000000 		movl	$.LC0, %esi
+ 1170 1ad0 C5F9DB05 		vpand	.LC96(%rip), %xmm0, %xmm0
+ 1170      00000000 
+ 1171 1ad8 C5FD2994 		vmovapd	%ymm2, 1472(%rsp)
+ 1171      24C00500 
  1171      00
- 1172 1720 BF000000 		movl	$_ZSt4cout, %edi
+ 1172 1ae1 C5F9FE84 		vpaddd	1504(%rsp), %xmm0, %xmm0
+ 1172      24E00500 
  1172      00
- 1173 1725 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1173 1aea C5F97F84 		vmovdqa	%xmm0, 1504(%rsp)
+ 1173      24E00500 
  1173      00
- 1174 172a C5FB1084 		vmovsd	160(%rsp), %xmm0
- 1174      24A00000 
+ 1174 1af3 C5FD2884 		vmovapd	1344(%rsp), %ymm0
+ 1174      24400500 
  1174      00
- 1175 1733 BF000000 		movl	$_ZSt4cout, %edi
- 1175      00
- 1176 1738 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1176      00
- 1177 173d BA010000 		movl	$1, %edx
- 1177      00
- 1178 1742 BE000000 		movl	$.LC0, %esi
- 1178      00
- 1179 1747 4889C7   		movq	%rax, %rdi
- 1180 174a 4989C6   		movq	%rax, %r14
- 1181 174d E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1181      00
- 1182 1752 C5FB10A4 		vmovsd	144(%rsp), %xmm4
- 1182      24900000 
+ 1175              	.L16:
+ 1176 1afc C5FD58D9 		vaddpd	%ymm1, %ymm0, %ymm3
+ 1177 1b00 C5FD282D 		vmovapd	.LC98(%rip), %ymm5
+ 1177      00000000 
+ 1178 1b08 C5EDC2DB 		vcmppd	$2, %ymm3, %ymm2, %ymm3
+ 1178      02
+ 1179 1b0d C5ED5CD0 		vsubpd	%ymm0, %ymm2, %ymm2
+ 1180 1b11 C5D5C2C0 		vcmppd	$2, %ymm0, %ymm5, %ymm0
+ 1180      02
+ 1181 1b16 C4E3754B 		vblendvpd	%ymm3, %ymm2, %ymm1, %ymm1
+ 1181      CA30
+ 1182 1b1c C5FD298C 		vmovapd	%ymm1, 1408(%rsp)
+ 1182      24800500 
  1182      00
- 1183 175b 4C89F7   		movq	%r14, %rdi
- 1184 175e C5F928C4 		vmovapd	%xmm4, %xmm0
- 1185 1762 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1185      00
- 1186 1767 BA010000 		movl	$1, %edx
- 1186      00
- 1187 176c BE000000 		movl	$.LC0, %esi
- 1187      00
- 1188 1771 4889C7   		movq	%rax, %rdi
- 1189 1774 4989C6   		movq	%rax, %r14
- 1190 1777 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1190      00
- 1191 177c C5FB105C 		vmovsd	96(%rsp), %xmm3
- 1191      2460
- 1192 1782 4C89F7   		movq	%r14, %rdi
- 1193 1785 C5F928C3 		vmovapd	%xmm3, %xmm0
- 1194 1789 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1194      00
- 1195 178e BA010000 		movl	$1, %edx
- 1195      00
-GAS LISTING /tmp/cc72IM0J.s 			page 39
-
-
- 1196 1793 BE000000 		movl	$.LC0, %esi
+ 1183 1b25 C4E37D19 		vextractf128	$0x1, %ymm0, %xmm1
+ 1183      C101
+ 1184 1b2b C5F954C1 		vandpd	%xmm1, %xmm0, %xmm0
+ 1185 1b2f C5F950C0 		vmovmskpd	%xmm0, %eax
+ 1186 1b33 83F803   		cmpl	$3, %eax
+ 1187 1b36 0F85C4E5 		jne	.L47
+ 1187      FFFF
+ 1188 1b3c 4983C620 		addq	$32, %r14
+ 1189 1b40 4981FE00 		cmpq	$11520, %r14
+ 1189      2D0000
+ 1190 1b47 0F8544E5 		jne	.L12
+ 1190      FFFF
+ 1191 1b4d C5F877   		vzeroupper
+ 1192 1b50 E8000000 		call	clock
+ 1192      00
+ 1193 1b55 4889C1   		movq	%rax, %rcx
+ 1194 1b58 482B4C24 		subq	48(%rsp), %rcx
+ 1194      30
+ 1195 1b5d 48BBCFF7 		movabsq	$2361183241434822607, %rbx
+ 1195      53E3A59B 
+ 1195      C420
+ 1196 1b67 BE000000 		movl	$.LC103, %esi
  1196      00
- 1197 1798 4889C7   		movq	%rax, %rdi
- 1198 179b 4989C6   		movq	%rax, %r14
- 1199 179e E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
- 1199      00
- 1200 17a3 C5FB1054 		vmovsd	64(%rsp), %xmm2
- 1200      2440
- 1201 17a9 4C89F7   		movq	%r14, %rdi
- 1202 17ac C5F928C2 		vmovapd	%xmm2, %xmm0
- 1203 17b0 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
- 1203      00
- 1204 17b5 4989C7   		movq	%rax, %r15
- 1205 17b8 488B00   		movq	(%rax), %rax
- 1206 17bb 488B40E8 		movq	-24(%rax), %rax
- 1207 17bf 4D8BB407 		movq	240(%r15,%rax), %r14
- 1207      F0000000 
- 1208 17c7 4D85F6   		testq	%r14, %r14
- 1209 17ca 745C     		je	.L30
- 1210 17cc 41807E38 		cmpb	$0, 56(%r14)
- 1210      00
- 1211 17d1 743D     		je	.L31
- 1212 17d3 410FB646 		movzbl	67(%r14), %eax
- 1212      43
- 1213              	.L32:
- 1214 17d8 4C89FF   		movq	%r15, %rdi
- 1215 17db 0FBEF0   		movsbl	%al, %esi
- 1216 17de E8000000 		call	_ZNSo3putEc
- 1216      00
- 1217 17e3 4889C7   		movq	%rax, %rdi
- 1218 17e6 E8000000 		call	_ZNSo5flushEv
- 1218      00
- 1219 17eb E985FCFF 		jmp	.L26
- 1219      FF
- 1220              		.p2align 4,,10
- 1221              		.p2align 3
- 1222              	.L28:
- 1223 17f0 4C89F7   		movq	%r14, %rdi
- 1224 17f3 E8000000 		call	_ZNKSt5ctypeIcE13_M_widen_initEv
- 1224      00
- 1225 17f8 498B06   		movq	(%r14), %rax
- 1226 17fb BE0A0000 		movl	$10, %esi
- 1226      00
- 1227 1800 4C89F7   		movq	%r14, %rdi
- 1228 1803 FF5030   		call	*48(%rax)
- 1229 1806 E98DFEFF 		jmp	.L29
- 1229      FF
- 1230 180b 0F1F4400 		.p2align 4,,10
- 1230      00
- 1231              		.p2align 3
- 1232              	.L31:
- 1233 1810 4C89F7   		movq	%r14, %rdi
- 1234 1813 E8000000 		call	_ZNKSt5ctypeIcE13_M_widen_initEv
- 1234      00
- 1235 1818 498B06   		movq	(%r14), %rax
- 1236 181b BE0A0000 		movl	$10, %esi
- 1236      00
-GAS LISTING /tmp/cc72IM0J.s 			page 40
+ 1197 1b6c BF000000 		movl	$_ZSt4cout, %edi
+ 1197      00
+ 1198 1b71 4889C8   		movq	%rcx, %rax
+ 1199 1b74 48C1F93F 		sarq	$63, %rcx
+GAS LISTING /tmp/ccsgyXat.s 			page 40
 
 
- 1237 1820 4C89F7   		movq	%r14, %rdi
- 1238 1823 FF5030   		call	*48(%rax)
- 1239 1826 EBB0     		jmp	.L32
- 1240              	.L30:
- 1241 1828 E8000000 		call	_ZSt16__throw_bad_castv
- 1241      00
- 1242              		.cfi_endproc
- 1243              	.LFE4733:
- 1244              		.size	main, .-main
- 1245 182d 0F1F00   		.p2align 4,,15
- 1246              		.type	_GLOBAL__sub_I__Z11printVectorPKc5Vec4d, @function
- 1247              	_GLOBAL__sub_I__Z11printVectorPKc5Vec4d:
- 1248              	.LFB5042:
- 1249              		.cfi_startproc
- 1250 1830 4883EC08 		subq	$8, %rsp
- 1251              		.cfi_def_cfa_offset 16
- 1252 1834 BF000000 		movl	$_ZStL8__ioinit, %edi
- 1252      00
- 1253 1839 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+ 1200 1b78 48F7EB   		imulq	%rbx
+ 1201 1b7b 4889D3   		movq	%rdx, %rbx
+ 1202 1b7e 48C1FB07 		sarq	$7, %rbx
+ 1203 1b82 4829CB   		subq	%rcx, %rbx
+ 1204              	.LEHB1:
+ 1205 1b85 E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 1205      00
+ 1206 1b8a 4889DE   		movq	%rbx, %rsi
+ 1207 1b8d 4889C7   		movq	%rax, %rdi
+ 1208 1b90 E8000000 		call	_ZNSo9_M_insertIlEERSoT_
+ 1208      00
+ 1209 1b95 BE000000 		movl	$.LC104, %esi
+ 1209      00
+ 1210 1b9a 4889C7   		movq	%rax, %rdi
+ 1211 1b9d E8000000 		call	_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 1211      00
+ 1212 1ba2 4889C7   		movq	%rax, %rdi
+ 1213 1ba5 E8000000 		call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+ 1213      00
+ 1214 1baa 488DBC24 		leaq	1552(%rsp), %rdi
+ 1214      10060000 
+ 1215 1bb2 E8000000 		call	_ZNSo5flushEv
+ 1215      00
+ 1216 1bb7 488DBC24 		leaq	1552(%rsp), %rdi
+ 1216      10060000 
+ 1217 1bbf E8000000 		call	_ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
+ 1217      00
+ 1218 1bc4 488DBC24 		leaq	1552(%rsp), %rdi
+ 1218      10060000 
+ 1219 1bcc E8000000 		call	_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+ 1219      00
+ 1220 1bd1 31C0     		xorl	%eax, %eax
+ 1221 1bd3 488B8C24 		movq	2072(%rsp), %rcx
+ 1221      18080000 
+ 1222 1bdb 6448330C 		xorq	%fs:40, %rcx
+ 1222      25280000 
+ 1222      00
+ 1223 1be4 0F85D701 		jne	.L49
+ 1223      0000
+ 1224 1bea 488D65D8 		leaq	-40(%rbp), %rsp
+ 1225 1bee 5B       		popq	%rbx
+ 1226 1bef 415C     		popq	%r12
+ 1227 1bf1 415D     		popq	%r13
+ 1228 1bf3 415E     		popq	%r14
+ 1229 1bf5 415F     		popq	%r15
+ 1230 1bf7 5D       		popq	%rbp
+ 1231              		.cfi_remember_state
+ 1232              		.cfi_def_cfa 7, 8
+ 1233 1bf8 C3       		ret
+ 1234 1bf9 0F1F8000 		.p2align 4,,10
+ 1234      000000
+ 1235              		.p2align 3
+ 1236              	.L48:
+ 1237              		.cfi_restore_state
+ 1238 1c00 C5F96F84 		vmovdqa	1504(%rsp), %xmm0
+ 1238      24E00500 
+ 1238      00
+GAS LISTING /tmp/ccsgyXat.s 			page 41
+
+
+ 1239 1c09 C5FA7F84 		vmovdqu	%xmm0, 160(%rsp)
+ 1239      24A00000 
+ 1239      00
+ 1240 1c12 83BC1CA0 		cmpl	$31, 160(%rsp,%rbx)
+ 1240      0000001F 
+ 1241 1c1a 0F8FE8FD 		jg	.L29
+ 1241      FFFF
+ 1242 1c20 C5FD2884 		vmovapd	1344(%rsp), %ymm0
+ 1242      24400500 
+ 1242      00
+ 1243 1c29 488DBC24 		leaq	1552(%rsp), %rdi
+ 1243      10060000 
+ 1244 1c31 C5FD1184 		vmovupd	%ymm0, 384(%rsp)
+ 1244      24800100 
+ 1244      00
+ 1245 1c3a C5FB1084 		vmovsd	384(%rsp,%rbx,2), %xmm0
+ 1245      5C800100 
+ 1245      00
+ 1246 1c43 C5FB5E05 		vdivsd	.LC93(%rip), %xmm0, %xmm0
+ 1246      00000000 
+ 1247 1c4b C5FB5C05 		vsubsd	.LC94(%rip), %xmm0, %xmm0
+ 1247      00000000 
+ 1248 1c53 C5FB1144 		vmovsd	%xmm0, 112(%rsp)
+ 1248      2470
+ 1249 1c59 C5FD2884 		vmovapd	1312(%rsp), %ymm0
+ 1249      24200500 
+ 1249      00
+ 1250 1c62 C5FD1184 		vmovupd	%ymm0, 416(%rsp)
+ 1250      24A00100 
+ 1250      00
+ 1251 1c6b C5FB1084 		vmovsd	416(%rsp,%rbx,2), %xmm0
+ 1251      5CA00100 
+ 1251      00
+ 1252 1c74 C5FB1144 		vmovsd	%xmm0, 96(%rsp)
+ 1252      2460
+ 1253 1c7a C5FD2884 		vmovapd	1280(%rsp), %ymm0
+ 1253      24000500 
  1253      00
- 1254 183e BA000000 		movl	$__dso_handle, %edx
+ 1254 1c83 C5FD1184 		vmovupd	%ymm0, 448(%rsp)
+ 1254      24C00100 
  1254      00
- 1255 1843 BE000000 		movl	$_ZStL8__ioinit, %esi
+ 1255 1c8c C5FB1084 		vmovsd	448(%rsp,%rbx,2), %xmm0
+ 1255      5CC00100 
  1255      00
- 1256 1848 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
- 1256      00
- 1257 184d 4883C408 		addq	$8, %rsp
- 1258              		.cfi_def_cfa_offset 8
- 1259 1851 E9000000 		jmp	__cxa_atexit
+ 1256 1c95 C5FB1144 		vmovsd	%xmm0, 56(%rsp)
+ 1256      2438
+ 1257 1c9b C5FD2884 		vmovapd	1440(%rsp), %ymm0
+ 1257      24A00500 
+ 1257      00
+ 1258 1ca4 C5FD1184 		vmovupd	%ymm0, 480(%rsp)
+ 1258      24E00100 
+ 1258      00
+ 1259 1cad C5FB1084 		vmovsd	480(%rsp,%rbx,2), %xmm0
+ 1259      5CE00100 
  1259      00
- 1260              		.cfi_endproc
- 1261              	.LFE5042:
- 1262              		.size	_GLOBAL__sub_I__Z11printVectorPKc5Vec4d, .-_GLOBAL__sub_I__Z11printVectorPKc5Vec4d
- 1263              		.section	.init_array,"aw"
- 1264              		.align 8
- 1265 0000 00000000 		.quad	_GLOBAL__sub_I__Z11printVectorPKc5Vec4d
- 1265      00000000 
- 1266              		.section	.rodata
- 1267              		.align 32
- 1268              		.type	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8
- 1269              		.size	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8
- 1270              	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8_fvE1u:
- 1271 0000 00000000 		.long	0
- 1272 0004 00000080 		.long	-2147483648
- 1273 0008 00000000 		.long	0
- 1274 000c 00000080 		.long	-2147483648
- 1275 0010 00000000 		.long	0
- 1276 0014 00000080 		.long	-2147483648
- 1277 0018 00000000 		.long	0
- 1278 001c 00000080 		.long	-2147483648
- 1279              		.align 32
- 1280              		.type	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8
- 1281              		.size	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8
- 1282              	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8_fvE1u:
- 1283 0020 FFFFFFFF 		.long	-1
- 1284 0024 FFFFFF7F 		.long	2147483647
- 1285 0028 FFFFFFFF 		.long	-1
-GAS LISTING /tmp/cc72IM0J.s 			page 41
+ 1260 1cb6 C5F877   		vzeroupper
+ 1261 1cb9 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
+GAS LISTING /tmp/ccsgyXat.s 			page 42
 
 
- 1286 002c FFFFFF7F 		.long	2147483647
- 1287 0030 FFFFFFFF 		.long	-1
- 1288 0034 FFFFFF7F 		.long	2147483647
- 1289 0038 FFFFFFFF 		.long	-1
- 1290 003c FFFFFF7F 		.long	2147483647
- 1291              		.local	_ZStL8__ioinit
- 1292              		.comm	_ZStL8__ioinit,1,1
- 1293              		.section	.rodata.cst8,"aM",@progbits,8
- 1294              		.align 8
- 1295              	.LC1:
- 1296 0000 33333333 		.long	858993459
- 1297 0004 3333D33F 		.long	1070805811
- 1298              		.align 8
- 1299              	.LC2:
- 1300 0008 9A999999 		.long	2576980378
- 1301 000c 9999C93F 		.long	1070176665
- 1302              		.section	.rodata.cst32,"aM",@progbits,32
- 1303              		.align 32
- 1304              	.LC3:
- 1305 0000 83C8C96D 		.long	1841940611
- 1306 0004 305FE43F 		.long	1071931184
- 1307 0008 83C8C96D 		.long	1841940611
- 1308 000c 305FE43F 		.long	1071931184
- 1309 0010 83C8C96D 		.long	1841940611
- 1310 0014 305FE43F 		.long	1071931184
- 1311 0018 83C8C96D 		.long	1841940611
- 1312 001c 305FE43F 		.long	1071931184
- 1313              		.align 32
- 1314              	.LC4:
- 1315 0020 00000050 		.long	1342177280
- 1316 0024 FB21F93F 		.long	1073291771
- 1317 0028 00000050 		.long	1342177280
- 1318 002c FB21F93F 		.long	1073291771
- 1319 0030 00000050 		.long	1342177280
- 1320 0034 FB21F93F 		.long	1073291771
- 1321 0038 00000050 		.long	1342177280
- 1322 003c FB21F93F 		.long	1073291771
- 1323              		.align 32
- 1324              	.LC5:
- 1325 0040 00000060 		.long	1610612736
- 1326 0044 B410513E 		.long	1045500084
- 1327 0048 00000060 		.long	1610612736
- 1328 004c B410513E 		.long	1045500084
- 1329 0050 00000060 		.long	1610612736
- 1330 0054 B410513E 		.long	1045500084
- 1331 0058 00000060 		.long	1610612736
- 1332 005c B410513E 		.long	1045500084
- 1333              		.align 32
- 1334              	.LC6:
- 1335 0060 075C1433 		.long	856972295
- 1336 0064 26A6913C 		.long	1016178214
- 1337 0068 075C1433 		.long	856972295
- 1338 006c 26A6913C 		.long	1016178214
- 1339 0070 075C1433 		.long	856972295
- 1340 0074 26A6913C 		.long	1016178214
- 1341 0078 075C1433 		.long	856972295
- 1342 007c 26A6913C 		.long	1016178214
-GAS LISTING /tmp/cc72IM0J.s 			page 42
+ 1261      00
+ 1262 1cbe BA010000 		movl	$1, %edx
+ 1262      00
+ 1263 1cc3 BE000000 		movl	$.LC95, %esi
+ 1263      00
+ 1264 1cc8 4889C7   		movq	%rax, %rdi
+ 1265 1ccb 4989C4   		movq	%rax, %r12
+ 1266 1cce E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1266      00
+ 1267 1cd3 C5FB1044 		vmovsd	56(%rsp), %xmm0
+ 1267      2438
+ 1268 1cd9 4C89E7   		movq	%r12, %rdi
+ 1269 1cdc E8000000 		call	_ZNSo9_M_insertIdEERSoT_
+ 1269      00
+ 1270 1ce1 BA010000 		movl	$1, %edx
+ 1270      00
+ 1271 1ce6 BE000000 		movl	$.LC95, %esi
+ 1271      00
+ 1272 1ceb 4889C7   		movq	%rax, %rdi
+ 1273 1cee 4989C4   		movq	%rax, %r12
+ 1274 1cf1 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1274      00
+ 1275 1cf6 C5FB1044 		vmovsd	96(%rsp), %xmm0
+ 1275      2460
+ 1276 1cfc 4C89E7   		movq	%r12, %rdi
+ 1277 1cff E8000000 		call	_ZNSo9_M_insertIdEERSoT_
+ 1277      00
+ 1278 1d04 BA010000 		movl	$1, %edx
+ 1278      00
+ 1279 1d09 BE000000 		movl	$.LC95, %esi
+ 1279      00
+ 1280 1d0e 4889C7   		movq	%rax, %rdi
+ 1281 1d11 4989C4   		movq	%rax, %r12
+ 1282 1d14 E8000000 		call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+ 1282      00
+ 1283 1d19 C5FB1044 		vmovsd	112(%rsp), %xmm0
+ 1283      2470
+ 1284 1d1f 4C89E7   		movq	%r12, %rdi
+ 1285 1d22 E8000000 		call	_ZNSo9_M_insertIdEERSoT_
+ 1285      00
+ 1286 1d27 4989C5   		movq	%rax, %r13
+ 1287 1d2a 488B00   		movq	(%rax), %rax
+ 1288 1d2d 488B40E8 		movq	-24(%rax), %rax
+ 1289 1d31 4D8BA405 		movq	240(%r13,%rax), %r12
+ 1289      F0000000 
+ 1290 1d39 4D85E4   		testq	%r12, %r12
+ 1291 1d3c 7463     		je	.L50
+ 1292 1d3e 41807C24 		cmpb	$0, 56(%r12)
+ 1292      3800
+ 1293 1d44 7432     		je	.L20
+ 1294 1d46 410FB644 		movzbl	67(%r12), %eax
+ 1294      2443
+ 1295              	.L21:
+ 1296 1d4c 0FBEF0   		movsbl	%al, %esi
+ 1297 1d4f 4C89EF   		movq	%r13, %rdi
+ 1298 1d52 E8000000 		call	_ZNSo3putEc
+ 1298      00
+GAS LISTING /tmp/ccsgyXat.s 			page 43
 
 
- 1343              		.align 32
- 1344              	.LC7:
- 1345 0080 D0F71011 		.long	286324688
- 1346 0084 1111813F 		.long	1065423121
- 1347 0088 D0F71011 		.long	286324688
- 1348 008c 1111813F 		.long	1065423121
- 1349 0090 D0F71011 		.long	286324688
- 1350 0094 1111813F 		.long	1065423121
- 1351 0098 D0F71011 		.long	286324688
- 1352 009c 1111813F 		.long	1065423121
- 1353              		.align 32
- 1354              	.LC8:
- 1355 00a0 48555555 		.long	1431655752
- 1356 00a4 5555C5BF 		.long	-1077586603
- 1357 00a8 48555555 		.long	1431655752
- 1358 00ac 5555C5BF 		.long	-1077586603
- 1359 00b0 48555555 		.long	1431655752
- 1360 00b4 5555C5BF 		.long	-1077586603
- 1361 00b8 48555555 		.long	1431655752
- 1362 00bc 5555C5BF 		.long	-1077586603
- 1363              		.align 32
- 1364              	.LC9:
- 1365 00c0 CD9CD11F 		.long	533830861
- 1366 00c4 FDD8E53D 		.long	1038473469
- 1367 00c8 CD9CD11F 		.long	533830861
- 1368 00cc FDD8E53D 		.long	1038473469
- 1369 00d0 CD9CD11F 		.long	533830861
- 1370 00d4 FDD8E53D 		.long	1038473469
- 1371 00d8 CD9CD11F 		.long	533830861
- 1372 00dc FDD8E53D 		.long	1038473469
- 1373              		.align 32
- 1374              	.LC10:
- 1375 00e0 5D1F29A9 		.long	2838044509
- 1376 00e4 E5E55ABE 		.long	-1101339163
- 1377 00e8 5D1F29A9 		.long	2838044509
- 1378 00ec E5E55ABE 		.long	-1101339163
- 1379 00f0 5D1F29A9 		.long	2838044509
- 1380 00f4 E5E55ABE 		.long	-1101339163
- 1381 00f8 5D1F29A9 		.long	2838044509
- 1382 00fc E5E55ABE 		.long	-1101339163
- 1383              		.align 32
- 1384              	.LC11:
- 1385 0100 A1487D56 		.long	1451051169
- 1386 0104 E31DC73E 		.long	1053236707
- 1387 0108 A1487D56 		.long	1451051169
- 1388 010c E31DC73E 		.long	1053236707
- 1389 0110 A1487D56 		.long	1451051169
- 1390 0114 E31DC73E 		.long	1053236707
- 1391 0118 A1487D56 		.long	1451051169
- 1392 011c E31DC73E 		.long	1053236707
- 1393              		.align 32
- 1394              	.LC12:
- 1395 0120 03DFBF19 		.long	432004867
- 1396 0124 A0012ABF 		.long	-1087766112
- 1397 0128 03DFBF19 		.long	432004867
- 1398 012c A0012ABF 		.long	-1087766112
- 1399 0130 03DFBF19 		.long	432004867
-GAS LISTING /tmp/cc72IM0J.s 			page 43
+ 1299 1d57 4889C7   		movq	%rax, %rdi
+ 1300 1d5a E8000000 		call	_ZNSo5flushEv
+ 1300      00
+ 1301 1d5f E9A4FCFF 		jmp	.L29
+ 1301      FF
+ 1302              		.p2align 4,,10
+ 1303 1d64 0F1F4000 		.p2align 3
+ 1304              	.L34:
+ 1305 1d68 C5FD28C3 		vmovapd	%ymm3, %ymm0
+ 1306 1d6c E98BFDFF 		jmp	.L16
+ 1306      FF
+ 1307              		.p2align 4,,10
+ 1308 1d71 0F1F8000 		.p2align 3
+ 1308      000000
+ 1309              	.L20:
+ 1310 1d78 4C89E7   		movq	%r12, %rdi
+ 1311 1d7b E8000000 		call	_ZNKSt5ctypeIcE13_M_widen_initEv
+ 1311      00
+ 1312 1d80 498B0424 		movq	(%r12), %rax
+ 1313 1d84 BE0A0000 		movl	$10, %esi
+ 1313      00
+ 1314 1d89 4C89E7   		movq	%r12, %rdi
+ 1315 1d8c FF5030   		call	*48(%rax)
+ 1316 1d8f EBBB     		jmp	.L21
+ 1317              		.p2align 4,,10
+ 1318 1d91 0F1F8000 		.p2align 3
+ 1318      000000
+ 1319              	.L33:
+ 1320 1d98 C5FD28D6 		vmovapd	%ymm6, %ymm2
+ 1321 1d9c E937FBFF 		jmp	.L15
+ 1321      FF
+ 1322              	.L50:
+ 1323              		.p2align 4,,7
+ 1324 1da1 E8000000 		call	_ZSt16__throw_bad_castv
+ 1324      00
+ 1325              	.LEHE1:
+ 1326              	.L37:
+ 1327              	.L36:
+ 1328 1da6 488DBC24 		leaq	1552(%rsp), %rdi
+ 1328      10060000 
+ 1329 1dae 4889C3   		movq	%rax, %rbx
+ 1330 1db1 C5F877   		vzeroupper
+ 1331 1db4 E8000000 		call	_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+ 1331      00
+ 1332 1db9 4889DF   		movq	%rbx, %rdi
+ 1333              	.LEHB2:
+ 1334 1dbc E8000000 		call	_Unwind_Resume
+ 1334      00
+ 1335              	.LEHE2:
+ 1336              	.L49:
+ 1337 1dc1 E8000000 		call	__stack_chk_fail
+ 1337      00
+ 1338              		.cfi_endproc
+ 1339              	.LFE4614:
+ 1340              		.globl	__gxx_personality_v0
+ 1341              		.section	.gcc_except_table,"a",@progbits
+ 1342              	.LLSDA4614:
+GAS LISTING /tmp/ccsgyXat.s 			page 44
 
 
- 1400 0134 A0012ABF 		.long	-1087766112
- 1401 0138 03DFBF19 		.long	432004867
- 1402 013c A0012ABF 		.long	-1087766112
- 1403              		.align 32
- 1404              	.LC13:
- 1405 0140 914FC116 		.long	381767569
- 1406 0144 6CC156BF 		.long	-1084833428
- 1407 0148 914FC116 		.long	381767569
- 1408 014c 6CC156BF 		.long	-1084833428
- 1409 0150 914FC116 		.long	381767569
- 1410 0154 6CC156BF 		.long	-1084833428
- 1411 0158 914FC116 		.long	381767569
- 1412 015c 6CC156BF 		.long	-1084833428
- 1413              		.align 32
- 1414              	.LC14:
- 1415 0160 4B555555 		.long	1431655755
- 1416 0164 5555A53F 		.long	1067799893
- 1417 0168 4B555555 		.long	1431655755
- 1418 016c 5555A53F 		.long	1067799893
- 1419 0170 4B555555 		.long	1431655755
- 1420 0174 5555A53F 		.long	1067799893
- 1421 0178 4B555555 		.long	1431655755
- 1422 017c 5555A53F 		.long	1067799893
- 1423              		.align 32
- 1424              	.LC15:
- 1425 0180 9B1A86A0 		.long	2693143195
- 1426 0184 49FAA8BD 		.long	-1112999351
- 1427 0188 9B1A86A0 		.long	2693143195
- 1428 018c 49FAA8BD 		.long	-1112999351
- 1429 0190 9B1A86A0 		.long	2693143195
- 1430 0194 49FAA8BD 		.long	-1112999351
- 1431 0198 9B1A86A0 		.long	2693143195
- 1432 019c 49FAA8BD 		.long	-1112999351
- 1433              		.align 32
- 1434              	.LC16:
- 1435 01a0 053F4E7B 		.long	2068725509
- 1436 01a4 9DEE213E 		.long	1042411165
- 1437 01a8 053F4E7B 		.long	2068725509
- 1438 01ac 9DEE213E 		.long	1042411165
- 1439 01b0 053F4E7B 		.long	2068725509
- 1440 01b4 9DEE213E 		.long	1042411165
- 1441 01b8 053F4E7B 		.long	2068725509
- 1442 01bc 9DEE213E 		.long	1042411165
- 1443              		.align 32
- 1444              	.LC17:
- 1445 01c0 C64BAC7E 		.long	2125220806
- 1446 01c4 4F7E92BE 		.long	-1097695665
- 1447 01c8 C64BAC7E 		.long	2125220806
- 1448 01cc 4F7E92BE 		.long	-1097695665
- 1449 01d0 C64BAC7E 		.long	2125220806
- 1450 01d4 4F7E92BE 		.long	-1097695665
- 1451 01d8 C64BAC7E 		.long	2125220806
- 1452 01dc 4F7E92BE 		.long	-1097695665
- 1453              		.align 32
- 1454              	.LC18:
- 1455 01e0 F544C819 		.long	432555253
- 1456 01e4 A001FA3E 		.long	1056571808
-GAS LISTING /tmp/cc72IM0J.s 			page 44
+ 1343 0000 FF       		.byte	0xff
+ 1344 0001 FF       		.byte	0xff
+ 1345 0002 01       		.byte	0x1
+ 1346 0003 10       		.uleb128 .LLSDACSE4614-.LLSDACSB4614
+ 1347              	.LLSDACSB4614:
+ 1348 0004 5D       		.uleb128 .LEHB0-.LFB4614
+ 1349 0005 05       		.uleb128 .LEHE0-.LEHB0
+ 1350 0006 00       		.uleb128 0
+ 1351 0007 00       		.uleb128 0
+ 1352 0008 8537     		.uleb128 .LEHB1-.LFB4614
+ 1353 000a A104     		.uleb128 .LEHE1-.LEHB1
+ 1354 000c A63B     		.uleb128 .L36-.LFB4614
+ 1355 000e 00       		.uleb128 0
+ 1356 000f BC3B     		.uleb128 .LEHB2-.LFB4614
+ 1357 0011 05       		.uleb128 .LEHE2-.LEHB2
+ 1358 0012 00       		.uleb128 0
+ 1359 0013 00       		.uleb128 0
+ 1360              	.LLSDACSE4614:
+ 1361              		.section	.text.startup
+ 1362              		.size	main, .-main
+ 1363 1dc6 662E0F1F 		.p2align 4,,15
+ 1363      84000000 
+ 1363      0000
+ 1364              		.type	_GLOBAL__sub_I_main, @function
+ 1365              	_GLOBAL__sub_I_main:
+ 1366              	.LFB4954:
+ 1367              		.cfi_startproc
+ 1368 1dd0 4883EC08 		subq	$8, %rsp
+ 1369              		.cfi_def_cfa_offset 16
+ 1370 1dd4 BF000000 		movl	$_ZStL8__ioinit, %edi
+ 1370      00
+ 1371 1dd9 E8000000 		call	_ZNSt8ios_base4InitC1Ev
+ 1371      00
+ 1372 1dde BA000000 		movl	$__dso_handle, %edx
+ 1372      00
+ 1373 1de3 BE000000 		movl	$_ZStL8__ioinit, %esi
+ 1373      00
+ 1374 1de8 BF000000 		movl	$_ZNSt8ios_base4InitD1Ev, %edi
+ 1374      00
+ 1375 1ded 4883C408 		addq	$8, %rsp
+ 1376              		.cfi_def_cfa_offset 8
+ 1377 1df1 E9000000 		jmp	__cxa_atexit
+ 1377      00
+ 1378              		.cfi_endproc
+ 1379              	.LFE4954:
+ 1380              		.size	_GLOBAL__sub_I_main, .-_GLOBAL__sub_I_main
+ 1381              		.section	.init_array,"aw"
+ 1382              		.align 8
+ 1383 0000 00000000 		.quad	_GLOBAL__sub_I_main
+ 1383      00000000 
+ 1384              		.section	.rodata
+ 1385              		.align 32
+ 1386              		.type	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8
+ 1387              		.size	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8
+ 1388              	_ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8_fvE1u:
+ 1389 0000 00000000 		.long	0
+ 1390 0004 00000080 		.long	-2147483648
+GAS LISTING /tmp/ccsgyXat.s 			page 45
 
 
- 1457 01e8 F544C819 		.long	432555253
- 1458 01ec A001FA3E 		.long	1056571808
- 1459 01f0 F544C819 		.long	432555253
- 1460 01f4 A001FA3E 		.long	1056571808
- 1461 01f8 F544C819 		.long	432555253
- 1462 01fc A001FA3E 		.long	1056571808
- 1463              		.align 32
- 1464              	.LC19:
- 1465 0200 00000000 		.long	0
- 1466 0204 0000E03F 		.long	1071644672
- 1467 0208 00000000 		.long	0
- 1468 020c 0000E03F 		.long	1071644672
- 1469 0210 00000000 		.long	0
- 1470 0214 0000E03F 		.long	1071644672
- 1471 0218 00000000 		.long	0
- 1472 021c 0000E03F 		.long	1071644672
- 1473              		.align 32
- 1474              	.LC20:
- 1475 0220 00000000 		.long	0
- 1476 0224 0000F03F 		.long	1072693248
- 1477 0228 00000000 		.long	0
- 1478 022c 0000F03F 		.long	1072693248
- 1479 0230 00000000 		.long	0
- 1480 0234 0000F03F 		.long	1072693248
- 1481 0238 00000000 		.long	0
- 1482 023c 0000F03F 		.long	1072693248
- 1483              		.section	.rodata.cst16,"aM",@progbits,16
- 1484              		.align 16
- 1485              	.LC21:
- 1486 0000 01000000 		.quad	1
- 1486      00000000 
- 1487 0008 01000000 		.quad	1
- 1487      00000000 
- 1488              		.align 16
- 1489              	.LC22:
- 1490 0010 00000000 		.quad	36028797018963968
- 1490      00008000 
- 1491 0018 00000000 		.quad	36028797018963968
- 1491      00008000 
- 1492              		.align 16
- 1493              	.LC23:
- 1494 0020 00000000 		.quad	-9007199254740992
- 1494      0000E0FF 
- 1495 0028 00000000 		.quad	-9007199254740992
- 1495      0000E0FF 
- 1496              		.align 16
- 1497              	.LC24:
- 1498 0030 02000000 		.quad	2
- 1498      00000000 
- 1499 0038 02000000 		.quad	2
- 1499      00000000 
- 1500              		.section	.rodata.cst32
+ 1391 0008 00000000 		.long	0
+ 1392 000c 00000080 		.long	-2147483648
+ 1393 0010 00000000 		.long	0
+ 1394 0014 00000080 		.long	-2147483648
+ 1395 0018 00000000 		.long	0
+ 1396 001c 00000080 		.long	-2147483648
+ 1397              		.align 32
+ 1398              		.type	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8
+ 1399              		.size	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8
+ 1400              	_ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8_fvE1u:
+ 1401 0020 FFFFFFFF 		.long	-1
+ 1402 0024 FFFFFF7F 		.long	2147483647
+ 1403 0028 FFFFFFFF 		.long	-1
+ 1404 002c FFFFFF7F 		.long	2147483647
+ 1405 0030 FFFFFFFF 		.long	-1
+ 1406 0034 FFFFFF7F 		.long	2147483647
+ 1407 0038 FFFFFFFF 		.long	-1
+ 1408 003c FFFFFF7F 		.long	2147483647
+ 1409              		.local	_ZStL8__ioinit
+ 1410              		.comm	_ZStL8__ioinit,1,1
+ 1411              		.section	.rodata.cst8,"aM",@progbits,8
+ 1412              		.align 8
+ 1413              	.LC0:
+ 1414 0000 33333333 		.long	858993459
+ 1415 0004 3333D33F 		.long	1070805811
+ 1416              		.align 8
+ 1417              	.LC1:
+ 1418 0008 9A999999 		.long	2576980378
+ 1419 000c 9999C93F 		.long	1070176665
+ 1420              		.section	.rodata.cst32,"aM",@progbits,32
+ 1421              		.align 32
+ 1422              	.LC3:
+ 1423 0000 83C8C96D 		.long	1841940611
+ 1424 0004 305FE43F 		.long	1071931184
+ 1425 0008 83C8C96D 		.long	1841940611
+ 1426 000c 305FE43F 		.long	1071931184
+ 1427 0010 83C8C96D 		.long	1841940611
+ 1428 0014 305FE43F 		.long	1071931184
+ 1429 0018 83C8C96D 		.long	1841940611
+ 1430 001c 305FE43F 		.long	1071931184
+ 1431              		.align 32
+ 1432              	.LC4:
+ 1433 0020 00000050 		.long	1342177280
+ 1434 0024 FB21F93F 		.long	1073291771
+ 1435 0028 00000050 		.long	1342177280
+ 1436 002c FB21F93F 		.long	1073291771
+ 1437 0030 00000050 		.long	1342177280
+ 1438 0034 FB21F93F 		.long	1073291771
+ 1439 0038 00000050 		.long	1342177280
+ 1440 003c FB21F93F 		.long	1073291771
+ 1441              		.align 32
+ 1442              	.LC5:
+ 1443 0040 00000060 		.long	1610612736
+ 1444 0044 B410513E 		.long	1045500084
+ 1445 0048 00000060 		.long	1610612736
+ 1446 004c B410513E 		.long	1045500084
+ 1447 0050 00000060 		.long	1610612736
+GAS LISTING /tmp/ccsgyXat.s 			page 46
+
+
+ 1448 0054 B410513E 		.long	1045500084
+ 1449 0058 00000060 		.long	1610612736
+ 1450 005c B410513E 		.long	1045500084
+ 1451              		.align 32
+ 1452              	.LC6:
+ 1453 0060 075C1433 		.long	856972295
+ 1454 0064 26A6913C 		.long	1016178214
+ 1455 0068 075C1433 		.long	856972295
+ 1456 006c 26A6913C 		.long	1016178214
+ 1457 0070 075C1433 		.long	856972295
+ 1458 0074 26A6913C 		.long	1016178214
+ 1459 0078 075C1433 		.long	856972295
+ 1460 007c 26A6913C 		.long	1016178214
+ 1461              		.align 32
+ 1462              	.LC7:
+ 1463 0080 D0F71011 		.long	286324688
+ 1464 0084 1111813F 		.long	1065423121
+ 1465 0088 D0F71011 		.long	286324688
+ 1466 008c 1111813F 		.long	1065423121
+ 1467 0090 D0F71011 		.long	286324688
+ 1468 0094 1111813F 		.long	1065423121
+ 1469 0098 D0F71011 		.long	286324688
+ 1470 009c 1111813F 		.long	1065423121
+ 1471              		.align 32
+ 1472              	.LC8:
+ 1473 00a0 48555555 		.long	1431655752
+ 1474 00a4 5555C5BF 		.long	-1077586603
+ 1475 00a8 48555555 		.long	1431655752
+ 1476 00ac 5555C5BF 		.long	-1077586603
+ 1477 00b0 48555555 		.long	1431655752
+ 1478 00b4 5555C5BF 		.long	-1077586603
+ 1479 00b8 48555555 		.long	1431655752
+ 1480 00bc 5555C5BF 		.long	-1077586603
+ 1481              		.align 32
+ 1482              	.LC9:
+ 1483 00c0 CD9CD11F 		.long	533830861
+ 1484 00c4 FDD8E53D 		.long	1038473469
+ 1485 00c8 CD9CD11F 		.long	533830861
+ 1486 00cc FDD8E53D 		.long	1038473469
+ 1487 00d0 CD9CD11F 		.long	533830861
+ 1488 00d4 FDD8E53D 		.long	1038473469
+ 1489 00d8 CD9CD11F 		.long	533830861
+ 1490 00dc FDD8E53D 		.long	1038473469
+ 1491              		.align 32
+ 1492              	.LC10:
+ 1493 00e0 5D1F29A9 		.long	2838044509
+ 1494 00e4 E5E55ABE 		.long	-1101339163
+ 1495 00e8 5D1F29A9 		.long	2838044509
+ 1496 00ec E5E55ABE 		.long	-1101339163
+ 1497 00f0 5D1F29A9 		.long	2838044509
+ 1498 00f4 E5E55ABE 		.long	-1101339163
+ 1499 00f8 5D1F29A9 		.long	2838044509
+ 1500 00fc E5E55ABE 		.long	-1101339163
  1501              		.align 32
- 1502              	.LC25:
- 1503 0240 33333333 		.long	858993459
- 1504 0244 3333D33F 		.long	1070805811
- 1505 0248 33333333 		.long	858993459
-GAS LISTING /tmp/cc72IM0J.s 			page 45
+ 1502              	.LC11:
+ 1503 0100 A1487D56 		.long	1451051169
+ 1504 0104 E31DC73E 		.long	1053236707
+GAS LISTING /tmp/ccsgyXat.s 			page 47
 
 
- 1506 024c 3333D33F 		.long	1070805811
- 1507 0250 33333333 		.long	858993459
- 1508 0254 3333D33F 		.long	1070805811
- 1509 0258 33333333 		.long	858993459
- 1510 025c 3333D33F 		.long	1070805811
+ 1505 0108 A1487D56 		.long	1451051169
+ 1506 010c E31DC73E 		.long	1053236707
+ 1507 0110 A1487D56 		.long	1451051169
+ 1508 0114 E31DC73E 		.long	1053236707
+ 1509 0118 A1487D56 		.long	1451051169
+ 1510 011c E31DC73E 		.long	1053236707
  1511              		.align 32
- 1512              	.LC26:
- 1513 0260 9A999999 		.long	2576980378
- 1514 0264 9999C93F 		.long	1070176665
- 1515 0268 9A999999 		.long	2576980378
- 1516 026c 9999C93F 		.long	1070176665
- 1517 0270 9A999999 		.long	2576980378
- 1518 0274 9999C93F 		.long	1070176665
- 1519 0278 9A999999 		.long	2576980378
- 1520 027c 9999C93F 		.long	1070176665
+ 1512              	.LC12:
+ 1513 0120 03DFBF19 		.long	432004867
+ 1514 0124 A0012ABF 		.long	-1087766112
+ 1515 0128 03DFBF19 		.long	432004867
+ 1516 012c A0012ABF 		.long	-1087766112
+ 1517 0130 03DFBF19 		.long	432004867
+ 1518 0134 A0012ABF 		.long	-1087766112
+ 1519 0138 03DFBF19 		.long	432004867
+ 1520 013c A0012ABF 		.long	-1087766112
  1521              		.align 32
- 1522              	.LC27:
- 1523 0280 CDCCCCCC 		.long	3435973837
- 1524 0284 CCCCCC3F 		.long	1070386380
- 1525 0288 CDCCCCCC 		.long	3435973837
- 1526 028c CCCCCC3F 		.long	1070386380
- 1527 0290 CDCCCCCC 		.long	3435973837
- 1528 0294 CCCCCC3F 		.long	1070386380
- 1529 0298 CDCCCCCC 		.long	3435973837
- 1530 029c CCCCCC3F 		.long	1070386380
+ 1522              	.LC13:
+ 1523 0140 914FC116 		.long	381767569
+ 1524 0144 6CC156BF 		.long	-1084833428
+ 1525 0148 914FC116 		.long	381767569
+ 1526 014c 6CC156BF 		.long	-1084833428
+ 1527 0150 914FC116 		.long	381767569
+ 1528 0154 6CC156BF 		.long	-1084833428
+ 1529 0158 914FC116 		.long	381767569
+ 1530 015c 6CC156BF 		.long	-1084833428
  1531              		.align 32
- 1532              	.LC28:
- 1533 02a0 33333333 		.long	858993459
- 1534 02a4 3333B33F 		.long	1068708659
- 1535 02a8 33333333 		.long	858993459
- 1536 02ac 3333B33F 		.long	1068708659
- 1537 02b0 33333333 		.long	858993459
- 1538 02b4 3333B33F 		.long	1068708659
- 1539 02b8 33333333 		.long	858993459
- 1540 02bc 3333B33F 		.long	1068708659
+ 1532              	.LC14:
+ 1533 0160 4B555555 		.long	1431655755
+ 1534 0164 5555A53F 		.long	1067799893
+ 1535 0168 4B555555 		.long	1431655755
+ 1536 016c 5555A53F 		.long	1067799893
+ 1537 0170 4B555555 		.long	1431655755
+ 1538 0174 5555A53F 		.long	1067799893
+ 1539 0178 4B555555 		.long	1431655755
+ 1540 017c 5555A53F 		.long	1067799893
  1541              		.align 32
- 1542              	.LC29:
- 1543 02c0 33333333 		.long	858993459
- 1544 02c4 3333F33F 		.long	1072902963
- 1545 02c8 33333333 		.long	858993459
- 1546 02cc 3333F33F 		.long	1072902963
- 1547 02d0 33333333 		.long	858993459
- 1548 02d4 3333F33F 		.long	1072902963
- 1549 02d8 33333333 		.long	858993459
- 1550 02dc 3333F33F 		.long	1072902963
+ 1542              	.LC15:
+ 1543 0180 9B1A86A0 		.long	2693143195
+ 1544 0184 49FAA8BD 		.long	-1112999351
+ 1545 0188 9B1A86A0 		.long	2693143195
+ 1546 018c 49FAA8BD 		.long	-1112999351
+ 1547 0190 9B1A86A0 		.long	2693143195
+ 1548 0194 49FAA8BD 		.long	-1112999351
+ 1549 0198 9B1A86A0 		.long	2693143195
+ 1550 019c 49FAA8BD 		.long	-1112999351
  1551              		.align 32
- 1552              	.LC30:
- 1553 02e0 CDCCCCCC 		.long	3435973837
- 1554 02e4 CCCCECBF 		.long	-1075000116
- 1555 02e8 CDCCCCCC 		.long	3435973837
- 1556 02ec CCCCECBF 		.long	-1075000116
- 1557 02f0 CDCCCCCC 		.long	3435973837
- 1558 02f4 CCCCECBF 		.long	-1075000116
- 1559 02f8 CDCCCCCC 		.long	3435973837
- 1560 02fc CCCCECBF 		.long	-1075000116
+ 1552              	.LC16:
+ 1553 01a0 053F4E7B 		.long	2068725509
+ 1554 01a4 9DEE213E 		.long	1042411165
+ 1555 01a8 053F4E7B 		.long	2068725509
+ 1556 01ac 9DEE213E 		.long	1042411165
+ 1557 01b0 053F4E7B 		.long	2068725509
+ 1558 01b4 9DEE213E 		.long	1042411165
+ 1559 01b8 053F4E7B 		.long	2068725509
+ 1560 01bc 9DEE213E 		.long	1042411165
  1561              		.align 32
- 1562              	.LC31:
-GAS LISTING /tmp/cc72IM0J.s 			page 46
+GAS LISTING /tmp/ccsgyXat.s 			page 48
 
 
- 1563 0300 D94B682F 		.long	795364313
- 1564 0304 A1BDF43F 		.long	1073003937
- 1565 0308 D94B682F 		.long	795364313
- 1566 030c A1BDF43F 		.long	1073003937
- 1567 0310 D94B682F 		.long	795364313
- 1568 0314 A1BDF43F 		.long	1073003937
- 1569 0318 D94B682F 		.long	795364313
- 1570 031c A1BDF43F 		.long	1073003937
+ 1562              	.LC17:
+ 1563 01c0 C64BAC7E 		.long	2125220806
+ 1564 01c4 4F7E92BE 		.long	-1097695665
+ 1565 01c8 C64BAC7E 		.long	2125220806
+ 1566 01cc 4F7E92BE 		.long	-1097695665
+ 1567 01d0 C64BAC7E 		.long	2125220806
+ 1568 01d4 4F7E92BE 		.long	-1097695665
+ 1569 01d8 C64BAC7E 		.long	2125220806
+ 1570 01dc 4F7E92BE 		.long	-1097695665
  1571              		.align 32
- 1572              	.LC32:
- 1573 0320 D44B682F 		.long	795364308
- 1574 0324 A1BD04C0 		.long	-1073431135
- 1575 0328 D44B682F 		.long	795364308
- 1576 032c A1BD04C0 		.long	-1073431135
- 1577 0330 D44B682F 		.long	795364308
- 1578 0334 A1BD04C0 		.long	-1073431135
- 1579 0338 D44B682F 		.long	795364308
- 1580 033c A1BD04C0 		.long	-1073431135
+ 1572              	.LC18:
+ 1573 01e0 F544C819 		.long	432555253
+ 1574 01e4 A001FA3E 		.long	1056571808
+ 1575 01e8 F544C819 		.long	432555253
+ 1576 01ec A001FA3E 		.long	1056571808
+ 1577 01f0 F544C819 		.long	432555253
+ 1578 01f4 A001FA3E 		.long	1056571808
+ 1579 01f8 F544C819 		.long	432555253
+ 1580 01fc A001FA3E 		.long	1056571808
  1581              		.align 32
- 1582              	.LC33:
- 1583 0340 00000000 		.long	0
- 1584 0344 00000440 		.long	1074003968
- 1585 0348 00000000 		.long	0
- 1586 034c 00000440 		.long	1074003968
- 1587 0350 00000000 		.long	0
- 1588 0354 00000440 		.long	1074003968
- 1589 0358 00000000 		.long	0
- 1590 035c 00000440 		.long	1074003968
+ 1582              	.LC19:
+ 1583 0200 00000000 		.long	0
+ 1584 0204 0000E03F 		.long	1071644672
+ 1585 0208 00000000 		.long	0
+ 1586 020c 0000E03F 		.long	1071644672
+ 1587 0210 00000000 		.long	0
+ 1588 0214 0000E03F 		.long	1071644672
+ 1589 0218 00000000 		.long	0
+ 1590 021c 0000E03F 		.long	1071644672
  1591              		.align 32
- 1592              	.LC34:
- 1593 0360 2FA1BD84 		.long	2227020079
- 1594 0364 F612CABF 		.long	-1077275914
- 1595 0368 2FA1BD84 		.long	2227020079
- 1596 036c F612CABF 		.long	-1077275914
- 1597 0370 2FA1BD84 		.long	2227020079
- 1598 0374 F612CABF 		.long	-1077275914
- 1599 0378 2FA1BD84 		.long	2227020079
- 1600 037c F612CABF 		.long	-1077275914
- 1601              		.align 32
- 1602              	.LC35:
- 1603 0380 00000000 		.long	0
- 1604 0384 00A0AF3F 		.long	1068474368
- 1605 0388 00000000 		.long	0
- 1606 038c 00A0AF3F 		.long	1068474368
- 1607 0390 00000000 		.long	0
- 1608 0394 00A0AF3F 		.long	1068474368
- 1609 0398 00000000 		.long	0
- 1610 039c 00A0AF3F 		.long	1068474368
- 1611              		.align 32
- 1612              	.LC36:
- 1613 03a0 B497D05E 		.long	1590728628
- 1614 03a4 429FD93F 		.long	1071226690
- 1615 03a8 B497D05E 		.long	1590728628
- 1616 03ac 429FD93F 		.long	1071226690
- 1617 03b0 B497D05E 		.long	1590728628
- 1618 03b4 429FD93F 		.long	1071226690
- 1619 03b8 B497D05E 		.long	1590728628
-GAS LISTING /tmp/cc72IM0J.s 			page 47
+ 1592              	.LC20:
+ 1593 0220 00000000 		.long	0
+ 1594 0224 0000F03F 		.long	1072693248
+ 1595 0228 00000000 		.long	0
+ 1596 022c 0000F03F 		.long	1072693248
+ 1597 0230 00000000 		.long	0
+ 1598 0234 0000F03F 		.long	1072693248
+ 1599 0238 00000000 		.long	0
+ 1600 023c 0000F03F 		.long	1072693248
+ 1601              		.section	.rodata.cst16,"aM",@progbits,16
+ 1602              		.align 16
+ 1603              	.LC21:
+ 1604 0000 01000000 		.quad	1
+ 1604      00000000 
+ 1605 0008 01000000 		.quad	1
+ 1605      00000000 
+ 1606              		.align 16
+ 1607              	.LC22:
+ 1608 0010 00000000 		.quad	36028797018963968
+ 1608      00008000 
+ 1609 0018 00000000 		.quad	36028797018963968
+ 1609      00008000 
+ 1610              		.align 16
+ 1611              	.LC23:
+ 1612 0020 00000000 		.quad	-9007199254740992
+ 1612      0000E0FF 
+ 1613 0028 00000000 		.quad	-9007199254740992
+GAS LISTING /tmp/ccsgyXat.s 			page 49
 
 
- 1620 03bc 429FD93F 		.long	1071226690
- 1621              		.align 32
- 1622              	.LC37:
- 1623 03c0 BE84F612 		.long	318145726
- 1624 03c4 DA4BA53F 		.long	1067797466
- 1625 03c8 BE84F612 		.long	318145726
- 1626 03cc DA4BA53F 		.long	1067797466
- 1627 03d0 BE84F612 		.long	318145726
- 1628 03d4 DA4BA53F 		.long	1067797466
- 1629 03d8 BE84F612 		.long	318145726
- 1630 03dc DA4BA53F 		.long	1067797466
- 1631              		.align 32
- 1632              	.LC38:
- 1633 03e0 00000000 		.long	0
- 1634 03e4 00E0D53F 		.long	1070981120
- 1635 03e8 00000000 		.long	0
- 1636 03ec 00E0D53F 		.long	1070981120
- 1637 03f0 00000000 		.long	0
- 1638 03f4 00E0D53F 		.long	1070981120
- 1639 03f8 00000000 		.long	0
- 1640 03fc 00E0D53F 		.long	1070981120
- 1641              		.align 32
- 1642              	.LC39:
- 1643 0400 427B09ED 		.long	3976821570
- 1644 0404 25349E3F 		.long	1067332645
- 1645 0408 427B09ED 		.long	3976821570
- 1646 040c 25349E3F 		.long	1067332645
- 1647 0410 427B09ED 		.long	3976821570
- 1648 0414 25349E3F 		.long	1067332645
- 1649 0418 427B09ED 		.long	3976821570
- 1650 041c 25349E3F 		.long	1067332645
- 1651              		.align 32
- 1652              	.LC40:
- 1653 0420 B0B4DA85 		.long	2245702832
- 1654 0424 A680D23F 		.long	1070760102
- 1655 0428 B0B4DA85 		.long	2245702832
- 1656 042c A680D23F 		.long	1070760102
- 1657 0430 B0B4DA85 		.long	2245702832
- 1658 0434 A680D23F 		.long	1070760102
- 1659 0438 B0B4DA85 		.long	2245702832
- 1660 043c A680D23F 		.long	1070760102
- 1661              		.align 32
- 1662              	.LC41:
- 1663 0440 29691676 		.long	1981180201
- 1664 0444 9FEFCA3F 		.long	1070264223
- 1665 0448 29691676 		.long	1981180201
- 1666 044c 9FEFCA3F 		.long	1070264223
- 1667 0450 29691676 		.long	1981180201
- 1668 0454 9FEFCA3F 		.long	1070264223
- 1669 0458 29691676 		.long	1981180201
- 1670 045c 9FEFCA3F 		.long	1070264223
- 1671              		.align 32
- 1672              	.LC42:
- 1673 0460 80B22B2E 		.long	774615680
- 1674 0464 D0C3D93F 		.long	1071236048
- 1675 0468 80B22B2E 		.long	774615680
- 1676 046c D0C3D93F 		.long	1071236048
-GAS LISTING /tmp/cc72IM0J.s 			page 48
+ 1613      0000E0FF 
+ 1614              		.align 16
+ 1615              	.LC24:
+ 1616 0030 02000000 		.quad	2
+ 1616      00000000 
+ 1617 0038 02000000 		.quad	2
+ 1617      00000000 
+ 1618              		.section	.rodata.cst32
+ 1619              		.align 32
+ 1620              	.LC25:
+ 1621 0240 33333333 		.long	858993459
+ 1622 0244 3333D33F 		.long	1070805811
+ 1623 0248 33333333 		.long	858993459
+ 1624 024c 3333D33F 		.long	1070805811
+ 1625 0250 33333333 		.long	858993459
+ 1626 0254 3333D33F 		.long	1070805811
+ 1627 0258 33333333 		.long	858993459
+ 1628 025c 3333D33F 		.long	1070805811
+ 1629              		.align 32
+ 1630              	.LC26:
+ 1631 0260 9A999999 		.long	2576980378
+ 1632 0264 9999C93F 		.long	1070176665
+ 1633 0268 9A999999 		.long	2576980378
+ 1634 026c 9999C93F 		.long	1070176665
+ 1635 0270 9A999999 		.long	2576980378
+ 1636 0274 9999C93F 		.long	1070176665
+ 1637 0278 9A999999 		.long	2576980378
+ 1638 027c 9999C93F 		.long	1070176665
+ 1639              		.align 32
+ 1640              	.LC27:
+ 1641 0280 CDCCCCCC 		.long	3435973837
+ 1642 0284 CCCCCC3F 		.long	1070386380
+ 1643 0288 CDCCCCCC 		.long	3435973837
+ 1644 028c CCCCCC3F 		.long	1070386380
+ 1645 0290 CDCCCCCC 		.long	3435973837
+ 1646 0294 CCCCCC3F 		.long	1070386380
+ 1647 0298 CDCCCCCC 		.long	3435973837
+ 1648 029c CCCCCC3F 		.long	1070386380
+ 1649              		.align 32
+ 1650              	.LC28:
+ 1651 02a0 33333333 		.long	858993459
+ 1652 02a4 3333B33F 		.long	1068708659
+ 1653 02a8 33333333 		.long	858993459
+ 1654 02ac 3333B33F 		.long	1068708659
+ 1655 02b0 33333333 		.long	858993459
+ 1656 02b4 3333B33F 		.long	1068708659
+ 1657 02b8 33333333 		.long	858993459
+ 1658 02bc 3333B33F 		.long	1068708659
+ 1659              		.align 32
+ 1660              	.LC29:
+ 1661 02c0 33333333 		.long	858993459
+ 1662 02c4 3333F33F 		.long	1072902963
+ 1663 02c8 33333333 		.long	858993459
+ 1664 02cc 3333F33F 		.long	1072902963
+ 1665 02d0 33333333 		.long	858993459
+ 1666 02d4 3333F33F 		.long	1072902963
+ 1667 02d8 33333333 		.long	858993459
+GAS LISTING /tmp/ccsgyXat.s 			page 50
 
 
- 1677 0470 80B22B2E 		.long	774615680
- 1678 0474 D0C3D93F 		.long	1071236048
- 1679 0478 80B22B2E 		.long	774615680
- 1680 047c D0C3D93F 		.long	1071236048
- 1681              		.align 32
- 1682              	.LC43:
- 1683 0480 EE90B943 		.long	1136234734
- 1684 0484 E60EB93F 		.long	1069092582
- 1685 0488 EE90B943 		.long	1136234734
- 1686 048c E60EB93F 		.long	1069092582
- 1687 0490 EE90B943 		.long	1136234734
- 1688 0494 E60EB93F 		.long	1069092582
- 1689 0498 EE90B943 		.long	1136234734
- 1690 049c E60EB93F 		.long	1069092582
- 1691              		.align 32
- 1692              	.LC44:
- 1693 04a0 83A5D52E 		.long	785753475
- 1694 04a4 3405A4BF 		.long	-1079769804
- 1695 04a8 83A5D52E 		.long	785753475
- 1696 04ac 3405A4BF 		.long	-1079769804
- 1697 04b0 83A5D52E 		.long	785753475
- 1698 04b4 3405A4BF 		.long	-1079769804
- 1699 04b8 83A5D52E 		.long	785753475
- 1700 04bc 3405A4BF 		.long	-1079769804
- 1701              		.align 32
- 1702              	.LC45:
- 1703 04c0 92244992 		.long	2454267026
- 1704 04c4 24C9933F 		.long	1066649892
- 1705 04c8 92244992 		.long	2454267026
- 1706 04cc 24C9933F 		.long	1066649892
- 1707 04d0 92244992 		.long	2454267026
- 1708 04d4 24C9933F 		.long	1066649892
- 1709 04d8 92244992 		.long	2454267026
- 1710 04dc 24C9933F 		.long	1066649892
- 1711              		.align 32
- 1712              	.LC46:
- 1713 04e0 12F37686 		.long	2255942418
- 1714 04e4 C47CA13F 		.long	1067547844
- 1715 04e8 12F37686 		.long	2255942418
- 1716 04ec C47CA13F 		.long	1067547844
- 1717 04f0 12F37686 		.long	2255942418
- 1718 04f4 C47CA13F 		.long	1067547844
- 1719 04f8 12F37686 		.long	2255942418
- 1720 04fc C47CA13F 		.long	1067547844
- 1721              		.align 32
- 1722              	.LC47:
- 1723 0500 0A56F19A 		.long	2599507466
- 1724 0504 DB1D93BF 		.long	-1080877605
- 1725 0508 0A56F19A 		.long	2599507466
- 1726 050c DB1D93BF 		.long	-1080877605
- 1727 0510 0A56F19A 		.long	2599507466
- 1728 0514 DB1D93BF 		.long	-1080877605
- 1729 0518 0A56F19A 		.long	2599507466
- 1730 051c DB1D93BF 		.long	-1080877605
- 1731              		.align 32
- 1732              	.LC48:
- 1733 0520 66599665 		.long	1704352102
-GAS LISTING /tmp/cc72IM0J.s 			page 49
+ 1668 02dc 3333F33F 		.long	1072902963
+ 1669              		.align 32
+ 1670              	.LC30:
+ 1671 02e0 CDCCCCCC 		.long	3435973837
+ 1672 02e4 CCCCECBF 		.long	-1075000116
+ 1673 02e8 CDCCCCCC 		.long	3435973837
+ 1674 02ec CCCCECBF 		.long	-1075000116
+ 1675 02f0 CDCCCCCC 		.long	3435973837
+ 1676 02f4 CCCCECBF 		.long	-1075000116
+ 1677 02f8 CDCCCCCC 		.long	3435973837
+ 1678 02fc CCCCECBF 		.long	-1075000116
+ 1679              		.align 32
+ 1680              	.LC31:
+ 1681 0300 33333333 		.long	858993459
+ 1682 0304 3333E33F 		.long	1071854387
+ 1683 0308 33333333 		.long	858993459
+ 1684 030c 3333E33F 		.long	1071854387
+ 1685 0310 33333333 		.long	858993459
+ 1686 0314 3333E33F 		.long	1071854387
+ 1687 0318 33333333 		.long	858993459
+ 1688 031c 3333E33F 		.long	1071854387
+ 1689              		.align 32
+ 1690              	.LC32:
+ 1691 0320 DA4B682F 		.long	795364314
+ 1692 0324 A1BDF43F 		.long	1073003937
+ 1693 0328 DA4B682F 		.long	795364314
+ 1694 032c A1BDF43F 		.long	1073003937
+ 1695 0330 DA4B682F 		.long	795364314
+ 1696 0334 A1BDF43F 		.long	1073003937
+ 1697 0338 DA4B682F 		.long	795364314
+ 1698 033c A1BDF43F 		.long	1073003937
+ 1699              		.align 32
+ 1700              	.LC33:
+ 1701 0340 D94B682F 		.long	795364313
+ 1702 0344 A1BD04C0 		.long	-1073431135
+ 1703 0348 D94B682F 		.long	795364313
+ 1704 034c A1BD04C0 		.long	-1073431135
+ 1705 0350 D94B682F 		.long	795364313
+ 1706 0354 A1BD04C0 		.long	-1073431135
+ 1707 0358 D94B682F 		.long	795364313
+ 1708 035c A1BD04C0 		.long	-1073431135
+ 1709              		.align 32
+ 1710              	.LC34:
+ 1711 0360 00000000 		.long	0
+ 1712 0364 00000440 		.long	1074003968
+ 1713 0368 00000000 		.long	0
+ 1714 036c 00000440 		.long	1074003968
+ 1715 0370 00000000 		.long	0
+ 1716 0374 00000440 		.long	1074003968
+ 1717 0378 00000000 		.long	0
+ 1718 037c 00000440 		.long	1074003968
+ 1719              		.align 32
+ 1720              	.LC35:
+ 1721 0380 16A1BD84 		.long	2227020054
+ 1722 0384 F612CABF 		.long	-1077275914
+ 1723 0388 16A1BD84 		.long	2227020054
+ 1724 038c F612CABF 		.long	-1077275914
+GAS LISTING /tmp/ccsgyXat.s 			page 51
 
 
- 1734 0524 5996713F 		.long	1064408665
- 1735 0528 66599665 		.long	1704352102
- 1736 052c 5996713F 		.long	1064408665
- 1737 0530 66599665 		.long	1704352102
- 1738 0534 5996713F 		.long	1064408665
- 1739 0538 66599665 		.long	1704352102
- 1740 053c 5996713F 		.long	1064408665
- 1741              		.align 32
- 1742              	.LC49:
- 1743 0540 95D626E8 		.long	3894859413
- 1744 0544 0B2E113E 		.long	1041313291
- 1745 0548 95D626E8 		.long	3894859413
- 1746 054c 0B2E113E 		.long	1041313291
- 1747 0550 95D626E8 		.long	3894859413
- 1748 0554 0B2E113E 		.long	1041313291
- 1749 0558 95D626E8 		.long	3894859413
- 1750 055c 0B2E113E 		.long	1041313291
- 1751              		.section	.rodata.cst16
- 1752              		.align 16
- 1753              	.LC50:
- 1754 0040 FFFFFFFF 		.quad	4503599627370495
- 1754      FFFF0F00 
- 1755 0048 FFFFFFFF 		.quad	4503599627370495
- 1755      FFFF0F00 
- 1756              		.align 16
- 1757              	.LC51:
- 1758 0050 00000000 		.quad	4602678819172646912
- 1758      0000E03F 
- 1759 0058 00000000 		.quad	4602678819172646912
- 1759      0000E03F 
- 1760              		.align 16
- 1761              	.LC52:
- 1762 0060 00000000 		.quad	4841369599423283200
- 1762      00003043 
- 1763 0068 00000000 		.quad	4841369599423283200
- 1763      00003043 
- 1764              		.section	.rodata.cst32
- 1765              		.align 32
- 1766              	.LC53:
- 1767 0560 FF030000 		.long	1023
- 1768 0564 00003043 		.long	1127219200
- 1769 0568 FF030000 		.long	1023
- 1770 056c 00003043 		.long	1127219200
- 1771 0570 FF030000 		.long	1023
- 1772 0574 00003043 		.long	1127219200
- 1773 0578 FF030000 		.long	1023
- 1774 057c 00003043 		.long	1127219200
- 1775              		.align 32
- 1776              	.LC54:
- 1777 0580 CD3B7F66 		.long	1719614413
- 1778 0584 9EA0E63F 		.long	1072079006
- 1779 0588 CD3B7F66 		.long	1719614413
- 1780 058c 9EA0E63F 		.long	1072079006
- 1781 0590 CD3B7F66 		.long	1719614413
- 1782 0594 9EA0E63F 		.long	1072079006
- 1783 0598 CD3B7F66 		.long	1719614413
- 1784 059c 9EA0E63F 		.long	1072079006
-GAS LISTING /tmp/cc72IM0J.s 			page 50
+ 1725 0390 16A1BD84 		.long	2227020054
+ 1726 0394 F612CABF 		.long	-1077275914
+ 1727 0398 16A1BD84 		.long	2227020054
+ 1728 039c F612CABF 		.long	-1077275914
+ 1729              		.align 32
+ 1730              	.LC36:
+ 1731 03a0 00000000 		.long	0
+ 1732 03a4 00A0AF3F 		.long	1068474368
+ 1733 03a8 00000000 		.long	0
+ 1734 03ac 00A0AF3F 		.long	1068474368
+ 1735 03b0 00000000 		.long	0
+ 1736 03b4 00A0AF3F 		.long	1068474368
+ 1737 03b8 00000000 		.long	0
+ 1738 03bc 00A0AF3F 		.long	1068474368
+ 1739              		.align 32
+ 1740              	.LC37:
+ 1741 03c0 B397D05E 		.long	1590728627
+ 1742 03c4 429FD93F 		.long	1071226690
+ 1743 03c8 B397D05E 		.long	1590728627
+ 1744 03cc 429FD93F 		.long	1071226690
+ 1745 03d0 B397D05E 		.long	1590728627
+ 1746 03d4 429FD93F 		.long	1071226690
+ 1747 03d8 B397D05E 		.long	1590728627
+ 1748 03dc 429FD93F 		.long	1071226690
+ 1749              		.align 32
+ 1750              	.LC38:
+ 1751 03e0 BD84F612 		.long	318145725
+ 1752 03e4 DA4BA53F 		.long	1067797466
+ 1753 03e8 BD84F612 		.long	318145725
+ 1754 03ec DA4BA53F 		.long	1067797466
+ 1755 03f0 BD84F612 		.long	318145725
+ 1756 03f4 DA4BA53F 		.long	1067797466
+ 1757 03f8 BD84F612 		.long	318145725
+ 1758 03fc DA4BA53F 		.long	1067797466
+ 1759              		.align 32
+ 1760              	.LC39:
+ 1761 0400 00000000 		.long	0
+ 1762 0404 00E0D53F 		.long	1070981120
+ 1763 0408 00000000 		.long	0
+ 1764 040c 00E0D53F 		.long	1070981120
+ 1765 0410 00000000 		.long	0
+ 1766 0414 00E0D53F 		.long	1070981120
+ 1767 0418 00000000 		.long	0
+ 1768 041c 00E0D53F 		.long	1070981120
+ 1769              		.align 32
+ 1770              	.LC40:
+ 1771 0420 347B09ED 		.long	3976821556
+ 1772 0424 25349E3F 		.long	1067332645
+ 1773 0428 347B09ED 		.long	3976821556
+ 1774 042c 25349E3F 		.long	1067332645
+ 1775 0430 347B09ED 		.long	3976821556
+ 1776 0434 25349E3F 		.long	1067332645
+ 1777 0438 347B09ED 		.long	3976821556
+ 1778 043c 25349E3F 		.long	1067332645
+ 1779              		.align 32
+ 1780              	.LC41:
+ 1781 0440 00000000 		.long	0
+GAS LISTING /tmp/ccsgyXat.s 			page 52
 
 
- 1785              		.section	.rodata.cst16
- 1786              		.align 16
- 1787              	.LC55:
- 1788 0070 FFFFFFFF 		.long	4294967295
- 1789 0074 FFFFFFFF 		.long	-1
- 1790 0078 FFFFFFFF 		.long	4294967295
- 1791 007c FFFFFFFF 		.long	-1
- 1792              		.section	.rodata.cst32
- 1793              		.align 32
- 1794              	.LC56:
- 1795 05a0 4DC84B92 		.long	2454440013
- 1796 05a4 D6EF3140 		.long	1077014486
- 1797 05a8 4DC84B92 		.long	2454440013
- 1798 05ac D6EF3140 		.long	1077014486
- 1799 05b0 4DC84B92 		.long	2454440013
- 1800 05b4 D6EF3140 		.long	1077014486
- 1801 05b8 4DC84B92 		.long	2454440013
- 1802 05bc D6EF3140 		.long	1077014486
- 1803              		.align 32
- 1804              	.LC57:
- 1805 05c0 F8DC7E7D 		.long	2105466104
- 1806 05c4 63D51E40 		.long	1075762531
- 1807 05c8 F8DC7E7D 		.long	2105466104
- 1808 05cc 63D51E40 		.long	1075762531
- 1809 05d0 F8DC7E7D 		.long	2105466104
- 1810 05d4 63D51E40 		.long	1075762531
- 1811 05d8 F8DC7E7D 		.long	2105466104
- 1812 05dc 63D51E40 		.long	1075762531
- 1813              		.align 32
- 1814              	.LC58:
- 1815 05e0 B01BC393 		.long	2479037360
- 1816 05e4 C2B41A3F 		.long	1058714818
- 1817 05e8 B01BC393 		.long	2479037360
- 1818 05ec C2B41A3F 		.long	1058714818
- 1819 05f0 B01BC393 		.long	2479037360
- 1820 05f4 C2B41A3F 		.long	1058714818
- 1821 05f8 B01BC393 		.long	2479037360
- 1822 05fc C2B41A3F 		.long	1058714818
- 1823              		.align 32
- 1824              	.LC59:
- 1825 0600 F252563F 		.long	1062621938
- 1826 0604 F5D6DF3F 		.long	1071634165
- 1827 0608 F252563F 		.long	1062621938
- 1828 060c F5D6DF3F 		.long	1071634165
- 1829 0610 F252563F 		.long	1062621938
- 1830 0614 F5D6DF3F 		.long	1071634165
- 1831 0618 F252563F 		.long	1062621938
- 1832 061c F5D6DF3F 		.long	1071634165
- 1833              		.align 32
- 1834              	.LC60:
- 1835 0620 116992ED 		.long	3985795345
- 1836 0624 BAD21240 		.long	1074975418
- 1837 0628 116992ED 		.long	3985795345
- 1838 062c BAD21240 		.long	1074975418
- 1839 0630 116992ED 		.long	3985795345
- 1840 0634 BAD21240 		.long	1074975418
- 1841 0638 116992ED 		.long	3985795345
-GAS LISTING /tmp/cc72IM0J.s 			page 51
+ 1782 0444 0000EC3F 		.long	1072431104
+ 1783 0448 00000000 		.long	0
+ 1784 044c 0000EC3F 		.long	1072431104
+ 1785 0450 00000000 		.long	0
+ 1786 0454 0000EC3F 		.long	1072431104
+ 1787 0458 00000000 		.long	0
+ 1788 045c 0000EC3F 		.long	1072431104
+ 1789              		.align 32
+ 1790              	.LC42:
+ 1791 0460 B0B4DA85 		.long	2245702832
+ 1792 0464 A680D23F 		.long	1070760102
+ 1793 0468 B0B4DA85 		.long	2245702832
+ 1794 046c A680D23F 		.long	1070760102
+ 1795 0470 B0B4DA85 		.long	2245702832
+ 1796 0474 A680D23F 		.long	1070760102
+ 1797 0478 B0B4DA85 		.long	2245702832
+ 1798 047c A680D23F 		.long	1070760102
+ 1799              		.align 32
+ 1800              	.LC43:
+ 1801 0480 27691676 		.long	1981180199
+ 1802 0484 9FEFCA3F 		.long	1070264223
+ 1803 0488 27691676 		.long	1981180199
+ 1804 048c 9FEFCA3F 		.long	1070264223
+ 1805 0490 27691676 		.long	1981180199
+ 1806 0494 9FEFCA3F 		.long	1070264223
+ 1807 0498 27691676 		.long	1981180199
+ 1808 049c 9FEFCA3F 		.long	1070264223
+ 1809              		.align 32
+ 1810              	.LC44:
+ 1811 04a0 7EB22B2E 		.long	774615678
+ 1812 04a4 D0C3D93F 		.long	1071236048
+ 1813 04a8 7EB22B2E 		.long	774615678
+ 1814 04ac D0C3D93F 		.long	1071236048
+ 1815 04b0 7EB22B2E 		.long	774615678
+ 1816 04b4 D0C3D93F 		.long	1071236048
+ 1817 04b8 7EB22B2E 		.long	774615678
+ 1818 04bc D0C3D93F 		.long	1071236048
+ 1819              		.align 32
+ 1820              	.LC45:
+ 1821 04c0 E890B943 		.long	1136234728
+ 1822 04c4 E60EB93F 		.long	1069092582
+ 1823 04c8 E890B943 		.long	1136234728
+ 1824 04cc E60EB93F 		.long	1069092582
+ 1825 04d0 E890B943 		.long	1136234728
+ 1826 04d4 E60EB93F 		.long	1069092582
+ 1827 04d8 E890B943 		.long	1136234728
+ 1828 04dc E60EB93F 		.long	1069092582
+ 1829              		.align 32
+ 1830              	.LC46:
+ 1831 04e0 48A5D52E 		.long	785753416
+ 1832 04e4 3405A4BF 		.long	-1079769804
+ 1833 04e8 48A5D52E 		.long	785753416
+ 1834 04ec 3405A4BF 		.long	-1079769804
+ 1835 04f0 48A5D52E 		.long	785753416
+ 1836 04f4 3405A4BF 		.long	-1079769804
+ 1837 04f8 48A5D52E 		.long	785753416
+ 1838 04fc 3405A4BF 		.long	-1079769804
+GAS LISTING /tmp/ccsgyXat.s 			page 53
 
 
- 1842 063c BAD21240 		.long	1074975418
- 1843              		.align 32
- 1844              	.LC61:
- 1845 0640 2EEB3EC6 		.long	3326012206
- 1846 0644 72FF2C40 		.long	1076690802
- 1847 0648 2EEB3EC6 		.long	3326012206
- 1848 064c 72FF2C40 		.long	1076690802
- 1849 0650 2EEB3EC6 		.long	3326012206
- 1850 0654 72FF2C40 		.long	1076690802
- 1851 0658 2EEB3EC6 		.long	3326012206
- 1852 065c 72FF2C40 		.long	1076690802
- 1853              		.align 32
- 1854              	.LC62:
- 1855 0660 21AE5EEB 		.long	3948850721
- 1856 0664 E2C95140 		.long	1079101922
- 1857 0668 21AE5EEB 		.long	3948850721
- 1858 066c E2C95140 		.long	1079101922
- 1859 0670 21AE5EEB 		.long	3948850721
- 1860 0674 E2C95140 		.long	1079101922
- 1861 0678 21AE5EEB 		.long	3948850721
- 1862 067c E2C95140 		.long	1079101922
- 1863              		.align 32
- 1864              	.LC63:
- 1865 0680 B2251F9E 		.long	2652841394
- 1866 0684 0A203740 		.long	1077354506
- 1867 0688 B2251F9E 		.long	2652841394
- 1868 068c 0A203740 		.long	1077354506
- 1869 0690 B2251F9E 		.long	2652841394
- 1870 0694 0A203740 		.long	1077354506
- 1871 0698 B2251F9E 		.long	2652841394
- 1872 069c 0A203740 		.long	1077354506
- 1873              		.align 32
- 1874              	.LC64:
- 1875 06a0 8EEF97AE 		.long	2929192846
- 1876 06a4 20932640 		.long	1076269856
- 1877 06a8 8EEF97AE 		.long	2929192846
- 1878 06ac 20932640 		.long	1076269856
- 1879 06b0 8EEF97AE 		.long	2929192846
- 1880 06b4 20932640 		.long	1076269856
- 1881 06b8 8EEF97AE 		.long	2929192846
- 1882 06bc 20932640 		.long	1076269856
- 1883              		.align 32
- 1884              	.LC65:
- 1885 06c0 33C0194E 		.long	1310310451
- 1886 06c4 2C9D4640 		.long	1078369580
- 1887 06c8 33C0194E 		.long	1310310451
- 1888 06cc 2C9D4640 		.long	1078369580
- 1889 06d0 33C0194E 		.long	1310310451
- 1890 06d4 2C9D4640 		.long	1078369580
- 1891 06d8 33C0194E 		.long	1310310451
- 1892 06dc 2C9D4640 		.long	1078369580
- 1893              		.align 32
- 1894              	.LC66:
- 1895 06e0 BDBD26A3 		.long	2737225149
- 1896 06e4 33BF5440 		.long	1079295795
- 1897 06e8 BDBD26A3 		.long	2737225149
- 1898 06ec 33BF5440 		.long	1079295795
-GAS LISTING /tmp/cc72IM0J.s 			page 52
+ 1839              		.align 32
+ 1840              	.LC47:
+ 1841 0500 82244992 		.long	2454267010
+ 1842 0504 24C9933F 		.long	1066649892
+ 1843 0508 82244992 		.long	2454267010
+ 1844 050c 24C9933F 		.long	1066649892
+ 1845 0510 82244992 		.long	2454267010
+ 1846 0514 24C9933F 		.long	1066649892
+ 1847 0518 82244992 		.long	2454267010
+ 1848 051c 24C9933F 		.long	1066649892
+ 1849              		.align 32
+ 1850              	.LC48:
+ 1851 0520 06F37686 		.long	2255942406
+ 1852 0524 C47CA13F 		.long	1067547844
+ 1853 0528 06F37686 		.long	2255942406
+ 1854 052c C47CA13F 		.long	1067547844
+ 1855 0530 06F37686 		.long	2255942406
+ 1856 0534 C47CA13F 		.long	1067547844
+ 1857 0538 06F37686 		.long	2255942406
+ 1858 053c C47CA13F 		.long	1067547844
+ 1859              		.align 32
+ 1860              	.LC49:
+ 1861 0540 1A55F19A 		.long	2599507226
+ 1862 0544 DB1D93BF 		.long	-1080877605
+ 1863 0548 1A55F19A 		.long	2599507226
+ 1864 054c DB1D93BF 		.long	-1080877605
+ 1865 0550 1A55F19A 		.long	2599507226
+ 1866 0554 DB1D93BF 		.long	-1080877605
+ 1867 0558 1A55F19A 		.long	2599507226
+ 1868 055c DB1D93BF 		.long	-1080877605
+ 1869              		.align 32
+ 1870              	.LC50:
+ 1871 0560 64599665 		.long	1704352100
+ 1872 0564 5996713F 		.long	1064408665
+ 1873 0568 64599665 		.long	1704352100
+ 1874 056c 5996713F 		.long	1064408665
+ 1875 0570 64599665 		.long	1704352100
+ 1876 0574 5996713F 		.long	1064408665
+ 1877 0578 64599665 		.long	1704352100
+ 1878 057c 5996713F 		.long	1064408665
+ 1879              		.align 32
+ 1880              	.LC51:
+ 1881 0580 95D626E8 		.long	3894859413
+ 1882 0584 0B2E113E 		.long	1041313291
+ 1883 0588 95D626E8 		.long	3894859413
+ 1884 058c 0B2E113E 		.long	1041313291
+ 1885 0590 95D626E8 		.long	3894859413
+ 1886 0594 0B2E113E 		.long	1041313291
+ 1887 0598 95D626E8 		.long	3894859413
+ 1888 059c 0B2E113E 		.long	1041313291
+ 1889              		.section	.rodata.cst16
+ 1890              		.align 16
+ 1891              	.LC52:
+ 1892 0040 FFFFFFFF 		.quad	4503599627370495
+ 1892      FFFF0F00 
+ 1893 0048 FFFFFFFF 		.quad	4503599627370495
+ 1893      FFFF0F00 
+GAS LISTING /tmp/ccsgyXat.s 			page 54
 
 
- 1899 06f0 BDBD26A3 		.long	2737225149
- 1900 06f4 33BF5440 		.long	1079295795
- 1901 06f8 BDBD26A3 		.long	2737225149
- 1902 06fc 33BF5440 		.long	1079295795
+ 1894              		.align 16
+ 1895              	.LC53:
+ 1896 0050 00000000 		.quad	4602678819172646912
+ 1896      0000E03F 
+ 1897 0058 00000000 		.quad	4602678819172646912
+ 1897      0000E03F 
+ 1898              		.align 16
+ 1899              	.LC54:
+ 1900 0060 00000000 		.quad	4841369599423283200
+ 1900      00003043 
+ 1901 0068 00000000 		.quad	4841369599423283200
+ 1901      00003043 
+ 1902              		.section	.rodata.cst32
  1903              		.align 32
- 1904              	.LC67:
- 1905 0700 A80C615C 		.long	1549864104
- 1906 0704 10D02BBF 		.long	-1087647728
- 1907 0708 A80C615C 		.long	1549864104
- 1908 070c 10D02BBF 		.long	-1087647728
- 1909 0710 A80C615C 		.long	1549864104
- 1910 0714 10D02BBF 		.long	-1087647728
- 1911 0718 A80C615C 		.long	1549864104
- 1912 071c 10D02BBF 		.long	-1087647728
+ 1904              	.LC55:
+ 1905 05a0 FF030000 		.long	1023
+ 1906 05a4 00003043 		.long	1127219200
+ 1907 05a8 FF030000 		.long	1023
+ 1908 05ac 00003043 		.long	1127219200
+ 1909 05b0 FF030000 		.long	1023
+ 1910 05b4 00003043 		.long	1127219200
+ 1911 05b8 FF030000 		.long	1023
+ 1912 05bc 00003043 		.long	1127219200
  1913              		.align 32
- 1914              	.LC68:
- 1915 0720 00000000 		.long	0
- 1916 0724 0030E63F 		.long	1072050176
- 1917 0728 00000000 		.long	0
- 1918 072c 0030E63F 		.long	1072050176
- 1919 0730 00000000 		.long	0
- 1920 0734 0030E63F 		.long	1072050176
- 1921 0738 00000000 		.long	0
- 1922 073c 0030E63F 		.long	1072050176
+ 1914              	.LC56:
+ 1915 05c0 CD3B7F66 		.long	1719614413
+ 1916 05c4 9EA0E63F 		.long	1072079006
+ 1917 05c8 CD3B7F66 		.long	1719614413
+ 1918 05cc 9EA0E63F 		.long	1072079006
+ 1919 05d0 CD3B7F66 		.long	1719614413
+ 1920 05d4 9EA0E63F 		.long	1072079006
+ 1921 05d8 CD3B7F66 		.long	1719614413
+ 1922 05dc 9EA0E63F 		.long	1072079006
  1923              		.align 32
- 1924              	.LC69:
- 1925 0740 00000000 		.long	0
- 1926 0744 00001000 		.long	1048576
- 1927 0748 00000000 		.long	0
- 1928 074c 00001000 		.long	1048576
- 1929 0750 00000000 		.long	0
- 1930 0754 00001000 		.long	1048576
- 1931 0758 00000000 		.long	0
- 1932 075c 00001000 		.long	1048576
+ 1924              	.LC57:
+ 1925 05e0 4DC84B92 		.long	2454440013
+ 1926 05e4 D6EF3140 		.long	1077014486
+ 1927 05e8 4DC84B92 		.long	2454440013
+ 1928 05ec D6EF3140 		.long	1077014486
+ 1929 05f0 4DC84B92 		.long	2454440013
+ 1930 05f4 D6EF3140 		.long	1077014486
+ 1931 05f8 4DC84B92 		.long	2454440013
+ 1932 05fc D6EF3140 		.long	1077014486
  1933              		.align 32
- 1934              	.LC70:
- 1935 0760 00000020 		.long	536870912
- 1936 0764 2000F87F 		.long	2146959392
- 1937 0768 00000020 		.long	536870912
- 1938 076c 2000F87F 		.long	2146959392
- 1939 0770 00000020 		.long	536870912
- 1940 0774 2000F87F 		.long	2146959392
- 1941 0778 00000020 		.long	536870912
- 1942 077c 2000F87F 		.long	2146959392
- 1943              		.section	.rodata.cst16
- 1944              		.align 16
- 1945              	.LC71:
- 1946 0080 00000000 		.long	0
- 1947 0084 0000F07F 		.long	2146435072
- 1948 0088 00000000 		.long	0
- 1949 008c 0000F07F 		.long	2146435072
- 1950              		.align 16
- 1951              	.LC72:
- 1952 0090 00000000 		.quad	9218868437227405312
- 1952      0000F07F 
- 1953 0098 00000000 		.quad	9218868437227405312
- 1953      0000F07F 
-GAS LISTING /tmp/cc72IM0J.s 			page 53
+ 1934              	.LC58:
+ 1935 0600 F8DC7E7D 		.long	2105466104
+ 1936 0604 63D51E40 		.long	1075762531
+ 1937 0608 F8DC7E7D 		.long	2105466104
+ 1938 060c 63D51E40 		.long	1075762531
+ 1939 0610 F8DC7E7D 		.long	2105466104
+ 1940 0614 63D51E40 		.long	1075762531
+ 1941 0618 F8DC7E7D 		.long	2105466104
+ 1942 061c 63D51E40 		.long	1075762531
+ 1943              		.align 32
+ 1944              	.LC59:
+ 1945 0620 B01BC393 		.long	2479037360
+ 1946 0624 C2B41A3F 		.long	1058714818
+GAS LISTING /tmp/ccsgyXat.s 			page 55
 
 
- 1954              		.section	.rodata.cst32
- 1955              		.align 32
- 1956              	.LC73:
- 1957 0780 FE822B65 		.long	1697350398
- 1958 0784 4715F73F 		.long	1073157447
- 1959 0788 FE822B65 		.long	1697350398
- 1960 078c 4715F73F 		.long	1073157447
- 1961 0790 FE822B65 		.long	1697350398
- 1962 0794 4715F73F 		.long	1073157447
- 1963 0798 FE822B65 		.long	1697350398
- 1964 079c 4715F73F 		.long	1073157447
- 1965              		.align 32
- 1966              	.LC74:
- 1967 07a0 00000000 		.long	0
- 1968 07a4 402EE63F 		.long	1072049728
- 1969 07a8 00000000 		.long	0
- 1970 07ac 402EE63F 		.long	1072049728
- 1971 07b0 00000000 		.long	0
- 1972 07b4 402EE63F 		.long	1072049728
- 1973 07b8 00000000 		.long	0
- 1974 07bc 402EE63F 		.long	1072049728
- 1975              		.align 32
- 1976              	.LC75:
- 1977 07c0 CAAB79CF 		.long	3480857546
- 1978 07c4 D1F7B73E 		.long	1052243921
- 1979 07c8 CAAB79CF 		.long	3480857546
- 1980 07cc D1F7B73E 		.long	1052243921
- 1981 07d0 CAAB79CF 		.long	3480857546
- 1982 07d4 D1F7B73E 		.long	1052243921
- 1983 07d8 CAAB79CF 		.long	3480857546
- 1984 07dc D1F7B73E 		.long	1052243921
- 1985              		.align 32
- 1986              	.LC76:
- 1987 07e0 55555555 		.long	1431655765
- 1988 07e4 5555C53F 		.long	1069897045
- 1989 07e8 55555555 		.long	1431655765
- 1990 07ec 5555C53F 		.long	1069897045
- 1991 07f0 55555555 		.long	1431655765
- 1992 07f4 5555C53F 		.long	1069897045
- 1993 07f8 55555555 		.long	1431655765
- 1994 07fc 5555C53F 		.long	1069897045
- 1995              		.align 32
- 1996              	.LC77:
- 1997 0800 11111111 		.long	286331153
- 1998 0804 1111813F 		.long	1065423121
- 1999 0808 11111111 		.long	286331153
- 2000 080c 1111813F 		.long	1065423121
- 2001 0810 11111111 		.long	286331153
- 2002 0814 1111813F 		.long	1065423121
- 2003 0818 11111111 		.long	286331153
- 2004 081c 1111813F 		.long	1065423121
- 2005              		.align 32
- 2006              	.LC78:
- 2007 0820 55555555 		.long	1431655765
- 2008 0824 5555A53F 		.long	1067799893
- 2009 0828 55555555 		.long	1431655765
- 2010 082c 5555A53F 		.long	1067799893
-GAS LISTING /tmp/cc72IM0J.s 			page 54
+ 1947 0628 B01BC393 		.long	2479037360
+ 1948 062c C2B41A3F 		.long	1058714818
+ 1949 0630 B01BC393 		.long	2479037360
+ 1950 0634 C2B41A3F 		.long	1058714818
+ 1951 0638 B01BC393 		.long	2479037360
+ 1952 063c C2B41A3F 		.long	1058714818
+ 1953              		.align 32
+ 1954              	.LC60:
+ 1955 0640 F252563F 		.long	1062621938
+ 1956 0644 F5D6DF3F 		.long	1071634165
+ 1957 0648 F252563F 		.long	1062621938
+ 1958 064c F5D6DF3F 		.long	1071634165
+ 1959 0650 F252563F 		.long	1062621938
+ 1960 0654 F5D6DF3F 		.long	1071634165
+ 1961 0658 F252563F 		.long	1062621938
+ 1962 065c F5D6DF3F 		.long	1071634165
+ 1963              		.align 32
+ 1964              	.LC61:
+ 1965 0660 116992ED 		.long	3985795345
+ 1966 0664 BAD21240 		.long	1074975418
+ 1967 0668 116992ED 		.long	3985795345
+ 1968 066c BAD21240 		.long	1074975418
+ 1969 0670 116992ED 		.long	3985795345
+ 1970 0674 BAD21240 		.long	1074975418
+ 1971 0678 116992ED 		.long	3985795345
+ 1972 067c BAD21240 		.long	1074975418
+ 1973              		.align 32
+ 1974              	.LC62:
+ 1975 0680 2EEB3EC6 		.long	3326012206
+ 1976 0684 72FF2C40 		.long	1076690802
+ 1977 0688 2EEB3EC6 		.long	3326012206
+ 1978 068c 72FF2C40 		.long	1076690802
+ 1979 0690 2EEB3EC6 		.long	3326012206
+ 1980 0694 72FF2C40 		.long	1076690802
+ 1981 0698 2EEB3EC6 		.long	3326012206
+ 1982 069c 72FF2C40 		.long	1076690802
+ 1983              		.align 32
+ 1984              	.LC63:
+ 1985 06a0 21AE5EEB 		.long	3948850721
+ 1986 06a4 E2C95140 		.long	1079101922
+ 1987 06a8 21AE5EEB 		.long	3948850721
+ 1988 06ac E2C95140 		.long	1079101922
+ 1989 06b0 21AE5EEB 		.long	3948850721
+ 1990 06b4 E2C95140 		.long	1079101922
+ 1991 06b8 21AE5EEB 		.long	3948850721
+ 1992 06bc E2C95140 		.long	1079101922
+ 1993              		.align 32
+ 1994              	.LC64:
+ 1995 06c0 B2251F9E 		.long	2652841394
+ 1996 06c4 0A203740 		.long	1077354506
+ 1997 06c8 B2251F9E 		.long	2652841394
+ 1998 06cc 0A203740 		.long	1077354506
+ 1999 06d0 B2251F9E 		.long	2652841394
+ 2000 06d4 0A203740 		.long	1077354506
+ 2001 06d8 B2251F9E 		.long	2652841394
+ 2002 06dc 0A203740 		.long	1077354506
+ 2003              		.align 32
+GAS LISTING /tmp/ccsgyXat.s 			page 56
 
 
- 2011 0830 55555555 		.long	1431655765
- 2012 0834 5555A53F 		.long	1067799893
- 2013 0838 55555555 		.long	1431655765
- 2014 083c 5555A53F 		.long	1067799893
- 2015              		.align 32
- 2016              	.LC79:
- 2017 0840 1AA0011A 		.long	436314138
- 2018 0844 A0012A3F 		.long	1059717536
- 2019 0848 1AA0011A 		.long	436314138
- 2020 084c A0012A3F 		.long	1059717536
- 2021 0850 1AA0011A 		.long	436314138
- 2022 0854 A0012A3F 		.long	1059717536
- 2023 0858 1AA0011A 		.long	436314138
- 2024 085c A0012A3F 		.long	1059717536
- 2025              		.align 32
- 2026              	.LC80:
- 2027 0860 176CC116 		.long	381774871
- 2028 0864 6CC1563F 		.long	1062650220
- 2029 0868 176CC116 		.long	381774871
- 2030 086c 6CC1563F 		.long	1062650220
- 2031 0870 176CC116 		.long	381774871
- 2032 0874 6CC1563F 		.long	1062650220
- 2033 0878 176CC116 		.long	381774871
- 2034 087c 6CC1563F 		.long	1062650220
- 2035              		.align 32
- 2036              	.LC81:
- 2037 0880 34C756A5 		.long	2773927732
- 2038 0884 E31DC73E 		.long	1053236707
- 2039 0888 34C756A5 		.long	2773927732
- 2040 088c E31DC73E 		.long	1053236707
- 2041 0890 34C756A5 		.long	2773927732
- 2042 0894 E31DC73E 		.long	1053236707
- 2043 0898 34C756A5 		.long	2773927732
- 2044 089c E31DC73E 		.long	1053236707
- 2045              		.align 32
- 2046              	.LC82:
- 2047 08a0 1AA0011A 		.long	436314138
- 2048 08a4 A001FA3E 		.long	1056571808
- 2049 08a8 1AA0011A 		.long	436314138
- 2050 08ac A001FA3E 		.long	1056571808
- 2051 08b0 1AA0011A 		.long	436314138
- 2052 08b4 A001FA3E 		.long	1056571808
- 2053 08b8 1AA0011A 		.long	436314138
- 2054 08bc A001FA3E 		.long	1056571808
- 2055              		.align 32
- 2056              	.LC83:
- 2057 08c0 E444F567 		.long	1744127204
- 2058 08c4 45E65A3E 		.long	1046144581
- 2059 08c8 E444F567 		.long	1744127204
- 2060 08cc 45E65A3E 		.long	1046144581
- 2061 08d0 E444F567 		.long	1744127204
- 2062 08d4 45E65A3E 		.long	1046144581
- 2063 08d8 E444F567 		.long	1744127204
- 2064 08dc 45E65A3E 		.long	1046144581
- 2065              		.align 32
- 2066              	.LC84:
- 2067 08e0 5C9F78B7 		.long	3078135644
-GAS LISTING /tmp/cc72IM0J.s 			page 55
+ 2004              	.LC65:
+ 2005 06e0 8EEF97AE 		.long	2929192846
+ 2006 06e4 20932640 		.long	1076269856
+ 2007 06e8 8EEF97AE 		.long	2929192846
+ 2008 06ec 20932640 		.long	1076269856
+ 2009 06f0 8EEF97AE 		.long	2929192846
+ 2010 06f4 20932640 		.long	1076269856
+ 2011 06f8 8EEF97AE 		.long	2929192846
+ 2012 06fc 20932640 		.long	1076269856
+ 2013              		.align 32
+ 2014              	.LC66:
+ 2015 0700 33C0194E 		.long	1310310451
+ 2016 0704 2C9D4640 		.long	1078369580
+ 2017 0708 33C0194E 		.long	1310310451
+ 2018 070c 2C9D4640 		.long	1078369580
+ 2019 0710 33C0194E 		.long	1310310451
+ 2020 0714 2C9D4640 		.long	1078369580
+ 2021 0718 33C0194E 		.long	1310310451
+ 2022 071c 2C9D4640 		.long	1078369580
+ 2023              		.align 32
+ 2024              	.LC67:
+ 2025 0720 BDBD26A3 		.long	2737225149
+ 2026 0724 33BF5440 		.long	1079295795
+ 2027 0728 BDBD26A3 		.long	2737225149
+ 2028 072c 33BF5440 		.long	1079295795
+ 2029 0730 BDBD26A3 		.long	2737225149
+ 2030 0734 33BF5440 		.long	1079295795
+ 2031 0738 BDBD26A3 		.long	2737225149
+ 2032 073c 33BF5440 		.long	1079295795
+ 2033              		.align 32
+ 2034              	.LC68:
+ 2035 0740 A80C615C 		.long	1549864104
+ 2036 0744 10D02BBF 		.long	-1087647728
+ 2037 0748 A80C615C 		.long	1549864104
+ 2038 074c 10D02BBF 		.long	-1087647728
+ 2039 0750 A80C615C 		.long	1549864104
+ 2040 0754 10D02BBF 		.long	-1087647728
+ 2041 0758 A80C615C 		.long	1549864104
+ 2042 075c 10D02BBF 		.long	-1087647728
+ 2043              		.align 32
+ 2044              	.LC69:
+ 2045 0760 00000000 		.long	0
+ 2046 0764 0030E63F 		.long	1072050176
+ 2047 0768 00000000 		.long	0
+ 2048 076c 0030E63F 		.long	1072050176
+ 2049 0770 00000000 		.long	0
+ 2050 0774 0030E63F 		.long	1072050176
+ 2051 0778 00000000 		.long	0
+ 2052 077c 0030E63F 		.long	1072050176
+ 2053              		.align 32
+ 2054              	.LC70:
+ 2055 0780 00000000 		.long	0
+ 2056 0784 00001000 		.long	1048576
+ 2057 0788 00000000 		.long	0
+ 2058 078c 00001000 		.long	1048576
+ 2059 0790 00000000 		.long	0
+ 2060 0794 00001000 		.long	1048576
+GAS LISTING /tmp/ccsgyXat.s 			page 57
 
 
- 2068 08e4 4F7E923E 		.long	1049787983
- 2069 08e8 5C9F78B7 		.long	3078135644
- 2070 08ec 4F7E923E 		.long	1049787983
- 2071 08f0 5C9F78B7 		.long	3078135644
- 2072 08f4 4F7E923E 		.long	1049787983
- 2073 08f8 5C9F78B7 		.long	3078135644
- 2074 08fc 4F7E923E 		.long	1049787983
- 2075              		.align 32
- 2076              	.LC85:
- 2077 0900 096DA813 		.long	329805065
- 2078 0904 4612E63D 		.long	1038488134
- 2079 0908 096DA813 		.long	329805065
- 2080 090c 4612E63D 		.long	1038488134
- 2081 0910 096DA813 		.long	329805065
- 2082 0914 4612E63D 		.long	1038488134
- 2083 0918 096DA813 		.long	329805065
- 2084 091c 4612E63D 		.long	1038488134
+ 2061 0798 00000000 		.long	0
+ 2062 079c 00001000 		.long	1048576
+ 2063              		.align 32
+ 2064              	.LC71:
+ 2065 07a0 00000020 		.long	536870912
+ 2066 07a4 2000F87F 		.long	2146959392
+ 2067 07a8 00000020 		.long	536870912
+ 2068 07ac 2000F87F 		.long	2146959392
+ 2069 07b0 00000020 		.long	536870912
+ 2070 07b4 2000F87F 		.long	2146959392
+ 2071 07b8 00000020 		.long	536870912
+ 2072 07bc 2000F87F 		.long	2146959392
+ 2073              		.section	.rodata.cst16
+ 2074              		.align 16
+ 2075              	.LC72:
+ 2076 0070 00000000 		.long	0
+ 2077 0074 0000F07F 		.long	2146435072
+ 2078 0078 00000000 		.long	0
+ 2079 007c 0000F07F 		.long	2146435072
+ 2080              		.align 16
+ 2081              	.LC73:
+ 2082 0080 00000000 		.quad	9218868437227405312
+ 2082      0000F07F 
+ 2083 0088 00000000 		.quad	9218868437227405312
+ 2083      0000F07F 
+ 2084              		.section	.rodata.cst32
  2085              		.align 32
- 2086              	.LC86:
- 2087 0920 98D8F8EF 		.long	4026063000
- 2088 0924 D8EE213E 		.long	1042411224
- 2089 0928 98D8F8EF 		.long	4026063000
- 2090 092c D8EE213E 		.long	1042411224
- 2091 0930 98D8F8EF 		.long	4026063000
- 2092 0934 D8EE213E 		.long	1042411224
- 2093 0938 98D8F8EF 		.long	4026063000
- 2094 093c D8EE213E 		.long	1042411224
+ 2086              	.LC74:
+ 2087 07c0 FE822B65 		.long	1697350398
+ 2088 07c4 4715F73F 		.long	1073157447
+ 2089 07c8 FE822B65 		.long	1697350398
+ 2090 07cc 4715F73F 		.long	1073157447
+ 2091 07d0 FE822B65 		.long	1697350398
+ 2092 07d4 4715F73F 		.long	1073157447
+ 2093 07d8 FE822B65 		.long	1697350398
+ 2094 07dc 4715F73F 		.long	1073157447
  2095              		.align 32
- 2096              	.LC87:
- 2097 0940 85EB51B8 		.long	3092376453
- 2098 0944 1E238640 		.long	1082532638
- 2099 0948 85EB51B8 		.long	3092376453
- 2100 094c 1E238640 		.long	1082532638
- 2101 0950 85EB51B8 		.long	3092376453
- 2102 0954 1E238640 		.long	1082532638
- 2103 0958 85EB51B8 		.long	3092376453
- 2104 095c 1E238640 		.long	1082532638
+ 2096              	.LC75:
+ 2097 07e0 00000000 		.long	0
+ 2098 07e4 402EE63F 		.long	1072049728
+ 2099 07e8 00000000 		.long	0
+ 2100 07ec 402EE63F 		.long	1072049728
+ 2101 07f0 00000000 		.long	0
+ 2102 07f4 402EE63F 		.long	1072049728
+ 2103 07f8 00000000 		.long	0
+ 2104 07fc 402EE63F 		.long	1072049728
  2105              		.align 32
- 2106              	.LC88:
- 2107 0960 2D431CEB 		.long	3944497965
- 2108 0964 E2361A3F 		.long	1058682594
- 2109 0968 2D431CEB 		.long	3944497965
- 2110 096c E2361A3F 		.long	1058682594
- 2111 0970 2D431CEB 		.long	3944497965
- 2112 0974 E2361A3F 		.long	1058682594
- 2113 0978 2D431CEB 		.long	3944497965
- 2114 097c E2361A3F 		.long	1058682594
+ 2106              	.LC76:
+ 2107 0800 CAAB79CF 		.long	3480857546
+ 2108 0804 D1F7B73E 		.long	1052243921
+ 2109 0808 CAAB79CF 		.long	3480857546
+ 2110 080c D1F7B73E 		.long	1052243921
+ 2111 0810 CAAB79CF 		.long	3480857546
+ 2112 0814 D1F7B73E 		.long	1052243921
+ 2113 0818 CAAB79CF 		.long	3480857546
+ 2114 081c D1F7B73E 		.long	1052243921
  2115              		.align 32
- 2116              	.LC89:
- 2117 0980 00000000 		.long	0
- 2118 0984 00001440 		.long	1075052544
- 2119 0988 00000000 		.long	0
- 2120 098c 00001440 		.long	1075052544
- 2121 0990 00000000 		.long	0
- 2122 0994 00001440 		.long	1075052544
- 2123 0998 00000000 		.long	0
- 2124 099c 00001440 		.long	1075052544
-GAS LISTING /tmp/cc72IM0J.s 			page 56
+GAS LISTING /tmp/ccsgyXat.s 			page 58
 
 
+ 2116              	.LC77:
+ 2117 0820 55555555 		.long	1431655765
+ 2118 0824 5555C53F 		.long	1069897045
+ 2119 0828 55555555 		.long	1431655765
+ 2120 082c 5555C53F 		.long	1069897045
+ 2121 0830 55555555 		.long	1431655765
+ 2122 0834 5555C53F 		.long	1069897045
+ 2123 0838 55555555 		.long	1431655765
+ 2124 083c 5555C53F 		.long	1069897045
  2125              		.align 32
- 2126              	.LC90:
- 2127 09a0 9A999999 		.long	2576980378
- 2128 09a4 9999E93F 		.long	1072273817
- 2129 09a8 9A999999 		.long	2576980378
- 2130 09ac 9999E93F 		.long	1072273817
- 2131 09b0 9A999999 		.long	2576980378
- 2132 09b4 9999E93F 		.long	1072273817
- 2133 09b8 9A999999 		.long	2576980378
- 2134 09bc 9999E93F 		.long	1072273817
+ 2126              	.LC78:
+ 2127 0840 11111111 		.long	286331153
+ 2128 0844 1111813F 		.long	1065423121
+ 2129 0848 11111111 		.long	286331153
+ 2130 084c 1111813F 		.long	1065423121
+ 2131 0850 11111111 		.long	286331153
+ 2132 0854 1111813F 		.long	1065423121
+ 2133 0858 11111111 		.long	286331153
+ 2134 085c 1111813F 		.long	1065423121
  2135              		.align 32
- 2136              	.LC91:
- 2137 09c0 00000000 		.long	0
- 2138 09c4 00408F40 		.long	1083129856
- 2139 09c8 00000000 		.long	0
- 2140 09cc 00408F40 		.long	1083129856
- 2141 09d0 00000000 		.long	0
- 2142 09d4 00408F40 		.long	1083129856
- 2143 09d8 00000000 		.long	0
- 2144 09dc 00408F40 		.long	1083129856
+ 2136              	.LC79:
+ 2137 0860 55555555 		.long	1431655765
+ 2138 0864 5555A53F 		.long	1067799893
+ 2139 0868 55555555 		.long	1431655765
+ 2140 086c 5555A53F 		.long	1067799893
+ 2141 0870 55555555 		.long	1431655765
+ 2142 0874 5555A53F 		.long	1067799893
+ 2143 0878 55555555 		.long	1431655765
+ 2144 087c 5555A53F 		.long	1067799893
  2145              		.align 32
- 2146              	.LC92:
- 2147 09e0 814EE62E 		.long	786845313
- 2148 09e4 0BEBB940 		.long	1085926155
- 2149 09e8 814EE62E 		.long	786845313
- 2150 09ec 0BEBB940 		.long	1085926155
- 2151 09f0 814EE62E 		.long	786845313
- 2152 09f4 0BEBB940 		.long	1085926155
- 2153 09f8 814EE62E 		.long	786845313
- 2154 09fc 0BEBB940 		.long	1085926155
+ 2146              	.LC80:
+ 2147 0880 1AA0011A 		.long	436314138
+ 2148 0884 A0012A3F 		.long	1059717536
+ 2149 0888 1AA0011A 		.long	436314138
+ 2150 088c A0012A3F 		.long	1059717536
+ 2151 0890 1AA0011A 		.long	436314138
+ 2152 0894 A0012A3F 		.long	1059717536
+ 2153 0898 1AA0011A 		.long	436314138
+ 2154 089c A0012A3F 		.long	1059717536
  2155              		.align 32
- 2156              	.LC98:
- 2157 0a00 7B14AE47 		.long	1202590843
- 2158 0a04 E17A843F 		.long	1065646817
- 2159 0a08 7B14AE47 		.long	1202590843
- 2160 0a0c E17A843F 		.long	1065646817
- 2161 0a10 7B14AE47 		.long	1202590843
- 2162 0a14 E17A843F 		.long	1065646817
- 2163 0a18 7B14AE47 		.long	1202590843
- 2164 0a1c E17A843F 		.long	1065646817
+ 2156              	.LC81:
+ 2157 08a0 176CC116 		.long	381774871
+ 2158 08a4 6CC1563F 		.long	1062650220
+ 2159 08a8 176CC116 		.long	381774871
+ 2160 08ac 6CC1563F 		.long	1062650220
+ 2161 08b0 176CC116 		.long	381774871
+ 2162 08b4 6CC1563F 		.long	1062650220
+ 2163 08b8 176CC116 		.long	381774871
+ 2164 08bc 6CC1563F 		.long	1062650220
  2165              		.align 32
- 2166              	.LC99:
- 2167 0a20 00000000 		.long	0
- 2168 0a24 0000E0BF 		.long	-1075838976
- 2169 0a28 00000000 		.long	0
- 2170 0a2c 0000E0BF 		.long	-1075838976
- 2171 0a30 00000000 		.long	0
- 2172 0a34 0000E0BF 		.long	-1075838976
- 2173 0a38 00000000 		.long	0
- 2174 0a3c 0000E0BF 		.long	-1075838976
+ 2166              	.LC82:
+ 2167 08c0 34C756A5 		.long	2773927732
+ 2168 08c4 E31DC73E 		.long	1053236707
+ 2169 08c8 34C756A5 		.long	2773927732
+ 2170 08cc E31DC73E 		.long	1053236707
+ 2171 08d0 34C756A5 		.long	2773927732
+ 2172 08d4 E31DC73E 		.long	1053236707
+GAS LISTING /tmp/ccsgyXat.s 			page 59
+
+
+ 2173 08d8 34C756A5 		.long	2773927732
+ 2174 08dc E31DC73E 		.long	1053236707
  2175              		.align 32
- 2176              	.LC100:
- 2177 0a40 9A999999 		.long	2576980378
- 2178 0a44 9999B9BF 		.long	-1078355559
- 2179 0a48 9A999999 		.long	2576980378
- 2180 0a4c 9999B9BF 		.long	-1078355559
- 2181 0a50 9A999999 		.long	2576980378
-GAS LISTING /tmp/cc72IM0J.s 			page 57
+ 2176              	.LC83:
+ 2177 08e0 1AA0011A 		.long	436314138
+ 2178 08e4 A001FA3E 		.long	1056571808
+ 2179 08e8 1AA0011A 		.long	436314138
+ 2180 08ec A001FA3E 		.long	1056571808
+ 2181 08f0 1AA0011A 		.long	436314138
+ 2182 08f4 A001FA3E 		.long	1056571808
+ 2183 08f8 1AA0011A 		.long	436314138
+ 2184 08fc A001FA3E 		.long	1056571808
+ 2185              		.align 32
+ 2186              	.LC84:
+ 2187 0900 E444F567 		.long	1744127204
+ 2188 0904 45E65A3E 		.long	1046144581
+ 2189 0908 E444F567 		.long	1744127204
+ 2190 090c 45E65A3E 		.long	1046144581
+ 2191 0910 E444F567 		.long	1744127204
+ 2192 0914 45E65A3E 		.long	1046144581
+ 2193 0918 E444F567 		.long	1744127204
+ 2194 091c 45E65A3E 		.long	1046144581
+ 2195              		.align 32
+ 2196              	.LC85:
+ 2197 0920 5C9F78B7 		.long	3078135644
+ 2198 0924 4F7E923E 		.long	1049787983
+ 2199 0928 5C9F78B7 		.long	3078135644
+ 2200 092c 4F7E923E 		.long	1049787983
+ 2201 0930 5C9F78B7 		.long	3078135644
+ 2202 0934 4F7E923E 		.long	1049787983
+ 2203 0938 5C9F78B7 		.long	3078135644
+ 2204 093c 4F7E923E 		.long	1049787983
+ 2205              		.align 32
+ 2206              	.LC86:
+ 2207 0940 096DA813 		.long	329805065
+ 2208 0944 4612E63D 		.long	1038488134
+ 2209 0948 096DA813 		.long	329805065
+ 2210 094c 4612E63D 		.long	1038488134
+ 2211 0950 096DA813 		.long	329805065
+ 2212 0954 4612E63D 		.long	1038488134
+ 2213 0958 096DA813 		.long	329805065
+ 2214 095c 4612E63D 		.long	1038488134
+ 2215              		.align 32
+ 2216              	.LC87:
+ 2217 0960 98D8F8EF 		.long	4026063000
+ 2218 0964 D8EE213E 		.long	1042411224
+ 2219 0968 98D8F8EF 		.long	4026063000
+ 2220 096c D8EE213E 		.long	1042411224
+ 2221 0970 98D8F8EF 		.long	4026063000
+ 2222 0974 D8EE213E 		.long	1042411224
+ 2223 0978 98D8F8EF 		.long	4026063000
+ 2224 097c D8EE213E 		.long	1042411224
+ 2225              		.align 32
+ 2226              	.LC88:
+ 2227 0980 85EB51B8 		.long	3092376453
+ 2228 0984 1E238640 		.long	1082532638
+ 2229 0988 85EB51B8 		.long	3092376453
+GAS LISTING /tmp/ccsgyXat.s 			page 60
 
 
- 2182 0a54 9999B9BF 		.long	-1078355559
- 2183 0a58 9A999999 		.long	2576980378
- 2184 0a5c 9999B9BF 		.long	-1078355559
- 2185              		.section	.rodata.cst16
- 2186              		.align 16
- 2187              	.LC103:
- 2188 00a0 FFFFFFFF 		.quad	-1
- 2188      FFFFFFFF 
- 2189 00a8 FFFFFFFF 		.quad	-1
- 2189      FFFFFFFF 
- 2190              		.hidden	__dso_handle
- 2191              		.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.4) 4.8.4"
- 2192              		.section	.note.GNU-stack,"",@progbits
-GAS LISTING /tmp/cc72IM0J.s 			page 58
+ 2230 098c 1E238640 		.long	1082532638
+ 2231 0990 85EB51B8 		.long	3092376453
+ 2232 0994 1E238640 		.long	1082532638
+ 2233 0998 85EB51B8 		.long	3092376453
+ 2234 099c 1E238640 		.long	1082532638
+ 2235              		.align 32
+ 2236              	.LC89:
+ 2237 09a0 2D431CEB 		.long	3944497965
+ 2238 09a4 E2361A3F 		.long	1058682594
+ 2239 09a8 2D431CEB 		.long	3944497965
+ 2240 09ac E2361A3F 		.long	1058682594
+ 2241 09b0 2D431CEB 		.long	3944497965
+ 2242 09b4 E2361A3F 		.long	1058682594
+ 2243 09b8 2D431CEB 		.long	3944497965
+ 2244 09bc E2361A3F 		.long	1058682594
+ 2245              		.align 32
+ 2246              	.LC90:
+ 2247 09c0 00000000 		.long	0
+ 2248 09c4 00001440 		.long	1075052544
+ 2249 09c8 00000000 		.long	0
+ 2250 09cc 00001440 		.long	1075052544
+ 2251 09d0 00000000 		.long	0
+ 2252 09d4 00001440 		.long	1075052544
+ 2253 09d8 00000000 		.long	0
+ 2254 09dc 00001440 		.long	1075052544
+ 2255              		.align 32
+ 2256              	.LC91:
+ 2257 09e0 9A999999 		.long	2576980378
+ 2258 09e4 9999E93F 		.long	1072273817
+ 2259 09e8 9A999999 		.long	2576980378
+ 2260 09ec 9999E93F 		.long	1072273817
+ 2261 09f0 9A999999 		.long	2576980378
+ 2262 09f4 9999E93F 		.long	1072273817
+ 2263 09f8 9A999999 		.long	2576980378
+ 2264 09fc 9999E93F 		.long	1072273817
+ 2265              		.align 32
+ 2266              	.LC92:
+ 2267 0a00 00000000 		.long	0
+ 2268 0a04 00408F40 		.long	1083129856
+ 2269 0a08 00000000 		.long	0
+ 2270 0a0c 00408F40 		.long	1083129856
+ 2271 0a10 00000000 		.long	0
+ 2272 0a14 00408F40 		.long	1083129856
+ 2273 0a18 00000000 		.long	0
+ 2274 0a1c 00408F40 		.long	1083129856
+ 2275              		.section	.rodata.cst8
+ 2276              		.align 8
+ 2277              	.LC93:
+ 2278 0010 182D4454 		.long	1413754136
+ 2279 0014 FB211940 		.long	1075388923
+ 2280              		.align 8
+ 2281              	.LC94:
+ 2282 0018 00000000 		.long	0
+ 2283 001c 00009040 		.long	1083179008
+ 2284              		.section	.rodata.cst16
+ 2285              		.align 16
+ 2286              	.LC96:
+GAS LISTING /tmp/ccsgyXat.s 			page 61
+
+
+ 2287 0090 01000000 		.quad	4294967297
+ 2287      01000000 
+ 2288 0098 01000000 		.quad	4294967297
+ 2288      01000000 
+ 2289              		.section	.rodata.cst32
+ 2290              		.align 32
+ 2291              	.LC97:
+ 2292 0a20 182D4454 		.long	1413754136
+ 2293 0a24 FB211940 		.long	1075388923
+ 2294 0a28 182D4454 		.long	1413754136
+ 2295 0a2c FB211940 		.long	1075388923
+ 2296 0a30 182D4454 		.long	1413754136
+ 2297 0a34 FB211940 		.long	1075388923
+ 2298 0a38 182D4454 		.long	1413754136
+ 2299 0a3c FB211940 		.long	1075388923
+ 2300              		.align 32
+ 2301              	.LC98:
+ 2302 0a40 814EE62E 		.long	786845313
+ 2303 0a44 0BEBB940 		.long	1085926155
+ 2304 0a48 814EE62E 		.long	786845313
+ 2305 0a4c 0BEBB940 		.long	1085926155
+ 2306 0a50 814EE62E 		.long	786845313
+ 2307 0a54 0BEBB940 		.long	1085926155
+ 2308 0a58 814EE62E 		.long	786845313
+ 2309 0a5c 0BEBB940 		.long	1085926155
+ 2310              		.align 32
+ 2311              	.LC99:
+ 2312 0a60 7B14AE47 		.long	1202590843
+ 2313 0a64 E17A843F 		.long	1065646817
+ 2314 0a68 7B14AE47 		.long	1202590843
+ 2315 0a6c E17A843F 		.long	1065646817
+ 2316 0a70 7B14AE47 		.long	1202590843
+ 2317 0a74 E17A843F 		.long	1065646817
+ 2318 0a78 7B14AE47 		.long	1202590843
+ 2319 0a7c E17A843F 		.long	1065646817
+ 2320              		.align 32
+ 2321              	.LC100:
+ 2322 0a80 182D4454 		.long	1413754136
+ 2323 0a84 FB21B940 		.long	1085874683
+ 2324 0a88 182D4454 		.long	1413754136
+ 2325 0a8c FB21B940 		.long	1085874683
+ 2326 0a90 182D4454 		.long	1413754136
+ 2327 0a94 FB21B940 		.long	1085874683
+ 2328 0a98 182D4454 		.long	1413754136
+ 2329 0a9c FB21B940 		.long	1085874683
+ 2330              		.align 32
+ 2331              	.LC101:
+ 2332 0aa0 00000000 		.long	0
+ 2333 0aa4 0000E0BF 		.long	-1075838976
+ 2334 0aa8 00000000 		.long	0
+ 2335 0aac 0000E0BF 		.long	-1075838976
+ 2336 0ab0 00000000 		.long	0
+ 2337 0ab4 0000E0BF 		.long	-1075838976
+ 2338 0ab8 00000000 		.long	0
+ 2339 0abc 0000E0BF 		.long	-1075838976
+ 2340              		.align 32
+ 2341              	.LC102:
+GAS LISTING /tmp/ccsgyXat.s 			page 62
+
+
+ 2342 0ac0 9A999999 		.long	2576980378
+ 2343 0ac4 9999B9BF 		.long	-1078355559
+ 2344 0ac8 9A999999 		.long	2576980378
+ 2345 0acc 9999B9BF 		.long	-1078355559
+ 2346 0ad0 9A999999 		.long	2576980378
+ 2347 0ad4 9999B9BF 		.long	-1078355559
+ 2348 0ad8 9A999999 		.long	2576980378
+ 2349 0adc 9999B9BF 		.long	-1078355559
+ 2350              		.section	.rodata.cst16
+ 2351              		.align 16
+ 2352              	.LC105:
+ 2353 00a0 FFFFFFFF 		.quad	-1
+ 2353      FFFFFFFF 
+ 2354 00a8 FFFFFFFF 		.quad	-1
+ 2354      FFFFFFFF 
+ 2355              		.hidden	__dso_handle
+ 2356              		.ident	"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.4) 4.8.4"
+ 2357              		.section	.note.GNU-stack,"",@progbits
+GAS LISTING /tmp/ccsgyXat.s 			page 63
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 Duffing_RKCK45.cpp
-     /tmp/cc72IM0J.s:4      .text.unlikely:0000000000000000 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.part.3
-     /tmp/cc72IM0J.s:27     .text:0000000000000000 _Z11printVectorPKc5Vec4d
-     /tmp/cc72IM0J.s:143    .text:0000000000000180 _Z8linspaceddi
-     /tmp/cc72IM0J.s:208    .text.startup:0000000000000000 main
-     /tmp/cc72IM0J.s:1270   .rodata:0000000000000000 _ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8_fvE1u
-     /tmp/cc72IM0J.s:1282   .rodata:0000000000000020 _ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8_fvE1u
-     /tmp/cc72IM0J.s:1247   .text.startup:0000000000001830 _GLOBAL__sub_I__Z11printVectorPKc5Vec4d
+                            *ABS*:0000000000000000 duffing_RKCK45.cpp
+     /tmp/ccsgyXat.s:4      .text.unlikely:0000000000000000 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.part.3
+     /tmp/ccsgyXat.s:24     .text:0000000000000000 _Z8linspaceddi
+     /tmp/ccsgyXat.s:81     .text.startup:0000000000000000 main
+     /tmp/ccsgyXat.s:1388   .rodata:0000000000000000 _ZZ10constant8fILi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648ELi0ELin2147483648EEDv8_fvE1u
+     /tmp/ccsgyXat.s:1400   .rodata:0000000000000020 _ZZ10constant8fILin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647ELin1ELi2147483647EEDv8_fvE1u
+     /tmp/ccsgyXat.s:1365   .text.startup:0000000000001dd0 _GLOBAL__sub_I_main
                              .bss:0000000000000000 _ZStL8__ioinit
-     /tmp/cc72IM0J.s:1295   .rodata.cst8:0000000000000000 .LC1
-     /tmp/cc72IM0J.s:1299   .rodata.cst8:0000000000000008 .LC2
-     /tmp/cc72IM0J.s:1945   .rodata.cst16:0000000000000080 .LC71
-     /tmp/cc72IM0J.s:2156   .rodata.cst32:0000000000000a00 .LC98
-     /tmp/cc72IM0J.s:2166   .rodata.cst32:0000000000000a20 .LC99
-     /tmp/cc72IM0J.s:2176   .rodata.cst32:0000000000000a40 .LC100
-     /tmp/cc72IM0J.s:1304   .rodata.cst32:0000000000000000 .LC3
-     /tmp/cc72IM0J.s:1324   .rodata.cst32:0000000000000040 .LC5
-     /tmp/cc72IM0J.s:1314   .rodata.cst32:0000000000000020 .LC4
-     /tmp/cc72IM0J.s:1334   .rodata.cst32:0000000000000060 .LC6
-     /tmp/cc72IM0J.s:1364   .rodata.cst32:00000000000000c0 .LC9
-     /tmp/cc72IM0J.s:1344   .rodata.cst32:0000000000000080 .LC7
-     /tmp/cc72IM0J.s:1374   .rodata.cst32:00000000000000e0 .LC10
-     /tmp/cc72IM0J.s:1384   .rodata.cst32:0000000000000100 .LC11
-     /tmp/cc72IM0J.s:1354   .rodata.cst32:00000000000000a0 .LC8
-     /tmp/cc72IM0J.s:1394   .rodata.cst32:0000000000000120 .LC12
-     /tmp/cc72IM0J.s:1424   .rodata.cst32:0000000000000180 .LC15
-     /tmp/cc72IM0J.s:1404   .rodata.cst32:0000000000000140 .LC13
-     /tmp/cc72IM0J.s:1434   .rodata.cst32:00000000000001a0 .LC16
-     /tmp/cc72IM0J.s:1414   .rodata.cst32:0000000000000160 .LC14
-     /tmp/cc72IM0J.s:1444   .rodata.cst32:00000000000001c0 .LC17
-     /tmp/cc72IM0J.s:1454   .rodata.cst32:00000000000001e0 .LC18
-     /tmp/cc72IM0J.s:1464   .rodata.cst32:0000000000000200 .LC19
-     /tmp/cc72IM0J.s:1485   .rodata.cst16:0000000000000000 .LC21
-     /tmp/cc72IM0J.s:1474   .rodata.cst32:0000000000000220 .LC20
-     /tmp/cc72IM0J.s:1493   .rodata.cst16:0000000000000020 .LC23
-     /tmp/cc72IM0J.s:2187   .rodata.cst16:00000000000000a0 .LC103
-     /tmp/cc72IM0J.s:1489   .rodata.cst16:0000000000000010 .LC22
-     /tmp/cc72IM0J.s:1497   .rodata.cst16:0000000000000030 .LC24
-     /tmp/cc72IM0J.s:1502   .rodata.cst32:0000000000000240 .LC25
-     /tmp/cc72IM0J.s:1512   .rodata.cst32:0000000000000260 .LC26
-     /tmp/cc72IM0J.s:1532   .rodata.cst32:00000000000002a0 .LC28
-     /tmp/cc72IM0J.s:1522   .rodata.cst32:0000000000000280 .LC27
-     /tmp/cc72IM0J.s:1542   .rodata.cst32:00000000000002c0 .LC29
-     /tmp/cc72IM0J.s:1552   .rodata.cst32:00000000000002e0 .LC30
-     /tmp/cc72IM0J.s:1592   .rodata.cst32:0000000000000360 .LC34
-     /tmp/cc72IM0J.s:1562   .rodata.cst32:0000000000000300 .LC31
-     /tmp/cc72IM0J.s:1582   .rodata.cst32:0000000000000340 .LC33
-     /tmp/cc72IM0J.s:1572   .rodata.cst32:0000000000000320 .LC32
-     /tmp/cc72IM0J.s:1632   .rodata.cst32:00000000000003e0 .LC38
-     /tmp/cc72IM0J.s:1642   .rodata.cst32:0000000000000400 .LC39
-     /tmp/cc72IM0J.s:1612   .rodata.cst32:00000000000003a0 .LC36
-     /tmp/cc72IM0J.s:1622   .rodata.cst32:00000000000003c0 .LC37
-     /tmp/cc72IM0J.s:1602   .rodata.cst32:0000000000000380 .LC35
-     /tmp/cc72IM0J.s:1702   .rodata.cst32:00000000000004c0 .LC45
-     /tmp/cc72IM0J.s:1682   .rodata.cst32:0000000000000480 .LC43
-     /tmp/cc72IM0J.s:1662   .rodata.cst32:0000000000000440 .LC41
-GAS LISTING /tmp/cc72IM0J.s 			page 59
+     /tmp/ccsgyXat.s:1413   .rodata.cst8:0000000000000000 .LC0
+     /tmp/ccsgyXat.s:1417   .rodata.cst8:0000000000000008 .LC1
+     /tmp/ccsgyXat.s:2075   .rodata.cst16:0000000000000070 .LC72
+     /tmp/ccsgyXat.s:2311   .rodata.cst32:0000000000000a60 .LC99
+     /tmp/ccsgyXat.s:2321   .rodata.cst32:0000000000000a80 .LC100
+     /tmp/ccsgyXat.s:2331   .rodata.cst32:0000000000000aa0 .LC101
+     /tmp/ccsgyXat.s:2341   .rodata.cst32:0000000000000ac0 .LC102
+     /tmp/ccsgyXat.s:1422   .rodata.cst32:0000000000000000 .LC3
+     /tmp/ccsgyXat.s:1432   .rodata.cst32:0000000000000020 .LC4
+     /tmp/ccsgyXat.s:1442   .rodata.cst32:0000000000000040 .LC5
+     /tmp/ccsgyXat.s:1452   .rodata.cst32:0000000000000060 .LC6
+     /tmp/ccsgyXat.s:1482   .rodata.cst32:00000000000000c0 .LC9
+     /tmp/ccsgyXat.s:1462   .rodata.cst32:0000000000000080 .LC7
+     /tmp/ccsgyXat.s:1542   .rodata.cst32:0000000000000180 .LC15
+     /tmp/ccsgyXat.s:1492   .rodata.cst32:00000000000000e0 .LC10
+     /tmp/ccsgyXat.s:1472   .rodata.cst32:00000000000000a0 .LC8
+     /tmp/ccsgyXat.s:1552   .rodata.cst32:00000000000001a0 .LC16
+     /tmp/ccsgyXat.s:1502   .rodata.cst32:0000000000000100 .LC11
+     /tmp/ccsgyXat.s:1512   .rodata.cst32:0000000000000120 .LC12
+     /tmp/ccsgyXat.s:1522   .rodata.cst32:0000000000000140 .LC13
+     /tmp/ccsgyXat.s:1532   .rodata.cst32:0000000000000160 .LC14
+     /tmp/ccsgyXat.s:1562   .rodata.cst32:00000000000001c0 .LC17
+     /tmp/ccsgyXat.s:1572   .rodata.cst32:00000000000001e0 .LC18
+     /tmp/ccsgyXat.s:1582   .rodata.cst32:0000000000000200 .LC19
+     /tmp/ccsgyXat.s:1592   .rodata.cst32:0000000000000220 .LC20
+     /tmp/ccsgyXat.s:1611   .rodata.cst16:0000000000000020 .LC23
+     /tmp/ccsgyXat.s:1603   .rodata.cst16:0000000000000000 .LC21
+     /tmp/ccsgyXat.s:2352   .rodata.cst16:00000000000000a0 .LC105
+     /tmp/ccsgyXat.s:1607   .rodata.cst16:0000000000000010 .LC22
+     /tmp/ccsgyXat.s:1615   .rodata.cst16:0000000000000030 .LC24
+     /tmp/ccsgyXat.s:1620   .rodata.cst32:0000000000000240 .LC25
+     /tmp/ccsgyXat.s:1630   .rodata.cst32:0000000000000260 .LC26
+     /tmp/ccsgyXat.s:1650   .rodata.cst32:00000000000002a0 .LC28
+     /tmp/ccsgyXat.s:1640   .rodata.cst32:0000000000000280 .LC27
+     /tmp/ccsgyXat.s:1670   .rodata.cst32:00000000000002e0 .LC30
+     /tmp/ccsgyXat.s:1680   .rodata.cst32:0000000000000300 .LC31
+     /tmp/ccsgyXat.s:1660   .rodata.cst32:00000000000002c0 .LC29
+     /tmp/ccsgyXat.s:1690   .rodata.cst32:0000000000000320 .LC32
+     /tmp/ccsgyXat.s:1720   .rodata.cst32:0000000000000380 .LC35
+     /tmp/ccsgyXat.s:1700   .rodata.cst32:0000000000000340 .LC33
+     /tmp/ccsgyXat.s:1710   .rodata.cst32:0000000000000360 .LC34
+     /tmp/ccsgyXat.s:1760   .rodata.cst32:0000000000000400 .LC39
+     /tmp/ccsgyXat.s:1750   .rodata.cst32:00000000000003e0 .LC38
+     /tmp/ccsgyXat.s:1770   .rodata.cst32:0000000000000420 .LC40
+     /tmp/ccsgyXat.s:1740   .rodata.cst32:00000000000003c0 .LC37
+     /tmp/ccsgyXat.s:1730   .rodata.cst32:00000000000003a0 .LC36
+     /tmp/ccsgyXat.s:1780   .rodata.cst32:0000000000000440 .LC41
+     /tmp/ccsgyXat.s:1800   .rodata.cst32:0000000000000480 .LC43
+GAS LISTING /tmp/ccsgyXat.s 			page 64
 
 
-     /tmp/cc72IM0J.s:1672   .rodata.cst32:0000000000000460 .LC42
-     /tmp/cc72IM0J.s:1722   .rodata.cst32:0000000000000500 .LC47
-     /tmp/cc72IM0J.s:1712   .rodata.cst32:00000000000004e0 .LC46
-     /tmp/cc72IM0J.s:1652   .rodata.cst32:0000000000000420 .LC40
-     /tmp/cc72IM0J.s:1732   .rodata.cst32:0000000000000520 .LC48
-     /tmp/cc72IM0J.s:1692   .rodata.cst32:00000000000004a0 .LC44
-     /tmp/cc72IM0J.s:1742   .rodata.cst32:0000000000000540 .LC49
-     /tmp/cc72IM0J.s:1753   .rodata.cst16:0000000000000040 .LC50
-     /tmp/cc72IM0J.s:1761   .rodata.cst16:0000000000000060 .LC52
-     /tmp/cc72IM0J.s:1757   .rodata.cst16:0000000000000050 .LC51
-     /tmp/cc72IM0J.s:1776   .rodata.cst32:0000000000000580 .LC54
-     /tmp/cc72IM0J.s:1766   .rodata.cst32:0000000000000560 .LC53
-     /tmp/cc72IM0J.s:1787   .rodata.cst16:0000000000000070 .LC55
-     /tmp/cc72IM0J.s:1814   .rodata.cst32:00000000000005e0 .LC58
-     /tmp/cc72IM0J.s:1794   .rodata.cst32:00000000000005a0 .LC56
-     /tmp/cc72IM0J.s:1834   .rodata.cst32:0000000000000620 .LC60
-     /tmp/cc72IM0J.s:1824   .rodata.cst32:0000000000000600 .LC59
-     /tmp/cc72IM0J.s:1804   .rodata.cst32:00000000000005c0 .LC57
-     /tmp/cc72IM0J.s:1844   .rodata.cst32:0000000000000640 .LC61
-     /tmp/cc72IM0J.s:1854   .rodata.cst32:0000000000000660 .LC62
-     /tmp/cc72IM0J.s:1864   .rodata.cst32:0000000000000680 .LC63
-     /tmp/cc72IM0J.s:1874   .rodata.cst32:00000000000006a0 .LC64
-     /tmp/cc72IM0J.s:1884   .rodata.cst32:00000000000006c0 .LC65
-     /tmp/cc72IM0J.s:1894   .rodata.cst32:00000000000006e0 .LC66
-     /tmp/cc72IM0J.s:1904   .rodata.cst32:0000000000000700 .LC67
-     /tmp/cc72IM0J.s:1914   .rodata.cst32:0000000000000720 .LC68
-     /tmp/cc72IM0J.s:1924   .rodata.cst32:0000000000000740 .LC69
-     /tmp/cc72IM0J.s:1951   .rodata.cst16:0000000000000090 .LC72
-     /tmp/cc72IM0J.s:1934   .rodata.cst32:0000000000000760 .LC70
-     /tmp/cc72IM0J.s:1956   .rodata.cst32:0000000000000780 .LC73
-     /tmp/cc72IM0J.s:1966   .rodata.cst32:00000000000007a0 .LC74
-     /tmp/cc72IM0J.s:1976   .rodata.cst32:00000000000007c0 .LC75
-     /tmp/cc72IM0J.s:2016   .rodata.cst32:0000000000000840 .LC79
-     /tmp/cc72IM0J.s:1986   .rodata.cst32:00000000000007e0 .LC76
-     /tmp/cc72IM0J.s:1996   .rodata.cst32:0000000000000800 .LC77
-     /tmp/cc72IM0J.s:2026   .rodata.cst32:0000000000000860 .LC80
-     /tmp/cc72IM0J.s:2006   .rodata.cst32:0000000000000820 .LC78
-     /tmp/cc72IM0J.s:2056   .rodata.cst32:00000000000008c0 .LC83
-     /tmp/cc72IM0J.s:2066   .rodata.cst32:00000000000008e0 .LC84
-     /tmp/cc72IM0J.s:2036   .rodata.cst32:0000000000000880 .LC81
-     /tmp/cc72IM0J.s:2076   .rodata.cst32:0000000000000900 .LC85
-     /tmp/cc72IM0J.s:2046   .rodata.cst32:00000000000008a0 .LC82
-     /tmp/cc72IM0J.s:2086   .rodata.cst32:0000000000000920 .LC86
-     /tmp/cc72IM0J.s:2096   .rodata.cst32:0000000000000940 .LC87
-     /tmp/cc72IM0J.s:2106   .rodata.cst32:0000000000000960 .LC88
-     /tmp/cc72IM0J.s:2116   .rodata.cst32:0000000000000980 .LC89
-     /tmp/cc72IM0J.s:2146   .rodata.cst32:00000000000009e0 .LC92
-     /tmp/cc72IM0J.s:2136   .rodata.cst32:00000000000009c0 .LC91
-     /tmp/cc72IM0J.s:2126   .rodata.cst32:00000000000009a0 .LC90
+     /tmp/ccsgyXat.s:1820   .rodata.cst32:00000000000004c0 .LC45
+     /tmp/ccsgyXat.s:1790   .rodata.cst32:0000000000000460 .LC42
+     /tmp/ccsgyXat.s:1810   .rodata.cst32:00000000000004a0 .LC44
+     /tmp/ccsgyXat.s:1860   .rodata.cst32:0000000000000540 .LC49
+     /tmp/ccsgyXat.s:1870   .rodata.cst32:0000000000000560 .LC50
+     /tmp/ccsgyXat.s:1850   .rodata.cst32:0000000000000520 .LC48
+     /tmp/ccsgyXat.s:1840   .rodata.cst32:0000000000000500 .LC47
+     /tmp/ccsgyXat.s:1830   .rodata.cst32:00000000000004e0 .LC46
+     /tmp/ccsgyXat.s:1880   .rodata.cst32:0000000000000580 .LC51
+     /tmp/ccsgyXat.s:1891   .rodata.cst16:0000000000000040 .LC52
+     /tmp/ccsgyXat.s:1899   .rodata.cst16:0000000000000060 .LC54
+     /tmp/ccsgyXat.s:1895   .rodata.cst16:0000000000000050 .LC53
+     /tmp/ccsgyXat.s:1914   .rodata.cst32:00000000000005c0 .LC56
+     /tmp/ccsgyXat.s:1904   .rodata.cst32:00000000000005a0 .LC55
+     /tmp/ccsgyXat.s:1944   .rodata.cst32:0000000000000620 .LC59
+     /tmp/ccsgyXat.s:2004   .rodata.cst32:00000000000006e0 .LC65
+     /tmp/ccsgyXat.s:1924   .rodata.cst32:00000000000005e0 .LC57
+     /tmp/ccsgyXat.s:1954   .rodata.cst32:0000000000000640 .LC60
+     /tmp/ccsgyXat.s:1934   .rodata.cst32:0000000000000600 .LC58
+     /tmp/ccsgyXat.s:1964   .rodata.cst32:0000000000000660 .LC61
+     /tmp/ccsgyXat.s:1974   .rodata.cst32:0000000000000680 .LC62
+     /tmp/ccsgyXat.s:1984   .rodata.cst32:00000000000006a0 .LC63
+     /tmp/ccsgyXat.s:1994   .rodata.cst32:00000000000006c0 .LC64
+     /tmp/ccsgyXat.s:2014   .rodata.cst32:0000000000000700 .LC66
+     /tmp/ccsgyXat.s:2024   .rodata.cst32:0000000000000720 .LC67
+     /tmp/ccsgyXat.s:2034   .rodata.cst32:0000000000000740 .LC68
+     /tmp/ccsgyXat.s:2044   .rodata.cst32:0000000000000760 .LC69
+     /tmp/ccsgyXat.s:2054   .rodata.cst32:0000000000000780 .LC70
+     /tmp/ccsgyXat.s:2081   .rodata.cst16:0000000000000080 .LC73
+     /tmp/ccsgyXat.s:2064   .rodata.cst32:00000000000007a0 .LC71
+     /tmp/ccsgyXat.s:2086   .rodata.cst32:00000000000007c0 .LC74
+     /tmp/ccsgyXat.s:2096   .rodata.cst32:00000000000007e0 .LC75
+     /tmp/ccsgyXat.s:2106   .rodata.cst32:0000000000000800 .LC76
+     /tmp/ccsgyXat.s:2146   .rodata.cst32:0000000000000880 .LC80
+     /tmp/ccsgyXat.s:2116   .rodata.cst32:0000000000000820 .LC77
+     /tmp/ccsgyXat.s:2126   .rodata.cst32:0000000000000840 .LC78
+     /tmp/ccsgyXat.s:2156   .rodata.cst32:00000000000008a0 .LC81
+     /tmp/ccsgyXat.s:2136   .rodata.cst32:0000000000000860 .LC79
+     /tmp/ccsgyXat.s:2186   .rodata.cst32:0000000000000900 .LC84
+     /tmp/ccsgyXat.s:2196   .rodata.cst32:0000000000000920 .LC85
+     /tmp/ccsgyXat.s:2166   .rodata.cst32:00000000000008c0 .LC82
+     /tmp/ccsgyXat.s:2206   .rodata.cst32:0000000000000940 .LC86
+     /tmp/ccsgyXat.s:2176   .rodata.cst32:00000000000008e0 .LC83
+     /tmp/ccsgyXat.s:2216   .rodata.cst32:0000000000000960 .LC87
+     /tmp/ccsgyXat.s:2226   .rodata.cst32:0000000000000980 .LC88
+     /tmp/ccsgyXat.s:2236   .rodata.cst32:00000000000009a0 .LC89
+     /tmp/ccsgyXat.s:2246   .rodata.cst32:00000000000009c0 .LC90
+     /tmp/ccsgyXat.s:2266   .rodata.cst32:0000000000000a00 .LC92
+     /tmp/ccsgyXat.s:2256   .rodata.cst32:00000000000009e0 .LC91
+     /tmp/ccsgyXat.s:2291   .rodata.cst32:0000000000000a20 .LC97
+     /tmp/ccsgyXat.s:2286   .rodata.cst16:0000000000000090 .LC96
+     /tmp/ccsgyXat.s:2301   .rodata.cst32:0000000000000a40 .LC98
+     /tmp/ccsgyXat.s:2277   .rodata.cst8:0000000000000010 .LC93
+     /tmp/ccsgyXat.s:2281   .rodata.cst8:0000000000000018 .LC94
 
 UNDEFINED SYMBOLS
 _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate
-strlen
+GAS LISTING /tmp/ccsgyXat.s 			page 65
+
+
+aligned_alloc
+__gxx_personality_v0
+_ZNSt14basic_ofstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+clock
 _ZSt4cout
-_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
-_ZNSo9_M_insertIdEERSoT_
-_ZNSo3putEc
-GAS LISTING /tmp/cc72IM0J.s 			page 60
-
-
+_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+_ZNSo9_M_insertIlEERSoT_
+_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
 _ZNSo5flushEv
+_ZNSt14basic_ofstreamIcSt11char_traitsIcEE5closeEv
+_ZNSt14basic_ofstreamIcSt11char_traitsIcEED1Ev
+_ZNSo9_M_insertIdEERSoT_
+_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+_ZNSo3putEc
 _ZNKSt5ctypeIcE13_M_widen_initEv
 _ZSt16__throw_bad_castv
-aligned_alloc
-clock
-_ZNSo9_M_insertIlEERSoT_
-_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
-_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
-_ZNSolsEi
+_Unwind_Resume
+__stack_chk_fail
 _ZNSt8ios_base4InitC1Ev
 __dso_handle
 _ZNSt8ios_base4InitD1Ev
