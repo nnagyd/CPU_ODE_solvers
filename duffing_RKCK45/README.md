@@ -14,5 +14,5 @@ Testing peek GFLOPS, with RKCK45 solver.
 * [Table of results for 1440 parameters](https://docs.google.com/spreadsheets/d/1sb9cdZxjwmb_gEAFR5ncPjAkvN65XeDSObiIpz_Kl0Q/edit?usp=sharing)
 * 9.2 GFLOPS (30%) with rollOut = 1
 
-### Bifurcation diagram with 46080 parameters created in 195 s
-![Bifurcation diagram](https://raw.githubusercontent.com/nnagyd/CPU_ODE_solvers/master/duffing_RKCK45/bifurcation_diagram.PNG)
+### Bifurcation diagram with 46080 parameters created in 240 s
+![Bifurcation diagram](https://raw.githubusercontent.com/nnagyd/CPU_ODE_solvers/master/duffing_RKCK45/duffing_bifurcation_diagram.PNG)
