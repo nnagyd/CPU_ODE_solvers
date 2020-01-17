@@ -39,7 +39,7 @@
 |Transcendental test|RK4|4|3.143 s|18144|10.7|35%|sine in ODE|
 |Lorentz|RK4|2|1.438 s|40320|21.3|70%|-|
 |Lorentz|RKCK45|1|2.129 s|40320|10.8|36%|log,exp,division by stepsize prediction|
-|Duffing|RKCK45|1|195 s|46080|9.2|30%|Cosine in ODE and log,exp,division by stepsize prediction|
+|Duffing|RKCK45|1|240 s|46080|10.6|35%|Cosine in ODE and log,exp,division by stepsize prediction|
 
 
 
