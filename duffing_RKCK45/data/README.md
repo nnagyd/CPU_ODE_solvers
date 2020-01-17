@@ -8,4 +8,4 @@ Results for different rollOuts for 1440 parameters
 
 ## Measurement
 * CPU: Intel Core i7-4820K
-* Date: 2020/01/14
+* Date: 2020/01/17
